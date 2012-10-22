@@ -1,16 +1,10 @@
-//
-//  ViewerAgent.h
-//  Coach
-//
-//  Created by Daren Taylor on 20/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-
+#import "Model.h"
 @interface ViewerAgent : NSObject
+
 @property (nonatomic, strong) UIViewController *rootViewController;
 
+-(id) initWithModel:(Model *) model;
 -(void) start;
 
 @end

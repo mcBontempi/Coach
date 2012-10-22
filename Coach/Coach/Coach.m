@@ -4,14 +4,35 @@
 @implementation Coach
 
 // returns an array of slots, the slots are the day
--(NSArray*) getWeekUsesProfileWithWeek:(NSInteger) week{
+-(NSArray *) getWeekUsesProfileWithWeek:(NSInteger) week{
+
+    NSArray *stackedWeek = [self getStackedWeekUsesProfileWithWeek: week];
+
+    NSMutableArray *coachedWeek = [[NSMutableArray alloc] init];
     
-    return nil;
+    for(NSInteger day = 0 ; day < 7 ; day++){
+        NSMutableArray *dayArray = [[NSMutableArray alloc] init];
+        [coachedWeek addObject:dayArray];
+    }
+    
+    
+    for(Slot *slot in stackedWeek){
+        
+        
+        u_int32_t r = arc4random()%7;
+        
+        [coachedWeek[r] addObject:slot];
+        
+    }
+    
+    
+
+    return [NSArray arrayWithArray:coachedWeek];
 }
 
 
 // this gets a week, basically what sessions he needs to do within 1 week.
--(NSArray*) getStackedWeekUsesProfileWithWeek:(NSInteger) week{
+-(NSArray *) getStackedWeekUsesProfileWithWeek:(NSInteger) week{
 
     double weekPercentage = [[self.profile.array objectAtIndex:week-1] doubleValue];
     
@@ -28,8 +49,10 @@
     Slot *swim2 = [[Slot alloc] initWithDuration:totalHours*0.10 activityType:EActivityTypeSwim];
     Slot *swim3 = [[Slot alloc] initWithDuration:totalHours*0.05 activityType:EActivityTypeSwim];
     
-    return [[NSArray alloc] initWithObjects:longRun, tempoRun, shortRun, longBike, shortBike, swim1, swim2, swim3, nil];
+    return [[NSArray alloc] initWithObjects:longRun, shortBike, swim1, tempoRun, shortRun, longBike, swim2, swim3, nil];
     
 }
+
+
 
 @end

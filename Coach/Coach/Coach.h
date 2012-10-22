@@ -3,6 +3,7 @@
 
 @interface Coach : NSObject
 
+-(NSArray *) getWeekUsesProfileWithWeek:(NSInteger) week;
 -(NSArray*) getStackedWeekUsesProfileWithWeek:(NSInteger) week;
 
 @property (nonatomic, strong) Profile *profile;

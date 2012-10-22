@@ -31,4 +31,9 @@
     return [self fillUIColorOfActivityType:activityType].CGColor;
 }
 
++(NSString *) weekdayFromWeekdayOrdinal:(NSInteger) ordinal{
+    return [[NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil] objectAtIndex:ordinal];
+}
+
+
 @end

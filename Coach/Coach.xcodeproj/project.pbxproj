@@ -35,21 +35,14 @@
 		852CF7D21608CA6B009E249F /* Coach.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7D11608CA6B009E249F /* Coach.m */; };
 		852CF7D51608D2E5009E249F /* Scheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7D41608D2E5009E249F /* Scheduler.m */; };
 		852CF7F3160A0CB8009E249F /* SlotLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7F2160A0CB7009E249F /* SlotLogger.m */; };
-		852CF7F6160A0D37009E249F /* SlotLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7F2160A0CB7009E249F /* SlotLogger.m */; };
 		852CF7FB160A2896009E249F /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7FA160A2896009E249F /* Profile.m */; };
-		852CF7FC160A2896009E249F /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7FA160A2896009E249F /* Profile.m */; };
 		852CF801160A2C8A009E249F /* ProfileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF800160A2C8A009E249F /* ProfileTests.m */; };
 		852CF804160A2F2B009E249F /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
-		852CF805160A2F2B009E249F /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
 		856A323C16145252003533BE /* TypeSelectViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */; };
 		85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */; };
-		85C8862F163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */; };
 		85C88630163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */; };
-		85C88631163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */; };
 		85C88632163160280023A3E1 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8862C163160280023A3E1 /* TimetableViewController.m */; };
-		85C88633163160280023A3E1 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8862C163160280023A3E1 /* TimetableViewController.m */; };
 		85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
-		85C886451631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
 		D61672C2160B3896001C3F15 /* ProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C1160B3896001C3F15 /* ProfileGraph.m */; };
@@ -445,9 +438,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		852CF78C1608A7E6009E249F /* Triathlon Timetable */ = {
+		852CF78C1608A7E6009E249F /* Coach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 852CF7C31608A7E8009E249F /* Build configuration list for PBXNativeTarget "Triathlon Timetable" */;
+			buildConfigurationList = 852CF7C31608A7E8009E249F /* Build configuration list for PBXNativeTarget "Coach" */;
 			buildPhases = (
 				852CF7891608A7E6009E249F /* Sources */,
 				852CF78A1608A7E6009E249F /* Frameworks */,
@@ -457,7 +450,7 @@
 			);
 			dependencies = (
 			);
-			name = "Triathlon Timetable";
+			name = Coach;
 			productName = Coach;
 			productReference = 852CF78D1608A7E6009E249F /* Triathlon Timetable.app */;
 			productType = "com.apple.product-type.application";
@@ -502,7 +495,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				852CF78C1608A7E6009E249F /* Triathlon Timetable */,
+				852CF78C1608A7E6009E249F /* Coach */,
 				852CF7B01608A7E8009E249F /* CoachTests */,
 			);
 		};
@@ -538,8 +531,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				852CF7BD1608A7E8009E249F /* InfoPlist.strings in Resources */,
-				85C8862F163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */,
-				85C88631163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,12 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				852CF7C01608A7E8009E249F /* CoachTests.m in Sources */,
-				852CF7F6160A0D37009E249F /* SlotLogger.m in Sources */,
-				852CF7FC160A2896009E249F /* Profile.m in Sources */,
 				852CF801160A2C8A009E249F /* ProfileTests.m in Sources */,
-				852CF805160A2F2B009E249F /* ProfileLogger.m in Sources */,
-				85C88633163160280023A3E1 /* TimetableViewController.m in Sources */,
-				85C886451631675B0023A3E1 /* TimetableViewAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,7 +601,7 @@
 /* Begin PBXTargetDependency section */
 		852CF7B71608A7E8009E249F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 852CF78C1608A7E6009E249F /* Triathlon Timetable */;
+			target = 852CF78C1608A7E6009E249F /* Coach */;
 			targetProxy = 852CF7B61608A7E8009E249F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -779,7 +765,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		852CF7C31608A7E8009E249F /* Build configuration list for PBXNativeTarget "Triathlon Timetable" */ = {
+		852CF7C31608A7E8009E249F /* Build configuration list for PBXNativeTarget "Coach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				852CF7C41608A7E8009E249F /* Debug */,

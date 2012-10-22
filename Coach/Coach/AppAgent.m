@@ -11,6 +11,7 @@
 #import "StackedProfileViewController.h"
 #import "Profile.h"
 #import "Coach.h"
+#import "Model.h"
 
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
@@ -20,10 +21,21 @@
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
 
+@property (nonatomic, strong) Model *model;
 
 @end
 
 @implementation AppAgent
+
+
+
+-(id) init{
+    self = [super init];
+    if(self){
+        self.model = [[Model alloc] init];
+    }
+    return self;
+}
 
 -(void) showProfileViewController{
     // test data
@@ -78,7 +90,7 @@
 
 -(void) startViewer{
     
-    self.viewerAgent = [[ViewerAgent alloc] init];
+    self.viewerAgent = [[ViewerAgent alloc] initWithModel:self.model];
     self.viewerAgent.rootViewController = self.rootViewController;
     
     [self.viewerAgent start];

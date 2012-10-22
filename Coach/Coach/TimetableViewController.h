@@ -4,7 +4,7 @@
 
 @interface TimetableViewController : UIViewController <TimetableViewAgentDelegate>
 
-@property (nonatomic, strong) NSMutableArray *days;
+@property (nonatomic, strong) NSMutableArray *weeks;
 
 @property (nonatomic, weak) id<TimetableViewControllerDelegate> delegate;
 

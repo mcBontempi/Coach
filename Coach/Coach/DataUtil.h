@@ -12,5 +12,6 @@
 
 +(UIColor*) fillUIColorOfActivityType:(TActivityType) activityType;
 +(CGColorRef) fillCGColorRefOfActivityType:(TActivityType) activityType;
++(NSString *) weekdayFromWeekdayOrdinal:(NSInteger) ordinal;
 
 @end

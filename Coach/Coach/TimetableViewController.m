@@ -31,14 +31,14 @@
 
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.tableView setEditing:YES animated:YES];
+    [self.tableView setEditing:YES animated:NO];
     
 }
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    NSInteger sectionCount = [self.delegate.days count];
+    NSInteger sectionCount = [self.delegate.currentWeek count];
     
     NSLog(@"%d", sectionCount);
     
@@ -47,7 +47,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSInteger rowCount = [self.delegate.days[section] count];
+    NSInteger rowCount = [self.delegate.currentWeek[section] count];
     
     NSLog(@"%d", rowCount);
     
@@ -63,24 +63,29 @@
         cell.textLabel.textColor = [UIColor blueColor];
     }
     
-    NSArray* slots = self.delegate.days[indexPath.section];
+    NSArray* slots = self.delegate.currentWeek[indexPath.section];
     
     Slot *slot = slots[indexPath.row];
     
     UIColor *color = [DataUtil fillUIColorOfActivityType:slot.activityType];
     
- 
-    
-    color = [Utils lighterColorForColor:color];
-    
-    color = [Utils lighterColorForColor:color];
-    color = [Utils lighterColorForColor:color];
-    
-       cell.backgroundColor = color;
+    cell.backgroundColor = color;
     cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSArray* slots = self.delegate.currentWeek[indexPath.section];
+    
+    Slot *slot = slots[indexPath.row];
+    
+    return slot.duration > 70 ? slot.duration : 70;
+    
+}
+
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewCellEditingStyleNone;
@@ -94,6 +99,29 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     
+}
+
+-(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return nil;
+  
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 40;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,40)];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,40)];
+    
+    label.text = [DataUtil weekdayFromWeekdayOrdinal:section];
+    
+    [view addSubview:label];
+    
+    return view;
 }
 
 

@@ -3,6 +3,6 @@
 
 @protocol TimetableViewControllerDelegate <NSObject>
 
--(NSArray*) days;
+-(NSArray*) currentWeek;
 
 @end

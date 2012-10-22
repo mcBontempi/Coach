@@ -1,6 +1,7 @@
 #import "ViewerAgent.h"
 #import "TimetableViewAgent.h"
 #import "TimetableViewController.h"
+#import "Model.h"
 
 @interface ViewerAgent () 
 
@@ -8,12 +9,24 @@
 
 @property (nonatomic, strong) TimetableViewAgent *timetableViewAgent;
 
+@property (nonatomic, strong) Model *model;
+
 @end
 
 @implementation ViewerAgent
 
+
+-(id) initWithModel:(Model *) model{
+    self = [super init];
+    if(self){
+        self.model = model;
+    }
+    
+    return self;
+}
+
 -(void) start{
-    self.timetableViewAgent = [[TimetableViewAgent alloc] init];
+    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModel:self.model];
     TimetableViewController *vc = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
     self.timetableViewAgent.delegate = vc;
 

@@ -24,16 +24,17 @@
     [super tearDown];
 }
 
-/*
+
 - (void)testLinearNoTaper
 {
+    /*
     self.profile.numberOfWeeks = 10;
     self.profile.startPercentage =70;
     
     [self.profile generate];
     
     [ProfileLogger logProfile:self.profile];
-    
+    */
 }
-*/
+
 @end
