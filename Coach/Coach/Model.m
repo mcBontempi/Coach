@@ -22,14 +22,13 @@
         coach.profile = profile;
         coach.peakMinutes = 20*60;
         
-        NSMutableArray *array = [[NSMutableArray alloc] init];
+        self.weeks = [[NSMutableArray alloc] init];
         
         for(NSInteger week = 1 ; week <= length ; week++){
-            [array addObject: [coach getWeekUsesProfileWithWeek:1]];
+            [self.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
         }
-        
-        self.weeks = [NSArray arrayWithArray:array];
     }
     return self;
 }
+
 @end

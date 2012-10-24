@@ -26,9 +26,9 @@
 }
 
 -(void) start{
-    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModel:self.model];
+    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModel:self.model delegate:self.model];
     TimetableViewController *vc = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
-    self.timetableViewAgent.delegate = vc;
+    self.timetableViewAgent.toViewDelegate = vc;
 
     self.viewerNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.rootViewController presentModalViewController:self.viewerNavigationController animated:YES];

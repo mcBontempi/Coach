@@ -40,16 +40,12 @@
     
     NSInteger sectionCount = [self.delegate.currentWeek count];
     
-    NSLog(@"%d", sectionCount);
-    
     return sectionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     NSInteger rowCount = [self.delegate.currentWeek[section] count];
-    
-    NSLog(@"%d", rowCount);
     
     return rowCount;
 }
@@ -82,7 +78,7 @@
     
     Slot *slot = slots[indexPath.row];
     
-    return slot.duration > 70 ? slot.duration : 70;
+    return slot.duration > 50 ? slot.duration : 50;
     
 }
 
@@ -98,7 +94,7 @@
 
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    
+    [self.delegate moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
 }
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -124,6 +120,29 @@
     return view;
 }
 
+
+-(void) reloadTable{
+    [self.tableView reloadData];
+}
+
+
+-(void) insertRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+    [self.tableView endUpdates];
+}
+
+-(void) removeRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
+    [self.tableView endUpdates];
+}
 
 
 

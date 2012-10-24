@@ -5,4 +5,6 @@
 
 -(NSArray*) currentWeek;
 
+-(void) moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
+
 @end

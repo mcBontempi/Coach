@@ -90,7 +90,7 @@
 		850D26AF161072420034A743 /* StackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackViewController.h; path = Coach/StackViewController.h; sourceTree = "<group>"; };
 		850D26B0161072420034A743 /* StackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackViewController.m; path = Coach/StackViewController.m; sourceTree = "<group>"; };
 		850D26B1161072420034A743 /* StackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StackViewController.xib; path = Coach/StackViewController.xib; sourceTree = "<group>"; };
-		852CF78D1608A7E6009E249F /* Triathlon Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Triathlon Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		852CF78D1608A7E6009E249F /* Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852CF7911608A7E6009E249F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		852CF7931608A7E6009E249F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		852CF7951608A7E6009E249F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,6 +153,7 @@
 		D61672DA161396B0001C3F15 /* DataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtil.m; sourceTree = "<group>"; };
 		D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone.xib; path = Coach/WelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
 		D61672E61614E8A0001C3F15 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Coach/assets/background.png; sourceTree = "<group>"; };
+		D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -161,7 +162,7 @@
 		D6A7769E162DEFFE00879C11 /* DurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationViewController.h; path = Coach/DurationViewController.h; sourceTree = "<group>"; };
 		D6A7769F162DEFFE00879C11 /* DurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DurationViewController.m; path = Coach/DurationViewController.m; sourceTree = "<group>"; };
 		D6A776A0162DEFFE00879C11 /* DurationViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationViewControllerDelegate.h; path = Coach/DurationViewControllerDelegate.h; sourceTree = "<group>"; };
-		D6A776B1163341E300879C11 /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
+		D6A776B1163341E300879C11 /* TimetableViewAgentToViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentToViewDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +202,8 @@
 				850D2627160B78E30034A743 /* ViewerAgent.m */,
 				85C886421631675B0023A3E1 /* TimetableViewAgent.h */,
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
-				D6A776B1163341E300879C11 /* TimetableViewAgentDelegate.h */,
+				D6A776B1163341E300879C11 /* TimetableViewAgentToViewDelegate.h */,
+				D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */,
 			);
 			name = Agents;
 			sourceTree = "<group>";
@@ -219,7 +221,7 @@
 		852CF78E1608A7E6009E249F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				852CF78D1608A7E6009E249F /* Triathlon Timetable.app */,
+				852CF78D1608A7E6009E249F /* Coach.app */,
 				852CF7B11608A7E8009E249F /* CoachTests.octest */,
 			);
 			name = Products;
@@ -452,7 +454,7 @@
 			);
 			name = Coach;
 			productName = Coach;
-			productReference = 852CF78D1608A7E6009E249F /* Triathlon Timetable.app */;
+			productReference = 852CF78D1608A7E6009E249F /* Coach.app */;
 			productType = "com.apple.product-type.application";
 		};
 		852CF7B01608A7E8009E249F /* CoachTests */ = {
