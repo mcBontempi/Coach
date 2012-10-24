@@ -2,9 +2,12 @@
 #import "Slot.h"
 #import "DataUtil.h"
 #import "Utils.h"
+#import "HeaderView.h"
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *headerViews;
+@property NSInteger lastSectionUpdatedWhenDragging;
 @end
 
 @implementation TimetableViewController
@@ -23,11 +26,21 @@
     }
     if(self){
         self.delegate = delegate;
+        
+        NSMutableArray *tempArray = [[NSMutableArray alloc ] init];
+        
+        for(NSInteger i = 0 ; i < 7 ; i++){
+            [tempArray addObject:[[HeaderView alloc] initWithFrame:CGRectMake(0,0,320,40)]];
+        }
+        
+        self.headerViews = [NSArray arrayWithArray:tempArray];
+        
+        self.lastSectionUpdatedWhenDragging = -1;
+        
     }
     
     return self;
 }
-
 
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -95,11 +108,39 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     [self.delegate moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
+    [self updateHeaderViewForSection:destinationIndexPath.section];
+    [self updateHeaderViewForSection:sourceIndexPath.section];
+    
+    self.lastSectionUpdatedWhenDragging = -1;
 }
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
+    [self.delegate moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
+    
+    DLog(@"from section %d row %d to section %d row %d", sourceIndexPath.section, sourceIndexPath.row, proposedDestinationIndexPath.section, proposedDestinationIndexPath.row);
+    
+    DLog(@"proposed section = %d", self.lastSectionUpdatedWhenDragging);
+    
+    
+    [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
+    [self updateHeaderViewForSection:sourceIndexPath.section];
+    if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
+    
+  
+    [self.delegate moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
+    
+    self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
+    
+    
+    return proposedDestinationIndexPath;
+}
+
+
+
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return nil;
-  
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -108,45 +149,37 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [self updatedHeaderViewForSection:section];
+}
+
+-(void) updateHeaderViewForSection:(NSInteger) section{
+    UIView *view = [self updatedHeaderViewForSection:section];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,40)];
+    [view setNeedsDisplay];
+}
+
+-(HeaderView *) updatedHeaderViewForSection:(NSInteger) section{
+    HeaderView *headerView = self.headerViews[section];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,40)];
+    [headerView setText:[self.delegate daySummary:section]];
     
-    label.text = [DataUtil weekdayFromWeekdayOrdinal:section];
+    NSInteger total = 0;
+    for(Slot *slot in self.delegate.currentWeek[section] ){
+        total += slot.duration;
+        
+    }
     
-    [view addSubview:label];
+    if(total > 100) [headerView setWarning:YES];
+    else
+        [headerView setWarning:NO];
     
-    return view;
+    return headerView;
 }
 
 
 -(void) reloadTable{
     [self.tableView reloadData];
 }
-
-
--(void) insertRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
-    [self.tableView endUpdates];
-}
-
--(void) removeRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    
-    [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationRight];
-    [self.tableView endUpdates];
-}
-
-
-
-
 
 
 @end

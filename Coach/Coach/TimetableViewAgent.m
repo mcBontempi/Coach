@@ -1,5 +1,6 @@
 #import "TimetableViewAgent.h"
 #import "Slot.h"
+#import "DataUtil.h"
 
 @interface TimetableViewAgent ()
 
@@ -22,79 +23,33 @@
 
 -(NSArray *) currentWeek{
     if(!self.week) {
-        
-        self.week = self.model.weeks[0];
-        
-        for(NSMutableArray *array in self.week){
-            
-            if(!array.count){
-                [array addObject:[[Slot alloc] initWithDuration:0 activityType:EActivityTypeStrengthAndConditioning ]];
-            }
-        }
-        
+        self.week = [NSArray arrayWithArray:self.model.weeks[0]];
     }return self.week;
 }
-
 
 -(void) moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     
     Slot *slot = self.week[sourceIndexPath.section][sourceIndexPath.row];
-    
     NSMutableArray *day = self.week[sourceIndexPath.section];
-    
     [day removeObjectAtIndex:sourceIndexPath.row];
-    
     day = self.week[destinationIndexPath.section];
-    
     [day insertObject:slot atIndex:destinationIndexPath.row];
-    
-    [self checkForEmptyDaysAndInsertRestDaysIfRequired];
 }
 
--(void) checkForEmptyDaysAndInsertRestDaysIfRequired{
+-(NSString *) daySummary:(NSInteger)day{
+    NSString *dayText = [DataUtil weekdayFromWeekdayOrdinal:day];
     
-    NSInteger day = 0;
-    
-    for(NSMutableArray *array in self.week){
-        
-        if(!array.count){
-            [array addObject:[[Slot alloc] initWithDuration:0 activityType:EActivityTypeStrengthAndConditioning ]];
-         //   [self.toViewDelegate insertRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:day]];
-        
-        
-           [self.toViewDelegate reloadTable];
+    if(![self.currentWeek[day] count])
+        return [NSString stringWithFormat:@"%@ - Rest Day", dayText];
+    else
+    {
+        NSInteger total = 0;
+        for(Slot *slot in self.currentWeek[day]){
+            total += slot.duration;
         }
         
-        else if(array.count >1){
-            NSInteger deleteIndex = 0;
-            BOOL delete = NO;
-            
-            Slot *slot;
-            
-            for(slot in array){
-                if(slot.activityType == EActivityTypeStrengthAndConditioning){
-                    
-                    delete = YES;
-                    break;
-                }
-                deleteIndex++;
-            }
+        return [NSString stringWithFormat:@"%@ - %d minutes", dayText, total];
         
-            if(delete){
-                [array removeObject:slot];
-            
-                DLog(@"row = %d section = %d", deleteIndex, day)
-                
-           //     [self.toViewDelegate removeRowAtIndexPath:[NSIndexPath indexPathForRow:deleteIndex inSection:day]];
-            
-                [self.toViewDelegate reloadTable];
-            
-            
-            }
-        }
-        
-        
-        day++;
     }
 }
 

@@ -7,4 +7,6 @@
 
 -(void) moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
 
+-(NSString *) daySummary:(NSInteger) day;
+
 @end

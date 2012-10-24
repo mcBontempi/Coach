@@ -55,6 +55,7 @@
 		D61672DB161396B0001C3F15 /* DataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672DA161396B0001C3F15 /* DataUtil.m */; };
 		D61672E416147811001C3F15 /* WelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */; };
 		D61672E71614E8A0001C3F15 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672E61614E8A0001C3F15 /* background.png */; };
+		D63AA69816384F670074EA70 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69716384F670074EA70 /* HeaderView.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -154,6 +155,8 @@
 		D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone.xib; path = Coach/WelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
 		D61672E61614E8A0001C3F15 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Coach/assets/background.png; sourceTree = "<group>"; };
 		D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
+		D63AA69616384F670074EA70 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Coach/HeaderView.h; sourceTree = "<group>"; };
+		D63AA69716384F670074EA70 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Coach/HeaderView.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -369,20 +372,9 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
 				D6A7769A162DEF0500879C11 /* Config */,
-				850D26AA1610721D0034A743 /* EffortViewController.h */,
-				850D26AB1610721D0034A743 /* EffortViewController.m */,
-				850D26AC1610721D0034A743 /* EffortViewController.xib */,
-				D61672C7160B39DB001C3F15 /* ProfileViewController.h */,
-				D61672C8160B39DB001C3F15 /* ProfileViewController.m */,
-				D61672C9160B39DB001C3F15 /* ProfileViewController.xib */,
-				D61672D41611D23B001C3F15 /* StackedProfileViewController.h */,
-				D61672D51611D23B001C3F15 /* StackedProfileViewController.m */,
-				D61672D61611D23B001C3F15 /* StackedProfileViewController.xib */,
-				850D26AF161072420034A743 /* StackViewController.h */,
-				850D26B0161072420034A743 /* StackViewController.m */,
-				850D26B1161072420034A743 /* StackViewController.xib */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -391,6 +383,7 @@
 		D61672C6160B3999001C3F15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D63AA69516384EF90074EA70 /* HeaderView */,
 				D61672B9160B37C2001C3F15 /* Graph */,
 			);
 			name = Views;
@@ -404,6 +397,34 @@
 			);
 			name = Assets;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		D63AA69516384EF90074EA70 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				D63AA69616384F670074EA70 /* HeaderView.h */,
+				D63AA69716384F670074EA70 /* HeaderView.m */,
+			);
+			name = HeaderView;
+			sourceTree = "<group>";
+		};
+		D63AA69916384F7D0074EA70 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				850D26AA1610721D0034A743 /* EffortViewController.h */,
+				850D26AB1610721D0034A743 /* EffortViewController.m */,
+				850D26AC1610721D0034A743 /* EffortViewController.xib */,
+				D61672C7160B39DB001C3F15 /* ProfileViewController.h */,
+				D61672C8160B39DB001C3F15 /* ProfileViewController.m */,
+				D61672C9160B39DB001C3F15 /* ProfileViewController.xib */,
+				D61672D41611D23B001C3F15 /* StackedProfileViewController.h */,
+				D61672D51611D23B001C3F15 /* StackedProfileViewController.m */,
+				D61672D61611D23B001C3F15 /* StackedProfileViewController.xib */,
+				850D26AF161072420034A743 /* StackViewController.h */,
+				850D26B0161072420034A743 /* StackViewController.m */,
+				850D26B1161072420034A743 /* StackViewController.xib */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		D6A7769A162DEF0500879C11 /* Config */ = {
@@ -586,6 +607,7 @@
 				85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */,
 				D6A776B616334DE900879C11 /* Utils.m in Sources */,
 				85FE7052163549410084AE26 /* Model.m in Sources */,
+				D63AA69816384F670074EA70 /* HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
