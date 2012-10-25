@@ -1,17 +1,11 @@
-//
-//  ConfigAgent.h
-//  Coach
-//
-//  Created by Daren Taylor on 20/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+
+#import "ConfigAgentDelegate.h"
 
 @interface ConfigAgent  : NSObject 
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 
--(void) start;
+-(void) startWithDelegate:(id<ConfigAgentDelegate>) delegate;
 
 @end

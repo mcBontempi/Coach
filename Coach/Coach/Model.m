@@ -8,26 +8,7 @@
 -(id) init{
     self = [super init];
     if(self){
-        
-        Coach *coach = [[Coach alloc] init];
-        
-        // test data
-        const NSInteger length = 45;
-        
-        Profile *profile = [[Profile alloc] init];
-        profile.numberOfWeeks = length;
-        profile.startPercentage =30;
-        [profile generate];
-        
-        coach.profile = profile;
-        coach.peakMinutes = 20*60;
-        
-        self.weeks = [[NSMutableArray alloc] init];
-        
-        for(NSInteger week = 1 ; week <= length ; week++){
-            [self.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
-        }
-    }
+           }
     return self;
 }
 

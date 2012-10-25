@@ -166,9 +166,7 @@
     NSInteger total = 0;
     for(Slot *slot in self.delegate.currentWeek[section] ){
         total += slot.duration;
-        
     }
-    
     if(total > 100) [headerView setWarning:YES];
     else
         [headerView setWarning:NO];

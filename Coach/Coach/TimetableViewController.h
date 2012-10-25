@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "TimetableViewControllerDelegate.h"
-#import "TimetableViewAgentToViewDelegate.h"
+#import "ToTimetableViewControllerDelegate.h"
 
-@interface TimetableViewController : UIViewController <TimetableViewAgentToViewDelegate>
+@interface TimetableViewController : UIViewController <ToTimetableViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *weeks;
 

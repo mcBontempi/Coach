@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface AppAgent : NSObject
+@interface AppAgent : NSObject 
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 -(void) start;

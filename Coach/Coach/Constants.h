@@ -24,6 +24,12 @@ typedef enum{
     ETypeFull,
 }TType;
 
+typedef enum{
+    EEffortEasy,
+    EEffortIntermediate,
+    EEffortCompetitive,
+}TEffort;
+
 #define maxHoursInAPlan 20
 
 

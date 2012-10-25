@@ -13,8 +13,6 @@
 		850D26A3161071E00034A743 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26A1161071DF0034A743 /* WelcomeViewController.m */; };
 		850D26A8161072090034A743 /* TypeSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26A6161072090034A743 /* TypeSelectViewController.m */; };
 		850D26A9161072090034A743 /* TypeSelectViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D26A7161072090034A743 /* TypeSelectViewController_iPhone.xib */; };
-		850D26AD1610721D0034A743 /* EffortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26AB1610721D0034A743 /* EffortViewController.m */; };
-		850D26AE1610721D0034A743 /* EffortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D26AC1610721D0034A743 /* EffortViewController.xib */; };
 		850D26B2161072420034A743 /* StackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26B0161072420034A743 /* StackViewController.m */; };
 		850D26B3161072420034A743 /* StackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D26B1161072420034A743 /* StackViewController.xib */; };
 		852CF7921608A7E6009E249F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852CF7911608A7E6009E249F /* UIKit.framework */; };
@@ -56,6 +54,12 @@
 		D61672E416147811001C3F15 /* WelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */; };
 		D61672E71614E8A0001C3F15 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672E61614E8A0001C3F15 /* background.png */; };
 		D63AA69816384F670074EA70 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69716384F670074EA70 /* HeaderView.m */; };
+		D63AA69F16392E070074EA70 /* EffortViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */; };
+		D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */; };
+		D63AA6A116392E070074EA70 /* EffortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69D16392E070074EA70 /* EffortViewController.m */; };
+		D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */; };
+		D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
+		D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA6A51639429A0074EA70 /* FinishViewController.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -85,9 +89,6 @@
 		850D26A5161072090034A743 /* TypeSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewController.h; path = Coach/TypeSelectViewController.h; sourceTree = "<group>"; };
 		850D26A6161072090034A743 /* TypeSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TypeSelectViewController.m; path = Coach/TypeSelectViewController.m; sourceTree = "<group>"; };
 		850D26A7161072090034A743 /* TypeSelectViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TypeSelectViewController_iPhone.xib; path = Coach/TypeSelectViewController_iPhone.xib; sourceTree = "<group>"; };
-		850D26AA1610721D0034A743 /* EffortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffortViewController.h; path = Coach/EffortViewController.h; sourceTree = "<group>"; };
-		850D26AB1610721D0034A743 /* EffortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EffortViewController.m; path = Coach/EffortViewController.m; sourceTree = "<group>"; };
-		850D26AC1610721D0034A743 /* EffortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController.xib; path = Coach/EffortViewController.xib; sourceTree = "<group>"; };
 		850D26AF161072420034A743 /* StackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackViewController.h; path = Coach/StackViewController.h; sourceTree = "<group>"; };
 		850D26B0161072420034A743 /* StackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackViewController.m; path = Coach/StackViewController.m; sourceTree = "<group>"; };
 		850D26B1161072420034A743 /* StackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StackViewController.xib; path = Coach/StackViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +158,18 @@
 		D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA69616384F670074EA70 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Coach/HeaderView.h; sourceTree = "<group>"; };
 		D63AA69716384F670074EA70 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Coach/HeaderView.m; sourceTree = "<group>"; };
+		D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController_iPad.xib; path = Coach/EffortViewController_iPad.xib; sourceTree = "<group>"; };
+		D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController_iPhone.xib; path = Coach/EffortViewController_iPhone.xib; sourceTree = "<group>"; };
+		D63AA69C16392E070074EA70 /* EffortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffortViewController.h; path = Coach/EffortViewController.h; sourceTree = "<group>"; };
+		D63AA69D16392E070074EA70 /* EffortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EffortViewController.m; path = Coach/EffortViewController.m; sourceTree = "<group>"; };
+		D63AA69E16392E070074EA70 /* EffortViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffortViewControllerDelegate.h; path = Coach/EffortViewControllerDelegate.h; sourceTree = "<group>"; };
+		D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishViewController_iPad.xib; path = Coach/FinishViewController_iPad.xib; sourceTree = "<group>"; };
+		D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishViewController_iPhone.xib; path = Coach/FinishViewController_iPhone.xib; sourceTree = "<group>"; };
+		D63AA6A41639429A0074EA70 /* FinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinishViewController.h; path = Coach/FinishViewController.h; sourceTree = "<group>"; };
+		D63AA6A51639429A0074EA70 /* FinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinishViewController.m; path = Coach/FinishViewController.m; sourceTree = "<group>"; };
+		D63AA6A61639429A0074EA70 /* FinishViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinishViewControllerDelegate.h; path = Coach/FinishViewControllerDelegate.h; sourceTree = "<group>"; };
+		D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigAgentDelegate.h; sourceTree = "<group>"; };
+		D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToFinishViewControllerDelegate.h; path = Coach/ToFinishViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -165,7 +178,7 @@
 		D6A7769E162DEFFE00879C11 /* DurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationViewController.h; path = Coach/DurationViewController.h; sourceTree = "<group>"; };
 		D6A7769F162DEFFE00879C11 /* DurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DurationViewController.m; path = Coach/DurationViewController.m; sourceTree = "<group>"; };
 		D6A776A0162DEFFE00879C11 /* DurationViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DurationViewControllerDelegate.h; path = Coach/DurationViewControllerDelegate.h; sourceTree = "<group>"; };
-		D6A776B1163341E300879C11 /* TimetableViewAgentToViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimetableViewAgentToViewDelegate.h; sourceTree = "<group>"; };
+		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,11 +214,12 @@
 				850D2621160B78770034A743 /* AppAgent.m */,
 				850D2623160B78C20034A743 /* ConfigAgent.h */,
 				850D2624160B78C20034A743 /* ConfigAgent.m */,
+				D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */,
 				850D2626160B78E30034A743 /* ViewerAgent.h */,
 				850D2627160B78E30034A743 /* ViewerAgent.m */,
 				85C886421631675B0023A3E1 /* TimetableViewAgent.h */,
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
-				D6A776B1163341E300879C11 /* TimetableViewAgentToViewDelegate.h */,
+				D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */,
 				D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */,
 			);
 			name = Agents;
@@ -411,9 +425,6 @@
 		D63AA69916384F7D0074EA70 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				850D26AA1610721D0034A743 /* EffortViewController.h */,
-				850D26AB1610721D0034A743 /* EffortViewController.m */,
-				850D26AC1610721D0034A743 /* EffortViewController.xib */,
 				D61672C7160B39DB001C3F15 /* ProfileViewController.h */,
 				D61672C8160B39DB001C3F15 /* ProfileViewController.m */,
 				D61672C9160B39DB001C3F15 /* ProfileViewController.xib */,
@@ -427,7 +438,32 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		D6A7769A162DEF0500879C11 /* Config */ = {
+		D63AA6AA163942A20074EA70 /* Finish */ = {
+			isa = PBXGroup;
+			children = (
+				D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */,
+				D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */,
+				D63AA6A41639429A0074EA70 /* FinishViewController.h */,
+				D63AA6A51639429A0074EA70 /* FinishViewController.m */,
+				D63AA6A61639429A0074EA70 /* FinishViewControllerDelegate.h */,
+				D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */,
+			);
+			name = Finish;
+			sourceTree = "<group>";
+		};
+		D63AA6AB163942A90074EA70 /* Effort */ = {
+			isa = PBXGroup;
+			children = (
+				D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */,
+				D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */,
+				D63AA69C16392E070074EA70 /* EffortViewController.h */,
+				D63AA69D16392E070074EA70 /* EffortViewController.m */,
+				D63AA69E16392E070074EA70 /* EffortViewControllerDelegate.h */,
+			);
+			name = Effort;
+			sourceTree = "<group>";
+		};
+		D63AA6AC163942AE0074EA70 /* Duration */ = {
 			isa = PBXGroup;
 			children = (
 				D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */,
@@ -435,16 +471,42 @@
 				D6A7769E162DEFFE00879C11 /* DurationViewController.h */,
 				D6A7769F162DEFFE00879C11 /* DurationViewController.m */,
 				D6A776A0162DEFFE00879C11 /* DurationViewControllerDelegate.h */,
+			);
+			name = Duration;
+			sourceTree = "<group>";
+		};
+		D63AA6AD163942B50074EA70 /* TypeSelect */ = {
+			isa = PBXGroup;
+			children = (
 				850D26A5161072090034A743 /* TypeSelectViewController.h */,
 				850D26A6161072090034A743 /* TypeSelectViewController.m */,
 				856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */,
 				850D26A7161072090034A743 /* TypeSelectViewController_iPhone.xib */,
 				D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */,
+			);
+			name = TypeSelect;
+			sourceTree = "<group>";
+		};
+		D63AA6AE163942C00074EA70 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
 				850D26A0161071DF0034A743 /* WelcomeViewController.h */,
 				850D26A1161071DF0034A743 /* WelcomeViewController.m */,
 				85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */,
 				D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */,
 				854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		D6A7769A162DEF0500879C11 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D63AA6AE163942C00074EA70 /* Welcome */,
+				D63AA6AD163942B50074EA70 /* TypeSelect */,
+				D63AA6AC163942AE0074EA70 /* Duration */,
+				D63AA6AB163942A90074EA70 /* Effort */,
+				D63AA6AA163942A20074EA70 /* Finish */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -535,7 +597,6 @@
 				D61672C4160B38F6001C3F15 /* Default-568h@2x.png in Resources */,
 				D61672CB160B39DB001C3F15 /* ProfileViewController.xib in Resources */,
 				850D26A9161072090034A743 /* TypeSelectViewController_iPhone.xib in Resources */,
-				850D26AE1610721D0034A743 /* EffortViewController.xib in Resources */,
 				850D26B3161072420034A743 /* StackViewController.xib in Resources */,
 				D61672D81611D23B001C3F15 /* StackedProfileViewController.xib in Resources */,
 				85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */,
@@ -546,6 +607,10 @@
 				D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */,
 				85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */,
 				85C88630163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */,
+				D63AA69F16392E070074EA70 /* EffortViewController_iPad.xib in Resources */,
+				D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */,
+				D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */,
+				D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +661,6 @@
 				850D2628160B78E30034A743 /* ViewerAgent.m in Sources */,
 				850D26A3161071E00034A743 /* WelcomeViewController.m in Sources */,
 				850D26A8161072090034A743 /* TypeSelectViewController.m in Sources */,
-				850D26AD1610721D0034A743 /* EffortViewController.m in Sources */,
 				850D26B2161072420034A743 /* StackViewController.m in Sources */,
 				D61672D21611D180001C3F15 /* StackedProfileGraph.m in Sources */,
 				D61672D71611D23B001C3F15 /* StackedProfileViewController.m in Sources */,
@@ -608,6 +672,8 @@
 				D6A776B616334DE900879C11 /* Utils.m in Sources */,
 				85FE7052163549410084AE26 /* Model.m in Sources */,
 				D63AA69816384F670074EA70 /* HeaderView.m in Sources */,
+				D63AA6A116392E070074EA70 /* EffortViewController.m in Sources */,
+				D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

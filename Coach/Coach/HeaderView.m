@@ -52,8 +52,6 @@
     [UIView animateWithDuration:0.5 animations:^{
         label.alpha = 1.0;
         CGRect frame = label.frame;
-        if(self.warning) self.backgroundColor = [UIColor redColor];
-        else self.backgroundColor = [UIColor whiteColor];
      //   frame.origin.y = 0;
         label.frame = frame;
     }];
@@ -62,8 +60,6 @@
     [UIView animateWithDuration:0.5 animations:^{
         label.alpha = 0.0;
         CGRect frame = label.frame;
-        if(self.warning) self.backgroundColor = [UIColor redColor];
-        else self.backgroundColor = [UIColor whiteColor];
         //   frame.origin.y = -100;
         label.frame = frame;
     }];
@@ -75,6 +71,10 @@
 
 
 -(void) setText:(NSString *) text{
+    
+    if(self.warning) self.backgroundColor = [UIColor redColor];
+    else self.backgroundColor = [UIColor whiteColor];
+    
     
     if(self.currentLabel == self.textLabel1){
         [self animateOut:self.textLabel1];

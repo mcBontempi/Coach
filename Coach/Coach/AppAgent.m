@@ -1,22 +1,15 @@
-//
-//  AppAgent.m
-//  Coach
-//
-//  Created by Daren Taylor on 20/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import "AppAgent.h"
 #import "ProfileViewController.h"
 #import "StackedProfileViewController.h"
 #import "Profile.h"
 #import "Coach.h"
 #import "Model.h"
-
+#import "Config.h"
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
 
-@interface AppAgent ()
+
+@interface AppAgent () <ConfigAgentDelegate>
 
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
@@ -63,10 +56,6 @@
     profile.startPercentage =30;
     [profile generate];
     
-    
-    //for(NSInteger week = 1 ; week <= length ; week++){
-    
-    
     Coach *coach = [[Coach alloc] init];
     coach.profile = profile;
     coach.peakMinutes = 20*60;
@@ -85,7 +74,7 @@
     self.configAgent = [[ConfigAgent alloc] init];
     self.configAgent.rootViewController = self.rootViewController;
     
-    [self.configAgent start];
+    [self.configAgent startWithDelegate:self];
 }
 
 -(void) startViewer{
@@ -98,9 +87,45 @@
 
 -(void) start{
     
-    //[self startConfigWizard];
+    [self startConfigWizard];
+    
+ //   [self startViewer];
+    
+}
+
+-(void) ConfigAgentDelegate_finished{
+ 
     
     [self startViewer];
+    
+    
+}
+
+
+-(void) makePlan:(Config*) config{
+    
+    Coach *coach = [[Coach alloc] init];
+    
+    // test data
+    const NSInteger length = config.duration;
+    
+    Profile *profile = [[Profile alloc] init];
+    profile.numberOfWeeks = length;
+    profile.startPercentage =30;
+    [profile generate];
+    
+    coach.profile = profile;
+    
+    switch(config.effort){
+        case EEffortEasy: coach.peakMinutes = 5*60; break;
+        case EEffortIntermediate: coach.peakMinutes = 10*60; break;
+        case EEffortCompetitive: coach.peakMinutes = 20*60; break;
+    }
+    
+    self.model.weeks = [[NSMutableArray alloc] init];
+    for(NSInteger week = 1 ; week <= length ; week++){
+        [self.model.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
+    }
     
 }
 

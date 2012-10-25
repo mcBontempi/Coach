@@ -1,11 +1,3 @@
-//
-//  DurationViewController.m
-//  Coach
-//
-//  Created by Daren Taylor on 24/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import "DurationViewController.h"
 
 @interface DurationViewController ()
@@ -48,7 +40,8 @@
 }
 
 - (IBAction)nextPressed:(id)sender {
-    [self.delegate DurationViewControllerDelegate_nextPressed:ETypeSprint];
+    
+    [self.delegate DurationViewControllerDelegate_nextPressed:[self.duration.text intValue]];
 }
 
 - (void)viewDidUnload {
