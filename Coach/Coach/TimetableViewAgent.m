@@ -48,7 +48,17 @@
             total += slot.duration;
         }
         
-        return [NSString stringWithFormat:@"%@ - %d minutes", dayText, total];
+        
+        NSInteger hours = total /60;
+        
+        NSInteger minutes  = total - (hours *60);
+        
+        if(hours && minutes)
+            return [NSString stringWithFormat:@" %d hrs %d mins", hours, minutes];
+        else if (hours)
+            return  [NSString stringWithFormat:@" %d hrs", hours];
+        else
+            return  [NSString stringWithFormat:@" %d mins", minutes];
         
     }
 }

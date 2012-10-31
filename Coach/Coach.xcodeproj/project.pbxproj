@@ -60,6 +60,60 @@
 		D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */; };
 		D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
 		D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA6A51639429A0074EA70 /* FinishViewController.m */; };
+		D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6B61639A9D40074EA70 /* appIcon.png */; };
+		D63AA6BA1639AE8B0074EA70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF79D1608A7E7009E249F /* main.m */; };
+		D63AA6BB1639AE8B0074EA70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7A11608A7E7009E249F /* AppDelegate.m */; };
+		D63AA6BC1639AE8B0074EA70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7A41608A7E7009E249F /* ViewController.m */; };
+		D63AA6BD1639AE8B0074EA70 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7CB1608C8FF009E249F /* Slot.m */; };
+		D63AA6BE1639AE8B0074EA70 /* Coach.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7D11608CA6B009E249F /* Coach.m */; };
+		D63AA6BF1639AE8B0074EA70 /* Scheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7D41608D2E5009E249F /* Scheduler.m */; };
+		D63AA6C01639AE8B0074EA70 /* SlotLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7F2160A0CB7009E249F /* SlotLogger.m */; };
+		D63AA6C11639AE8B0074EA70 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7FA160A2896009E249F /* Profile.m */; };
+		D63AA6C21639AE8B0074EA70 /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
+		D63AA6C31639AE8B0074EA70 /* ProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C1160B3896001C3F15 /* ProfileGraph.m */; };
+		D63AA6C41639AE8B0074EA70 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C8160B39DB001C3F15 /* ProfileViewController.m */; };
+		D63AA6C51639AE8B0074EA70 /* AppAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2621160B78770034A743 /* AppAgent.m */; };
+		D63AA6C61639AE8B0074EA70 /* ConfigAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2624160B78C20034A743 /* ConfigAgent.m */; };
+		D63AA6C71639AE8B0074EA70 /* ViewerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2627160B78E30034A743 /* ViewerAgent.m */; };
+		D63AA6C81639AE8B0074EA70 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26A1161071DF0034A743 /* WelcomeViewController.m */; };
+		D63AA6C91639AE8B0074EA70 /* TypeSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26A6161072090034A743 /* TypeSelectViewController.m */; };
+		D63AA6CA1639AE8B0074EA70 /* StackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D26B0161072420034A743 /* StackViewController.m */; };
+		D63AA6CB1639AE8B0074EA70 /* StackedProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672D11611D180001C3F15 /* StackedProfileGraph.m */; };
+		D63AA6CC1639AE8B0074EA70 /* StackedProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672D51611D23B001C3F15 /* StackedProfileViewController.m */; };
+		D63AA6CD1639AE8B0074EA70 /* DataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672DA161396B0001C3F15 /* DataUtil.m */; };
+		D63AA6CE1639AE8B0074EA70 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
+		D63AA6CF1639AE8B0074EA70 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
+		D63AA6D01639AE8B0074EA70 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8862C163160280023A3E1 /* TimetableViewController.m */; };
+		D63AA6D11639AE8B0074EA70 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
+		D63AA6D21639AE8B0074EA70 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D63AA6D31639AE8B0074EA70 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
+		D63AA6D41639AE8B0074EA70 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69716384F670074EA70 /* HeaderView.m */; };
+		D63AA6D51639AE8B0074EA70 /* EffortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69D16392E070074EA70 /* EffortViewController.m */; };
+		D63AA6D61639AE8B0074EA70 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA6A51639429A0074EA70 /* FinishViewController.m */; };
+		D63AA6D81639AE8B0074EA70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852CF7911608A7E6009E249F /* UIKit.framework */; };
+		D63AA6D91639AE8B0074EA70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852CF7931608A7E6009E249F /* Foundation.framework */; };
+		D63AA6DA1639AE8B0074EA70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852CF7951608A7E6009E249F /* CoreGraphics.framework */; };
+		D63AA6DC1639AE8B0074EA70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852CF79A1608A7E6009E249F /* InfoPlist.strings */; };
+		D63AA6DD1639AE8B0074EA70 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852CF7A61608A7E7009E249F /* ViewController_iPhone.xib */; };
+		D63AA6DE1639AE8B0074EA70 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852CF7A91608A7E7009E249F /* ViewController_iPad.xib */; };
+		D63AA6DF1639AE8B0074EA70 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672C3160B38F6001C3F15 /* Default-568h@2x.png */; };
+		D63AA6E01639AE8B0074EA70 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672C9160B39DB001C3F15 /* ProfileViewController.xib */; };
+		D63AA6E11639AE8B0074EA70 /* TypeSelectViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D26A7161072090034A743 /* TypeSelectViewController_iPhone.xib */; };
+		D63AA6E21639AE8B0074EA70 /* StackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D26B1161072420034A743 /* StackViewController.xib */; };
+		D63AA6E31639AE8B0074EA70 /* StackedProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672D61611D23B001C3F15 /* StackedProfileViewController.xib */; };
+		D63AA6E41639AE8B0074EA70 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
+		D63AA6E51639AE8B0074EA70 /* TypeSelectViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */; };
+		D63AA6E61639AE8B0074EA70 /* WelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */; };
+		D63AA6E71639AE8B0074EA70 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672E61614E8A0001C3F15 /* background.png */; };
+		D63AA6E81639AE8B0074EA70 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
+		D63AA6E91639AE8B0074EA70 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
+		D63AA6EA1639AE8B0074EA70 /* TimetableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */; };
+		D63AA6EB1639AE8B0074EA70 /* TimetableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */; };
+		D63AA6EC1639AE8B0074EA70 /* EffortViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */; };
+		D63AA6ED1639AE8B0074EA70 /* EffortViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */; };
+		D63AA6EE1639AE8B0074EA70 /* FinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */; };
+		D63AA6EF1639AE8B0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
+		D63AA6F01639AE8B0074EA70 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6B61639A9D40074EA70 /* appIcon.png */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -170,6 +224,9 @@
 		D63AA6A61639429A0074EA70 /* FinishViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinishViewControllerDelegate.h; path = Coach/FinishViewControllerDelegate.h; sourceTree = "<group>"; };
 		D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToFinishViewControllerDelegate.h; path = Coach/ToFinishViewControllerDelegate.h; sourceTree = "<group>"; };
+		D63AA6B61639A9D40074EA70 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
+		D63AA6F41639AE8B0074EA70 /* Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63AA6F61639AE8B0074EA70 /* Coach copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Coach copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Coach/Coach/Coach/Coach copy-Info.plist"; sourceTree = "<absolute>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +261,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D63AA6D71639AE8B0074EA70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63AA6D81639AE8B0074EA70 /* UIKit.framework in Frameworks */,
+				D63AA6D91639AE8B0074EA70 /* Foundation.framework in Frameworks */,
+				D63AA6DA1639AE8B0074EA70 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -228,10 +295,12 @@
 		852CF7821608A7E6009E249F = {
 			isa = PBXGroup;
 			children = (
+				D63AA6B61639A9D40074EA70 /* appIcon.png */,
 				852CF7971608A7E6009E249F /* Coach */,
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
 				852CF78E1608A7E6009E249F /* Products */,
+				D63AA6F61639AE8B0074EA70 /* Coach copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,6 +309,7 @@
 			children = (
 				852CF78D1608A7E6009E249F /* Coach.app */,
 				852CF7B11608A7E8009E249F /* CoachTests.octest */,
+				D63AA6F41639AE8B0074EA70 /* Timetable.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -559,6 +629,23 @@
 			productReference = 852CF7B11608A7E8009E249F /* CoachTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		D63AA6B81639AE8B0074EA70 /* Timetable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D63AA6F11639AE8B0074EA70 /* Build configuration list for PBXNativeTarget "Timetable" */;
+			buildPhases = (
+				D63AA6B91639AE8B0074EA70 /* Sources */,
+				D63AA6D71639AE8B0074EA70 /* Frameworks */,
+				D63AA6DB1639AE8B0074EA70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timetable;
+			productName = Coach;
+			productReference = D63AA6F41639AE8B0074EA70 /* Timetable.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -582,6 +669,7 @@
 			targets = (
 				852CF78C1608A7E6009E249F /* Coach */,
 				852CF7B01608A7E8009E249F /* CoachTests */,
+				D63AA6B81639AE8B0074EA70 /* Timetable */,
 			);
 		};
 /* End PBXProject section */
@@ -611,6 +699,7 @@
 				D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */,
 				D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */,
 				D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */,
+				D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +708,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				852CF7BD1608A7E8009E249F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D63AA6DB1639AE8B0074EA70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63AA6DC1639AE8B0074EA70 /* InfoPlist.strings in Resources */,
+				D63AA6DD1639AE8B0074EA70 /* ViewController_iPhone.xib in Resources */,
+				D63AA6DE1639AE8B0074EA70 /* ViewController_iPad.xib in Resources */,
+				D63AA6DF1639AE8B0074EA70 /* Default-568h@2x.png in Resources */,
+				D63AA6E01639AE8B0074EA70 /* ProfileViewController.xib in Resources */,
+				D63AA6E11639AE8B0074EA70 /* TypeSelectViewController_iPhone.xib in Resources */,
+				D63AA6E21639AE8B0074EA70 /* StackViewController.xib in Resources */,
+				D63AA6E31639AE8B0074EA70 /* StackedProfileViewController.xib in Resources */,
+				D63AA6E41639AE8B0074EA70 /* WelcomeViewController_iPad.xib in Resources */,
+				D63AA6E51639AE8B0074EA70 /* TypeSelectViewController_iPad.xib in Resources */,
+				D63AA6E61639AE8B0074EA70 /* WelcomeViewController_iPhone.xib in Resources */,
+				D63AA6E71639AE8B0074EA70 /* background.png in Resources */,
+				D63AA6E81639AE8B0074EA70 /* DurationViewController_iPad.xib in Resources */,
+				D63AA6E91639AE8B0074EA70 /* DurationViewController_iPhone.xib in Resources */,
+				D63AA6EA1639AE8B0074EA70 /* TimetableViewController_iPad.xib in Resources */,
+				D63AA6EB1639AE8B0074EA70 /* TimetableViewController_iPhone.xib in Resources */,
+				D63AA6EC1639AE8B0074EA70 /* EffortViewController_iPad.xib in Resources */,
+				D63AA6ED1639AE8B0074EA70 /* EffortViewController_iPhone.xib in Resources */,
+				D63AA6EE1639AE8B0074EA70 /* FinishViewController_iPad.xib in Resources */,
+				D63AA6EF1639AE8B0074EA70 /* FinishViewController_iPhone.xib in Resources */,
+				D63AA6F01639AE8B0074EA70 /* appIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +800,42 @@
 			files = (
 				852CF7C01608A7E8009E249F /* CoachTests.m in Sources */,
 				852CF801160A2C8A009E249F /* ProfileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D63AA6B91639AE8B0074EA70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D63AA6BA1639AE8B0074EA70 /* main.m in Sources */,
+				D63AA6BB1639AE8B0074EA70 /* AppDelegate.m in Sources */,
+				D63AA6BC1639AE8B0074EA70 /* ViewController.m in Sources */,
+				D63AA6BD1639AE8B0074EA70 /* Slot.m in Sources */,
+				D63AA6BE1639AE8B0074EA70 /* Coach.m in Sources */,
+				D63AA6BF1639AE8B0074EA70 /* Scheduler.m in Sources */,
+				D63AA6C01639AE8B0074EA70 /* SlotLogger.m in Sources */,
+				D63AA6C11639AE8B0074EA70 /* Profile.m in Sources */,
+				D63AA6C21639AE8B0074EA70 /* ProfileLogger.m in Sources */,
+				D63AA6C31639AE8B0074EA70 /* ProfileGraph.m in Sources */,
+				D63AA6C41639AE8B0074EA70 /* ProfileViewController.m in Sources */,
+				D63AA6C51639AE8B0074EA70 /* AppAgent.m in Sources */,
+				D63AA6C61639AE8B0074EA70 /* ConfigAgent.m in Sources */,
+				D63AA6C71639AE8B0074EA70 /* ViewerAgent.m in Sources */,
+				D63AA6C81639AE8B0074EA70 /* WelcomeViewController.m in Sources */,
+				D63AA6C91639AE8B0074EA70 /* TypeSelectViewController.m in Sources */,
+				D63AA6CA1639AE8B0074EA70 /* StackViewController.m in Sources */,
+				D63AA6CB1639AE8B0074EA70 /* StackedProfileGraph.m in Sources */,
+				D63AA6CC1639AE8B0074EA70 /* StackedProfileViewController.m in Sources */,
+				D63AA6CD1639AE8B0074EA70 /* DataUtil.m in Sources */,
+				D63AA6CE1639AE8B0074EA70 /* Config.m in Sources */,
+				D63AA6CF1639AE8B0074EA70 /* DurationViewController.m in Sources */,
+				D63AA6D01639AE8B0074EA70 /* TimetableViewController.m in Sources */,
+				D63AA6D11639AE8B0074EA70 /* TimetableViewAgent.m in Sources */,
+				D63AA6D21639AE8B0074EA70 /* Utils.m in Sources */,
+				D63AA6D31639AE8B0074EA70 /* Model.m in Sources */,
+				D63AA6D41639AE8B0074EA70 /* HeaderView.m in Sources */,
+				D63AA6D51639AE8B0074EA70 /* EffortViewController.m in Sources */,
+				D63AA6D61639AE8B0074EA70 /* FinishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +996,30 @@
 			};
 			name = Release;
 		};
+		D63AA6F21639AE8B0074EA70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				INFOPLIST_FILE = "Coach copy-Info.plist";
+				PRODUCT_NAME = Timetable;
+				TEST_AFTER_BUILD = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D63AA6F31639AE8B0074EA70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				INFOPLIST_FILE = "Coach copy-Info.plist";
+				PRODUCT_NAME = Timetable;
+				TEST_AFTER_BUILD = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -869,6 +1046,15 @@
 			buildConfigurations = (
 				852CF7C71608A7E8009E249F /* Debug */,
 				852CF7C81608A7E8009E249F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D63AA6F11639AE8B0074EA70 /* Build configuration list for PBXNativeTarget "Timetable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D63AA6F21639AE8B0074EA70 /* Debug */,
+				D63AA6F31639AE8B0074EA70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

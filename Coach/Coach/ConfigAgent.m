@@ -70,7 +70,7 @@
     
     [self.delegate makePlan:self.config];
     
-    [self performSelector:@selector(planCreated) withObject:nil afterDelay:5.0];
+    [self performSelector:@selector(planCreated) withObject:nil afterDelay:1.0];
         
 }
 
