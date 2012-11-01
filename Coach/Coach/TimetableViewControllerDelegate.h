@@ -9,4 +9,7 @@
 
 -(NSString *) TimetableViewControllerDelegate_daySummary:(NSInteger) day;
 
+-(void) TimetableViewControllerDelegate_addItem;
+
+
 @end

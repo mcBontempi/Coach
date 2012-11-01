@@ -42,9 +42,75 @@
     return self;
 }
 
+-(void) viewDidLoad{
+    [super viewDidLoad];
+    
+    [self setRightBarButtonEdit];
+}
+
+-(void) setRightBarButtonEdit{
+    [self setRightBarButton:UIBarButtonSystemItemEdit];
+}
+
+-(void) setRightBarButtonDone{
+    [self setRightBarButton:UIBarButtonSystemItemDone];
+}
+
+-(void) setRightBarButton:(UIBarButtonSystemItem)systemItem {
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:systemItem
+                                                                                target:self
+                                                                                action:@selector(toggleEdit)];
+    
+}
+
+-(void) setLeftBarButton:(UIBarButtonSystemItem)systemItem {
+
+    
+}
+
+
+
+
+-(void)toggleEdit{
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
+    
+    if(self.tableView.editing){
+        [self setRightBarButtonDone];
+        [self.navigationItem setHidesBackButton:YES animated:YES];
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                           target:self
+                                                                                           action:@selector(addItem)] animated:YES];
+    }
+    else{
+        [self setRightBarButtonEdit];
+        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+        [self.navigationItem setHidesBackButton:NO animated:YES];
+        
+    }
+}
+
+-(void) addItem{
+    
+    
+    
+    
+    [self.tableView beginUpdates];
+    [self.delegate TimetableViewControllerDelegate_addItem];
+    
+    NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationLeft];
+  
+    [self.tableView endUpdates];
+    
+    [self updateHeaderViewForSection:0];
+    
+}
+
+
+
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.tableView setEditing:YES animated:NO];
     
 }
 
@@ -130,7 +196,7 @@
     [self updateHeaderViewForSection:sourceIndexPath.section];
     if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
     
-  
+    
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
     
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;

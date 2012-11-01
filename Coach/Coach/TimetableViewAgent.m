@@ -68,4 +68,13 @@
     }
 }
 
+-(void) TimetableViewControllerDelegate_addItem{
+    
+    Slot *newSlot = [[Slot alloc ] initWithDuration:60 activityType:EActivityTypeBike];
+    
+    NSMutableArray *monday = self.week[0];
+    
+    [monday addObject:newSlot];
+}
+
 @end
