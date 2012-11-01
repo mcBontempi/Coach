@@ -7,20 +7,19 @@
 #import "Config.h"
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
-
+#import "ListAgent.h"
 
 @interface AppAgent () <ConfigAgentDelegate>
 
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
+@property (nonatomic, strong) ListAgent *listAgent;
 
 @property (nonatomic, strong) Model *model;
 
 @end
 
 @implementation AppAgent
-
-
 
 -(id) init{
     self = [super init];
@@ -85,22 +84,29 @@
     [self.viewerAgent start];
 }
 
+
+-(void) startList{
+    
+    self.listAgent = [[ViewerAgent alloc] initWithModel:self.model];
+    self.listAgent.rootViewController = self.rootViewController;
+    
+    [self.listAgent start];
+}
+
+
 -(void) start{
     
-    [self startConfigWizard];
+  //  [self startConfigWizard];
     
  //   [self startViewer];
+
+    [self startList];
     
 }
 
 -(void) ConfigAgentDelegate_finished{
- 
-    
     [self startViewer];
-    
-    
 }
-
 
 -(void) makePlan:(Config*) config{
     

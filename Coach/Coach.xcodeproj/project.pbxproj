@@ -114,6 +114,18 @@
 		D63AA6EE1639AE8B0074EA70 /* FinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */; };
 		D63AA6EF1639AE8B0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
 		D63AA6F01639AE8B0074EA70 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6B61639A9D40074EA70 /* appIcon.png */; };
+		D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
+		D65CE440164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
+		D65CE441164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
+		D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
+		D65CE443164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
+		D65CE444164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
+		D65CE445164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
+		D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
+		D65CE447164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
+		D65CE44D1641561600D3B0CB /* ListAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE44C1641561600D3B0CB /* ListAgent.m */; };
+		D65CE44E1641561600D3B0CB /* ListAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE44C1641561600D3B0CB /* ListAgent.m */; };
+		D65CE44F1641561600D3B0CB /* ListAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE44C1641561600D3B0CB /* ListAgent.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -227,6 +239,13 @@
 		D63AA6B61639A9D40074EA70 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 		D63AA6F41639AE8B0074EA70 /* Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63AA6F61639AE8B0074EA70 /* Coach copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Coach copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Coach/Coach/Coach/Coach copy-Info.plist"; sourceTree = "<absolute>"; };
+		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
+		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
+		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
+		D65CE43C164152DB00D3B0CB /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Coach/ListViewController.m; sourceTree = "<group>"; };
+		D65CE43E164152DB00D3B0CB /* ListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewControllerDelegate.h; path = Coach/ListViewControllerDelegate.h; sourceTree = "<group>"; };
+		D65CE44B1641561600D3B0CB /* ListAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListAgent.h; sourceTree = "<group>"; };
+		D65CE44C1641561600D3B0CB /* ListAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListAgent.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -277,6 +296,8 @@
 		850D261F160B78620034A743 /* Agents */ = {
 			isa = PBXGroup;
 			children = (
+				D65CE44B1641561600D3B0CB /* ListAgent.h */,
+				D65CE44C1641561600D3B0CB /* ListAgent.m */,
 				850D2620160B78770034A743 /* AppAgent.h */,
 				850D2621160B78770034A743 /* AppAgent.m */,
 				850D2623160B78C20034A743 /* ConfigAgent.h */,
@@ -456,6 +477,7 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D65CE4371641526C00D3B0CB /* List */,
 				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
 				D6A7769A162DEF0500879C11 /* Config */,
@@ -567,6 +589,18 @@
 				854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */,
 			);
 			name = Welcome;
+			sourceTree = "<group>";
+		};
+		D65CE4371641526C00D3B0CB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */,
+				D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */,
+				D65CE43B164152DB00D3B0CB /* ListViewController.h */,
+				D65CE43C164152DB00D3B0CB /* ListViewController.m */,
+				D65CE43E164152DB00D3B0CB /* ListViewControllerDelegate.h */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		D6A7769A162DEF0500879C11 /* Config */ = {
@@ -700,6 +734,8 @@
 				D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */,
 				D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */,
 				D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */,
+				D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
+				D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +744,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				852CF7BD1608A7E8009E249F /* InfoPlist.strings in Resources */,
+				D65CE440164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
+				D65CE443164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +774,8 @@
 				D63AA6EE1639AE8B0074EA70 /* FinishViewController_iPad.xib in Resources */,
 				D63AA6EF1639AE8B0074EA70 /* FinishViewController_iPhone.xib in Resources */,
 				D63AA6F01639AE8B0074EA70 /* appIcon.png in Resources */,
+				D65CE441164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
+				D65CE444164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +831,8 @@
 				D63AA69816384F670074EA70 /* HeaderView.m in Sources */,
 				D63AA6A116392E070074EA70 /* EffortViewController.m in Sources */,
 				D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */,
+				D65CE445164152DB00D3B0CB /* ListViewController.m in Sources */,
+				D65CE44D1641561600D3B0CB /* ListAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,6 +842,8 @@
 			files = (
 				852CF7C01608A7E8009E249F /* CoachTests.m in Sources */,
 				852CF801160A2C8A009E249F /* ProfileTests.m in Sources */,
+				D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */,
+				D65CE44E1641561600D3B0CB /* ListAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +880,8 @@
 				D63AA6D41639AE8B0074EA70 /* HeaderView.m in Sources */,
 				D63AA6D51639AE8B0074EA70 /* EffortViewController.m in Sources */,
 				D63AA6D61639AE8B0074EA70 /* FinishViewController.m in Sources */,
+				D65CE447164152DB00D3B0CB /* ListViewController.m in Sources */,
+				D65CE44F1641561600D3B0CB /* ListAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
