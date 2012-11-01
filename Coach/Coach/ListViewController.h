@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "ListViewControllerDelegate.h"
+#import "ToListViewControllerDelegate.h"
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController  <ToListViewControllerDelegate>
 
     @property (nonatomic, weak) id<ListViewControllerDelegate> delegate;
 

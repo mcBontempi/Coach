@@ -1,6 +1,7 @@
 #import "ListViewController.h"
 
 @interface ListViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation ListViewController
@@ -33,5 +34,40 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+- (void)viewDidUnload {
+    [self setTableView:nil];
+    [super viewDidUnload];
+}
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
+ 
+    cell.backgroundColor = [UIColor grayColor];
+    cell.textLabel.text = @"This Week";
+    cell.textLabel.textColor = [UIColor blackColor];
+    return cell;
+}
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.delegate ListViewControllerDelegate_showThisWeek];
+}
+
+
 
 @end

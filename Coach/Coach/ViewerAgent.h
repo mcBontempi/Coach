@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "Model.h"
-@interface ViewerAgent : NSObject
+#import "ListViewAgentDelegate.h"
+
+@interface ViewerAgent : NSObject <ListViewAgentDelegate>
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 
