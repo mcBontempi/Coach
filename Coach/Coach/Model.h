@@ -7,4 +7,6 @@
 // structure is weeks / days / slots
 @property (nonatomic, strong) NSMutableArray* weeks;
 
+-(void) makeTestData;
+
 @end

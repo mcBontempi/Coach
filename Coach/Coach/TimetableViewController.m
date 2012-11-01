@@ -48,17 +48,21 @@
     
 }
 
+-(NSArray*) currentWeek{
+    return [self.delegate TimetableViewControllerDelegate_currentWeek];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    NSInteger sectionCount = [self.delegate.currentWeek count];
+    NSInteger sectionCount = [self.currentWeek count];
     
     return sectionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSInteger rowCount = [self.delegate.currentWeek[section] count];
+    NSInteger rowCount = [self.currentWeek[section] count];
     
     return rowCount;
 }
@@ -72,7 +76,7 @@
         cell.textLabel.textColor = [UIColor blueColor];
     }
     
-    NSArray* slots = self.delegate.currentWeek[indexPath.section];
+    NSArray* slots = self.currentWeek[indexPath.section];
     
     Slot *slot = slots[indexPath.row];
     
@@ -87,7 +91,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSArray* slots = self.delegate.currentWeek[indexPath.section];
+    NSArray* slots = self.currentWeek[indexPath.section];
     
     Slot *slot = slots[indexPath.row];
     
@@ -107,7 +111,7 @@
 
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    [self.delegate moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
+    [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
     [self updateHeaderViewForSection:destinationIndexPath.section];
     [self updateHeaderViewForSection:sourceIndexPath.section];
     
@@ -115,7 +119,7 @@
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
-    [self.delegate moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
+    [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
     DLog(@"from section %d row %d to section %d row %d", sourceIndexPath.section, sourceIndexPath.row, proposedDestinationIndexPath.section, proposedDestinationIndexPath.row);
     
@@ -127,7 +131,7 @@
     if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
     
   
-    [self.delegate moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
+    [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
     
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
@@ -161,10 +165,10 @@
 -(HeaderView *) updatedHeaderViewForSection:(NSInteger) section{
     HeaderView *headerView = self.headerViews[section];
     
-    [headerView setText:[self.delegate daySummary:section]];
+    [headerView setText:[self.delegate TimetableViewControllerDelegate_daySummary:section]];
     
     NSInteger total = 0;
-    for(Slot *slot in self.delegate.currentWeek[section] ){
+    for(Slot *slot in self.currentWeek[section] ){
         total += slot.duration;
     }
     if(total > 100) [headerView setWarning:YES];

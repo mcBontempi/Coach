@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol ToFinishViewControllerDelegate <NSObject>
--(void) planCreated;
+-(void) ToFinishViewControllerDelegate_planCreated;
 @end

@@ -3,7 +3,7 @@
 
 @interface FinishViewController () 
 - (IBAction)getStartedPressed:(id)sender;
-- (IBAction)makePlan:(id)sender;
+- (IBAction)makePlanPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *makePlanButton;
 @property (weak, nonatomic) IBOutlet UIButton *getStartedButton;
 
@@ -37,27 +37,19 @@
     self.makePlanButton.hidden = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)getStartedPressed:(id)sender {
     
     [self.delegate FinishViewControllerDelegate_getStartedPressed];
-    
-    
 }
 
-- (IBAction)makePlan:(id)sender {
+- (IBAction)makePlanPressed:(id)sender {
     
     self.makePlanButton.hidden = YES;
     [self.delegate FinishViewControllerDelegate_makePlanPressed];
 }
 
 
--(void) planCreated{
+-(void) ToFinishViewControllerDelegate_planCreated{
     self.getStartedButton.hidden = NO;
     
 }

@@ -3,10 +3,10 @@
 
 @protocol TimetableViewControllerDelegate <NSObject>
 
--(NSArray*) currentWeek;
+-(NSArray*) TimetableViewControllerDelegate_currentWeek;
 
--(void) moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
+-(void) TimetableViewControllerDelegate_moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
 
--(NSString *) daySummary:(NSInteger) day;
+-(NSString *) TimetableViewControllerDelegate_daySummary:(NSInteger) day;
 
 @end

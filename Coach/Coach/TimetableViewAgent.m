@@ -21,13 +21,18 @@
     return self;
 }
 
+-(NSArray *) TimetableViewControllerDelegate_currentWeek{
+    return self.currentWeek;
+}
+
 -(NSArray *) currentWeek{
     if(!self.week) {
         self.week = [NSArray arrayWithArray:self.model.weeks[0]];
     }return self.week;
 }
 
--(void) moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+
+-(void) TimetableViewControllerDelegate_moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     
     Slot *slot = self.week[sourceIndexPath.section][sourceIndexPath.row];
     NSMutableArray *day = self.week[sourceIndexPath.section];
@@ -36,7 +41,7 @@
     [day insertObject:slot atIndex:destinationIndexPath.row];
 }
 
--(NSString *) daySummary:(NSInteger)day{
+-(NSString *) TimetableViewControllerDelegate_daySummary:(NSInteger)day{
     NSString *dayText = [DataUtil weekdayFromWeekdayOrdinal:day];
     
     if(![self.currentWeek[day] count])

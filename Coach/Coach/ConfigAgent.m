@@ -68,7 +68,7 @@
 
 -(void) FinishViewControllerDelegate_makePlanPressed{
     
-    [self.delegate makePlan:self.config];
+    [self.delegate ConfigAgentDelegate_makePlan:self.config];
     
     [self performSelector:@selector(planCreated) withObject:nil afterDelay:1.0];
         
@@ -76,7 +76,7 @@
 
 -(void) planCreated{
     
-    [self.toFinishViewControllerDelegate planCreated];
+    [self.toFinishViewControllerDelegate ToFinishViewControllerDelegate_planCreated];
 }
 
 -(void) FinishViewControllerDelegate_getStartedPressed{

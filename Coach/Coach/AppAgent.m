@@ -75,29 +75,27 @@
 }
 
 -(void) startViewer{
-    
     self.viewerAgent = [[ViewerAgent alloc] initWithModel:self.model];
     self.viewerAgent.rootViewController = self.rootViewController;
     
     [self.viewerAgent start];
 }
 
-
-
 -(void) start{
     
-   [self startConfigWizard];
+    // [self startConfigWizard];
+    
+    // DONT FORGET TAKE THIS OUT!
+    [self.model makeTestData];
     
     [self startViewer];
-
-    
 }
 
 -(void) ConfigAgentDelegate_finished{
     [self startViewer];
 }
 
--(void) makePlan:(Config*) config{
+-(void) ConfigAgentDelegate_makePlan:(Config*) config{
     
     Coach *coach = [[Coach alloc] init];
     
