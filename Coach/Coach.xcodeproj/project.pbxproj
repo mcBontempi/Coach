@@ -164,7 +164,6 @@
 		D61672DA161396B0001C3F15 /* DataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtil.m; sourceTree = "<group>"; };
 		D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone.xib; path = Coach/WelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
 		D61672E61614E8A0001C3F15 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Coach/assets/background.png; sourceTree = "<group>"; };
-		D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimetableViewAgentDelegate.h; path = Coach/TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA69616384F670074EA70 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Coach/HeaderView.h; sourceTree = "<group>"; };
 		D63AA69716384F670074EA70 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Coach/HeaderView.m; sourceTree = "<group>"; };
 		D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController_iPad.xib; path = Coach/EffortViewController_iPad.xib; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		D65CE4511642FFF900D3B0CB /* ListViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewAgent.m; path = Coach/ListViewAgent.m; sourceTree = "<group>"; };
 		D65CE4541643012200D3B0CB /* ToListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToListViewControllerDelegate.h; path = Coach/ToListViewControllerDelegate.h; sourceTree = "<group>"; };
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
+		D67D7978164854FE00A63FF8 /* ModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelDelegate.h; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -361,6 +361,7 @@
 			children = (
 				85FE7050163549410084AE26 /* Model.h */,
 				85FE7051163549410084AE26 /* Model.m */,
+				D67D7978164854FE00A63FF8 /* ModelDelegate.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -388,7 +389,6 @@
 				85C8862D163160280023A3E1 /* TimetableViewControllerDelegate.h */,
 				85C886421631675B0023A3E1 /* TimetableViewAgent.h */,
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
-				D632AB391636882400E22E76 /* TimetableViewAgentDelegate.h */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";

@@ -39,7 +39,7 @@
 
 -(void) ListViewAgentDelegate_showThisWeek{
     
-    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModel:self.model delegate:self.model];
+    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.model];
     TimetableViewController *vc = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
     self.timetableViewAgent.toTimetableViewControllerDelegate = vc;
     

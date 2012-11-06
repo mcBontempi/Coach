@@ -4,19 +4,17 @@
 
 @interface TimetableViewAgent ()
 
-@property (nonatomic, strong) Model *model;
-@property (nonatomic, weak) id<TimetableViewAgentDelegate> delegate;
+@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 @property (nonatomic, strong) NSMutableArray *week;
 
 @end
 
 @implementation TimetableViewAgent
 
--(id) initWithModel:(Model *) model delegate:(id<TimetableViewAgentDelegate>) delegate{
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate{
     self = [super init];
     if(self) {
-        self.model = model;
-        self.delegate = delegate;
+        self.modelDelegate = modelDelegate;
     }
     return self;
 }
@@ -27,8 +25,37 @@
 
 -(NSArray *) currentWeek{
     if(!self.week) {
-        self.week = [NSArray arrayWithArray:self.model.weeks[0]];
+        [self refetchCurrentWeek];
     }return self.week;
+}
+
+-(void) refetchCurrentWeek{
+    self.week = [NSArray arrayWithArray:[self.modelDelegate getWeek:0]];
+    
+    self.week = [[NSMutableArray alloc] init];
+    
+    for(NSMutableArray *day in[self.modelDelegate getWeek:0] ){
+        
+        NSMutableArray *newDay = [[NSMutableArray alloc] init];
+        [self.week addObject:newDay];
+        for(Slot* slot in day){
+            {
+                Slot *newSlot = [[Slot alloc] initWithSlot:slot];
+                [newDay addObject:newSlot];
+            }
+            
+            
+        }
+        
+    }
+    
+    
+    NSLog(@"%@", self.week.description);
+}
+
+-(void) saveCurrentWeek{
+    
+    [self.modelDelegate setWeek:0 array:[NSArray arrayWithArray:self.week]];
 }
 
 
@@ -59,11 +86,11 @@
         NSInteger minutes  = total - (hours *60);
         
         if(hours && minutes)
-            return [NSString stringWithFormat:@" %d hrs %d mins", hours, minutes];
+            return [NSString stringWithFormat:@"%@ - %d hrs %d mins", dayText, hours, minutes];
         else if (hours)
-            return  [NSString stringWithFormat:@" %d hrs", hours];
+            return  [NSString stringWithFormat:@"%@ - %d hrs", dayText, hours];
         else
-            return  [NSString stringWithFormat:@" %d mins", minutes];
+            return  [NSString stringWithFormat:@"%@ - %d mins", dayText, minutes];
         
     }
 }
@@ -74,7 +101,21 @@
     
     NSMutableArray *monday = self.week[0];
     
-    [monday addObject:newSlot];
+    [monday insertObject:newSlot atIndex:0];
 }
+
+
+-(void) TimetableViewControllerDelegate_startEditingWeek{
+}
+
+-(void) TimetableViewControllerDelegate_commitEditingWeek{
+    [self saveCurrentWeek];
+    [self refetchCurrentWeek];
+}
+-(void) TimetableViewControllerDelegate_cancelEditingWeek{
+    [self refetchCurrentWeek];
+}
+
+
 
 @end

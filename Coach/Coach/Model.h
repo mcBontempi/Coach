@@ -1,12 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "TimetableViewAgentDelegate.h"
+#import "ModelDelegate.h"
 
-
-@interface Model : NSObject <TimetableViewAgentDelegate>
-
-// structure is weeks / days / slots
-@property (nonatomic, strong) NSMutableArray* weeks;
-
--(void) makeTestData;
+@interface Model : NSObject <ModelDelegate>
 
 @end

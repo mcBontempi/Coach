@@ -2,17 +2,13 @@
 #import "Profile.h"
 #import "Coach.h"
 
+@interface Model ()
+
+@property (nonatomic, strong) NSMutableArray* weeks;
+
+@end
+
 @implementation Model
-
-
--(id) init{
-    self = [super init];
-    if(self){
-        
-           }
-    return self;
-}
-
 
 -(void) makeTestData{
     Coach *coach = [[Coach alloc] init];
@@ -28,13 +24,26 @@
     coach.profile = profile;
     coach.peakMinutes = 20*60;
     
-    NSMutableArray *array = [[NSMutableArray alloc] init];
+   self.weeks = [[NSMutableArray alloc] init];
     
     for(NSInteger week = 1 ; week <= length ; week++){
-        [array addObject: [coach getWeekUsesProfileWithWeek:1]];
+        [self.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
     }
-    
-    self.weeks = [NSArray arrayWithArray:array];
 }
+
+-(NSArray*) getWeek:(NSInteger) weekIndex{
+    NSArray *array = self.weeks[weekIndex];
+    
+    NSLog(@"%@", array.description);
+    
+    return self.weeks[weekIndex];
+}
+
+-(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
+    
+    [self.weeks removeObjectAtIndex:weekIndex];
+    [self.weeks insertObject:array atIndex:weekIndex];
+}
+
 
 @end

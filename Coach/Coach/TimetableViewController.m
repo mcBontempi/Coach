@@ -7,7 +7,6 @@
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
-@property NSInteger lastSectionUpdatedWhenDragging;
 @end
 
 @implementation TimetableViewController
@@ -35,8 +34,6 @@
         
         self.headerViews = [NSArray arrayWithArray:tempArray];
         
-        self.lastSectionUpdatedWhenDragging = -1;
-        
     }
     
     return self;
@@ -59,7 +56,7 @@
 -(void) setRightBarButton:(UIBarButtonSystemItem)systemItem {
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:systemItem
                                                                                 target:self
-                                                                                action:@selector(toggleEdit)];
+                                                                                action:@selector(toggleEditPressed)];
     
 }
 
@@ -71,37 +68,51 @@
 
 
 
--(void)toggleEdit{
+-(void)toggleEditPressed{
     [self.tableView setEditing:!self.tableView.editing animated:YES];
     
     if(self.tableView.editing){
+        // go into edit mode
         [self setRightBarButtonDone];
         [self.navigationItem setHidesBackButton:YES animated:YES];
-        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+        [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                            target:self
-                                                                                           action:@selector(addItem)] animated:YES];
+                                                                                           action:@selector(cancelItemPressed)] animated:YES];
+        
+        [self.delegate TimetableViewControllerDelegate_startEditingWeek];
     }
     else{
+        // editing done
         [self setRightBarButtonEdit];
         [self.navigationItem setLeftBarButtonItem:nil animated:YES];
         [self.navigationItem setHidesBackButton:NO animated:YES];
         
+        [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
     }
 }
 
--(void) addItem{
+-(void) cancelItemPressed{
+    [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
+    [self reloadTable];
+    // editing done
+    [self setRightBarButtonEdit];
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    [self.navigationItem setHidesBackButton:NO animated:YES];
+    
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
     
     
-    
-    
-    [self.tableView beginUpdates];
+}
+
+
+
+-(void) addItemPressed{
+
     [self.delegate TimetableViewControllerDelegate_addItem];
     
     NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
     
     [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationLeft];
-  
-    [self.tableView endUpdates];
     
     [self updateHeaderViewForSection:0];
     
@@ -112,6 +123,12 @@
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self updateAllHeaders];
 }
 
 -(NSArray*) currentWeek{
@@ -146,7 +163,7 @@
     
     Slot *slot = slots[indexPath.row];
     
-    UIColor *color = [DataUtil fillUIColorOfActivityType:slot.activityType];
+    UIColor *color = [UIColor grayColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
     
     cell.backgroundColor = color;
     cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
@@ -156,6 +173,8 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 40;
     
     NSArray* slots = self.currentWeek[indexPath.section];
     
@@ -167,39 +186,25 @@
 
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return UITableViewCellEditingStyleNone;
-    
+    return UITableViewCellEditingStyleDelete;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
-
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
     [self updateHeaderViewForSection:destinationIndexPath.section];
-    [self updateHeaderViewForSection:sourceIndexPath.section];
-    
-    self.lastSectionUpdatedWhenDragging = -1;
+    [self updateHeaderViewForSection:sourceIndexPath.section];    
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
-    DLog(@"from section %d row %d to section %d row %d", sourceIndexPath.section, sourceIndexPath.row, proposedDestinationIndexPath.section, proposedDestinationIndexPath.row);
-    
-    DLog(@"proposed section = %d", self.lastSectionUpdatedWhenDragging);
-    
-    
-    [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
-    [self updateHeaderViewForSection:sourceIndexPath.section];
-    if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
-    
+    [self updateAllHeaders];
     
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
-    
-    self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     
     return proposedDestinationIndexPath;
@@ -222,7 +227,17 @@
     return [self updatedHeaderViewForSection:section];
 }
 
+-(void) updateAllHeaders{
+    for(NSInteger i = 0 ; i < self.headerViews.count ; i++){
+        [self updateHeaderViewForSection:i];
+    }
+}
+
+
 -(void) updateHeaderViewForSection:(NSInteger) section{
+    
+    DLog(@"updateHeaderViewForSection:%d", section);
+    
     UIView *view = [self updatedHeaderViewForSection:section];
     
     [view setNeedsDisplay];

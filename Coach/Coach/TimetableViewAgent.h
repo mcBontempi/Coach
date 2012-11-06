@@ -3,12 +3,12 @@
 #import "TimetableViewControllerDelegate.h"
 #import "ToTimetableViewControllerDelegate.h"
 #import "Model.h"
-#import "TimetableViewAgentDelegate.h"
+#import "ModelDelegate.h"
 
 @interface TimetableViewAgent : NSObject  <TimetableViewControllerDelegate>
 
 @property (nonatomic, weak) id<ToTimetableViewControllerDelegate> toTimetableViewControllerDelegate;
 
--(id) initWithModel:(Model *) model delegate:(id<TimetableViewAgentDelegate>) delegate;
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate;
 
 @end

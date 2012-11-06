@@ -11,5 +11,8 @@
 
 -(void) TimetableViewControllerDelegate_addItem;
 
+-(void) TimetableViewControllerDelegate_startEditingWeek;
+-(void) TimetableViewControllerDelegate_commitEditingWeek;
+-(void) TimetableViewControllerDelegate_cancelEditingWeek;
 
 @end

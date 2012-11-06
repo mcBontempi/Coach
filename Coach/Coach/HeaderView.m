@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UILabel *textLabel2;
 @property (nonatomic, strong) UILabel *currentLabel;
 
+@property (nonatomic, strong) UIView *warningView;
+
 
 @end
 
@@ -24,23 +26,28 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.textLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,40)];
+        self.textLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,frame.size.width,40)];
         [self addSubview:self.textLabel1];
  
-        self.textLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,40)];
+        self.textLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,frame.size.width,40)];
         [self addSubview:self.textLabel2];
         
         
         self.currentLabel = self.textLabel1;
         
-        self.backgroundColor = [UIColor whiteColor];
-        self.backgroundColor = [UIColor whiteColor];
+      //  self.backgroundColor = [UIColor whiteColor];
+      //  self.backgroundColor = [UIColor whiteColor];
         
         self.textLabel1.backgroundColor = [UIColor clearColor];
         self.textLabel2.backgroundColor = [UIColor clearColor];
         
-        self.textLabel1.textColor = [UIColor blackColor];
-        self.textLabel2.textColor = [UIColor blackColor];
+        self.textLabel1.textColor = [UIColor whiteColor];
+        self.textLabel2.textColor = [UIColor whiteColor];
+        
+        self.warningView = [[UIView alloc] initWithFrame:CGRectMake(frame.size.width - 40 +5,5,30,30)];
+        [self addSubview:self.warningView];
+        
+        
         
     
     }
@@ -52,7 +59,6 @@
     [UIView animateWithDuration:0.5 animations:^{
         label.alpha = 1.0;
         CGRect frame = label.frame;
-     //   frame.origin.y = 0;
         label.frame = frame;
     }];
 }
@@ -60,22 +66,11 @@
     [UIView animateWithDuration:0.5 animations:^{
         label.alpha = 0.0;
         CGRect frame = label.frame;
-        //   frame.origin.y = -100;
         label.frame = frame;
     }];
-
-
-
 }
 
-
-
 -(void) setText:(NSString *) text{
-    
-    if(self.warning) self.backgroundColor = [UIColor redColor];
-    else self.backgroundColor = [UIColor whiteColor];
-    
-    
     if(self.currentLabel == self.textLabel1){
         [self animateOut:self.textLabel1];
         self.textLabel2.text = text;
@@ -92,5 +87,15 @@
 
     }
 }
+
+-(void) setWarning:(BOOL) warning{
+    [UIView animateWithDuration:0.5 animations:^{
+
+    if(warning) self.warningView.backgroundColor = [UIColor redColor];
+    else self.warningView.backgroundColor = [UIColor clearColor];
+
+    }];
+
+    }
 
 @end

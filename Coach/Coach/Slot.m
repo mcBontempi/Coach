@@ -2,6 +2,15 @@
 
 @implementation Slot
 
+
+
+
+-(id) initWithSlot:(Slot*) slot{
+    if(self = [self initWithDuration:slot.duration startTime:slot.start activityType:slot.activityType]){
+    }
+    return self;
+}
+
 -(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType {
 
     if(self = [self initWithDuration:duration activityType:activityType]){

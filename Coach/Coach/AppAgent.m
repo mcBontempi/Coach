@@ -3,6 +3,7 @@
 #import "StackedProfileViewController.h"
 #import "Profile.h"
 #import "Coach.h"
+#import "ModelDelegate.h"
 #import "Model.h"
 #import "Config.h"
 #import "ConfigAgent.h"
@@ -15,6 +16,8 @@
 
 @property (nonatomic, strong) Model *model;
 
+@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+
 @end
 
 @implementation AppAgent
@@ -23,6 +26,8 @@
     self = [super init];
     if(self){
         self.model = [[Model alloc] init];
+    
+        self.modelDelegate = self.model;
     }
     return self;
 }
@@ -115,10 +120,14 @@
         case EEffortCompetitive: coach.peakMinutes = 20*60; break;
     }
     
-    self.model.weeks = [[NSMutableArray alloc] init];
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     for(NSInteger week = 1 ; week <= length ; week++){
-        [self.model.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
+        [mutableArray addObject: [coach getWeekUsesProfileWithWeek:1]];
+        [self.modelDelegate setWeek:week=1 array:mutableArray];
     }
+    
+
+    
     
 }
 
