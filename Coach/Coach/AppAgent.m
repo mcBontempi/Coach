@@ -88,12 +88,12 @@
 
 -(void) start{
     
-    // [self startConfigWizard];
+     [self startConfigWizard];
     
     // DONT FORGET TAKE THIS OUT!
-    [self.model makeTestData];
+    //[self.model makeTestData];
     
-    [self startViewer];
+    //[self startViewer];
 }
 
 -(void) ConfigAgentDelegate_finished{
