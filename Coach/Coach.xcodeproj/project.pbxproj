@@ -37,6 +37,7 @@
 		852CF801160A2C8A009E249F /* ProfileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF800160A2C8A009E249F /* ProfileTests.m */; };
 		852CF804160A2F2B009E249F /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
 		856A323C16145252003533BE /* TypeSelectViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */; };
+		857D5160164BF40C00527584 /* noEntry.png in Resources */ = {isa = PBXBuildFile; fileRef = 857D515F164BF40C00527584 /* noEntry.png */; };
 		85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */; };
 		85C88630163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */; };
 		85C88632163160280023A3E1 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8862C163160280023A3E1 /* TimetableViewController.m */; };
@@ -52,7 +53,6 @@
 		D61672D81611D23B001C3F15 /* StackedProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672D61611D23B001C3F15 /* StackedProfileViewController.xib */; };
 		D61672DB161396B0001C3F15 /* DataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672DA161396B0001C3F15 /* DataUtil.m */; };
 		D61672E416147811001C3F15 /* WelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */; };
-		D61672E71614E8A0001C3F15 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672E61614E8A0001C3F15 /* background.png */; };
 		D63AA69816384F670074EA70 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69716384F670074EA70 /* HeaderView.m */; };
 		D63AA69F16392E070074EA70 /* EffortViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */; };
 		D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */; };
@@ -139,6 +139,7 @@
 		852CF803160A2F2B009E249F /* ProfileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileLogger.m; sourceTree = "<group>"; };
 		854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WelcomeViewControllerDelegate.h; path = Coach/WelcomeViewControllerDelegate.h; sourceTree = "<group>"; };
 		856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TypeSelectViewController_iPad.xib; path = Coach/TypeSelectViewController_iPad.xib; sourceTree = "<group>"; };
+		857D515F164BF40C00527584 /* noEntry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noEntry.png; path = Coach/assets/noEntry.png; sourceTree = "<group>"; };
 		85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPad.xib; path = Coach/TimetableViewController_iPad.xib; sourceTree = "<group>"; };
 		85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPhone.xib; path = Coach/TimetableViewController_iPhone.xib; sourceTree = "<group>"; };
 		85C8862B163160280023A3E1 /* TimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetableViewController.h; path = Coach/TimetableViewController.h; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		D61672D9161396B0001C3F15 /* DataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtil.h; sourceTree = "<group>"; };
 		D61672DA161396B0001C3F15 /* DataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtil.m; sourceTree = "<group>"; };
 		D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone.xib; path = Coach/WelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
-		D61672E61614E8A0001C3F15 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Coach/assets/background.png; sourceTree = "<group>"; };
 		D63AA69616384F670074EA70 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Coach/HeaderView.h; sourceTree = "<group>"; };
 		D63AA69716384F670074EA70 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Coach/HeaderView.m; sourceTree = "<group>"; };
 		D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController_iPad.xib; path = Coach/EffortViewController_iPad.xib; sourceTree = "<group>"; };
@@ -179,7 +179,6 @@
 		D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToFinishViewControllerDelegate.h; path = Coach/ToFinishViewControllerDelegate.h; sourceTree = "<group>"; };
 		D63AA6B61639A9D40074EA70 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
-		D63AA6F61639AE8B0074EA70 /* Coach copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Coach copy-Info.plist"; path = "/Users/mcbontempi/Documents/Code/DDT/Coach/Coach/Coach/Coach copy-Info.plist"; sourceTree = "<absolute>"; };
 		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
 		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
 		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
@@ -249,7 +248,6 @@
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
 				852CF78E1608A7E6009E249F /* Products */,
-				D63AA6F61639AE8B0074EA70 /* Coach copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,7 +428,7 @@
 		D61672E51614E868001C3F15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				D61672E61614E8A0001C3F15 /* background.png */,
+				857D515F164BF40C00527584 /* noEntry.png */,
 			);
 			name = Assets;
 			path = ..;
@@ -641,7 +639,6 @@
 				85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */,
 				856A323C16145252003533BE /* TypeSelectViewController_iPad.xib in Resources */,
 				D61672E416147811001C3F15 /* WelcomeViewController_iPhone.xib in Resources */,
-				D61672E71614E8A0001C3F15 /* background.png in Resources */,
 				D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */,
 				D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */,
 				85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */,
@@ -653,6 +650,7 @@
 				D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */,
 				D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
 				D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
+				857D5160164BF40C00527584 /* noEntry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

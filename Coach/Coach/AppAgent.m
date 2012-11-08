@@ -70,9 +70,7 @@
     [self.rootViewController presentModalViewController:vc animated:YES];
 }
 
-
 -(void) startConfigWizard{
-    
     self.configAgent = [[ConfigAgent alloc] init];
     self.configAgent.rootViewController = self.rootViewController;
     
@@ -87,13 +85,11 @@
 }
 
 -(void) start{
+//     [self startConfigWizard];
+
+    [self.model makeTestData];
     
-     [self startConfigWizard];
-    
-    // DONT FORGET TAKE THIS OUT!
-    //[self.model makeTestData];
-    
-    //[self startViewer];
+    [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_finished{
@@ -121,9 +117,9 @@
     }
     
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
-    for(NSInteger week = 1 ; week <= length ; week++){
-        [mutableArray addObject: [coach getWeekUsesProfileWithWeek:1]];
-        [self.modelDelegate setWeek:week=1 array:mutableArray];
+    for(NSInteger week = 0 ; week < length ; week++){
+        [mutableArray addObject: [coach getWeekUsesProfileWithWeek:week]];
+        [self.modelDelegate setWeek:week array:mutableArray];
     }
     
 

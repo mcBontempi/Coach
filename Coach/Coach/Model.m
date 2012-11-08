@@ -26,8 +26,8 @@
     
    self.weeks = [[NSMutableArray alloc] init];
     
-    for(NSInteger week = 1 ; week <= length ; week++){
-        [self.weeks addObject: [coach getWeekUsesProfileWithWeek:1]];
+    for(NSInteger week = 0 ; week <= length ; week++){
+        [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
     }
 }
 
@@ -41,8 +41,10 @@
 
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
     
-    [self.weeks removeObjectAtIndex:weekIndex];
-    [self.weeks insertObject:array atIndex:weekIndex];
+    self.weeks[weekIndex] = array;
+    
+    //[self.weeks removeObjectAtIndex:weekIndex];
+    //[self.weeks insertObject:array atIndex:weekIndex];
 }
 
 

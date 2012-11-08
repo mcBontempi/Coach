@@ -34,7 +34,7 @@
 // this gets a week, basically what sessions he needs to do within 1 week.
 -(NSArray *) getStackedWeekUsesProfileWithWeek:(NSInteger) week{
 
-    double weekPercentage = [[self.profile.array objectAtIndex:week-1] doubleValue];
+    double weekPercentage = [[self.profile.array objectAtIndex:week] doubleValue];
     
     double totalHours = self.peakMinutes * weekPercentage/100;
  

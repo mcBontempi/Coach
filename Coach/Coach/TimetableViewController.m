@@ -7,6 +7,7 @@
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
+@property NSInteger lastSectionUpdatedWhenDragging;
 @end
 
 @implementation TimetableViewController
@@ -34,6 +35,8 @@
         
         self.headerViews = [NSArray arrayWithArray:tempArray];
         
+         self.lastSectionUpdatedWhenDragging = -1;
+        
     }
     
     return self;
@@ -57,16 +60,7 @@
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:systemItem
                                                                                 target:self
                                                                                 action:@selector(toggleEditPressed)];
-    
 }
-
--(void) setLeftBarButton:(UIBarButtonSystemItem)systemItem {
-
-    
-}
-
-
-
 
 -(void)toggleEditPressed{
     [self.tableView setEditing:!self.tableView.editing animated:YES];
@@ -104,8 +98,6 @@
     
 }
 
-
-
 -(void) addItemPressed{
 
     [self.delegate TimetableViewControllerDelegate_addItem];
@@ -115,14 +107,6 @@
     [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationLeft];
     
     [self updateHeaderViewForSection:0];
-    
-}
-
-
-
--(void) viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -163,7 +147,7 @@
     
     Slot *slot = slots[indexPath.row];
     
-    UIColor *color = [UIColor grayColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
+    UIColor *color = [UIColor whiteColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
     
     cell.backgroundColor = color;
     cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
@@ -196,21 +180,30 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
     [self updateHeaderViewForSection:destinationIndexPath.section];
-    [self updateHeaderViewForSection:sourceIndexPath.section];    
+    [self updateHeaderViewForSection:sourceIndexPath.section];
+    
+    self.lastSectionUpdatedWhenDragging = -1;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
-    [self updateAllHeaders];
+    DLog(@"from section %d row %d to section %d row %d", sourceIndexPath.section, sourceIndexPath.row, proposedDestinationIndexPath.section, proposedDestinationIndexPath.row);
+    
+    DLog(@"proposed section = %d", self.lastSectionUpdatedWhenDragging);
+    
+    
+    [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
+    [self updateHeaderViewForSection:sourceIndexPath.section];
+    if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
+    
     
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
     
+    self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     return proposedDestinationIndexPath;
 }
-
-
 
 
 -(NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

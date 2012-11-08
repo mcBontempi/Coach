@@ -35,18 +35,22 @@
     
     self.viewerNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.rootViewController presentModalViewController:self.viewerNavigationController animated:YES];
+    
+       // test
+    [self showThisWeek];
 }
 
--(void) ListViewAgentDelegate_showThisWeek{
-    
+-(void) showThisWeek{
     self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.model];
     TimetableViewController *vc = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
     self.timetableViewAgent.toTimetableViewControllerDelegate = vc;
-    
-    [self.viewerNavigationController pushViewController:vc animated:YES];
 
-    
-    
+ 
+    [self.viewerNavigationController pushViewController:vc animated:YES];
+}
+
+-(void) ListViewAgentDelegate_showThisWeek{
+    [self showThisWeek];
 }
 
 @end
