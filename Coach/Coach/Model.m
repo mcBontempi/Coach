@@ -1,6 +1,7 @@
 #import "Model.h"
 #import "Profile.h"
 #import "Coach.h"
+#import "Slot.h"
 
 @interface Model ()
 
@@ -11,24 +12,28 @@
 @implementation Model
 
 -(void) makeTestData{
-    Coach *coach = [[Coach alloc] init];
     
-    // test data
-    const NSInteger length = 45;
-    
-    Profile *profile = [[Profile alloc] init];
-    profile.numberOfWeeks = length;
-    profile.startPercentage =30;
-    [profile generate];
-    
-    coach.profile = profile;
-    coach.peakMinutes = 20*60;
-    
-   self.weeks = [[NSMutableArray alloc] init];
-    
-    for(NSInteger week = 0 ; week <= length ; week++){
-        [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
-    }
+     Coach *coach = [[Coach alloc] init];
+     
+     // test data
+     const NSInteger length = 45;
+     
+     Profile *profile = [[Profile alloc] init];
+     profile.numberOfWeeks = length;
+     profile.startPercentage =30;
+     [profile generate];
+     
+     coach.profile = profile;
+     coach.peakMinutes = 20*60;
+     
+     self.weeks = [[NSMutableArray alloc] init];
+     
+     for(NSInteger week = 0 ; week <= length ; week++){
+     [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
+     }
+
+
+
 }
 
 -(NSArray*) getWeek:(NSInteger) weekIndex{
@@ -40,12 +45,25 @@
 }
 
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
-    
     self.weeks[weekIndex] = array;
-    
-    //[self.weeks removeObjectAtIndex:weekIndex];
-    //[self.weeks insertObject:array atIndex:weekIndex];
 }
 
+-(NSMutableArray*) makeCopyOfWeek:(NSArray*) weekToCopy{
+    
+    NSMutableArray *copiedWeek = [[NSMutableArray alloc] init];
+    
+    for(NSMutableArray *day in weekToCopy ){
+        
+        NSMutableArray *newDay = [[NSMutableArray alloc] init];
+        [copiedWeek addObject:newDay];
+        for(Slot* slot in day){
+            {
+                Slot *newSlot = [[Slot alloc] initWithSlot:slot];
+                [newDay addObject:newSlot];
+            }
+        }
+    }
+    return copiedWeek;
+}
 
 @end

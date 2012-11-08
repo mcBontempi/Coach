@@ -5,5 +5,6 @@
 -(void) makeTestData;
 -(NSArray*) getWeek:(NSInteger) weekIndex;
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array;
+-(NSMutableArray*) makeCopyOfWeek:(NSArray*) weekToCopy;
 
 @end

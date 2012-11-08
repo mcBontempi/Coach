@@ -39,7 +39,7 @@
     double totalHours = self.peakMinutes * weekPercentage/100;
  
     Slot *longRun = [[Slot alloc] initWithDuration:totalHours*0.20 activityType:EActivityTypeRun];
-    Slot *tempoRun= [[Slot alloc] initWithDuration:totalHours*0.10 activityType:EActivityTypeRun];
+   Slot *tempoRun= [[Slot alloc] initWithDuration:totalHours*0.10 activityType:EActivityTypeRun];
     Slot *shortRun= [[Slot alloc] initWithDuration:totalHours*0.05 activityType:EActivityTypeRun];
     
     Slot *longBike = [[Slot alloc] initWithDuration:totalHours*0.30 activityType:EActivityTypeBike];
@@ -50,7 +50,6 @@
     Slot *swim3 = [[Slot alloc] initWithDuration:totalHours*0.05 activityType:EActivityTypeSwim];
     
     return [[NSArray alloc] initWithObjects:longRun, shortBike, swim1, tempoRun, shortRun, longBike, swim2, swim3, nil];
-    
 }
 
 

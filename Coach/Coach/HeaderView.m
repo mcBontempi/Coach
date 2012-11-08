@@ -41,14 +41,14 @@ const CGFloat paddingForWarning = 5;
 
 -(void) animateIn:(UILabel *) label{
     
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         label.alpha = 1.0;
         CGRect frame = label.frame;
         label.frame = frame;
     }];
 }
 -(void) animateOut:(UILabel *) label{
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         label.alpha = 0.0;
         CGRect frame = label.frame;
         label.frame = frame;

@@ -8,5 +8,6 @@
 @property NSInteger start;
 @property NSInteger duration;
 @property TActivityType activityType;
+@property NSString *uid;
 
 @end

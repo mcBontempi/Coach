@@ -30,37 +30,14 @@
 }
 
 -(void) refetchCurrentWeek{
-    self.week = [NSArray arrayWithArray:[self.modelDelegate getWeek:0]];
-    
-    self.week = [[NSMutableArray alloc] init];
-    
-    for(NSMutableArray *day in[self.modelDelegate getWeek:0] ){
-        
-        NSMutableArray *newDay = [[NSMutableArray alloc] init];
-        [self.week addObject:newDay];
-        for(Slot* slot in day){
-            {
-                Slot *newSlot = [[Slot alloc] initWithSlot:slot];
-                [newDay addObject:newSlot];
-            }
-            
-            
-        }
-        
-    }
-    
-    
-    NSLog(@"%@", self.week.description);
+    self.week = [self.modelDelegate makeCopyOfWeek:[self.modelDelegate getWeek:0]];
 }
 
 -(void) saveCurrentWeek{
-    
     [self.modelDelegate setWeek:0 array:[NSArray arrayWithArray:self.week]];
 }
 
-
 -(void) TimetableViewControllerDelegate_moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    
     Slot *slot = self.week[sourceIndexPath.section][sourceIndexPath.row];
     NSMutableArray *day = self.week[sourceIndexPath.section];
     [day removeObjectAtIndex:sourceIndexPath.row];
@@ -80,7 +57,6 @@
             total += slot.duration;
         }
         
-        
         NSInteger hours = total /60;
         
         NSInteger minutes  = total - (hours *60);
@@ -96,14 +72,10 @@
 }
 
 -(void) TimetableViewControllerDelegate_addItem{
-    
     Slot *newSlot = [[Slot alloc ] initWithDuration:60 activityType:EActivityTypeBike];
-    
     NSMutableArray *monday = self.week[0];
-    
     [monday insertObject:newSlot atIndex:0];
 }
-
 
 -(void) TimetableViewControllerDelegate_startEditingWeek{
 }
@@ -112,10 +84,9 @@
     [self saveCurrentWeek];
     [self refetchCurrentWeek];
 }
+
 -(void) TimetableViewControllerDelegate_cancelEditingWeek{
     [self refetchCurrentWeek];
 }
-
-
 
 @end
