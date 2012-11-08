@@ -86,61 +86,15 @@
 }
 
 -(void) cancelItemPressed{
-    // We dont want a deep copy here, as we need to pointer check the slots later.
-    NSMutableArray *weekBeforeCancel = [[NSMutableArray alloc] init];
-    for(id day in self.currentWeek){
-        id newDay = [[NSMutableArray alloc] init];
-        [weekBeforeCancel addObject:newDay];
-        for(id slot in day){
-            [newDay addObject:slot];
-        }
-    }
     
     [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
-    [self animateWeekFrom:weekBeforeCancel To:self.currentWeek];
-    // editing done
+   
+    [self.tableView reloadData];
     [self setRightBarButtonEdit];
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     [self.navigationItem setHidesBackButton:NO animated:YES];
     
     [self.tableView setEditing:!self.tableView.editing animated:YES];
-}
-
--(NSIndexPath*) findSlot:(Slot*) slotFind inWeek:(NSArray*) week{
-    for(NSInteger dayIndex = 0 ; dayIndex < week.count ; dayIndex++){
-        NSMutableArray *day = week[dayIndex];
-        for(NSInteger slotIndex = 0 ; slotIndex < day.count ; slotIndex++){
-            Slot *slot = day[slotIndex];
-            if([slot.uid isEqualToString:slotFind.uid]){
-                return [NSIndexPath indexPathForRow:slotIndex  inSection:dayIndex];
-            }
-        }
-    }
-    return nil;
-}
-
--(void) animateWeekFrom:(NSArray*)from To:(NSArray*)to{
-    
-    [self.tableView beginUpdates];
-    for(NSInteger fromDayIndex = 0 ; fromDayIndex < from.count ; fromDayIndex++){
-        NSMutableArray *fromDay = from[fromDayIndex];
-        
-        for(NSInteger fromSlotIndex = 0 ; fromSlotIndex < fromDay.count ; fromSlotIndex++){
-            Slot *slot = fromDay[fromSlotIndex];
-            NSIndexPath *foundIndexPath = [self findSlot:slot inWeek:to];
-            
-            if(foundIndexPath){
-                if(fromDayIndex != foundIndexPath.section){
-                    
-                    NSLog(@"%d %d", fromDayIndex, fromSlotIndex);
-                    NSLog(@"%d %d", foundIndexPath.section, foundIndexPath.row);
-                    
-                    [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:fromDayIndex inSection:fromSlotIndex] toIndexPath:foundIndexPath ];
-                }
-            }
-        }
-    }
-    [self.tableView endUpdates];
 }
 
 -(void) addItemPressed{
