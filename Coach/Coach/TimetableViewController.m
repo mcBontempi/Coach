@@ -248,14 +248,26 @@
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
     
     if(self.tableView.isEditing){
-        if(proposedDestinationIndexPath.row >= [self.currentWeek[proposedDestinationIndexPath.section] count]){
-            return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
+        
+        if(proposedDestinationIndexPath.section = )
+        
+        NSInteger proposedRow = proposedDestinationIndexPath.row;
+        NSInteger count = [self.currentWeek[proposedDestinationIndexPath.section] count];
+        
+        NSLog(@"proposed row = %d count = %d",proposedRow, count  );
+        
+        
+        
+        if(proposedDestinationIndexPath.row > [self.currentWeek[proposedDestinationIndexPath.section] count]){
+           proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
+        
+            NSLog(@"changed");
         }
      }
     
-    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath );
+    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath.section,sourceIndexPath.row, proposedDestinationIndexPath.section,proposedDestinationIndexPath.row );
     
-/*
+
     // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
      [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
@@ -265,7 +277,7 @@
     
     
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
-  */  
+  
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     return proposedDestinationIndexPath;
