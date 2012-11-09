@@ -190,9 +190,7 @@
     
     if(indexPath.row >= slots.count){
         // this is an add row
-        
-        
-        
+        cell.textLabel.text = @"Tap to add...";
     }
     else{
     
@@ -255,6 +253,9 @@
         }
      }
     
+    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath );
+    
+/*
     // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
      [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
@@ -264,7 +265,7 @@
     
     
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
-    
+  */  
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     return proposedDestinationIndexPath;
