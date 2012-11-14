@@ -89,8 +89,6 @@
     
     [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
-    
-    
 }
 
 -(void)toggleEditPressed{
@@ -116,25 +114,55 @@
         [self.navigationItem setHidesBackButton:NO animated:YES];
         
         [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
-    
+        
         [self deleteAddRows];
     }
 }
 
+-(void) deleteAllRows{
+    NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
+    for(NSInteger section = 0 ; section < [self.tableView numberOfSections] ; section ++){
+        for(NSInteger row = 0 ; row < [self.tableView numberOfRowsInSection:section] ; row++)
+        {
+            [deleteArray addObject:[NSIndexPath indexPathForRow:row inSection:section]];
+        }
+    }
+    [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+-(void) addAllRows{
+    NSMutableArray *insertArray = [[NSMutableArray alloc] init];
+    for(NSInteger dayIndex = 0 ; dayIndex < self.currentWeek.count ; dayIndex++){
+        NSArray *day = self.currentWeek[dayIndex];
+        
+        for(NSInteger slotIndex = 0 ; slotIndex < day.count ; slotIndex++){
+            [insertArray addObject:[NSIndexPath indexPathForRow:slotIndex inSection:dayIndex]];
+        }
+    }
+    [self.tableView insertRowsAtIndexPaths:insertArray withRowAnimation:UITableViewRowAnimationFade];
+    
+}
 -(void) cancelItemPressed{
     
+    [self.tableView beginUpdates];
+    
+    [self deleteAllRows];
+    
     [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
-   
+    
+    [self addAllRows];
+    
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
+    
+    [self.tableView endUpdates];
+    
+    
     [self setRightBarButtonEdit];
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     [self.navigationItem setHidesBackButton:NO animated:YES];
     
-    [self.tableView setEditing:!self.tableView.editing animated:YES];
+    [self updateAllHeaders];
     
-    
- //   [self deleteAddRows];
-    
-    [self.tableView reloadData];
 }
 
 -(void) addItemPressed{
@@ -193,14 +221,14 @@
         cell.textLabel.text = @"Tap to add...";
     }
     else{
-    
-    Slot *slot = slots[indexPath.row];
-    
-    UIColor *color = [UIColor whiteColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
-    
-    cell.backgroundColor = color;
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
-    cell.textLabel.textColor = [UIColor blackColor];
+        
+        Slot *slot = slots[indexPath.row];
+        
+        UIColor *color = [UIColor whiteColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
+        
+        cell.backgroundColor = color;
+        cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
+        cell.textLabel.textColor = [UIColor blackColor];
     }
     
     return cell;
@@ -258,7 +286,7 @@
         
         if(proposedDestinationIndexPath.section ==  sourceIndexPath.section &&
            proposedDestinationIndexPath.row == [self.currentWeek[proposedDestinationIndexPath.section] count]){
-        
+            
             proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
             
             NSLog(@"changed 1");
@@ -266,17 +294,17 @@
             
         }
         else if(proposedDestinationIndexPath.row > [self.currentWeek[proposedDestinationIndexPath.section] count]){
-           proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
-        
+            proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
+            
             NSLog(@"changed");
         }
-     }
+    }
     
     NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath.section,sourceIndexPath.row, proposedDestinationIndexPath.section,proposedDestinationIndexPath.row );
     
-
+    
     // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
-     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
+    [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
     
     [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
     [self updateHeaderViewForSection:sourceIndexPath.section];
@@ -284,7 +312,7 @@
     
     
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
-  
+    
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     return proposedDestinationIndexPath;
