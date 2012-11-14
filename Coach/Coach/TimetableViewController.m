@@ -249,7 +249,6 @@
     
     if(self.tableView.isEditing){
         
-        if(proposedDestinationIndexPath.section = )
         
         NSInteger proposedRow = proposedDestinationIndexPath.row;
         NSInteger count = [self.currentWeek[proposedDestinationIndexPath.section] count];
@@ -257,8 +256,16 @@
         NSLog(@"proposed row = %d count = %d",proposedRow, count  );
         
         
+        if(proposedDestinationIndexPath.section ==  sourceIndexPath.section &&
+           proposedDestinationIndexPath.row == [self.currentWeek[proposedDestinationIndexPath.section] count]){
         
-        if(proposedDestinationIndexPath.row > [self.currentWeek[proposedDestinationIndexPath.section] count]){
+            proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
+            
+            NSLog(@"changed 1");
+            
+            
+        }
+        else if(proposedDestinationIndexPath.row > [self.currentWeek[proposedDestinationIndexPath.section] count]){
            proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
         
             NSLog(@"changed");
