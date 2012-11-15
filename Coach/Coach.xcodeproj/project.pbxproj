@@ -74,6 +74,13 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D6CC925D165414B100CA56B6 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925A165414B100CA56B6 /* bike.png */; };
+		D6CC925E165414B100CA56B6 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925B165414B100CA56B6 /* run.png */; };
+		D6CC925F165414B100CA56B6 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925C165414B100CA56B6 /* swim.png */; };
+		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
+		D6F56366165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
+		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
+		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +207,13 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D6CC925A165414B100CA56B6 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../Marketing/appicon/bike.png; sourceTree = "<group>"; };
+		D6CC925B165414B100CA56B6 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = run.png; path = ../../Marketing/appicon/run.png; sourceTree = "<group>"; };
+		D6CC925C165414B100CA56B6 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = ../../Marketing/appicon/swim.png; sourceTree = "<group>"; };
+		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
+		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
+		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
+		D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_ImageForActivityType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +288,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D6F5636816540F8D00E7617C /* Class Extensions */,
 				D6A776B316334DD700879C11 /* Utils */,
 				D61672E51614E868001C3F15 /* Assets */,
 				850D261F160B78620034A743 /* Agents */,
@@ -387,6 +402,8 @@
 				85C8862D163160280023A3E1 /* TimetableViewControllerDelegate.h */,
 				85C886421631675B0023A3E1 /* TimetableViewAgent.h */,
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
+				D6F56363165409AE00E7617C /* SlotCell.h */,
+				D6F56364165409AE00E7617C /* SlotCell.m */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";
@@ -428,6 +445,9 @@
 		D61672E51614E868001C3F15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D6CC925A165414B100CA56B6 /* bike.png */,
+				D6CC925B165414B100CA56B6 /* run.png */,
+				D6CC925C165414B100CA56B6 /* swim.png */,
 				857D515F164BF40C00527584 /* noEntry.png */,
 			);
 			name = Assets;
@@ -557,6 +577,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		D6F5636816540F8D00E7617C /* Class Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */,
+				D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */,
+			);
+			name = "Class Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,6 +680,9 @@
 				D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
 				D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 				857D5160164BF40C00527584 /* noEntry.png in Resources */,
+				D6CC925D165414B100CA56B6 /* bike.png in Resources */,
+				D6CC925E165414B100CA56B6 /* run.png in Resources */,
+				D6CC925F165414B100CA56B6 /* swim.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +750,8 @@
 				D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */,
 				D65CE445164152DB00D3B0CB /* ListViewController.m in Sources */,
 				D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */,
+				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
+				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +763,8 @@
 				852CF801160A2C8A009E249F /* ProfileTests.m in Sources */,
 				D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */,
 				D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */,
+				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
+				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

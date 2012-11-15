@@ -3,6 +3,9 @@
 #import "DataUtil.h"
 #import "Utils.h"
 #import "HeaderView.h"
+#import "SlotCell.h"
+
+const CGFloat KSlotCellHeight = 40;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -116,7 +119,7 @@
         [self.navigationItem setHidesBackButton:NO animated:YES];
         
         [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
-    
+        
         [self deleteAddRows];
     }
 }
@@ -124,7 +127,7 @@
 -(void) cancelItemPressed{
     
     [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
-   
+    
     [self setRightBarButtonEdit];
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     [self.navigationItem setHidesBackButton:NO animated:YES];
@@ -132,7 +135,7 @@
     [self.tableView setEditing:!self.tableView.editing animated:YES];
     
     
- //   [self deleteAddRows];
+    //   [self deleteAddRows];
     
     [self.tableView reloadData];
 }
@@ -177,39 +180,49 @@
     return rowCount;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.textLabel.textColor = [UIColor blueColor];
-    }
     
     NSArray* slots = self.currentWeek[indexPath.section];
     
     if(indexPath.row >= slots.count){
         // this is an add row
-        cell.textLabel.text = @"Tap to add...";
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Add"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Add"];
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.textLabel.textColor = [UIColor blackColor];
+            cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold" size:15.0];
+            cell.textLabel.text = @"Tap to add...";
+        }
+        return cell;
     }
     else{
-    
-    Slot *slot = slots[indexPath.row];
-    
-    UIColor *color = [UIColor whiteColor];// [DataUtil fillUIColorOfActivityType:slot.activityType];
-    
-    cell.backgroundColor = color;
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", slot.duration];
-    cell.textLabel.textColor = [UIColor blackColor];
+        // this is a slot row
+        SlotCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Slot"];
+        if (cell == nil) {
+            cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot"];
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.textLabel.textColor = [UIColor blueColor];
+            UIColor *color = [UIColor whiteColor];
+            cell.backgroundColor = color;
+        }
+        
+        Slot *slot = slots[indexPath.row];
+        cell.duration = slot.duration;
+        cell.activityType = slot.activityType;
+        
+        cell.height = KSlotCellHeight;
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 40;
+    return KSlotCellHeight;
     
     NSArray* slots = self.currentWeek[indexPath.section];
     
@@ -251,21 +264,21 @@
         if(proposedDestinationIndexPath.row >= [self.currentWeek[proposedDestinationIndexPath.section] count]){
             return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
         }
-     }
+    }
     
-    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath );
+    //    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath );
     
-/*
-    // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
+    /*
+     // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
      [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];
-    
-    [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
-    [self updateHeaderViewForSection:sourceIndexPath.section];
-    if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
-    
-    
-    [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
-  */  
+     
+     [self updateHeaderViewForSection:proposedDestinationIndexPath.section];
+     [self updateHeaderViewForSection:sourceIndexPath.section];
+     if(self.lastSectionUpdatedWhenDragging != -1) [self updateHeaderViewForSection:self.lastSectionUpdatedWhenDragging];
+     
+     
+     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:proposedDestinationIndexPath toIndexPath:sourceIndexPath];
+     */
     self.lastSectionUpdatedWhenDragging = proposedDestinationIndexPath.section;
     
     return proposedDestinationIndexPath;
@@ -279,7 +292,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    return 40;
+    return 35;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
