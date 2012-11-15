@@ -165,16 +165,6 @@
     
 }
 
--(void) addItemPressed{
-    
-    [self.delegate TimetableViewControllerDelegate_addItem];
-    
-    NSArray *array = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
-    
-    [self.tableView insertRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationLeft];
-    
-    [self updateHeaderViewForSection:0];
-}
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -245,6 +235,42 @@
     
     return slot.duration > 50 ? slot.duration : 50;
     
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+}
+
+
+- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Slot *slot = self.currentWeek[indexPath.section][indexPath.row];
+     
+        [self.tableView beginUpdates];
+        NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
+        [deleteArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+        [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationLeft];
+        [self.delegate TimetableViewControllerDelegate_deleteItem:slot];
+        [self.tableView endUpdates];
+        
+        [self updateHeaderViewForSection:indexPath.section];
+        
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+
+        [self.tableView beginUpdates];
+        NSMutableArray *addArray = [[NSMutableArray alloc] init];
+        [addArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+        [self.tableView insertRowsAtIndexPaths:addArray withRowAnimation:UITableViewRowAnimationLeft];
+        [self.delegate TimetableViewControllerDelegate_addItemForDay:indexPath.section];
+        [self.tableView endUpdates];
+        
+        [self updateHeaderViewForSection:indexPath.section];
+    }
 }
 
 
