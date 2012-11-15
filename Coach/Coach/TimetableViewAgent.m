@@ -71,11 +71,20 @@
     }
 }
 
--(void) TimetableViewControllerDelegate_addItem{
+-(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex{
     Slot *newSlot = [[Slot alloc ] initWithDuration:60 activityType:EActivityTypeBike];
-    NSMutableArray *monday = self.week[0];
-    [monday insertObject:newSlot atIndex:0];
+    NSMutableArray *monday = self.week[dayIndex];
+    [monday addObject:newSlot];
 }
+
+-(void) TimetableViewControllerDelegate_deleteItem:(Slot*) slot{
+    
+    for(NSInteger dayIndex= 0 ; dayIndex < self.week.count ; dayIndex++){
+        NSMutableArray *day = self.week[dayIndex];
+        [day removeObject:slot];
+    }
+}
+
 
 -(void) TimetableViewControllerDelegate_startEditingWeek{
 }
