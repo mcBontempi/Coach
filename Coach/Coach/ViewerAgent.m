@@ -57,7 +57,7 @@
 }
 
 -(void) showWeek:(NSInteger) weekIndex{
-    [self.timetableViewAgent changeCurrentWeekTo:weekIndex];
+    [self.timetableViewAgent changeCurrentWeekAnimatedTo:weekIndex];
     
     [self.demoSlideControllerSubclass bringInMiddleViewController];
 }

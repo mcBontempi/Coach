@@ -11,6 +11,10 @@ const CGFloat KSlotCellHeight = 40;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
 @property NSInteger lastSectionUpdatedWhenDragging;
+
+@property (nonatomic, strong) UISwipeGestureRecognizer *swipeGestureRecognizer;
+
+@property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
 @end
 
 @implementation TimetableViewController
@@ -39,7 +43,6 @@ const CGFloat KSlotCellHeight = 40;
         self.headerViews = [NSArray arrayWithArray:tempArray];
         
         self.lastSectionUpdatedWhenDragging = -1;
-        
     }
     
     return self;
@@ -107,7 +110,9 @@ const CGFloat KSlotCellHeight = 40;
     if(self.tableView.editing){
         // go into edit mode
         [self setRightBarButtonDone];
-        [self.navigationItem setHidesBackButton:YES animated:YES];
+        
+        self.previousBarButtonItem = self.navigationItem.leftBarButtonItem;
+        
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                                target:self
                                                                                                action:@selector(cancelItemPressed)] animated:YES];
@@ -120,8 +125,7 @@ const CGFloat KSlotCellHeight = 40;
     else{
         // editing done
         [self setRightBarButtonEdit];
-        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-        [self.navigationItem setHidesBackButton:NO animated:YES];
+        [self.navigationItem setLeftBarButtonItem:self.previousBarButtonItem  animated:YES];
         
         [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
         
@@ -129,7 +133,7 @@ const CGFloat KSlotCellHeight = 40;
     }
 }
 
--(void) deleteAllRows{
+-(void) deleteAllRows:(UITableViewRowAnimation) animation{
     NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
     for(NSInteger section = 0 ; section < [self.tableView numberOfSections] ; section ++){
         for(NSInteger row = 0 ; row < [self.tableView numberOfRowsInSection:section] ; row++)
@@ -137,10 +141,10 @@ const CGFloat KSlotCellHeight = 40;
             [deleteArray addObject:[NSIndexPath indexPathForRow:row inSection:section]];
         }
     }
-    [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationLeft];
+    [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:animation];
 }
 
--(void) addAllRows{
+-(void) addAllRows:(UITableViewRowAnimation) animation{
     NSMutableArray *insertArray = [[NSMutableArray alloc] init];
     for(NSInteger dayIndex = 0 ; dayIndex < self.currentWeek.count ; dayIndex++){
         NSArray *day = self.currentWeek[dayIndex];
@@ -149,24 +153,17 @@ const CGFloat KSlotCellHeight = 40;
             [insertArray addObject:[NSIndexPath indexPathForRow:slotIndex inSection:dayIndex]];
         }
     }
-    [self.tableView insertRowsAtIndexPaths:insertArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView insertRowsAtIndexPaths:insertArray withRowAnimation:animation];
     
 }
 -(void) cancelItemPressed{
-    
-    [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
-    
-    [self setRightBarButtonEdit];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    [self.navigationItem setHidesBackButton:NO animated:YES];
-    
     [self.tableView beginUpdates];
     
-    [self deleteAllRows];
+    [self deleteAllRows:UITableViewRowAnimationFade];
     
     [self.delegate TimetableViewControllerDelegate_cancelEditingWeek];
     
-    [self addAllRows];
+    [self addAllRows:UITableViewRowAnimationFade];
     
     [self.tableView setEditing:!self.tableView.editing animated:YES];
     
@@ -174,8 +171,7 @@ const CGFloat KSlotCellHeight = 40;
     
     
     [self setRightBarButtonEdit];
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    [self.navigationItem setHidesBackButton:NO animated:YES];
+    [self.navigationItem setLeftBarButtonItem:self.previousBarButtonItem animated:YES];
     
     [self updateAllHeaders];
     
@@ -292,7 +288,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [self updateHeaderViewForSection:indexPath.section];
     }
 }
-
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -413,6 +408,21 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(void) reloadTable{
     [self.tableView reloadData];
+}
+
+
+-(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
+  
+    [self.tableView beginUpdates];
+    
+    [self deleteAllRows:UITableViewRowAnimationFade];
+    
+    [self.delegate TimetableViewControllerDelegate_setWeekIndex:weekIndex];
+    
+    [self addAllRows:UITableViewRowAnimationFade];
+    
+    [self.tableView endUpdates];
+    [self updateAllHeaders];
 }
 
 

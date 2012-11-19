@@ -7,6 +7,8 @@
     self = [super init];
     if (self) {
         
+        self.slideViewPaddingRight = 160;
+        
         self.middleViewController = middleViewController;
         
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:middleViewController];
@@ -38,9 +40,7 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressedLeftButton)];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressedRightButton)];
-    
-    controller.navigationItem.rightBarButtonItem = rightButton;
+
     controller.navigationItem.leftBarButtonItem = button;
     controller.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
     

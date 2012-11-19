@@ -60,13 +60,13 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
         
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.textLabel.textColor = [UIColor blueColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
- 
-    cell.backgroundColor = [UIColor grayColor];
+    cell.textLabel.backgroundColor = [UIColor darkGrayColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    cell.contentView.backgroundColor = [UIColor darkGrayColor];
     cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row];
-    cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
 

@@ -76,8 +76,6 @@
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
 		D6AC1548165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
 		D6AC1549165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
-		D6AC1550165A65F100F6099D /* CHSlidingDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC154F165A65F100F6099D /* CHSlidingDemo.m */; };
-		D6AC1551165A65F100F6099D /* CHSlidingDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC154F165A65F100F6099D /* CHSlidingDemo.m */; };
 		D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
 		D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
 		D6CC925D165414B100CA56B6 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925A165414B100CA56B6 /* bike.png */; };
@@ -215,8 +213,6 @@
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D6AC1546165A645800F6099D /* CHSlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlideController.h; sourceTree = "<group>"; };
 		D6AC1547165A645800F6099D /* CHSlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlideController.m; sourceTree = "<group>"; };
-		D6AC154E165A65F100F6099D /* CHSlidingDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlidingDemo.h; sourceTree = "<group>"; };
-		D6AC154F165A65F100F6099D /* CHSlidingDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlidingDemo.m; sourceTree = "<group>"; };
 		D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSlideControllerSubclass.h; sourceTree = "<group>"; };
 		D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSlideControllerSubclass.m; sourceTree = "<group>"; };
 		D6CC925A165414B100CA56B6 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../Marketing/appicon/bike.png; sourceTree = "<group>"; };
@@ -595,8 +591,6 @@
 			children = (
 				D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */,
 				D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */,
-				D6AC154E165A65F100F6099D /* CHSlidingDemo.h */,
-				D6AC154F165A65F100F6099D /* CHSlidingDemo.m */,
 				D6AC1546165A645800F6099D /* CHSlideController.h */,
 				D6AC1547165A645800F6099D /* CHSlideController.m */,
 			);
@@ -780,7 +774,6 @@
 				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 				D6AC1548165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1550165A65F100F6099D /* CHSlidingDemo.m in Sources */,
 				D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,7 +789,6 @@
 				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 				D6AC1549165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1551165A65F100F6099D /* CHSlidingDemo.m in Sources */,
 				D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

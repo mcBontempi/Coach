@@ -10,6 +10,6 @@
 @property (nonatomic, weak) id<ToTimetableViewControllerDelegate> toTimetableViewControllerDelegate;
 
 -(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate weekIndex:(NSInteger) weekIndex;
--(void) changeCurrentWeekTo:(NSInteger) weekIndex;
+-(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex;
 
 @end

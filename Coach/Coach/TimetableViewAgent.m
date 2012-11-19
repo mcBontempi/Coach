@@ -21,11 +21,8 @@
     return self;
 }
 
--(void) changeCurrentWeekTo:(NSInteger) weekIndex{
-    self.weekIndex = weekIndex;
-    [self refetchCurrentWeek];
-    
-    [self.toTimetableViewControllerDelegate reloadTable];
+-(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
+    [self.toTimetableViewControllerDelegate changeCurrentWeekAnimatedTo:weekIndex];
 }
 
 -(NSArray *) currentWeek{
@@ -106,6 +103,11 @@
 
 -(NSArray *) TimetableViewControllerDelegate_currentWeek{
     return self.currentWeek;
+}
+
+-(void) TimetableViewControllerDelegate_setWeekIndex:(NSInteger) weekIndex{
+    self.weekIndex = weekIndex;
+    [self refetchCurrentWeek];
 }
 
 -(NSInteger) TimetableViewControllerDelegate_weekIndex{
