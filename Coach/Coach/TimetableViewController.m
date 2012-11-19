@@ -63,6 +63,7 @@ const CGFloat KSlotCellHeight = 40;
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:systemItem
                                                                                         target:self
                                                                                         action:@selector(toggleEditPressed)];
+    
 }
 
 
