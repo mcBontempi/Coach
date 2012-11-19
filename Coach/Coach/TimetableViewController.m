@@ -51,6 +51,12 @@ const CGFloat KSlotCellHeight = 40;
     [self setRightBarButtonEdit];
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.title = [NSString stringWithFormat:@"Week %d", [self.delegate TimetableViewControllerDelegate_weekIndex]];
+}
+
 -(void) setRightBarButtonEdit{
     [self setRightBarButton:UIBarButtonSystemItemEdit];
 }
@@ -173,13 +179,6 @@ const CGFloat KSlotCellHeight = 40;
     
     [self updateAllHeaders];
     
-}
-
-
--(void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    [self updateAllHeaders];
 }
 
 -(NSArray*) currentWeek{

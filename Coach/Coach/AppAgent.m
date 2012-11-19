@@ -73,14 +73,12 @@
 -(void) startConfigWizard{
     self.configAgent = [[ConfigAgent alloc] init];
     self.configAgent.rootViewController = self.rootViewController;
-    
     [self.configAgent startWithDelegate:self];
 }
 
 -(void) startViewer{
-    self.viewerAgent = [[ViewerAgent alloc] initWithModel:self.model];
+    self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.model];
     self.viewerAgent.rootViewController = self.rootViewController;
-    
     [self.viewerAgent start];
 }
 

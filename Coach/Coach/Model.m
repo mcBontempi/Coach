@@ -66,4 +66,8 @@
     return copiedWeek;
 }
 
+-(NSInteger) weekCount{
+    return self.weeks.count;
+}
+
 @end

@@ -6,22 +6,21 @@
 
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 @property (nonatomic, strong) NSMutableArray *week;
+@property NSInteger weekIndex;
 
 @end
 
 @implementation TimetableViewAgent
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate{
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate weekIndex:(NSInteger) weekIndex{
     self = [super init];
     if(self) {
         self.modelDelegate = modelDelegate;
+        self.weekIndex = weekIndex;
     }
     return self;
 }
 
--(NSArray *) TimetableViewControllerDelegate_currentWeek{
-    return self.currentWeek;
-}
 
 -(NSArray *) currentWeek{
     if(!self.week) {
@@ -30,11 +29,11 @@
 }
 
 -(void) refetchCurrentWeek{
-    self.week = [self.modelDelegate makeCopyOfWeek:[self.modelDelegate getWeek:0]];
+    self.week = [self.modelDelegate makeCopyOfWeek:[self.modelDelegate getWeek:self.weekIndex]];
 }
 
 -(void) saveCurrentWeek{
-    [self.modelDelegate setWeek:0 array:[NSArray arrayWithArray:self.week]];
+    [self.modelDelegate setWeek:self.weekIndex array:[NSArray arrayWithArray:self.week]];
 }
 
 -(void) TimetableViewControllerDelegate_moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
@@ -96,6 +95,15 @@
 
 -(void) TimetableViewControllerDelegate_cancelEditingWeek{
     [self refetchCurrentWeek];
+}
+
+
+-(NSArray *) TimetableViewControllerDelegate_currentWeek{
+    return self.currentWeek;
+}
+
+-(NSInteger) TimetableViewControllerDelegate_weekIndex{
+    return self.weekIndex;
 }
 
 @end

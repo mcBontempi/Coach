@@ -17,4 +17,6 @@
 -(void) TimetableViewControllerDelegate_commitEditingWeek;
 -(void) TimetableViewControllerDelegate_cancelEditingWeek;
 
+-(NSInteger) TimetableViewControllerDelegate_weekIndex;
+
 @end

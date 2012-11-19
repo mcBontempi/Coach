@@ -9,6 +9,6 @@
 
 @property (nonatomic, weak) id<ToTimetableViewControllerDelegate> toTimetableViewControllerDelegate;
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate;
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate weekIndex:(NSInteger) weekIndex;
 
 @end

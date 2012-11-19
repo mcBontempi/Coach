@@ -43,7 +43,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return [self.delegate ListViewControllerDelegate_numberOfWeeks];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -56,7 +56,7 @@
     }
  
     cell.backgroundColor = [UIColor grayColor];
-    cell.textLabel.text = @"This Week";
+    cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
@@ -65,7 +65,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self.delegate ListViewControllerDelegate_showThisWeek];
+    [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
 }
 
 
