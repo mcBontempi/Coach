@@ -4,6 +4,15 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
+
+@protocol CHStaticDemoDelegate <NSObject>
+
+// method to inform slidecontroller that something has been selected
+-(void)staticDemoDidSelectText:(NSString *)text;
+
+@end
+
+
 @implementation ListViewController
 
 -(id) init{

@@ -2,4 +2,6 @@
 
 @protocol ToTimetableViewControllerDelegate <NSObject>
 
+-(void) reloadTable;
+
 @end

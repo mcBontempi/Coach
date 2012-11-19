@@ -74,6 +74,12 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D6AC1548165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
+		D6AC1549165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
+		D6AC1550165A65F100F6099D /* CHSlidingDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC154F165A65F100F6099D /* CHSlidingDemo.m */; };
+		D6AC1551165A65F100F6099D /* CHSlidingDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC154F165A65F100F6099D /* CHSlidingDemo.m */; };
+		D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
+		D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
 		D6CC925D165414B100CA56B6 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925A165414B100CA56B6 /* bike.png */; };
 		D6CC925E165414B100CA56B6 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925B165414B100CA56B6 /* run.png */; };
 		D6CC925F165414B100CA56B6 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925C165414B100CA56B6 /* swim.png */; };
@@ -207,6 +213,12 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D6AC1546165A645800F6099D /* CHSlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlideController.h; sourceTree = "<group>"; };
+		D6AC1547165A645800F6099D /* CHSlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlideController.m; sourceTree = "<group>"; };
+		D6AC154E165A65F100F6099D /* CHSlidingDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlidingDemo.h; sourceTree = "<group>"; };
+		D6AC154F165A65F100F6099D /* CHSlidingDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlidingDemo.m; sourceTree = "<group>"; };
+		D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSlideControllerSubclass.h; sourceTree = "<group>"; };
+		D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSlideControllerSubclass.m; sourceTree = "<group>"; };
 		D6CC925A165414B100CA56B6 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../Marketing/appicon/bike.png; sourceTree = "<group>"; };
 		D6CC925B165414B100CA56B6 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = run.png; path = ../../Marketing/appicon/run.png; sourceTree = "<group>"; };
 		D6CC925C165414B100CA56B6 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = ../../Marketing/appicon/swim.png; sourceTree = "<group>"; };
@@ -288,23 +300,23 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
-				D6F5636816540F8D00E7617C /* Class Extensions */,
-				D6A776B316334DD700879C11 /* Utils */,
-				D61672E51614E868001C3F15 /* Assets */,
 				850D261F160B78620034A743 /* Agents */,
-				D61672C6160B3999001C3F15 /* Views */,
-				D61672C5160B3991001C3F15 /* ViewControllers */,
-				852CF7F4160A0CC4009E249F /* Logging */,
-				852CF7CE1608C9EB009E249F /* Models */,
-				852CF7CD1608C9E1009E249F /* Engines */,
-				852CF7C91608B184009E249F /* Data */,
 				852CF7A01608A7E7009E249F /* AppDelegate.h */,
 				852CF7A11608A7E7009E249F /* AppDelegate.m */,
+				D61672E51614E868001C3F15 /* Assets */,
+				D6F5636816540F8D00E7617C /* Class Extensions */,
+				852CF7C91608B184009E249F /* Data */,
+				852CF7CD1608C9E1009E249F /* Engines */,
+				852CF7F4160A0CC4009E249F /* Logging */,
+				852CF7CE1608C9EB009E249F /* Models */,
+				852CF7981608A7E6009E249F /* Supporting Files */,
+				D6A776B316334DD700879C11 /* Utils */,
 				852CF7A31608A7E7009E249F /* ViewController.h */,
 				852CF7A41608A7E7009E249F /* ViewController.m */,
-				852CF7A61608A7E7009E249F /* ViewController_iPhone.xib */,
 				852CF7A91608A7E7009E249F /* ViewController_iPad.xib */,
-				852CF7981608A7E6009E249F /* Supporting Files */,
+				852CF7A61608A7E7009E249F /* ViewController_iPhone.xib */,
+				D61672C5160B3991001C3F15 /* ViewControllers */,
+				D61672C6160B3999001C3F15 /* Views */,
 			);
 			path = Coach;
 			sourceTree = "<group>";
@@ -423,6 +435,7 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6AC1544165A643D00F6099D /* SlideController */,
 				D65CE4371641526C00D3B0CB /* List */,
 				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
@@ -575,6 +588,20 @@
 				D6A776B516334DE900879C11 /* Utils.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		D6AC1544165A643D00F6099D /* SlideController */ = {
+			isa = PBXGroup;
+			children = (
+				D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */,
+				D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */,
+				D6AC154E165A65F100F6099D /* CHSlidingDemo.h */,
+				D6AC154F165A65F100F6099D /* CHSlidingDemo.m */,
+				D6AC1546165A645800F6099D /* CHSlideController.h */,
+				D6AC1547165A645800F6099D /* CHSlideController.m */,
+			);
+			name = SlideController;
+			path = Coach;
 			sourceTree = "<group>";
 		};
 		D6F5636816540F8D00E7617C /* Class Extensions */ = {
@@ -752,6 +779,9 @@
 				D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */,
 				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
+				D6AC1548165A645800F6099D /* CHSlideController.m in Sources */,
+				D6AC1550165A65F100F6099D /* CHSlidingDemo.m in Sources */,
+				D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +795,9 @@
 				D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */,
 				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
+				D6AC1549165A645800F6099D /* CHSlideController.m in Sources */,
+				D6AC1551165A65F100F6099D /* CHSlidingDemo.m in Sources */,
+				D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

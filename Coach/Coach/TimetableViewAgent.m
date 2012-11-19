@@ -21,6 +21,12 @@
     return self;
 }
 
+-(void) changeCurrentWeekTo:(NSInteger) weekIndex{
+    self.weekIndex = weekIndex;
+    [self refetchCurrentWeek];
+    
+    [self.toTimetableViewControllerDelegate reloadTable];
+}
 
 -(NSArray *) currentWeek{
     if(!self.week) {

@@ -5,12 +5,17 @@
 #import "ListViewController.h"
 #import "Model.h"
 
+#import "DemoSlideControllerSubclass.h"
+
+
 @interface ViewerAgent () 
 
 @property (nonatomic, strong) UINavigationController *viewerNavigationController;
 @property (nonatomic, strong) TimetableViewAgent *timetableViewAgent;
 @property (nonatomic, strong) ListViewAgent *listViewAgent;
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+
+@property (nonatomic, strong) DemoSlideControllerSubclass *demoSlideControllerSubclass;
 
 @end
 
@@ -27,15 +32,20 @@
 }
 
 -(void) start{
+   
     self.listViewAgent = [[ListViewAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
-    ListViewController *vc = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
-    self.listViewAgent.toListViewControllerDelegate = vc;
+    ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
+    self.listViewAgent.toListViewControllerDelegate = listViewController;
     
-    self.viewerNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self.rootViewController presentModalViewController:self.viewerNavigationController animated:YES];
     
-    // test
-    [self showThisWeek];
+    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.modelDelegate weekIndex:0];
+    TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
+    self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
+    
+    
+    self.demoSlideControllerSubclass = [[DemoSlideControllerSubclass alloc] initWithLeftViewController:listViewController middleViewController:timetableViewController];
+    
+     [self.rootViewController presentModalViewController:self.demoSlideControllerSubclass animated:YES];
 }
 
 -(void) showThisWeek{
@@ -47,11 +57,9 @@
 }
 
 -(void) showWeek:(NSInteger) weekIndex{
-    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.modelDelegate weekIndex:(NSInteger) weekIndex];
-    TimetableViewController *vc = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
-    self.timetableViewAgent.toTimetableViewControllerDelegate = vc;
+    [self.timetableViewAgent changeCurrentWeekTo:weekIndex];
     
-    [self.viewerNavigationController pushViewController:vc animated:YES];
+    [self.demoSlideControllerSubclass bringInMiddleViewController];
 }
 
 -(void) ListViewAgentDelegate_showThisWeek{
@@ -60,6 +68,9 @@
 
 -(void) ListViewAgentDelegate_showWeek:(NSInteger) weekIndex{
     [self showWeek:weekIndex];
+    
+    
+    
 }
 
 
