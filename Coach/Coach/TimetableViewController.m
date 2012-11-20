@@ -212,7 +212,7 @@ const CGFloat KSlotCellHeight = 40;
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Add"];
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             cell.textLabel.textColor = [UIColor blackColor];
-            cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold" size:15.0];
+            cell.textLabel.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
             cell.textLabel.text = @"Tap to add...";
         }
         return cell;

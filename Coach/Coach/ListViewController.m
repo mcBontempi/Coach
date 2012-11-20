@@ -50,7 +50,6 @@
 }
 
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.delegate ListViewControllerDelegate_numberOfWeeks];
 }
@@ -73,7 +72,6 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
 }
 

@@ -61,6 +61,8 @@
 		D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
 		D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA6A51639429A0074EA70 /* FinishViewController.m */; };
 		D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6B61639A9D40074EA70 /* appIcon.png */; };
+		D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */; };
+		D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */; };
 		D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE440164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
@@ -76,8 +78,8 @@
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
 		D6AC1548165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
 		D6AC1549165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
-		D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
-		D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */; };
+		D6AC1554165A661400F6099D /* SlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* SlideController.m */; };
+		D6AC1555165A661400F6099D /* SlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* SlideController.m */; };
 		D6CC925D165414B100CA56B6 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925A165414B100CA56B6 /* bike.png */; };
 		D6CC925E165414B100CA56B6 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925B165414B100CA56B6 /* run.png */; };
 		D6CC925F165414B100CA56B6 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D6CC925C165414B100CA56B6 /* swim.png */; };
@@ -190,6 +192,8 @@
 		D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToFinishViewControllerDelegate.h; path = Coach/ToFinishViewControllerDelegate.h; sourceTree = "<group>"; };
 		D63AA6B61639A9D40074EA70 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
+		D63B1254165A99BA0045A725 /* NSString_NiceStringFromDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_NiceStringFromDuration.h; sourceTree = "<group>"; };
+		D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_NiceStringFromDuration.m; sourceTree = "<group>"; };
 		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
 		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
 		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
@@ -213,8 +217,8 @@
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D6AC1546165A645800F6099D /* CHSlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlideController.h; sourceTree = "<group>"; };
 		D6AC1547165A645800F6099D /* CHSlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlideController.m; sourceTree = "<group>"; };
-		D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSlideControllerSubclass.h; sourceTree = "<group>"; };
-		D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSlideControllerSubclass.m; sourceTree = "<group>"; };
+		D6AC1552165A661400F6099D /* SlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideController.h; sourceTree = "<group>"; };
+		D6AC1553165A661400F6099D /* SlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideController.m; sourceTree = "<group>"; };
 		D6CC925A165414B100CA56B6 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../Marketing/appicon/bike.png; sourceTree = "<group>"; };
 		D6CC925B165414B100CA56B6 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = run.png; path = ../../Marketing/appicon/run.png; sourceTree = "<group>"; };
 		D6CC925C165414B100CA56B6 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = ../../Marketing/appicon/swim.png; sourceTree = "<group>"; };
@@ -589,8 +593,8 @@
 		D6AC1544165A643D00F6099D /* SlideController */ = {
 			isa = PBXGroup;
 			children = (
-				D6AC1552165A661400F6099D /* DemoSlideControllerSubclass.h */,
-				D6AC1553165A661400F6099D /* DemoSlideControllerSubclass.m */,
+				D6AC1552165A661400F6099D /* SlideController.h */,
+				D6AC1553165A661400F6099D /* SlideController.m */,
 				D6AC1546165A645800F6099D /* CHSlideController.h */,
 				D6AC1547165A645800F6099D /* CHSlideController.m */,
 			);
@@ -603,6 +607,8 @@
 			children = (
 				D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */,
 				D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */,
+				D63B1254165A99BA0045A725 /* NSString_NiceStringFromDuration.h */,
+				D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */,
 			);
 			name = "Class Extensions";
 			sourceTree = "<group>";
@@ -774,7 +780,8 @@
 				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 				D6AC1548165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1554165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
+				D6AC1554165A661400F6099D /* SlideController.m in Sources */,
+				D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,7 +796,8 @@
 				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 				D6AC1549165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1555165A661400F6099D /* DemoSlideControllerSubclass.m in Sources */,
+				D6AC1555165A661400F6099D /* SlideController.m in Sources */,
+				D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

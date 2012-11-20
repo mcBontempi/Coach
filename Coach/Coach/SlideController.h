@@ -1,6 +1,6 @@
 #import "CHSlideController.h"
 
-@interface DemoSlideControllerSubclass : CHSlideController
+@interface SlideController : CHSlideController
 
 - (id)initWithLeftViewController:(UIViewController*) leftViewController middleViewController:(UIViewController*) middleViewController ;
 

@@ -83,14 +83,16 @@
 }
 
 -(void) start{
-//     [self startConfigWizard];
+     [self startConfigWizard];
 
-    [self.model makeTestData];
-    
+//    [self.model makeTestData];
+
     [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_finished{
+  
+  //  [self.model ]
     [self startViewer];
 }
 
@@ -114,10 +116,8 @@
         case EEffortCompetitive: coach.peakMinutes = 20*60; break;
     }
     
-    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     for(NSInteger week = 0 ; week < length ; week++){
-        [mutableArray addObject: [coach getWeekUsesProfileWithWeek:week]];
-        [self.modelDelegate setWeek:week array:mutableArray];
+        [self.modelDelegate setWeek:week array:[coach getWeekUsesProfileWithWeek:week]];
     }
     
 

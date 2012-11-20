@@ -1,6 +1,6 @@
-#import "DemoSlideControllerSubclass.h"
+#import "SlideController.h"
 
-@implementation DemoSlideControllerSubclass
+@implementation SlideController
 
 - (id)initWithLeftViewController:(UIViewController*) leftViewController middleViewController:(UIViewController*) middleViewController
 {

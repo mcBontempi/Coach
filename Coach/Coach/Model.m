@@ -11,6 +11,14 @@
 
 @implementation Model
 
+-(id) init{
+    if (self = [super init]){
+         self.weeks = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+
 -(void) makeTestData{
     
      Coach *coach = [[Coach alloc] init];
@@ -26,7 +34,7 @@
      coach.profile = profile;
      coach.peakMinutes = 20*60;
      
-     self.weeks = [[NSMutableArray alloc] init];
+    
      
      for(NSInteger week = 0 ; week <= length ; week++){
      [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];

@@ -17,10 +17,13 @@ const CGFloat paddingForWarning = 5;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.textLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,frame.size.width,frame.size.height)];
+        
+        CGFloat leftTextPadding = 5;
+        
+        self.textLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(leftTextPadding,0,frame.size.width,frame.size.height)];
         [self addSubview:self.textLabel1];
         
-        self.textLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0,0,frame.size.width,frame.size.height)];
+        self.textLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(leftTextPadding,0,frame.size.width,frame.size.height)];
         [self addSubview:self.textLabel2];
         
         self.currentLabel = self.textLabel1;
@@ -30,7 +33,10 @@ const CGFloat paddingForWarning = 5;
         
         self.textLabel1.textColor = [UIColor whiteColor];
         self.textLabel2.textColor = [UIColor whiteColor];
-        
+
+        self.textLabel1.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
+        self.textLabel2.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
+
         self.warningImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noEntry.png"]];
         self.warningImageView.frame = CGRectMake(frame.size.width - frame.size.height +paddingForWarning ,paddingForWarning,self.frame.size.height - (paddingForWarning*2),self.frame.size.height - (paddingForWarning*2) );
          

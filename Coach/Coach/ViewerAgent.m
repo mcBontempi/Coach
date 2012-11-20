@@ -5,7 +5,7 @@
 #import "ListViewController.h"
 #import "Model.h"
 
-#import "DemoSlideControllerSubclass.h"
+#import "SlideController.h"
 
 
 @interface ViewerAgent () 
@@ -15,7 +15,7 @@
 @property (nonatomic, strong) ListViewAgent *listViewAgent;
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 
-@property (nonatomic, strong) DemoSlideControllerSubclass *demoSlideControllerSubclass;
+@property (nonatomic, strong) SlideController *slideController;
 
 @end
 
@@ -43,9 +43,9 @@
     self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
     
     
-    self.demoSlideControllerSubclass = [[DemoSlideControllerSubclass alloc] initWithLeftViewController:listViewController middleViewController:timetableViewController];
+    self.slideController = [[SlideController alloc] initWithLeftViewController:listViewController middleViewController:timetableViewController];
     
-     [self.rootViewController presentModalViewController:self.demoSlideControllerSubclass animated:YES];
+     [self.rootViewController presentModalViewController:self.slideController animated:YES];
 }
 
 -(void) showThisWeek{
@@ -59,7 +59,7 @@
 -(void) showWeek:(NSInteger) weekIndex{
     [self.timetableViewAgent changeCurrentWeekAnimatedTo:weekIndex];
     
-    [self.demoSlideControllerSubclass bringInMiddleViewController];
+    [self.slideController bringInMiddleViewController];
 }
 
 -(void) ListViewAgentDelegate_showThisWeek{
