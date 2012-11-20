@@ -38,6 +38,12 @@
 		852CF804160A2F2B009E249F /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
 		856A323C16145252003533BE /* TypeSelectViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */; };
 		857D5160164BF40C00527584 /* noEntry.png in Resources */ = {isa = PBXBuildFile; fileRef = 857D515F164BF40C00527584 /* noEntry.png */; };
+		85C767A8165BA6A9008325EB /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767A7165BA6A9008325EB /* WrapController.m */; };
+		85C767A9165BA6A9008325EB /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767A7165BA6A9008325EB /* WrapController.m */; };
+		85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767AB165BA6BC008325EB /* IIViewDeckController.m */; };
+		85C767AD165BA6BC008325EB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767AB165BA6BC008325EB /* IIViewDeckController.m */; };
+		85C767AF165BA8C6008325EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C767AE165BA8C6008325EB /* QuartzCore.framework */; };
+		85C767B0165BA8C6008325EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C767AE165BA8C6008325EB /* QuartzCore.framework */; };
 		85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */; };
 		85C88630163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */; };
 		85C88632163160280023A3E1 /* TimetableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8862C163160280023A3E1 /* TimetableViewController.m */; };
@@ -156,6 +162,11 @@
 		854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WelcomeViewControllerDelegate.h; path = Coach/WelcomeViewControllerDelegate.h; sourceTree = "<group>"; };
 		856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TypeSelectViewController_iPad.xib; path = Coach/TypeSelectViewController_iPad.xib; sourceTree = "<group>"; };
 		857D515F164BF40C00527584 /* noEntry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noEntry.png; path = Coach/assets/noEntry.png; sourceTree = "<group>"; };
+		85C767A6165BA6A9008325EB /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = Coach/WrapController.h; sourceTree = SOURCE_ROOT; };
+		85C767A7165BA6A9008325EB /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = Coach/WrapController.m; sourceTree = SOURCE_ROOT; };
+		85C767AA165BA6BC008325EB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Coach/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
+		85C767AB165BA6BC008325EB /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Coach/IIViewDeckController.m; sourceTree = SOURCE_ROOT; };
+		85C767AE165BA8C6008325EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPad.xib; path = Coach/TimetableViewController_iPad.xib; sourceTree = "<group>"; };
 		85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPhone.xib; path = Coach/TimetableViewController_iPhone.xib; sourceTree = "<group>"; };
 		85C8862B163160280023A3E1 /* TimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetableViewController.h; path = Coach/TimetableViewController.h; sourceTree = "<group>"; };
@@ -239,6 +250,7 @@
 				852CF7921608A7E6009E249F /* UIKit.framework in Frameworks */,
 				852CF7941608A7E6009E249F /* Foundation.framework in Frameworks */,
 				852CF7961608A7E6009E249F /* CoreGraphics.framework in Frameworks */,
+				85C767AF165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +261,7 @@
 				852CF7B31608A7E8009E249F /* SenTestingKit.framework in Frameworks */,
 				852CF7B41608A7E8009E249F /* UIKit.framework in Frameworks */,
 				852CF7B51608A7E8009E249F /* Foundation.framework in Frameworks */,
+				85C767B0165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +305,7 @@
 		852CF7901608A7E6009E249F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85C767AE165BA8C6008325EB /* QuartzCore.framework */,
 				852CF7911608A7E6009E249F /* UIKit.framework */,
 				852CF7931608A7E6009E249F /* Foundation.framework */,
 				852CF7951608A7E6009E249F /* CoreGraphics.framework */,
@@ -303,6 +317,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				85C7679C165BA669008325EB /* ViewDeck */,
 				850D261F160B78620034A743 /* Agents */,
 				852CF7A01608A7E7009E249F /* AppDelegate.h */,
 				852CF7A11608A7E7009E249F /* AppDelegate.m */,
@@ -404,6 +419,17 @@
 				852CF803160A2F2B009E249F /* ProfileLogger.m */,
 			);
 			name = Logging;
+			sourceTree = "<group>";
+		};
+		85C7679C165BA669008325EB /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				85C767AA165BA6BC008325EB /* IIViewDeckController.h */,
+				85C767AB165BA6BC008325EB /* IIViewDeckController.m */,
+				85C767A6165BA6A9008325EB /* WrapController.h */,
+				85C767A7165BA6A9008325EB /* WrapController.m */,
+			);
+			path = ViewDeck;
 			sourceTree = "<group>";
 		};
 		85C886271631601B0023A3E1 /* Timetable */ = {
@@ -788,6 +814,8 @@
 				D6AC1548165A645800F6099D /* CHSlideController.m in Sources */,
 				D6AC1554165A661400F6099D /* SlideController.m in Sources */,
 				D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
+				85C767A8165BA6A9008325EB /* WrapController.m in Sources */,
+				85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +832,8 @@
 				D6AC1549165A645800F6099D /* CHSlideController.m in Sources */,
 				D6AC1555165A661400F6099D /* SlideController.m in Sources */,
 				D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
+				85C767A9165BA6A9008325EB /* WrapController.m in Sources */,
+				85C767AD165BA6BC008325EB /* IIViewDeckController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
