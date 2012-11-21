@@ -108,6 +108,9 @@ const CGFloat KSlotCellHeight = 40;
     [self.tableView setEditing:!self.tableView.editing animated:YES];
     
     if(self.tableView.editing){
+        
+        [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:YES];
+        
         // go into edit mode
         [self setRightBarButtonDone];
         
@@ -123,6 +126,9 @@ const CGFloat KSlotCellHeight = 40;
         [self addAddRows];
     }
     else{
+        
+        [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
+        
         // editing done
         [self setRightBarButtonEdit];
         [self.navigationItem setLeftBarButtonItem:self.previousBarButtonItem  animated:YES];
@@ -157,6 +163,9 @@ const CGFloat KSlotCellHeight = 40;
     
 }
 -(void) cancelItemPressed{
+    [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
+    
+    
     [self.tableView beginUpdates];
     
     [self deleteAllRows:UITableViewRowAnimationFade];

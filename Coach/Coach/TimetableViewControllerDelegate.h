@@ -20,4 +20,6 @@
 -(NSInteger) TimetableViewControllerDelegate_weekIndex;
 -(void) TimetableViewControllerDelegate_setWeekIndex:(NSInteger) weekIndex;
 
+-(void) TimetableViewControllerDelegate_editingModeChangedIsEditing:(BOOL) editing;
+
 @end

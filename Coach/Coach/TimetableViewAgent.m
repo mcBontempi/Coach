@@ -4,6 +4,7 @@
 
 @interface TimetableViewAgent ()
 
+@property (nonatomic, weak) id<TimetableViewAgentDelegate> delegate;
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 @property (nonatomic, strong) NSMutableArray *week;
 @property NSInteger weekIndex;
@@ -12,10 +13,11 @@
 
 @implementation TimetableViewAgent
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate weekIndex:(NSInteger) weekIndex{
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<TimetableViewAgentDelegate>) delegate weekIndex:(NSInteger) weekIndex{
     self = [super init];
     if(self) {
         self.modelDelegate = modelDelegate;
+        self.delegate = delegate;
         self.weekIndex = weekIndex;
     }
     return self;
@@ -112,6 +114,11 @@
 
 -(NSInteger) TimetableViewControllerDelegate_weekIndex{
     return self.weekIndex;
+}
+
+-(void) TimetableViewControllerDelegate_editingModeChangedIsEditing:(BOOL) editing{
+    [self.delegate TimetableViewAgentDelegate_editingModeChangedIsEditing:editing];
+    
 }
 
 @end

@@ -20,11 +20,6 @@
     return self;
 }
 
--(void) ListViewControllerDelegate_showThisWeek{
-    
-    [self.delegate ListViewAgentDelegate_showThisWeek];
-}
-
 -(void) ListViewControllerDelegate_showWeek:(NSInteger) weekIndex{
     [self.delegate ListViewAgentDelegate_showWeek:weekIndex];
 }

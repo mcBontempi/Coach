@@ -88,10 +88,6 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
-		D6AC1548165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
-		D6AC1549165A645800F6099D /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1547165A645800F6099D /* CHSlideController.m */; };
-		D6AC1554165A661400F6099D /* SlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* SlideController.m */; };
-		D6AC1555165A661400F6099D /* SlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6AC1553165A661400F6099D /* SlideController.m */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F56366165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
@@ -167,6 +163,7 @@
 		85C767AA165BA6BC008325EB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Coach/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
 		85C767AB165BA6BC008325EB /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = Coach/IIViewDeckController.m; sourceTree = SOURCE_ROOT; };
 		85C767AE165BA8C6008325EB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		85C767B5165BB0A4008325EB /* TimetableViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetableViewAgentDelegate.h; path = Coach/TimetableViewAgentDelegate.h; sourceTree = "<group>"; };
 		85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPad.xib; path = Coach/TimetableViewController_iPad.xib; sourceTree = "<group>"; };
 		85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetableViewController_iPhone.xib; path = Coach/TimetableViewController_iPhone.xib; sourceTree = "<group>"; };
 		85C8862B163160280023A3E1 /* TimetableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetableViewController.h; path = Coach/TimetableViewController.h; sourceTree = "<group>"; };
@@ -232,10 +229,6 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		D6AC1546165A645800F6099D /* CHSlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlideController.h; sourceTree = "<group>"; };
-		D6AC1547165A645800F6099D /* CHSlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlideController.m; sourceTree = "<group>"; };
-		D6AC1552165A661400F6099D /* SlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideController.h; sourceTree = "<group>"; };
-		D6AC1553165A661400F6099D /* SlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideController.m; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -445,6 +438,7 @@
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
 				D6F56363165409AE00E7617C /* SlotCell.h */,
 				D6F56364165409AE00E7617C /* SlotCell.m */,
+				85C767B5165BB0A4008325EB /* TimetableViewAgentDelegate.h */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";
@@ -464,7 +458,6 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6AC1544165A643D00F6099D /* SlideController */,
 				D65CE4371641526C00D3B0CB /* List */,
 				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
@@ -617,18 +610,6 @@
 				D6A776B516334DE900879C11 /* Utils.m */,
 			);
 			name = Utils;
-			sourceTree = "<group>";
-		};
-		D6AC1544165A643D00F6099D /* SlideController */ = {
-			isa = PBXGroup;
-			children = (
-				D6AC1552165A661400F6099D /* SlideController.h */,
-				D6AC1553165A661400F6099D /* SlideController.m */,
-				D6AC1546165A645800F6099D /* CHSlideController.h */,
-				D6AC1547165A645800F6099D /* CHSlideController.m */,
-			);
-			name = SlideController;
-			path = Coach;
 			sourceTree = "<group>";
 		};
 		D6F5636816540F8D00E7617C /* Class Extensions */ = {
@@ -811,8 +792,6 @@
 				D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */,
 				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
-				D6AC1548165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1554165A661400F6099D /* SlideController.m in Sources */,
 				D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A8165BA6A9008325EB /* WrapController.m in Sources */,
 				85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */,
@@ -829,8 +808,6 @@
 				D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */,
 				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
-				D6AC1549165A645800F6099D /* CHSlideController.m in Sources */,
-				D6AC1555165A661400F6099D /* SlideController.m in Sources */,
 				D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A9165BA6A9008325EB /* WrapController.m in Sources */,
 				85C767AD165BA6BC008325EB /* IIViewDeckController.m in Sources */,

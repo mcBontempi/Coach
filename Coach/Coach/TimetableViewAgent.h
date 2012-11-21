@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 #import "TimetableViewControllerDelegate.h"
+#import "TimetableViewAgentDelegate.h"
 #import "ToTimetableViewControllerDelegate.h"
 #import "Model.h"
 #import "ModelDelegate.h"
@@ -9,7 +10,7 @@
 
 @property (nonatomic, weak) id<ToTimetableViewControllerDelegate> toTimetableViewControllerDelegate;
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate weekIndex:(NSInteger) weekIndex;
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<TimetableViewAgentDelegate>) delegate weekIndex:(NSInteger) weekIndex;
 -(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex;
 
 @end

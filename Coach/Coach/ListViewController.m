@@ -2,6 +2,7 @@
 
 @interface ListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 @end
 
 
@@ -29,6 +30,8 @@
     }
     if(self){
         self.delegate = delegate;
+        
+        self.navigationBar. title = @"/";
     }
     
     return self;
@@ -46,6 +49,7 @@
 
 - (void)viewDidUnload {
     [self setTableView:nil];
+    [self setNavigationBar:nil];
     [super viewDidUnload];
 }
 
