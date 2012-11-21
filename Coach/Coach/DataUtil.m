@@ -32,7 +32,7 @@
 }
 
 +(NSString *) weekdayFromWeekdayOrdinal:(NSInteger) ordinal{
-    return [[NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil] objectAtIndex:ordinal];
+    return @[@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday"][ordinal];
 }
 
 

@@ -7,6 +7,8 @@
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 @property (nonatomic, weak) id<ListViewAgentDelegate> delegate;
 
+@property (nonatomic, strong) NSArray *actionItemArray;
+
 @end
 
 @implementation ListViewAgent
@@ -16,7 +18,9 @@
     if(self) {
         self.modelDelegate = modelDelegate;
         self.delegate = delegate;
-    }
+        
+        self.actionItemArray = @[@"New Timetable"];
+        }
     return self;
 }
 
@@ -26,6 +30,21 @@
 
 -(NSInteger) ListViewControllerDelegate_numberOfWeeks{
     return [self.modelDelegate weekCount];
+}
+
+-(NSInteger) ListViewControllerDelegate_actionItemCount{
+    return self.actionItemArray.count;
+}
+
+-(NSString*) ListViewControllerDelegate_actionItem:(NSInteger) itemIndex{
+    return self.actionItemArray[itemIndex];
+}
+
+-(void) ListViewControllerDelegate_actionItemPressed:(NSInteger) itemIndex{
+
+    
+    
+    
 }
 
 @end

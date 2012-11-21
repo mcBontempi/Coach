@@ -31,7 +31,7 @@
     if(self){
         self.delegate = delegate;
         
-        self.navigationBar. title = @"/";
+        self.navigationItem.title = @"";
     }
     
     return self;
@@ -55,7 +55,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.delegate ListViewControllerDelegate_numberOfWeeks];
+    return [self.delegate ListViewControllerDelegate_numberOfWeeks] + [self.delegate ListViewControllerDelegate_actionItemCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -69,14 +69,30 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     
     cell.contentView.backgroundColor = [UIColor darkGrayColor];
-    cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row];
+    
+    NSInteger actionItemCount = [self.delegate ListViewControllerDelegate_actionItemCount];
+    
+    if(indexPath.row < actionItemCount){
+        cell.textLabel.text = [self.delegate ListViewControllerDelegate_actionItem:indexPath.row];
+    }else{
+        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1- actionItemCount];
+    }
     return cell;
 }
 
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
+    
+    NSInteger actionItemCount = [self.delegate ListViewControllerDelegate_actionItemCount];
+    
+    if(indexPath.row < actionItemCount){
+        
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    else{
+        [self.delegate ListViewControllerDelegate_showWeek:indexPath.row - actionItemCount];
+    }
 }
 
 

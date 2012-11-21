@@ -34,7 +34,7 @@
 // this gets a week, basically what sessions he needs to do within 1 week.
 -(NSArray *) getStackedWeekUsesProfileWithWeek:(NSInteger) week{
 
-    double weekPercentage = [[self.profile.array objectAtIndex:week] doubleValue];
+    double weekPercentage = [(self.profile.array)[week] doubleValue];
     
     double totalHours = self.peakMinutes * weekPercentage/100;
  
@@ -49,7 +49,7 @@
     Slot *swim2 = [[Slot alloc] initWithDuration:totalHours*0.10 activityType:EActivityTypeSwim];
     Slot *swim3 = [[Slot alloc] initWithDuration:totalHours*0.05 activityType:EActivityTypeSwim];
     
-    return [[NSArray alloc] initWithObjects:longRun, shortBike, swim1, tempoRun, shortRun, longBike, swim2, swim3, nil];
+    return @[longRun, shortBike, swim1, tempoRun, shortRun, longBike, swim2, swim3];
 }
 
 

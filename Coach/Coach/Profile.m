@@ -22,7 +22,7 @@
         
         double percentage = self.startPercentage + (i*percentageChange);
         
-        [array addObject:[NSNumber numberWithDouble:percentage]];
+        [array addObject:@(percentage)];
     }
  
     self.array = array;
