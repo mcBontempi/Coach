@@ -19,7 +19,7 @@
         self.modelDelegate = modelDelegate;
         self.delegate = delegate;
         
-        self.actionItemArray = @[@"New Timetable"];
+        self.actionItemArray = @[KMENUITEM_NEWTIMETABLE];
         }
     return self;
 }
@@ -42,9 +42,11 @@
 
 -(void) ListViewControllerDelegate_actionItemPressed:(NSInteger) itemIndex{
 
+    NSString *title = self.actionItemArray[itemIndex];
     
-    
-    
+    if([title isEqualToString:KMENUITEM_NEWTIMETABLE]){
+        [self.delegate ListViewAgentDelegate_newTimetable];
+    }
 }
 
 @end

@@ -13,7 +13,7 @@
 
 -(id) init{
     if (self = [super init]){
-         self.weeks = [[NSMutableArray alloc] init];
+        [self clearPlan];
     }
     return self;
 }
@@ -77,5 +77,15 @@
 -(NSInteger) weekCount{
     return self.weeks.count;
 }
+
+-(void) clearPlan{
+       self.weeks = [[NSMutableArray alloc] init];
+}
+
+-(void) ModelDelegate_clearPlan{
+    [self clearPlan];
+    
+}
+
 
 @end

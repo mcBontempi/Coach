@@ -8,8 +8,9 @@
 #import "Config.h"
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
+#import "ViewerAgentDelegate.h"
 
-@interface AppAgent () <ConfigAgentDelegate>
+@interface AppAgent () <ConfigAgentDelegate, ViewerAgentDelegate>
 
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
@@ -77,13 +78,13 @@
 }
 
 -(void) startViewer{
-    self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.model];
+    self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.model delegate:self];
     self.viewerAgent.rootViewController = self.rootViewController;
     [self.viewerAgent start];
 }
 
 -(void) start{
-//     [self startConfigWizard];
+   //  [self startConfigWizard];
 
     [self.model makeTestData];
 
@@ -96,7 +97,14 @@
     [self startViewer];
 }
 
+-(void) ViewerAgentDelegate_finished{
+    [self startConfigWizard];
+}
+
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
+    
+    
+    [self.modelDelegate ModelDelegate_clearPlan];
     
     Coach *coach = [[Coach alloc] init];
     

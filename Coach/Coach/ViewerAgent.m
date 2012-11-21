@@ -12,15 +12,17 @@
 @property (nonatomic, strong) ListViewAgent *listViewAgent;
 @property (nonatomic, weak) id<ModelDelegate> modelDelegate;
 @property (nonatomic, strong) IIViewDeckController *viewDeckViewController;
+@property (nonatomic, weak) id<ViewerAgentDelegate> delegate;
 @end
 
 @implementation ViewerAgent
 
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate{
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<ViewerAgentDelegate>) delegate{
     self = [super init];
     if(self){
         self.modelDelegate = modelDelegate;
+        self.delegate = delegate;
     }
     
     return self;
@@ -47,6 +49,15 @@
     
     
      [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
+    
+    [self.viewDeckViewController bounceLeftView];
+}
+
+-(void) finish{
+    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
+     {
+         [self.delegate ViewerAgentDelegate_finished];
+     }];
 }
 
 
@@ -58,6 +69,10 @@
 
 -(void) ListViewAgentDelegate_showWeek:(NSInteger) weekIndex{
     [self showWeek:weekIndex];
+}
+
+-(void) ListViewAgentDelegate_newTimetable{
+    [self finish];
 }
 
 -(void) TimetableViewAgentDelegate_editingModeChangedIsEditing:(BOOL) editing{

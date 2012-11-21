@@ -87,7 +87,7 @@
     NSInteger actionItemCount = [self.delegate ListViewControllerDelegate_actionItemCount];
     
     if(indexPath.row < actionItemCount){
-        
+        [self.delegate ListViewControllerDelegate_actionItemPressed:indexPath.row];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     else{

@@ -8,4 +8,6 @@
 -(NSMutableArray*) makeCopyOfWeek:(NSArray*) weekToCopy;
 -(NSInteger) weekCount;
 
+-(void) ModelDelegate_clearPlan;
+
 @end

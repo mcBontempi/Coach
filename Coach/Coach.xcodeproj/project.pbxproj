@@ -208,6 +208,7 @@
 		D63B1258165B81960045A725 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = Coach/assets/bike.png; sourceTree = "<group>"; };
 		D63B1259165B81960045A725 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = run.png; path = Coach/assets/run.png; sourceTree = "<group>"; };
 		D63B125A165B81960045A725 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = Coach/assets/swim.png; sourceTree = "<group>"; };
+		D63B1269165CD06B0045A725 /* ViewerAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewerAgentDelegate.h; sourceTree = "<group>"; };
 		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
 		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
 		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 				D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */,
 				850D2626160B78E30034A743 /* ViewerAgent.h */,
 				850D2627160B78E30034A743 /* ViewerAgent.m */,
+				D63B1269165CD06B0045A725 /* ViewerAgentDelegate.h */,
 			);
 			name = Agents;
 			sourceTree = "<group>";
