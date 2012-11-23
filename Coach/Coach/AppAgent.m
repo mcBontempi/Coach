@@ -97,6 +97,11 @@
     [self startViewer];
 }
 
+-(void) ConfigAgentDelegate_cancelled{
+    
+    [self startViewer];
+}
+
 -(void) ViewerAgentDelegate_finished{
     [self startConfigWizard];
 }

@@ -24,6 +24,11 @@
     return self;
 }
 
+-(void) highlightCurrentWeek:(NSInteger) weekIndex{
+    [self.toListViewControllerDelegate ToListViewControllerDelegate_highlightCurrentWeek:weekIndex];
+    
+}
+
 -(void) ListViewControllerDelegate_showWeek:(NSInteger) weekIndex{
     [self.delegate ListViewAgentDelegate_showWeek:weekIndex];
 }

@@ -75,6 +75,8 @@
 		D63B125E165B81960045A725 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B1259165B81960045A725 /* run.png */; };
 		D63B125F165B81960045A725 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B125A165B81960045A725 /* swim.png */; };
 		D63B1260165B81960045A725 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B125A165B81960045A725 /* swim.png */; };
+		D63B126C165D0C4A0045A725 /* landingpageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B126B165D0C4A0045A725 /* landingpageicon.png */; };
+		D63B126D165D0C4A0045A725 /* landingpageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B126B165D0C4A0045A725 /* landingpageicon.png */; };
 		D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE440164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
@@ -209,6 +211,7 @@
 		D63B1259165B81960045A725 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = run.png; path = Coach/assets/run.png; sourceTree = "<group>"; };
 		D63B125A165B81960045A725 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = Coach/assets/swim.png; sourceTree = "<group>"; };
 		D63B1269165CD06B0045A725 /* ViewerAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewerAgentDelegate.h; sourceTree = "<group>"; };
+		D63B126B165D0C4A0045A725 /* landingpageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = landingpageicon.png; path = Coach/assets/landingpageicon.png; sourceTree = "<group>"; };
 		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
 		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
 		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
@@ -482,6 +485,7 @@
 		D61672E51614E868001C3F15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				D63B126B165D0C4A0045A725 /* landingpageicon.png */,
 				D63B1258165B81960045A725 /* bike.png */,
 				D63B1259165B81960045A725 /* run.png */,
 				D63B125A165B81960045A725 /* swim.png */,
@@ -722,6 +726,7 @@
 				D63B125B165B81960045A725 /* bike.png in Resources */,
 				D63B125D165B81960045A725 /* run.png in Resources */,
 				D63B125F165B81960045A725 /* swim.png in Resources */,
+				D63B126C165D0C4A0045A725 /* landingpageicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +740,7 @@
 				D63B125C165B81960045A725 /* bike.png in Resources */,
 				D63B125E165B81960045A725 /* run.png in Resources */,
 				D63B1260165B81960045A725 /* swim.png in Resources */,
+				D63B126D165D0C4A0045A725 /* landingpageicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

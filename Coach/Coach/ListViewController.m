@@ -53,9 +53,18 @@
     [super viewDidUnload];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.delegate ListViewControllerDelegate_numberOfWeeks] + [self.delegate ListViewControllerDelegate_actionItemCount];
+    
+    if(section == 0){
+        return [self.delegate ListViewControllerDelegate_actionItemCount];
+    }
+    else {
+        return [self.delegate ListViewControllerDelegate_numberOfWeeks];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -70,12 +79,10 @@
     
     cell.contentView.backgroundColor = [UIColor darkGrayColor];
     
-    NSInteger actionItemCount = [self.delegate ListViewControllerDelegate_actionItemCount];
-    
-    if(indexPath.row < actionItemCount){
+    if(indexPath.section == 0){
         cell.textLabel.text = [self.delegate ListViewControllerDelegate_actionItem:indexPath.row];
     }else{
-        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1- actionItemCount];
+        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1];
     }
     return cell;
 }
@@ -83,17 +90,32 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSInteger actionItemCount = [self.delegate ListViewControllerDelegate_actionItemCount];
-    
-    if(indexPath.row < actionItemCount){
+    if(indexPath.section == 0){
         [self.delegate ListViewControllerDelegate_actionItemPressed:indexPath.row];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     else{
-        [self.delegate ListViewControllerDelegate_showWeek:indexPath.row - actionItemCount];
+        [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section)
+        return 5;
+    else return 0; 
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *header =  [[UIView alloc] initWithFrame:CGRectMake(0,0,320,5)];
+
+    header.backgroundColor = [UIColor blackColor];
+    
+    return header;
+}
+
+-(void) ToListViewControllerDelegate_highlightCurrentWeek:(NSInteger) weekIndex{
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:1] animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+}
+
 
 
 

@@ -35,6 +35,15 @@
     [self.wizardNavigationController pushViewController:vc animated:YES];
 }
 
+-(void) WelcomeViewControllerDelegate_cancelPressed{
+    
+    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
+     {
+         [self.delegate ConfigAgentDelegate_cancelled];
+     }];
+    
+}
+
 -(void) TypeSelectViewControllerDelegate_typePressed:(TType) type{
     self.config.type = type;
     DurationViewController *vc = [[DurationViewController alloc] initWithDelegate:self];

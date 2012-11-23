@@ -10,4 +10,6 @@
 
 -(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<ListViewAgentDelegate>) delegate;
 
+-(void) highlightCurrentWeek:(NSInteger) weekIndex;
+
 @end

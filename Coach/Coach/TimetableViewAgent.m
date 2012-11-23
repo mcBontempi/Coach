@@ -1,6 +1,7 @@
 #import "TimetableViewAgent.h"
 #import "Slot.h"
 #import "DataUtil.h"
+#import "NSString_NiceStringFromDuration.h"
 
 @interface TimetableViewAgent ()
 
@@ -24,7 +25,7 @@
 }
 
 -(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
-    [self.toTimetableViewControllerDelegate changeCurrentWeekAnimatedTo:weekIndex];
+    [self.toTimetableViewControllerDelegate ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:weekIndex];
 }
 
 -(NSArray *) currentWeek{
@@ -60,18 +61,7 @@
         for(Slot *slot in self.currentWeek[day]){
             total += slot.duration;
         }
-        
-        NSInteger hours = total /60;
-        
-        NSInteger minutes  = total - (hours *60);
-        
-        if(hours && minutes)
-            return [NSString stringWithFormat:@"%@ - %d hrs %d mins", dayText, hours, minutes];
-        else if (hours)
-            return  [NSString stringWithFormat:@"%@ - %d hrs", dayText, hours];
-        else
-            return  [NSString stringWithFormat:@"%@ - %d mins", dayText, minutes];
-        
+        return [NSString stringWithFormat:@"%@ - %@", dayText, [NSString niceStringFromDuration:total]];
     }
 }
 

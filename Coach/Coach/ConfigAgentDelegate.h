@@ -5,6 +5,8 @@
 
 -(void) ConfigAgentDelegate_finished;
 
+-(void) ConfigAgentDelegate_cancelled;
+
 -(void) ConfigAgentDelegate_makePlan:(Config*) config;
 
 @end

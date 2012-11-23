@@ -38,6 +38,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                           target:self
+                                                                                           action:@selector(cancel)] animated:YES];
+    
+}
+
+-(void) cancel{
+    
+    [self.delegate WelcomeViewControllerDelegate_cancelPressed];
+    
 }
 
 - (void)didReceiveMemoryWarning

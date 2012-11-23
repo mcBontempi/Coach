@@ -2,6 +2,6 @@
 
 @protocol ToTimetableViewControllerDelegate <NSObject>
 
--(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex;
+-(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex;
 
 @end

@@ -46,11 +46,11 @@
     
     self.viewDeckViewController.leftLedge = 150;
     
-    
-    
      [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
     
-    [self.viewDeckViewController bounceLeftView];
+    [self.viewDeckViewController openLeftView];
+    
+    [self showInitialWeek];
 }
 
 -(void) finish{
@@ -60,10 +60,17 @@
      }];
 }
 
+-(void) showInitialWeek{
+    
+    [self.timetableViewAgent changeCurrentWeekAnimatedTo:0];
+    
+    [self.listViewAgent highlightCurrentWeek:0];
+    
+}
+
 
 -(void) showWeek:(NSInteger) weekIndex{
     [self.timetableViewAgent changeCurrentWeekAnimatedTo:weekIndex];
-    
     [self.viewDeckViewController closeLeftView];
 }
 

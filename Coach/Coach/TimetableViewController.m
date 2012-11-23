@@ -425,7 +425,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 
--(void) changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
+-(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
   
     [self.tableView beginUpdates];
     
