@@ -6,6 +6,7 @@
 #import "SlotCell.h"
 
 const CGFloat KSlotCellHeight = 40;
+const CGFloat KExpandedSlotHeight = 70;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -15,6 +16,9 @@ const CGFloat KSlotCellHeight = 40;
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeGestureRecognizer;
 
 @property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
+
+
+@property (nonatomic, strong) NSMutableDictionary *selectedIndexes;
 @end
 
 @implementation TimetableViewController
@@ -63,6 +67,8 @@ const CGFloat KSlotCellHeight = 40;
     [super viewDidLoad];
     
     [self setRightBarButtonEdit];
+    
+    self.selectedIndexes = [[NSMutableDictionary alloc] init];
 }
 
 -(void) setRightBarButtonEdit{
@@ -255,24 +261,37 @@ const CGFloat KSlotCellHeight = 40;
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return KSlotCellHeight;
-    
-    NSArray* slots = self.currentWeek[indexPath.section];
-    
-    Slot *slot = slots[indexPath.row];
-    
-    return slot.duration > 50 ? slot.duration : 50;
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if([self cellIsSelected:indexPath])
+		return KExpandedSlotHeight;
+    else
+        return KSlotCellHeight;
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
+	// Return whether the cell at the specified index path is selected or not
+	NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
+	return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"didselect");
+}
+
+/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Deselect cell
+    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+    // Toggle 'selected' state
+    BOOL isSelected = ![self cellIsSelected:indexPath];
+    // Store cell 'selected' state keyed on indexPath
+    NSNumber *selectedIndex = [NSNumber numberWithBool:isSelected];
+    [self.selectedIndexes setObject:selectedIndex forKey:indexPath];
+    // This is where magic happens...
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+}
+*/
 
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -377,6 +396,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
     
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
