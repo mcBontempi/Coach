@@ -24,4 +24,6 @@
 -(void) TimetableViewControllerDelegate_bookmarksPressed;
 
 
+-(void) TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot;
+
 @end

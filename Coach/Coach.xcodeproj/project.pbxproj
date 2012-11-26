@@ -237,6 +237,8 @@
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D6E0FC64166380FD00237C80 /* IconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconSelectionView.h; path = Coach/IconSelectionView.h; sourceTree = "<group>"; };
 		D6E0FC65166380FD00237C80 /* IconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconSelectionView.m; path = Coach/IconSelectionView.m; sourceTree = "<group>"; };
+		D6E0FC681663B7FC00237C80 /* IconSelectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IconSelectionViewDelegate.h; path = Coach/IconSelectionViewDelegate.h; sourceTree = "<group>"; };
+		D6E0FC691663B92600237C80 /* SlotCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SlotCellDelegate.h; path = Coach/SlotCellDelegate.h; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				85C886431631675B0023A3E1 /* TimetableViewAgent.m */,
 				D6F56363165409AE00E7617C /* SlotCell.h */,
 				D6F56364165409AE00E7617C /* SlotCell.m */,
+				D6E0FC691663B92600237C80 /* SlotCellDelegate.h */,
 				85C767B5165BB0A4008325EB /* TimetableViewAgentDelegate.h */,
 			);
 			name = Timetable;
@@ -628,6 +631,7 @@
 			children = (
 				D6E0FC64166380FD00237C80 /* IconSelectionView.h */,
 				D6E0FC65166380FD00237C80 /* IconSelectionView.m */,
+				D6E0FC681663B7FC00237C80 /* IconSelectionViewDelegate.h */,
 			);
 			name = IconSelectionView;
 			sourceTree = "<group>";

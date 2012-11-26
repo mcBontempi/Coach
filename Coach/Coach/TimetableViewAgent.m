@@ -79,7 +79,6 @@
     }
 }
 
-
 -(void) TimetableViewControllerDelegate_startEditingWeek{
 }
 
@@ -115,5 +114,13 @@
     [self.delegate TimetableViewAgentDelegate_bookmarksPressed];
     
 }
+
+
+-(void) TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot{
+    // only modify stuff in this class
+    slot.activityType = activityType;
+    
+}
+
 
 @end

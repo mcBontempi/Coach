@@ -247,7 +247,7 @@ const CGFloat KExpandedSlotHeight = 200;
         // this is a slot row
         SlotCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Slot"];
         if (cell == nil) {
-            cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot"];
+            cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot" delegate:self];
             
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.textLabel.textColor = [UIColor blueColor];
@@ -477,6 +477,21 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;
 }
+
+
+
+
+
+-(void) SlotCellDelegate_activityTypeChanged:(TActivityType) activityType{
+    
+    NSArray* slots = self.currentWeek[self.indexPathBeingEdited.section];
+    Slot *slot = slots[self.indexPathBeingEdited.row];
+    
+    [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot ];
+}
+
+
+
 
 
 @end

@@ -1,12 +1,8 @@
 #import <UIKit/UIKit.h>
+#import "IconSelectionViewDelegate.h"
 
 @interface IconSelectionView : UIView
 
-@property (nonatomic, strong) NSArray *images;
-@property CGSize iconSize;
-@property NSInteger padding;
-@property NSInteger selectedIndex;
-
-- (id)initWithFrame:(CGRect)frame andImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex;
+- (id)initWithFrame:(CGRect)frame andImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate;
 
 @end

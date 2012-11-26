@@ -1,8 +1,21 @@
 #import "IconSelectionView.h"
 
+@interface IconSelectionView ()
+
+
+@property (nonatomic, strong) NSArray *images;
+@property CGSize iconSize;
+@property NSInteger padding;
+@property NSInteger selectedIndex;
+
+@property (nonatomic, weak) id<IconSelectionViewDelegate> delegate;
+
+@end
+
+
 @implementation IconSelectionView
 
-- (id)initWithFrame:(CGRect)frame andImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex;
+- (id)initWithFrame:(CGRect)frame andImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -10,6 +23,7 @@
         self.iconSize = iconSize;
         self.padding = padding;
         self.selectedIndex = selectedIndex;
+        self.delegate = delegate;
      
         [self setup];
     }
@@ -17,6 +31,10 @@
 }
 
 -(void) setup{
+    for (UIView *view in [self subviews])
+    {
+        [view removeFromSuperview];
+    }
     
     CGFloat x = 0;
     
@@ -26,19 +44,22 @@
         
         x+=self.padding;
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x,self.padding, self.iconSize.width, self.iconSize.height)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x,self.padding, self.iconSize.width, self.iconSize.height)];
+        button.tag = index;
         
-        imageView.image = image;
+        [button addTarget:self action:@selector(itemPressed:) forControlEvents:UIControlEventTouchUpInside];
+       
+        [button setImage:image forState:UIControlStateNormal ];
         
         x+=self.iconSize.width;
         
-        [self addSubview:imageView];
+        [self addSubview:button];
         
         if(self.selectedIndex == index){
-            imageView.alpha = 1.0;
+            button.alpha = 1.0;
         }
         else{
-            imageView.alpha = 0.5;
+            button.alpha = 0.5;
         }
         
         
@@ -52,6 +73,17 @@
 
     
 }
+
+- (void) itemPressed:(UIControl *)sender{
+    self.selectedIndex = sender.tag;
+    
+    [self setup];
+    
+    [self.delegate IconSelectionViewDelegate_iconSelected:self.selectedIndex];
+}
+
+
+
 
 
 
