@@ -64,4 +64,9 @@
 - (IBAction)competitivePressed:(id)sender {
     [self.delegate EffortViewControllerDelegate_effortPressed:EEffortCompetitive];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return YES;
+}
+
 @end

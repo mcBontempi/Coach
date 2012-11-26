@@ -44,8 +44,12 @@
     
     self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:timetableNavigationController leftViewController:listViewController];
     
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) 
     self.viewDeckViewController.leftLedge = 150;
-    
+        else
+            self.viewDeckViewController.leftLedge = 500;
+        
+        
      [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
     
     [self.viewDeckViewController openLeftView];

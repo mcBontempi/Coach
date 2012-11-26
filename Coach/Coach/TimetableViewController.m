@@ -46,12 +46,14 @@ const CGFloat KExpandedSlotHeight = 70;
         
         self.headerViews = [NSArray arrayWithArray:tempArray];
         
+        // ok, a bit iffy
         self.lastSectionUpdatedWhenDragging = -1;
         
         
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
                                                                                                target:self
                                                                                                action:@selector(bookmarksPressed)] animated:YES];
+        
         
     }
     
@@ -69,6 +71,13 @@ const CGFloat KExpandedSlotHeight = 70;
     [self setRightBarButtonEdit];
     
     self.selectedIndexes = [[NSMutableDictionary alloc] init];
+    
+ //   [self.tableView setBackgroundColor:[UIColor clearColor]]; // this is for iPhone
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPhone) {
+        [self.tableView setBackgroundView:nil];
+        [self.tableView setBackgroundView:[[UIView alloc] init]];
+    } // this is for iPad only
 }
 
 -(void) setRightBarButtonEdit{
@@ -238,13 +247,13 @@ const CGFloat KExpandedSlotHeight = 70;
         return cell;
     }
     else{
-
+        
         // this is a slot row
         SlotCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Slot"];
         if (cell == nil) {
             cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot"];
             
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.textLabel.textColor = [UIColor blueColor];
             UIColor *color = [UIColor whiteColor];
             cell.backgroundColor = color;
@@ -275,11 +284,6 @@ const CGFloat KExpandedSlotHeight = 70;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"didselect");
-}
-
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Deselect cell
     [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
     // Toggle 'selected' state
@@ -291,7 +295,6 @@ const CGFloat KExpandedSlotHeight = 70;
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 }
-*/
 
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -299,7 +302,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         Slot *slot = self.currentWeek[indexPath.section][indexPath.row];
-     
+        
         [self.tableView beginUpdates];
         NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
         [deleteArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
@@ -310,7 +313,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [self updateHeaderViewForSection:indexPath.section];
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-
+        
         [self.tableView beginUpdates];
         NSMutableArray *addArray = [[NSMutableArray alloc] init];
         [addArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
@@ -447,7 +450,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 -(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
-  
+    
     [self.tableView beginUpdates];
     
     [self deleteAllRows:UITableViewRowAnimationFade];
@@ -460,7 +463,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self updateAllHeaders];
     
     self.title = [NSString stringWithFormat:@"Week %d", weekIndex+1];
+    
+}
 
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return YES;
 }
 
 

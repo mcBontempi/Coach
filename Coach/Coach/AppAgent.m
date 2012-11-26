@@ -84,7 +84,7 @@
 }
 
 -(void) start{
-   //  [self startConfigWizard];
+    // [self startConfigWizard];
 
     [self.model makeTestData];
 

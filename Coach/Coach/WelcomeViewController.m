@@ -61,4 +61,9 @@
     
     [self.delegate WelcomeViewControllerDelegate_getStartedPressed];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return YES;
+}
+
 @end

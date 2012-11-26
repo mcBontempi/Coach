@@ -59,4 +59,10 @@
 - (IBAction)fullPressed:(id)sender {
     [self.delegate TypeSelectViewControllerDelegate_typePressed:ETypeFull];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+    return YES;
+}
+
+
 @end
