@@ -6,19 +6,14 @@
 #import "SlotCell.h"
 
 const CGFloat KSlotCellHeight = 40;
-const CGFloat KExpandedSlotHeight = 70;
+const CGFloat KExpandedSlotHeight = 200;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
 @property NSInteger lastSectionUpdatedWhenDragging;
-
-@property (nonatomic, strong) UISwipeGestureRecognizer *swipeGestureRecognizer;
-
+@property (nonatomic, strong) NSIndexPath *indexPathBeingEdited;
 @property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
-
-
-@property (nonatomic, strong) NSMutableDictionary *selectedIndexes;
 @end
 
 @implementation TimetableViewController
@@ -49,12 +44,9 @@ const CGFloat KExpandedSlotHeight = 70;
         // ok, a bit iffy
         self.lastSectionUpdatedWhenDragging = -1;
         
-        
         [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
                                                                                                target:self
                                                                                                action:@selector(bookmarksPressed)] animated:YES];
-        
-        
     }
     
     return self;
@@ -62,7 +54,6 @@ const CGFloat KExpandedSlotHeight = 70;
 
 -(void) bookmarksPressed{
     [self.delegate TimetableViewControllerDelegate_bookmarksPressed];
-    
 }
 
 -(void) viewDidLoad{
@@ -70,14 +61,10 @@ const CGFloat KExpandedSlotHeight = 70;
     
     [self setRightBarButtonEdit];
     
-    self.selectedIndexes = [[NSMutableDictionary alloc] init];
-    
- //   [self.tableView setBackgroundColor:[UIColor clearColor]]; // this is for iPhone
-    
     if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPhone) {
         [self.tableView setBackgroundView:nil];
         [self.tableView setBackgroundView:[[UIView alloc] init]];
-    } // this is for iPad only
+    }
 }
 
 -(void) setRightBarButtonEdit{
@@ -156,6 +143,11 @@ const CGFloat KExpandedSlotHeight = 70;
         [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
         
         [self deleteAddRows];
+        
+        self.indexPathBeingEdited = nil;
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+        
     }
 }
 
@@ -204,6 +196,12 @@ const CGFloat KExpandedSlotHeight = 70;
     
     [self updateAllHeaders];
     
+    self.indexPathBeingEdited = nil;
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
+    
+    
+    
 }
 
 -(NSArray*) currentWeek{
@@ -223,8 +221,6 @@ const CGFloat KExpandedSlotHeight = 70;
     NSInteger rowCount = [self.currentWeek[section] count];
     
     rowCount += self.tableView.isEditing ? 1 : 0;
-    
-    NSLog(@"%d   %d     %d",section,  rowCount,  self.tableView.isEditing ? 1 : 0);
     
     return rowCount;
 }
@@ -263,6 +259,11 @@ const CGFloat KExpandedSlotHeight = 70;
         cell.duration = slot.duration;
         cell.activityType = slot.activityType;
         
+        cell.cellExpandedForEditing = self.indexPathBeingEdited  && self.indexPathBeingEdited.row == indexPath.row && self.indexPathBeingEdited.section == indexPath.section;
+        
+        NSLog(@"cell.cellExpandedForEditing = %d", cell.cellExpandedForEditing);
+        
+        // overloaded metod does the cell layout
         cell.height = KSlotCellHeight;
         
         return cell;
@@ -271,29 +272,48 @@ const CGFloat KExpandedSlotHeight = 70;
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if([self cellIsSelected:indexPath])
+	if(self.indexPathBeingEdited && indexPath.row == self.indexPathBeingEdited.row && indexPath.section == self.indexPathBeingEdited.section)
 		return KExpandedSlotHeight;
     else
         return KSlotCellHeight;
 }
 
-- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
-	// Return whether the cell at the specified index path is selected or not
-	NSNumber *selectedIndex = [self.selectedIndexes objectForKey:indexPath];
-	return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Deselect cell
-    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
-    // Toggle 'selected' state
-    BOOL isSelected = ![self cellIsSelected:indexPath];
-    // Store cell 'selected' state keyed on indexPath
-    NSNumber *selectedIndex = [NSNumber numberWithBool:isSelected];
-    [self.selectedIndexes setObject:selectedIndex forKey:indexPath];
-    // This is where magic happens...
+  
+    NSArray* slots = self.currentWeek[indexPath.section];
+    
+    if(indexPath.row >= slots.count){
+        return;
+        
+    }
+    
+    NSIndexPath *lastSelectedIndexPath = self.indexPathBeingEdited;
+    
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if(self.indexPathBeingEdited && indexPath.row == self.indexPathBeingEdited.row && indexPath.section == self.indexPathBeingEdited.section){
+        self.indexPathBeingEdited = nil;
+    }
+    else{
+  
+        self.indexPathBeingEdited = indexPath;
+        
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        
+    }
+    
+  
     [self.tableView beginUpdates];
+   
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    if(lastSelectedIndexPath)
+        if(!(indexPath.row == lastSelectedIndexPath.row && indexPath.section == lastSelectedIndexPath.section))
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:lastSelectedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+   
+    
+    
     [self.tableView endUpdates];
+    
 }
 
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
@@ -354,31 +374,18 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(self.tableView.isEditing){
         
-        
-        NSInteger proposedRow = proposedDestinationIndexPath.row;
-        NSInteger count = [self.currentWeek[proposedDestinationIndexPath.section] count];
-        
-        NSLog(@"proposed row = %d count = %d",proposedRow, count  );
-        
-        
         if(proposedDestinationIndexPath.section ==  sourceIndexPath.section &&
            proposedDestinationIndexPath.row == [self.currentWeek[proposedDestinationIndexPath.section] count]){
             
             proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
-            
-            NSLog(@"changed 1");
             
             
         }
         else if(proposedDestinationIndexPath.row > [self.currentWeek[proposedDestinationIndexPath.section] count]){
             proposedDestinationIndexPath = [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row -1 inSection:proposedDestinationIndexPath.section];
             
-            NSLog(@"changed");
         }
     }
-    
-    NSLog(@"src = %d,%d  dst = %d,%d",sourceIndexPath.section,sourceIndexPath.row, proposedDestinationIndexPath.section,proposedDestinationIndexPath.row );
-    
     
     // WE MOVE THE DATA AROUND HERE SO WE CAN CALC THE DAY TOTALS ETC
     [self.delegate TimetableViewControllerDelegate_moveRowAtIndexPath:sourceIndexPath toIndexPath:proposedDestinationIndexPath];

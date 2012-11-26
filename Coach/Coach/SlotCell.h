@@ -6,5 +6,6 @@
 @property TActivityType activityType;
 
 -(void) setHeight:(CGFloat) height;
+@property BOOL cellExpandedForEditing;
 
 @end

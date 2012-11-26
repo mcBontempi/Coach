@@ -52,7 +52,7 @@
         
      [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
     
-    [self.viewDeckViewController openLeftView];
+  //  [self.viewDeckViewController openLeftView];
     
     [self showInitialWeek];
 }

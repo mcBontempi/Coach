@@ -90,6 +90,8 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
+		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F56366165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
@@ -233,6 +235,8 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D6E0FC64166380FD00237C80 /* IconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconSelectionView.h; path = Coach/IconSelectionView.h; sourceTree = "<group>"; };
+		D6E0FC65166380FD00237C80 /* IconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconSelectionView.m; path = Coach/IconSelectionView.m; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 		D61672C6160B3999001C3F15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6E0FC63166380B500237C80 /* IconSelectionView */,
 				D63AA69516384EF90074EA70 /* HeaderView */,
 				D61672B9160B37C2001C3F15 /* Graph */,
 			);
@@ -616,6 +621,15 @@
 				D6A776B516334DE900879C11 /* Utils.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		D6E0FC63166380B500237C80 /* IconSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D6E0FC64166380FD00237C80 /* IconSelectionView.h */,
+				D6E0FC65166380FD00237C80 /* IconSelectionView.m */,
+			);
+			name = IconSelectionView;
 			sourceTree = "<group>";
 		};
 		D6F5636816540F8D00E7617C /* Class Extensions */ = {
@@ -803,6 +817,7 @@
 				D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A8165BA6A9008325EB /* WrapController.m in Sources */,
 				85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */,
+				D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,6 +834,7 @@
 				D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A9165BA6A9008325EB /* WrapController.m in Sources */,
 				85C767AD165BA6BC008325EB /* IIViewDeckController.m in Sources */,
+				D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
