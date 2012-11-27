@@ -2,12 +2,15 @@
 #import "UIImage_ImageForActivityType.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "IconSelectionView.h"
+#import "SimpleHScroller.h"
 
 @interface SlotCell ()
 @property (nonatomic, strong) UIImageView *activityTypeImageView;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, strong) IconSelectionView *activitiesIconSelectionView;
+
+@property (nonatomic, strong) SimpleHScroller *simpleHScroller;
 
 @property (nonatomic, weak) id<SlotCellDelegate> delegate;
 
@@ -45,9 +48,18 @@
                                                                             padding:5
                                                                       selectedIndex:selectedIndex
                                                                            delegate:self];
-        
-        [self.contentView addSubview:self.activitiesIconSelectionView];
         self.activitiesIconSelectionView.alpha = 0.0;
+        
+        NSMutableArray *scrollerArray = [[NSMutableArray alloc] init];
+        
+        for(NSInteger i = 1 ; i <= 80 ; i++){
+            [scrollerArray addObject:[NSString niceStringFromDuration:i*15]];
+        }
+        
+        self.simpleHScroller = [[SimpleHScroller alloc] initWithFrame:CGRectZero items:scrollerArray];
+        
+        [self.contentView addSubview:self.simpleHScroller];
+        [self.contentView addSubview:self.activitiesIconSelectionView];
         [self.contentView addSubview:self.activityTypeImageView];
         [self.contentView addSubview:self.label];
     }
@@ -86,6 +98,7 @@
         self.activitiesIconSelectionView.alpha = 1.0;
         self.backgroundColor = [UIColor lightGrayColor];
         self.label.alpha = 0.0;
+        self.simpleHScroller.alpha = 1.0;
     }
     else{
         self.label.frame = CGRectZero;
@@ -109,6 +122,13 @@
         self.label.text = [NSString niceStringFromDuration:self.duration];
         
         self.backgroundColor = [UIColor whiteColor];
+        
+        const CGFloat hScrollerHeight = 80;
+        
+        self.simpleHScroller.frame = CGRectMake(iconPadding, (iconPadding*3) + height, 200, hScrollerHeight );
+        
+        self.simpleHScroller.alpha = 0.0;
+        
     }
 }
 
