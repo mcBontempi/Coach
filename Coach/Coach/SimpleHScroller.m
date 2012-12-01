@@ -14,12 +14,10 @@
         
         self.items = items;
     
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor lightGrayColor];
     }
     return self;
 }
-
-
 
 
 @end

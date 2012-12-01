@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface SimpleHScroller : UIView
+@interface SimpleHScroller : UIScrollView
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray*) items;
 

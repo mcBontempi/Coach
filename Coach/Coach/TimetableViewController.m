@@ -6,7 +6,7 @@
 #import "SlotCell.h"
 
 const CGFloat KSlotCellHeight = 40;
-const CGFloat KExpandedSlotHeight = 200;
+const CGFloat KExpandedSlotHeight = 100;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

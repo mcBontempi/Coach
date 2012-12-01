@@ -44,7 +44,7 @@
         
         
         self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithFrame:CGRectZero andImages:imageArray
-                                                                           iconSize:CGSizeMake(30,30)
+                                                                           iconSize:CGSizeMake(40,40)
                                                                             padding:5
                                                                       selectedIndex:selectedIndex
                                                                            delegate:self];
@@ -92,40 +92,40 @@
 }
 
 -(void) setHeight:(CGFloat) height{
+    const CGFloat iconPadding = 5;
+    const CGFloat textPadding = 5;
+    
+    CGFloat size = height - (iconPadding *2);
+    
+    self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
+    self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, size, size);
+    
+    CGFloat labelOffsetX = (iconPadding*2) + size + textPadding;
+    CGFloat textHeight = height - (textPadding *2);
+    
+    self.label.frame = CGRectMake(labelOffsetX,textPadding,self.contentView.frame.size.width - labelOffsetX - (textPadding *2), textHeight);
+    self.label.text = [NSString niceStringFromDuration:self.duration];
+    
+    self.backgroundColor = [UIColor whiteColor];
+    
+    const CGFloat hScrollerHeight = 30;
+    
+    self.simpleHScroller.frame = CGRectMake(iconPadding, (iconPadding*3) + height, 200, hScrollerHeight );
+    
     
     if(self.cellExpandedForEditing){
         self.activityTypeImageView.alpha = 0.0;
         self.activitiesIconSelectionView.alpha = 1.0;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.label.alpha = 0.0;
         self.simpleHScroller.alpha = 1.0;
     }
     else{
-        self.label.frame = CGRectZero;
         self.activityTypeImageView.alpha = 1.0;
         self.activitiesIconSelectionView.alpha = 0.0;
         
         self.label.alpha = 1.0;
         
-        const CGFloat iconPadding = 5;
-        const CGFloat textPadding = 5;
-        
-        CGFloat size = height - (iconPadding *2);
-        
-        self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
-        self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, size, size);
-        
-        CGFloat labelOffsetX = (iconPadding*2) + size + textPadding;
-        CGFloat textHeight = height - (textPadding *2);
-        
-        self.label.frame = CGRectMake(labelOffsetX,textPadding,self.contentView.frame.size.width - labelOffsetX - (textPadding *2), textHeight);
-        self.label.text = [NSString niceStringFromDuration:self.duration];
-        
-        self.backgroundColor = [UIColor whiteColor];
-        
-        const CGFloat hScrollerHeight = 80;
-        
-        self.simpleHScroller.frame = CGRectMake(iconPadding, (iconPadding*3) + height, 200, hScrollerHeight );
         
         self.simpleHScroller.alpha = 0.0;
         
