@@ -15,9 +15,9 @@
 
 @implementation IconSelectionView
 
-- (id)initWithFrame:(CGRect)frame andImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate
+- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(point.x, point.y, 0,0)];
     if (self) {
         self.images = images;
         self.iconSize = iconSize;
@@ -67,6 +67,9 @@
     }
     
     CGRect frame = self.frame;
+    
+    // we set the actual size here, theres no point setting it from the initializer
+    // as we dont know the final size.
     frame.size = CGSizeMake(x+self.padding, self.padding*2 + self.iconSize.height);
     
     self.frame = frame;

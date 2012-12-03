@@ -85,6 +85,7 @@
 		D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
 		D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
 		D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
+		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -226,6 +227,8 @@
 		D65CE4541643012200D3B0CB /* ToListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToListViewControllerDelegate.h; path = Coach/ToListViewControllerDelegate.h; sourceTree = "<group>"; };
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
 		D67D7978164854FE00A63FF8 /* ModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelDelegate.h; sourceTree = "<group>"; };
+		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
+		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769B162DEF6400879C11 /* TypeSelectViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TypeSelectViewControllerDelegate.h; path = Coach/TypeSelectViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 				D6F56364165409AE00E7617C /* SlotCell.m */,
 				D6E0FC691663B92600237C80 /* SlotCellDelegate.h */,
 				85C767B5165BB0A4008325EB /* TimetableViewAgentDelegate.h */,
+				D6947962166A5ABB00F551FD /* SlotEditingCell.h */,
+				D6947963166A5ABB00F551FD /* SlotEditingCell.m */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";
@@ -837,6 +842,7 @@
 				85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */,
 				D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */,
 				D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */,
+				D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

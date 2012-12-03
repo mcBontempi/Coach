@@ -4,6 +4,7 @@
 #import "Utils.h"
 #import "HeaderView.h"
 #import "SlotCell.h"
+#import "SlotEditingCell.h"
 
 const CGFloat KSlotCellHeight = 40;
 const CGFloat KExpandedSlotHeight = 100;
@@ -12,7 +13,7 @@ const CGFloat KExpandedSlotHeight = 100;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
 @property NSInteger lastSectionUpdatedWhenDragging;
-@property (nonatomic, strong) NSIndexPath *indexPathBeingEdited;
+@property (nonatomic, strong) Slot *slotBeingEdited;
 @property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
 @end
 
@@ -144,7 +145,7 @@ const CGFloat KExpandedSlotHeight = 100;
         
         [self deleteAddRows];
         
-        self.indexPathBeingEdited = nil;
+        self.slotBeingEdited = nil;
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
         
@@ -196,7 +197,7 @@ const CGFloat KExpandedSlotHeight = 100;
     
     [self updateAllHeaders];
     
-    self.indexPathBeingEdited = nil;
+    self.slotBeingEdited = nil;
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     
@@ -225,11 +226,31 @@ const CGFloat KExpandedSlotHeight = 100;
     return rowCount;
 }
 
+-(Slot*) slotForRowAtIndexPath:(NSIndexPath*)indexPath{
+    NSArray* slots = self.currentWeek[indexPath.section];
+    if(indexPath.row >= slots.count) return nil;
+    Slot *slot = slots[indexPath.row];
+    
+    return slot;
+}
+
+-(NSIndexPath*) indexPathForSlot:(Slot*) slot{
+    for(NSInteger section = 0 ; section < 7 ; section++){
+        NSArray* day = self.currentWeek[section];
+        for(NSInteger row = 0 ; row < day.count ; row++){
+            if(slot == day[row]){
+                NSLog(@"%d  %d", section, row);
+                return [NSIndexPath indexPathForRow:row inSection:section];
+            }
+        }
+    }
+    return nil;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSArray* slots = self.currentWeek[indexPath.section];
-    
+
     if(indexPath.row >= slots.count){
         // this is an add row
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Add"];
@@ -244,73 +265,87 @@ const CGFloat KExpandedSlotHeight = 100;
     }
     else{
         
-        // this is a slot row
-        SlotCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Slot"];
-        if (cell == nil) {
-            cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot" delegate:self];
+        NSLog(@"section = %d : row = %d", indexPath.section, indexPath.row);
+        BOOL cellExpandedForEditing = self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath];
+        NSLog(@"cell expanded = %d", cellExpandedForEditing);
+        
+
+        
+        
+        if(cellExpandedForEditing){
             
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.textLabel.textColor = [UIColor blueColor];
-            UIColor *color = [UIColor whiteColor];
-            cell.backgroundColor = color;
+            // this is a slot row
+            SlotEditingCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SlotEditing"];
+            if (cell == nil) {
+                cell = [[SlotEditingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SlotEditing" delegate:self];
+                
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.textLabel.textColor = [UIColor blueColor];
+      
+            }
+          
+            Slot *slot = [self slotForRowAtIndexPath:indexPath];
+            cell.duration = slot.duration;
+            cell.activityType = slot.activityType;
+            
+            return cell;;
         }
-        
-        Slot *slot = slots[indexPath.row];
-        cell.duration = slot.duration;
-        cell.activityType = slot.activityType;
-        
-        cell.cellExpandedForEditing = self.indexPathBeingEdited  && self.indexPathBeingEdited.row == indexPath.row && self.indexPathBeingEdited.section == indexPath.section;
-        
-        NSLog(@"cell.cellExpandedForEditing = %d", cell.cellExpandedForEditing);
-        
-        // overloaded metod does the cell layout
-        cell.height = KSlotCellHeight;
-        
-        return cell;
+        else{
+            // this is a slot row
+            SlotCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Slot"];
+            if (cell == nil) {
+                cell = [[SlotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Slot"];
+                
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.textLabel.textColor = [UIColor blueColor];
+                UIColor *color = [UIColor whiteColor];
+                cell.backgroundColor = color;
+            }
+            
+            Slot *slot = [self slotForRowAtIndexPath:indexPath];
+            cell.duration = slot.duration;
+            cell.activityType = slot.activityType;
+            
+            
+            return cell;
+            
+        }
+    
     }
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if(self.indexPathBeingEdited && indexPath.row == self.indexPathBeingEdited.row && indexPath.section == self.indexPathBeingEdited.section)
+	if([self slotForRowAtIndexPath:indexPath] && self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath])
 		return KExpandedSlotHeight;
     else
         return KSlotCellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
+    
     NSArray* slots = self.currentWeek[indexPath.section];
     
     if(indexPath.row >= slots.count){
         return;
-        
     }
     
-    NSIndexPath *lastSelectedIndexPath = self.indexPathBeingEdited;
-    
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    if(self.indexPathBeingEdited && indexPath.row == self.indexPathBeingEdited.row && indexPath.section == self.indexPathBeingEdited.section){
-        self.indexPathBeingEdited = nil;
-    }
-    else{
-  
-        self.indexPathBeingEdited = indexPath;
-        
-        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-        
-    }
-    
-  
+    // take a temp here so we do a proper redraw in cellforrowatindexpath;
+    Slot *tempSlot = self.slotBeingEdited;
+    self.slotBeingEdited = nil;
+ 
     [self.tableView beginUpdates];
-   
+    
+    if(tempSlot)
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[self indexPathForSlot:tempSlot]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+        if(!(tempSlot && tempSlot== [self slotForRowAtIndexPath:indexPath])){
+        self.slotBeingEdited= [self slotForRowAtIndexPath:indexPath];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    }
+    
+    
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    if(lastSelectedIndexPath)
-        if(!(indexPath.row == lastSelectedIndexPath.row && indexPath.section == lastSelectedIndexPath.section))
-            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:lastSelectedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-   
-    
     
     [self.tableView endUpdates];
     
@@ -483,11 +518,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 -(void) SlotCellDelegate_activityTypeChanged:(TActivityType) activityType{
+
     
-    NSArray* slots = self.currentWeek[self.indexPathBeingEdited.section];
-    Slot *slot = slots[self.indexPathBeingEdited.row];
-    
-    [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot ];
+    [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingEdited];
 }
 
 
