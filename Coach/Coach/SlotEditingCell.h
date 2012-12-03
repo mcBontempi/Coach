@@ -1,15 +1,12 @@
 #import <UIKit/UIKit.h>
 
 #import "IconSelectionViewDelegate.h"
-#import "SlotCellDelegate.h"
+#import "SlotEditingCellDelegate.h"
+#import "SimpleHScrollerDelegate.h"
 
-@interface SlotEditingCell : UITableViewCell <IconSelectionViewDelegate>
+@interface SlotEditingCell : UITableViewCell <IconSelectionViewDelegate, SimpleHScrollerDelegate>
 
-@property NSInteger duration;
-@property TActivityType activityType;
-@property BOOL cellExpandedForEditing;
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotCellDelegate>) delegate;
-
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotEditingCellDelegate>) delegate;
+-(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType;
 
 @end

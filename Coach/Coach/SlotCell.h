@@ -3,9 +3,9 @@
 
 @interface SlotCell : UITableViewCell
 
-@property NSInteger duration;
-@property TActivityType activityType;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotCellDelegate>) delegate;
+
+-(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType;
 
 @end

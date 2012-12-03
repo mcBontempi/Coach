@@ -45,6 +45,13 @@ const CGFloat paddingForWarning = 5;
     return self;
 }
 
+
+-(void) layoutSubviews{
+    [super layoutSubviews];
+    
+    
+}
+
 -(void) animateIn:(UILabel *) label{
     
     [UIView animateWithDuration:0.2 animations:^{

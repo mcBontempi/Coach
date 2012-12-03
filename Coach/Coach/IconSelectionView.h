@@ -3,6 +3,8 @@
 
 @interface IconSelectionView : UIView
 
-- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate;
+- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate;
+
+-(void) setupWithSelectedIndex:(NSInteger) selectedIndex;
 
 @end

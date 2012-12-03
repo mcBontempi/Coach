@@ -6,7 +6,6 @@
 @property (nonatomic, strong) NSArray *images;
 @property CGSize iconSize;
 @property NSInteger padding;
-@property NSInteger selectedIndex;
 
 @property (nonatomic, weak) id<IconSelectionViewDelegate> delegate;
 
@@ -15,22 +14,20 @@
 
 @implementation IconSelectionView
 
-- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding selectedIndex:(NSInteger) selectedIndex delegate:(id<IconSelectionViewDelegate>) delegate
+- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate
 {
     self = [super initWithFrame:CGRectMake(point.x, point.y, 0,0)];
     if (self) {
         self.images = images;
         self.iconSize = iconSize;
         self.padding = padding;
-        self.selectedIndex = selectedIndex;
         self.delegate = delegate;
      
-        [self setup];
     }
     return self;
 }
 
--(void) setup{
+-(void) setupWithSelectedIndex:(NSInteger) selectedIndex{
     for (UIView *view in [self subviews])
     {
         [view removeFromSuperview];
@@ -55,7 +52,7 @@
         
         [self addSubview:button];
         
-        if(self.selectedIndex == index){
+        if(selectedIndex == index){
             button.alpha = 1.0;
         }
         else{
@@ -78,11 +75,9 @@
 }
 
 - (void) itemPressed:(UIControl *)sender{
-    self.selectedIndex = sender.tag;
+    [self setupWithSelectedIndex:sender.tag];
     
-    [self setup];
-    
-    [self.delegate IconSelectionViewDelegate_iconSelected:self.selectedIndex];
+    [self.delegate IconSelectionViewDelegate_iconSelected:sender.tag];
 }
 
 

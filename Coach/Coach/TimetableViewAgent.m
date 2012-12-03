@@ -115,12 +115,18 @@
     
 }
 
-
 -(void) TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot{
-    // only modify stuff in this class
     slot.activityType = activityType;
-    
 }
 
+-(void) TimetableViewControllerDelegate_durationChanged:(NSInteger) duration slot:(Slot*) slot{
+    slot.duration = duration;
+}
 
+-(void) TimetableViewControllerDelegate_checked:(BOOL)checked slot:(Slot *)slot{
+    slot.checked = checked;
+    
+    [self saveCurrentWeek];
+  //  [self refetchCurrentWeek];
+}
 @end

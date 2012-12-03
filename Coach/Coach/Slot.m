@@ -4,10 +4,22 @@
 
 
 -(id) initWithSlot:(Slot*) slot{
-    if(self = [self initWithDuration:slot.duration startTime:slot.start activityType:slot.activityType uid:slot.uid]){
+    if(self = [self initWithDuration:slot.duration startTime:slot.start activityType:slot.activityType uid:slot.uid checked:slot.checked]){
     }
     return self;
 }
+
+
+-(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType uid:(NSString *)uid checked:(BOOL) checked{
+    {
+        if(self = [self initWithDuration:duration startTime: start activityType: activityType uid:uid]){
+            self.checked = checked;
+        }
+    }
+    return self;
+}
+
+
 
 -(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType uid:(NSString *)uid{
     {
@@ -31,7 +43,7 @@
 -(id) initWithDuration:(NSInteger) duration activityType:(TActivityType) activityType{
     
     if(self = [self init]){
-        self.duration = duration /5 * 5;
+        self.duration = duration /15 * 15;
         self.activityType = activityType;
     }
     

@@ -5,38 +5,26 @@
 #import "SimpleHScroller.h"
 
 @interface SlotEditingCell ()
-@property (nonatomic, strong) UIImageView *activityTypeImageView;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, strong) IconSelectionView *activitiesIconSelectionView;
-
 @property (nonatomic, strong) SimpleHScroller *simpleHScroller;
+@property (nonatomic, weak) id<SlotEditingCellDelegate> delegate;
 
-@property (nonatomic, weak) id<SlotCellDelegate> delegate;
+
+@property NSInteger duration;
+@property TActivityType activityType;
 
 @end
 
 @implementation SlotEditingCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotCellDelegate>) delegate
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotEditingCellDelegate>) delegate
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor whiteColor];
         
         self.delegate = delegate;
-        
-        self.activityTypeImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        
-        self.label = [[UILabel alloc] initWithFrame:CGRectZero];
-        self.label.textColor = [UIColor blackColor];
-        self.label.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
-        self.label.backgroundColor = [UIColor clearColor];
-        
-        
-        NSInteger selectedIndex = 2;
-        
         
         NSMutableArray *imageArray = [[NSMutableArray alloc] init];
         
@@ -44,15 +32,11 @@
             [imageArray addObject:[UIImage imageForActivityType:number.integerValue]];
         }
         
-        
-        
-        self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(5,5)
+        self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(0,40)
                                                                              images:imageArray
-                                                                           iconSize:CGSizeMake(40,40)
+                                                                           iconSize:CGSizeMake(50,50)
                                                                             padding:5
-                                                                      selectedIndex:selectedIndex
                                                                            delegate:self];
-        self.activitiesIconSelectionView.alpha = 0.0;
         
         NSMutableArray *scrollerArray = [[NSMutableArray alloc] init];
         
@@ -60,18 +44,31 @@
             [scrollerArray addObject:[NSString niceStringFromDuration:i*15]];
         }
         
-        self.simpleHScroller = [[SimpleHScroller alloc] initWithFrame:CGRectZero items:scrollerArray];
+        self.simpleHScroller = [[SimpleHScroller alloc] initWithPoint:CGPointMake(5,103) items:scrollerArray delegate:self];
+        
+        
+        UIImageView *upImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"up.png"]];
+        
+        upImageView.frame = CGRectMake(100,0,50,50);
+        
+        
+        [self.contentView addSubview:upImageView];
+        
         
         [self.contentView addSubview:self.simpleHScroller];
         [self.contentView addSubview:self.activitiesIconSelectionView];
-        [self.contentView addSubview:self.activityTypeImageView];
-        [self.contentView addSubview:self.label];
+
     }
     return self;
 }
 
+-(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType{
+    [self.activitiesIconSelectionView setupWithSelectedIndex:activityType];
+    [self.simpleHScroller setupWithDuration:duration];
+}
+
 -(NSArray*) activityTypeOrdering{
-    return [NSArray arrayWithObjects:[NSNumber numberWithInteger:EActivityTypeSwim], [NSNumber numberWithInteger:EActivityTypeBike],[NSNumber numberWithInteger:EActivityTypeRun],nil];
+    return [NSArray arrayWithObjects:[NSNumber numberWithInteger:EActivityTypeSwim], [NSNumber numberWithInteger:EActivityTypeBike],[NSNumber numberWithInteger:EActivityTypeRun], [NSNumber numberWithInteger:EActivityTypeStrengthAndConditioning],nil];
     
 }
 
@@ -91,54 +88,13 @@
     return number.integerValue;
 }
 
-
--(void)reload{
-}
-
--(void) setHeight:(CGFloat) height{
-    const CGFloat iconPadding = 5;
-    const CGFloat textPadding = 5;
-    
-    CGFloat size = height - (iconPadding *2);
-    
-    self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
-    self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, size, size);
-    
-    CGFloat labelOffsetX = (iconPadding*2) + size + textPadding;
-    CGFloat textHeight = height - (textPadding *2);
-    
-    self.label.frame = CGRectMake(labelOffsetX,textPadding,self.contentView.frame.size.width - labelOffsetX - (textPadding *2), textHeight);
-    self.label.text = [NSString niceStringFromDuration:self.duration];
-    
-    self.backgroundColor = [UIColor whiteColor];
-    
-    const CGFloat hScrollerHeight = 30;
-    
-    self.simpleHScroller.frame = CGRectMake(iconPadding, (iconPadding*3) + height, 200, hScrollerHeight );
-    
-    
-    if(self.cellExpandedForEditing){
-        self.activityTypeImageView.alpha = 0.0;
-        self.activitiesIconSelectionView.alpha = 1.0;
-        self.backgroundColor = [UIColor whiteColor];
-        self.label.alpha = 0.0;
-        self.simpleHScroller.alpha = 1.0;
-    }
-    else{
-        self.activityTypeImageView.alpha = 1.0;
-        self.activitiesIconSelectionView.alpha = 0.0;
-        
-        self.label.alpha = 1.0;
-        
-        
-        self.simpleHScroller.alpha = 0.0;
-        
-    }
-}
-
-
 -(void) IconSelectionViewDelegate_iconSelected:(NSInteger) iconIndex{
-    [self.delegate SlotCellDelegate_activityTypeChanged:[self activityTpeForIndex:iconIndex]];
+    [self.delegate SlotEditingCellDelegate_activityTypeChanged:[self activityTpeForIndex:iconIndex]];
+}
+
+-(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration{
+    [self.delegate SlotEditingCellDelegate_durationChanged:duration];
+    
 }
 
 @end

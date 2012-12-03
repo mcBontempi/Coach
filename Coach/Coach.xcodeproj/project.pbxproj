@@ -91,6 +91,24 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D6DCF56A166CDFD200539164 /* strengthandconditioning.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF569166CDFD200539164 /* strengthandconditioning.png */; };
+		D6DCF56C166CE2FE00539164 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF56B166CE2FE00539164 /* up.png */; };
+		D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF56F166CE4DD00539164 /* CheckboxButton.m */; };
+		D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF56F166CE4DD00539164 /* CheckboxButton.m */; };
+		D6DCF576166CE4EF00539164 /* tickbox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF572166CE4EF00539164 /* tickbox_off.png */; };
+		D6DCF577166CE4EF00539164 /* tickbox_off.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF572166CE4EF00539164 /* tickbox_off.png */; };
+		D6DCF578166CE4EF00539164 /* tickbox_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */; };
+		D6DCF579166CE4EF00539164 /* tickbox_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */; };
+		D6DCF57A166CE4EF00539164 /* tickbox_on.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF574166CE4EF00539164 /* tickbox_on.png */; };
+		D6DCF57B166CE4EF00539164 /* tickbox_on.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF574166CE4EF00539164 /* tickbox_on.png */; };
+		D6DCF57C166CE4EF00539164 /* tickbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */; };
+		D6DCF57D166CE4EF00539164 /* tickbox_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */; };
+		D6DCF585166D13DA00539164 /* checked.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF581166D13DA00539164 /* checked.wav */; };
+		D6DCF586166D13DA00539164 /* delete.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF582166D13DA00539164 /* delete.wav */; };
+		D6DCF587166D13DA00539164 /* new.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF583166D13DA00539164 /* new.wav */; };
+		D6DCF588166D13DA00539164 /* slide.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF584166D13DA00539164 /* slide.wav */; };
+		D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58B166D147200539164 /* AVFoundation.framework */; };
+		D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58D166D160000539164 /* AudioToolbox.framework */; };
 		D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
@@ -240,6 +258,22 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D6DCF567166CD08800539164 /* SimpleHScrollerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleHScrollerDelegate.h; path = Coach/SimpleHScrollerDelegate.h; sourceTree = "<group>"; };
+		D6DCF569166CDFD200539164 /* strengthandconditioning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = strengthandconditioning.png; path = Coach/assets/strengthandconditioning.png; sourceTree = "<group>"; };
+		D6DCF56B166CE2FE00539164 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Coach/assets/up.png; sourceTree = "<group>"; };
+		D6DCF56E166CE4DD00539164 /* CheckboxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxButton.h; sourceTree = "<group>"; };
+		D6DCF56F166CE4DD00539164 /* CheckboxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxButton.m; sourceTree = "<group>"; };
+		D6DCF572166CE4EF00539164 /* tickbox_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tickbox_off.png; path = Coach/assets/tickbox_off.png; sourceTree = "<group>"; };
+		D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tickbox_off@2x.png"; path = "Coach/assets/tickbox_off@2x.png"; sourceTree = "<group>"; };
+		D6DCF574166CE4EF00539164 /* tickbox_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tickbox_on.png; path = Coach/assets/tickbox_on.png; sourceTree = "<group>"; };
+		D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tickbox_on@2x.png"; path = "Coach/assets/tickbox_on@2x.png"; sourceTree = "<group>"; };
+		D6DCF57E166CEFDD00539164 /* SlotEditingCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCellDelegate.h; path = Coach/SlotEditingCellDelegate.h; sourceTree = "<group>"; };
+		D6DCF581166D13DA00539164 /* checked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = checked.wav; path = Coach/assets/checked.wav; sourceTree = "<group>"; };
+		D6DCF582166D13DA00539164 /* delete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = delete.wav; path = Coach/assets/delete.wav; sourceTree = "<group>"; };
+		D6DCF583166D13DA00539164 /* new.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = new.wav; path = Coach/assets/new.wav; sourceTree = "<group>"; };
+		D6DCF584166D13DA00539164 /* slide.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = slide.wav; path = Coach/assets/slide.wav; sourceTree = "<group>"; };
+		D6DCF58B166D147200539164 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D6DCF58D166D160000539164 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6E0FC64166380FD00237C80 /* IconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconSelectionView.h; path = Coach/IconSelectionView.h; sourceTree = "<group>"; };
 		D6E0FC65166380FD00237C80 /* IconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconSelectionView.m; path = Coach/IconSelectionView.m; sourceTree = "<group>"; };
 		D6E0FC681663B7FC00237C80 /* IconSelectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IconSelectionViewDelegate.h; path = Coach/IconSelectionViewDelegate.h; sourceTree = "<group>"; };
@@ -261,6 +295,8 @@
 				852CF7941608A7E6009E249F /* Foundation.framework in Frameworks */,
 				852CF7961608A7E6009E249F /* CoreGraphics.framework in Frameworks */,
 				85C767AF165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
+				D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */,
+				D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +352,8 @@
 		852CF7901608A7E6009E249F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCF58D166D160000539164 /* AudioToolbox.framework */,
+				D6DCF58B166D147200539164 /* AVFoundation.framework */,
 				85C767AE165BA8C6008325EB /* QuartzCore.framework */,
 				852CF7911608A7E6009E249F /* UIKit.framework */,
 				852CF7931608A7E6009E249F /* Foundation.framework */,
@@ -328,6 +366,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
 				85C7679C165BA669008325EB /* ViewDeck */,
 				850D261F160B78620034A743 /* Agents */,
 				852CF7A01608A7E7009E249F /* AppDelegate.h */,
@@ -460,6 +499,7 @@
 				85C767B5165BB0A4008325EB /* TimetableViewAgentDelegate.h */,
 				D6947962166A5ABB00F551FD /* SlotEditingCell.h */,
 				D6947963166A5ABB00F551FD /* SlotEditingCell.m */,
+				D6DCF57E166CEFDD00539164 /* SlotEditingCellDelegate.h */,
 			);
 			name = Timetable;
 			sourceTree = "<group>";
@@ -503,11 +543,8 @@
 		D61672E51614E868001C3F15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				D63B126B165D0C4A0045A725 /* landingpageicon.png */,
-				D63B1258165B81960045A725 /* bike.png */,
-				D63B1259165B81960045A725 /* run.png */,
-				D63B125A165B81960045A725 /* swim.png */,
-				857D515F164BF40C00527584 /* noEntry.png */,
+				D6DCF580166D121D00539164 /* SFX */,
+				D6DCF57F166D120F00539164 /* GFX */,
 			);
 			name = Assets;
 			path = ..;
@@ -636,6 +673,44 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		D6DCF56D166CE4CB00539164 /* CheckboxButton */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF56E166CE4DD00539164 /* CheckboxButton.h */,
+				D6DCF56F166CE4DD00539164 /* CheckboxButton.m */,
+			);
+			name = CheckboxButton;
+			sourceTree = "<group>";
+		};
+		D6DCF57F166D120F00539164 /* GFX */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF572166CE4EF00539164 /* tickbox_off.png */,
+				D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */,
+				D6DCF574166CE4EF00539164 /* tickbox_on.png */,
+				D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */,
+				D6DCF56B166CE2FE00539164 /* up.png */,
+				D6DCF569166CDFD200539164 /* strengthandconditioning.png */,
+				D63B126B165D0C4A0045A725 /* landingpageicon.png */,
+				D63B1258165B81960045A725 /* bike.png */,
+				D63B1259165B81960045A725 /* run.png */,
+				D63B125A165B81960045A725 /* swim.png */,
+				857D515F164BF40C00527584 /* noEntry.png */,
+			);
+			name = GFX;
+			sourceTree = "<group>";
+		};
+		D6DCF580166D121D00539164 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF581166D13DA00539164 /* checked.wav */,
+				D6DCF582166D13DA00539164 /* delete.wav */,
+				D6DCF583166D13DA00539164 /* new.wav */,
+				D6DCF584166D13DA00539164 /* slide.wav */,
+			);
+			name = SFX;
+			sourceTree = "<group>";
+		};
 		D6E0FC63166380B500237C80 /* IconSelectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +726,7 @@
 			children = (
 				D6E0FC6B1663D31500237C80 /* SimpleHScroller.h */,
 				D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */,
+				D6DCF567166CD08800539164 /* SimpleHScrollerDelegate.h */,
 			);
 			name = SimpleHScroller;
 			sourceTree = "<group>";
@@ -764,6 +840,16 @@
 				D63B125D165B81960045A725 /* run.png in Resources */,
 				D63B125F165B81960045A725 /* swim.png in Resources */,
 				D63B126C165D0C4A0045A725 /* landingpageicon.png in Resources */,
+				D6DCF56A166CDFD200539164 /* strengthandconditioning.png in Resources */,
+				D6DCF56C166CE2FE00539164 /* up.png in Resources */,
+				D6DCF576166CE4EF00539164 /* tickbox_off.png in Resources */,
+				D6DCF578166CE4EF00539164 /* tickbox_off@2x.png in Resources */,
+				D6DCF57A166CE4EF00539164 /* tickbox_on.png in Resources */,
+				D6DCF57C166CE4EF00539164 /* tickbox_on@2x.png in Resources */,
+				D6DCF585166D13DA00539164 /* checked.wav in Resources */,
+				D6DCF586166D13DA00539164 /* delete.wav in Resources */,
+				D6DCF587166D13DA00539164 /* new.wav in Resources */,
+				D6DCF588166D13DA00539164 /* slide.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +864,10 @@
 				D63B125E165B81960045A725 /* run.png in Resources */,
 				D63B1260165B81960045A725 /* swim.png in Resources */,
 				D63B126D165D0C4A0045A725 /* landingpageicon.png in Resources */,
+				D6DCF577166CE4EF00539164 /* tickbox_off.png in Resources */,
+				D6DCF579166CE4EF00539164 /* tickbox_off@2x.png in Resources */,
+				D6DCF57B166CE4EF00539164 /* tickbox_on.png in Resources */,
+				D6DCF57D166CE4EF00539164 /* tickbox_on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +933,7 @@
 				D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */,
 				D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */,
+				D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +952,7 @@
 				85C767AD165BA6BC008325EB /* IIViewDeckController.m in Sources */,
 				D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */,
 				D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */,
+				D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

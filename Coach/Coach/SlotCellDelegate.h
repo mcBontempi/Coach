@@ -3,6 +3,6 @@
 
 @protocol SlotCellDelegate <NSObject>
 
--(void) SlotCellDelegate_activityTypeChanged:(TActivityType) activityType;
+-(void) SlotCellDelegate_checked:(BOOL) checked identifier:(id) identifier;
 
 @end
