@@ -134,6 +134,9 @@ const CGFloat KExpandedSlotHeight = 100;
         [self addAddRows];
     }
     else{
+        // get this before we go messing with the data
+        NSIndexPath *currentEditingIndexPath = [self indexPathForSlot:self.slotBeingEdited];
+        
         
         [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
         
@@ -145,12 +148,18 @@ const CGFloat KExpandedSlotHeight = 100;
         
         [self deleteAddRows];
         
-        self.slotBeingEdited = nil;
         [self.tableView beginUpdates];
+        self.slotBeingEdited = nil;
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:currentEditingIndexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
+        
         [self.tableView endUpdates];
+        
+
         
     }
 }
+
+
 
 -(void) deleteAllRows:(UITableViewRowAnimation) animation{
     NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
@@ -176,6 +185,11 @@ const CGFloat KExpandedSlotHeight = 100;
     
 }
 -(void) cancelItemPressed{
+    
+    // get this before we go messing with the data
+    NSIndexPath *currentEditingIndexPath = [self indexPathForSlot:self.slotBeingEdited];
+    
+    
     [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
     
     
@@ -197,8 +211,10 @@ const CGFloat KExpandedSlotHeight = 100;
     
     [self updateAllHeaders];
     
-    self.slotBeingEdited = nil;
     [self.tableView beginUpdates];
+    self.slotBeingEdited = nil;
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:currentEditingIndexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
+    
     [self.tableView endUpdates];
     
     
@@ -250,7 +266,7 @@ const CGFloat KExpandedSlotHeight = 100;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSArray* slots = self.currentWeek[indexPath.section];
-
+    
     if(indexPath.row >= slots.count){
         // this is an add row
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Add"];
@@ -269,8 +285,6 @@ const CGFloat KExpandedSlotHeight = 100;
         BOOL cellExpandedForEditing = self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath];
         NSLog(@"cell expanded = %d", cellExpandedForEditing);
         
-
-        
         
         if(cellExpandedForEditing){
             
@@ -281,9 +295,9 @@ const CGFloat KExpandedSlotHeight = 100;
                 
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 cell.textLabel.textColor = [UIColor blueColor];
-      
+                
             }
-          
+            
             Slot *slot = [self slotForRowAtIndexPath:indexPath];
             cell.duration = slot.duration;
             cell.activityType = slot.activityType;
@@ -310,7 +324,7 @@ const CGFloat KExpandedSlotHeight = 100;
             return cell;
             
         }
-    
+        
     }
 }
 
@@ -323,30 +337,27 @@ const CGFloat KExpandedSlotHeight = 100;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    // you cant expand the add row row!
     NSArray* slots = self.currentWeek[indexPath.section];
-    
     if(indexPath.row >= slots.count){
         return;
     }
     
-    // take a temp here so we do a proper redraw in cellforrowatindexpath;
-    Slot *tempSlot = self.slotBeingEdited;
-    self.slotBeingEdited = nil;
- 
-    [self.tableView beginUpdates];
+    NSMutableArray *reloadArray = [[NSMutableArray alloc] initWithObjects:indexPath, nil];
     
-    if(tempSlot)
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[self indexPathForSlot:tempSlot]] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-        if(!(tempSlot && tempSlot== [self slotForRowAtIndexPath:indexPath])){
-        self.slotBeingEdited= [self slotForRowAtIndexPath:indexPath];
-        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+    // we want to update the last selected cell
+    if((self.slotBeingEdited && self.slotBeingEdited!= [self slotForRowAtIndexPath:indexPath])){
+        [reloadArray addObject:[self indexPathForSlot:self.slotBeingEdited]];
     }
-    
-    
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
+ 
+    if(self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath]){
+        self.slotBeingEdited = nil;
+    }
+    else{
+        self.slotBeingEdited= [self slotForRowAtIndexPath:indexPath];
+    }
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
     
 }
@@ -518,7 +529,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
 -(void) SlotCellDelegate_activityTypeChanged:(TActivityType) activityType{
-
+    
     
     [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingEdited];
 }
