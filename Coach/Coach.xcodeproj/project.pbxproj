@@ -109,6 +109,8 @@
 		D6DCF588166D13DA00539164 /* slide.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF584166D13DA00539164 /* slide.wav */; };
 		D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58B166D147200539164 /* AVFoundation.framework */; };
 		D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58D166D160000539164 /* AudioToolbox.framework */; };
+		D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
+		D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
 		D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
@@ -274,6 +276,9 @@
 		D6DCF584166D13DA00539164 /* slide.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = slide.wav; path = Coach/assets/slide.wav; sourceTree = "<group>"; };
 		D6DCF58B166D147200539164 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D6DCF58D166D160000539164 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D6DCF590166E24E500539164 /* MultipleIconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionView.h; path = Coach/MultipleIconSelectionView.h; sourceTree = "<group>"; };
+		D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleIconSelectionView.m; path = Coach/MultipleIconSelectionView.m; sourceTree = "<group>"; };
+		D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionViewDelegate.h; path = Coach/MultipleIconSelectionViewDelegate.h; sourceTree = "<group>"; };
 		D6E0FC64166380FD00237C80 /* IconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconSelectionView.h; path = Coach/IconSelectionView.h; sourceTree = "<group>"; };
 		D6E0FC65166380FD00237C80 /* IconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconSelectionView.m; path = Coach/IconSelectionView.m; sourceTree = "<group>"; };
 		D6E0FC681663B7FC00237C80 /* IconSelectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IconSelectionViewDelegate.h; path = Coach/IconSelectionViewDelegate.h; sourceTree = "<group>"; };
@@ -531,6 +536,7 @@
 		D61672C6160B3999001C3F15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCF58F166E248F00539164 /* MultipleIconSelectionView */,
 				D6E0FC6A1663D2FC00237C80 /* SimpleHScroller */,
 				D6E0FC63166380B500237C80 /* IconSelectionView */,
 				D63AA69516384EF90074EA70 /* HeaderView */,
@@ -709,6 +715,16 @@
 				D6DCF584166D13DA00539164 /* slide.wav */,
 			);
 			name = SFX;
+			sourceTree = "<group>";
+		};
+		D6DCF58F166E248F00539164 /* MultipleIconSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF590166E24E500539164 /* MultipleIconSelectionView.h */,
+				D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */,
+				D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */,
+			);
+			name = MultipleIconSelectionView;
 			sourceTree = "<group>";
 		};
 		D6E0FC63166380B500237C80 /* IconSelectionView */ = {
@@ -934,6 +950,7 @@
 				D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */,
 				D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */,
+				D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +970,7 @@
 				D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */,
 				D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */,
+				D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
