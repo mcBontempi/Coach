@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "WelcomeViewControllerDelegate.h"
 
-@interface WelcomeViewController : UIViewController
+@interface WelcomeViewController : GeneralViewController
 
     @property (nonatomic, weak) id<WelcomeViewControllerDelegate> delegate;
 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StackViewController : UIViewController
+@interface StackViewController : GeneralViewController
 
 @end

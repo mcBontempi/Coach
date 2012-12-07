@@ -59,7 +59,7 @@ typedef enum {
 #define IIViewDeckCenterHiddenIsInteractive(interactivity) ((interactivity) == IIViewDeckCenterHiddenUserInteractive)
 
 
-@interface IIViewDeckController : UIViewController {
+@interface IIViewDeckController : GeneralViewController {
 @private    
     CGFloat _panOrigin;
     BOOL _viewAppeared;

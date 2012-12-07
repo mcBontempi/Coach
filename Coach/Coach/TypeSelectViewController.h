@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TypeSelectViewControllerDelegate.h"
 
-@interface TypeSelectViewController : UIViewController
+@interface TypeSelectViewController : GeneralViewController
 
 @property (nonatomic, weak) id<TypeSelectViewControllerDelegate> delegate;
 

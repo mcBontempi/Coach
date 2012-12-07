@@ -2,7 +2,7 @@
 #import "ListViewControllerDelegate.h"
 #import "ToListViewControllerDelegate.h"
 
-@interface ListViewController : UIViewController  <ToListViewControllerDelegate>
+@interface ListViewController : GeneralViewController  <ToListViewControllerDelegate>
 
     @property (nonatomic, weak) id<ListViewControllerDelegate> delegate;
 

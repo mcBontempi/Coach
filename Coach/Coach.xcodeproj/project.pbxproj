@@ -111,6 +111,16 @@
 		D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58D166D160000539164 /* AudioToolbox.framework */; };
 		D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
 		D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
+		D6DCF5A31671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
+		D6DCF5A41671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
+		D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */; };
+		D6DCF5A61671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */; };
+		D6DCF5A91671063600539164 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A81671063600539164 /* SystemConfiguration.framework */; };
+		D6DCF5AA1671063600539164 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A81671063600539164 /* SystemConfiguration.framework */; };
+		D6DCF5AC1671066900539164 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5AB1671066900539164 /* CoreData.framework */; };
+		D6DCF5AD1671066900539164 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5AB1671066900539164 /* CoreData.framework */; };
+		D6DCF5B0167106BB00539164 /* GeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF5AF167106BB00539164 /* GeneralViewController.m */; };
+		D6DCF5B1167106BB00539164 /* GeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF5AF167106BB00539164 /* GeneralViewController.m */; };
 		D6E0FC66166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
@@ -279,6 +289,17 @@
 		D6DCF590166E24E500539164 /* MultipleIconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionView.h; path = Coach/MultipleIconSelectionView.h; sourceTree = "<group>"; };
 		D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleIconSelectionView.m; path = Coach/MultipleIconSelectionView.m; sourceTree = "<group>"; };
 		D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionViewDelegate.h; path = Coach/MultipleIconSelectionViewDelegate.h; sourceTree = "<group>"; };
+		D6DCF59C1671044A00539164 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		D6DCF59D1671044A00539164 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		D6DCF59E1671044A00539164 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		D6DCF59F1671044A00539164 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		D6DCF5A01671044A00539164 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		D6DCF5A81671063600539164 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D6DCF5AB1671066900539164 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D6DCF5AE167106BB00539164 /* GeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralViewController.h; path = Coach/GeneralViewController.h; sourceTree = "<group>"; };
+		D6DCF5AF167106BB00539164 /* GeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneralViewController.m; path = Coach/GeneralViewController.m; sourceTree = "<group>"; };
 		D6E0FC64166380FD00237C80 /* IconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconSelectionView.h; path = Coach/IconSelectionView.h; sourceTree = "<group>"; };
 		D6E0FC65166380FD00237C80 /* IconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconSelectionView.m; path = Coach/IconSelectionView.m; sourceTree = "<group>"; };
 		D6E0FC681663B7FC00237C80 /* IconSelectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IconSelectionViewDelegate.h; path = Coach/IconSelectionViewDelegate.h; sourceTree = "<group>"; };
@@ -302,6 +323,10 @@
 				85C767AF165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
 				D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */,
 				D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */,
+				D6DCF5A31671044A00539164 /* libGoogleAnalytics.a in Frameworks */,
+				D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */,
+				D6DCF5A91671063600539164 /* SystemConfiguration.framework in Frameworks */,
+				D6DCF5AC1671066900539164 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +338,10 @@
 				852CF7B41608A7E8009E249F /* UIKit.framework in Frameworks */,
 				852CF7B51608A7E8009E249F /* Foundation.framework in Frameworks */,
 				85C767B0165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
+				D6DCF5A41671044A00539164 /* libGoogleAnalytics.a in Frameworks */,
+				D6DCF5A61671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */,
+				D6DCF5AA1671063600539164 /* SystemConfiguration.framework in Frameworks */,
+				D6DCF5AD1671066900539164 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +386,8 @@
 		852CF7901608A7E6009E249F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCF5AB1671066900539164 /* CoreData.framework */,
+				D6DCF5A81671063600539164 /* SystemConfiguration.framework */,
 				D6DCF58D166D160000539164 /* AudioToolbox.framework */,
 				D6DCF58B166D147200539164 /* AVFoundation.framework */,
 				85C767AE165BA8C6008325EB /* QuartzCore.framework */,
@@ -371,6 +402,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D6DCF5991671044A00539164 /* External */,
 				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
 				85C7679C165BA669008325EB /* ViewDeck */,
 				850D261F160B78620034A743 /* Agents */,
@@ -528,6 +560,8 @@
 				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
 				D6A7769A162DEF0500879C11 /* Config */,
+				D6DCF5AE167106BB00539164 /* GeneralViewController.h */,
+				D6DCF5AF167106BB00539164 /* GeneralViewController.m */,
 			);
 			name = ViewControllers;
 			path = ..;
@@ -725,6 +759,36 @@
 				D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */,
 			);
 			name = MultipleIconSelectionView;
+			sourceTree = "<group>";
+		};
+		D6DCF5991671044A00539164 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF59A1671044A00539164 /* Google */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D6DCF59A1671044A00539164 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF59B1671044A00539164 /* Library */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		D6DCF59B1671044A00539164 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D6DCF59C1671044A00539164 /* GAI.h */,
+				D6DCF59D1671044A00539164 /* GAITrackedViewController.h */,
+				D6DCF59E1671044A00539164 /* GAITracker.h */,
+				D6DCF59F1671044A00539164 /* GAITransaction.h */,
+				D6DCF5A01671044A00539164 /* GAITransactionItem.h */,
+				D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */,
+				D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		D6E0FC63166380B500237C80 /* IconSelectionView */ = {
@@ -951,6 +1015,7 @@
 				D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */,
 				D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */,
 				D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
+				D6DCF5B0167106BB00539164 /* GeneralViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +1036,7 @@
 				D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */,
 				D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
+				D6DCF5B1167106BB00539164 /* GeneralViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1077,6 +1143,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coach/External/Google/Library\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
@@ -1089,6 +1159,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coach/External/Google/Library\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
@@ -1106,6 +1180,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "CoachTests/CoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coach/External/Google/Library\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1124,6 +1202,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "CoachTests/CoachTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Coach/External/Google/Library\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				TEST_HOST = "$(BUNDLE_LOADER)";

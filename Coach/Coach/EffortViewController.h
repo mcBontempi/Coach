@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "EffortViewControllerDelegate.h"
 
-@interface EffortViewController : UIViewController
+@interface EffortViewController : GeneralViewController
 
 @property (nonatomic, weak) id<EffortViewControllerDelegate> delegate;
 

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface StackedProfileViewController : UIViewController
+@interface StackedProfileViewController : GeneralViewController
 
 @property (nonatomic, strong) NSArray *slots;
 

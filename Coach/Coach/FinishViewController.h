@@ -2,7 +2,7 @@
 #import "FinishViewControllerDelegate.h"
 #import "ToFinishViewControllerDelegate.h"
 
-@interface FinishViewController : UIViewController <ToFinishViewControllerDelegate>
+@interface FinishViewController : GeneralViewController <ToFinishViewControllerDelegate>
 
 @property (nonatomic, weak) id<FinishViewControllerDelegate> delegate;
 
