@@ -51,7 +51,6 @@
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
 		D61672C2160B3896001C3F15 /* ProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C1160B3896001C3F15 /* ProfileGraph.m */; };
-		D61672C4160B38F6001C3F15 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D61672C3160B38F6001C3F15 /* Default-568h@2x.png */; };
 		D61672CA160B39DB001C3F15 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C8160B39DB001C3F15 /* ProfileViewController.m */; };
 		D61672CB160B39DB001C3F15 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672C9160B39DB001C3F15 /* ProfileViewController.xib */; };
 		D61672D21611D180001C3F15 /* StackedProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672D11611D180001C3F15 /* StackedProfileGraph.m */; };
@@ -66,7 +65,6 @@
 		D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A2163942990074EA70 /* FinishViewController_iPad.xib */; };
 		D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6A31639429A0074EA70 /* FinishViewController_iPhone.xib */; };
 		D63AA6A91639429A0074EA70 /* FinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA6A51639429A0074EA70 /* FinishViewController.m */; };
-		D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63AA6B61639A9D40074EA70 /* appIcon.png */; };
 		D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */; };
 		D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */; };
 		D63B125B165B81960045A725 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B1258165B81960045A725 /* bike.png */; };
@@ -85,6 +83,8 @@
 		D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
 		D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
 		D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
+		D6605A6D1671D846008DFF75 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6C1671D846008DFF75 /* appIcon.png */; };
+		D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6E1671D945008DFF75 /* Default-568h@2x.png */; };
 		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
@@ -213,7 +213,6 @@
 		85FE7051163549410084AE26 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		D61672C0160B3896001C3F15 /* ProfileGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileGraph.h; sourceTree = "<group>"; };
 		D61672C1160B3896001C3F15 /* ProfileGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileGraph.m; sourceTree = "<group>"; };
-		D61672C3160B38F6001C3F15 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D61672C7160B39DB001C3F15 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Coach/ProfileViewController.h; sourceTree = "<group>"; };
 		D61672C8160B39DB001C3F15 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Coach/ProfileViewController.m; sourceTree = "<group>"; };
 		D61672C9160B39DB001C3F15 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Coach/ProfileViewController.xib; sourceTree = "<group>"; };
@@ -239,7 +238,6 @@
 		D63AA6A61639429A0074EA70 /* FinishViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinishViewControllerDelegate.h; path = Coach/FinishViewControllerDelegate.h; sourceTree = "<group>"; };
 		D63AA6AF163944740074EA70 /* ConfigAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigAgentDelegate.h; sourceTree = "<group>"; };
 		D63AA6B0163968090074EA70 /* ToFinishViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToFinishViewControllerDelegate.h; path = Coach/ToFinishViewControllerDelegate.h; sourceTree = "<group>"; };
-		D63AA6B61639A9D40074EA70 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 		D63B1254165A99BA0045A725 /* NSString_NiceStringFromDuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_NiceStringFromDuration.h; sourceTree = "<group>"; };
 		D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_NiceStringFromDuration.m; sourceTree = "<group>"; };
 		D63B1258165B81960045A725 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = Coach/assets/bike.png; sourceTree = "<group>"; };
@@ -256,6 +254,8 @@
 		D65CE4511642FFF900D3B0CB /* ListViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewAgent.m; path = Coach/ListViewAgent.m; sourceTree = "<group>"; };
 		D65CE4541643012200D3B0CB /* ToListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToListViewControllerDelegate.h; path = Coach/ToListViewControllerDelegate.h; sourceTree = "<group>"; };
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
+		D6605A6C1671D846008DFF75 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
+		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D67D7978164854FE00A63FF8 /* ModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelDelegate.h; sourceTree = "<group>"; };
 		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
 		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 		852CF7821608A7E6009E249F = {
 			isa = PBXGroup;
 			children = (
-				D63AA6B61639A9D40074EA70 /* appIcon.png */,
+				D6605A6E1671D945008DFF75 /* Default-568h@2x.png */,
 				852CF7971608A7E6009E249F /* Coach */,
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
@@ -429,7 +429,6 @@
 		852CF7981608A7E6009E249F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D61672C3160B38F6001C3F15 /* Default-568h@2x.png */,
 				852CF7991608A7E6009E249F /* Coach-Info.plist */,
 				852CF79A1608A7E6009E249F /* InfoPlist.strings */,
 				852CF79D1608A7E7009E249F /* main.m */,
@@ -725,6 +724,7 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D6605A6C1671D846008DFF75 /* appIcon.png */,
 				D6DCF572166CE4EF00539164 /* tickbox_off.png */,
 				D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */,
 				D6DCF574166CE4EF00539164 /* tickbox_on.png */,
@@ -896,7 +896,6 @@
 				852CF79C1608A7E6009E249F /* InfoPlist.strings in Resources */,
 				852CF7A81608A7E7009E249F /* ViewController_iPhone.xib in Resources */,
 				852CF7AB1608A7E7009E249F /* ViewController_iPad.xib in Resources */,
-				D61672C4160B38F6001C3F15 /* Default-568h@2x.png in Resources */,
 				D61672CB160B39DB001C3F15 /* ProfileViewController.xib in Resources */,
 				850D26A9161072090034A743 /* TypeSelectViewController_iPhone.xib in Resources */,
 				850D26B3161072420034A743 /* StackViewController.xib in Resources */,
@@ -912,7 +911,6 @@
 				D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */,
 				D63AA6A71639429A0074EA70 /* FinishViewController_iPad.xib in Resources */,
 				D63AA6A81639429A0074EA70 /* FinishViewController_iPhone.xib in Resources */,
-				D63AA6B71639A9D50074EA70 /* appIcon.png in Resources */,
 				D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
 				D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 				857D5160164BF40C00527584 /* noEntry.png in Resources */,
@@ -930,6 +928,8 @@
 				D6DCF586166D13DA00539164 /* delete.wav in Resources */,
 				D6DCF587166D13DA00539164 /* new.wav in Resources */,
 				D6DCF588166D13DA00539164 /* slide.wav in Resources */,
+				D6605A6D1671D846008DFF75 /* appIcon.png in Resources */,
+				D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
