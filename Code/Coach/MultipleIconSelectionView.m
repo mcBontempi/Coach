@@ -106,12 +106,8 @@
     
     [self setupWithSelectedIndexes:self.selectedIndexesArray];
     
-    [self.delegate MultipleIconSelectionViewDelegate_iconsSelected:nil];
+    [self.delegate MultipleIconSelectionViewDelegate_iconsSelected:self.selectedIndexesArray];
 }
-
-
-
-
 
 
 @end

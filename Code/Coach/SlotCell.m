@@ -1,16 +1,19 @@
 #import "SlotCell.h"
 #import "UIImage_ImageForActivityType.h"
+#import "UIImage_ImageForZone.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "CheckboxButton.h"
 
 @interface SlotCell ()
 @property (nonatomic, strong) UIImageView *activityTypeImageView;
+@property (nonatomic, strong) NSMutableArray* zoneImageViewArray;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) CheckboxButton *checkbox;
 @property (nonatomic, weak) id<SlotCellDelegate> delegate;
 
 @property NSInteger duration;
 @property TActivityType activityType;
+@property TZone zone;
 
 @end
 
@@ -39,10 +42,11 @@
 }
 
 
--(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType{
+-(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType zone:(TZone) zone{
     self.checkbox.selected = checked;
     self.activityType = activityType;
     self.duration = duration;
+    self.zone = zone;
 }
 
 
@@ -62,6 +66,33 @@
     
     self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
     self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, size, size);
+    
+    if(!self.zoneImageViewArray)
+    {
+        self.zoneImageViewArray = [[NSMutableArray alloc] init];
+    }
+    else{
+        for(UIView *view in self.zoneImageViewArray){
+            [view removeFromSuperview];
+        }
+        
+        [self.zoneImageViewArray removeAllObjects];
+    }
+    
+    // mmight have to clean this up
+    if(self.zone & EZone1) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone1]]];
+    if(self.zone & EZone2) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone2]]];
+    if(self.zone & EZone3) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone3]]];
+    if(self.zone & EZone4) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone4]]];
+    if(self.zone & EZone5) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone5]]];
+   
+    
+ //   for(TZone in TZone.){
+        
+   // }
+    
+   // for(UIImageView)
+    
     
     CGFloat labelOffsetX = (iconPadding*2) + size + textPadding;
     CGFloat textHeight = frame.size.height - (textPadding *2);

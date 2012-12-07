@@ -38,6 +38,8 @@
 		852CF804160A2F2B009E249F /* ProfileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF803160A2F2B009E249F /* ProfileLogger.m */; };
 		856A323C16145252003533BE /* TypeSelectViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */; };
 		857D5160164BF40C00527584 /* noEntry.png in Resources */ = {isa = PBXBuildFile; fileRef = 857D515F164BF40C00527584 /* noEntry.png */; };
+		85B6CC131671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6CC121671F4B0003B1A1F /* UIImage_ImageForZone.m */; };
+		85B6CC141671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B6CC121671F4B0003B1A1F /* UIImage_ImageForZone.m */; };
 		85C767A8165BA6A9008325EB /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767A7165BA6A9008325EB /* WrapController.m */; };
 		85C767A9165BA6A9008325EB /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767A7165BA6A9008325EB /* WrapController.m */; };
 		85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C767AB165BA6BC008325EB /* IIViewDeckController.m */; };
@@ -195,6 +197,8 @@
 		854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WelcomeViewControllerDelegate.h; path = Coach/WelcomeViewControllerDelegate.h; sourceTree = "<group>"; };
 		856A323B16145252003533BE /* TypeSelectViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TypeSelectViewController_iPad.xib; path = Coach/TypeSelectViewController_iPad.xib; sourceTree = "<group>"; };
 		857D515F164BF40C00527584 /* noEntry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noEntry.png; path = Coach/assets/noEntry.png; sourceTree = "<group>"; };
+		85B6CC101671F392003B1A1F /* UIImage_ImageForZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForZone.h; sourceTree = "<group>"; };
+		85B6CC121671F4B0003B1A1F /* UIImage_ImageForZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_ImageForZone.m; sourceTree = "<group>"; };
 		85C767A6165BA6A9008325EB /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WrapController.h; path = Coach/WrapController.h; sourceTree = SOURCE_ROOT; };
 		85C767A7165BA6A9008325EB /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WrapController.m; path = Coach/WrapController.m; sourceTree = SOURCE_ROOT; };
 		85C767AA165BA6BC008325EB /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = Coach/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
@@ -818,6 +822,8 @@
 				D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */,
 				D63B1254165A99BA0045A725 /* NSString_NiceStringFromDuration.h */,
 				D63B1255165A99DC0045A725 /* NSString_NiceStringFromDuration.m */,
+				85B6CC101671F392003B1A1F /* UIImage_ImageForZone.h */,
+				85B6CC121671F4B0003B1A1F /* UIImage_ImageForZone.m */,
 			);
 			name = "Class Extensions";
 			sourceTree = "<group>";
@@ -1016,6 +1022,7 @@
 				D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */,
 				D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B0167106BB00539164 /* GeneralViewController.m in Sources */,
+				85B6CC131671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,6 +1044,7 @@
 				D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */,
 				D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B1167106BB00539164 /* GeneralViewController.m in Sources */,
+				85B6CC141671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

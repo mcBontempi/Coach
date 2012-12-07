@@ -27,7 +27,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         self.delegate = delegate;
-   
+        
         // image showing contraction of cell
         UIImageView *upImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"up.png"]];
         upImageView.frame = CGRectMake(100,0,50,50);
@@ -51,10 +51,10 @@
         
         // zone selection
         self.zonesMultipleIconSelectionView = [[MultipleIconSelectionView alloc] initWithPoint:CGPointMake(0,103)
-                                                                                images:imageArray
-                                                                              iconSize:CGSizeMake(30,30)
-                                                                               padding:5
-                                                                              delegate:self];
+                                                                                        images:imageArray
+                                                                                      iconSize:CGSizeMake(30,30)
+                                                                                       padding:5
+                                                                                      delegate:self];
         
         
         
@@ -65,22 +65,24 @@
             [scrollerArray addObject:[NSString niceStringFromDuration:i*15]];
         }
         
-        self.simpleHScroller = [[SimpleHScroller alloc] initWithPoint:CGPointMake(5,163) items:scrollerArray delegate:self];
+        self.simpleHScroller = [[SimpleHScroller alloc] initWithPoint:CGPointMake(5,150) items:scrollerArray delegate:self];
         
         [self.contentView addSubview:upImageView];
         [self.contentView addSubview:self.activitiesIconSelectionView];
         [self.contentView addSubview:self.zonesMultipleIconSelectionView];
         [self.contentView addSubview:self.simpleHScroller];
-
+        
     }
     return self;
 }
 
--(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType{
+-(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType zone:(TZone) zone{
     [self.activitiesIconSelectionView setupWithSelectedIndex:activityType];
-    [self.zonesMultipleIconSelectionView setupWithSelectedIndexes:[[NSMutableArray alloc] init]];
+    [self.zonesMultipleIconSelectionView setupWithSelectedIndexes:[self selectedIndexesForZone:zone]];
     [self.simpleHScroller setupWithDuration:duration];
 }
+
+// activity Type conversion methods
 
 -(NSArray*) activityTypeOrdering{
     return @[@(EActivityTypeSwim), @(EActivityTypeBike), @(EActivityTypeRun), @(EActivityTypeStrengthAndConditioning)];
@@ -102,15 +104,48 @@
     return number.integerValue;
 }
 
+// zone conversion methods
+
+-(TZone) zoneForSelectedIndexes:(NSArray*) array{
+    
+    NSInteger zone = 0;
+    
+    for(NSNumber *number in array){
+        
+        switch (number.integerValue)
+        {
+            case 1: zone += EZone1; break;
+            case 2: zone += EZone2; break;
+            case 3: zone += EZone3; break;
+            case 4: zone += EZone4; break;
+            case 5: zone += EZone5; break;
+        }
+    }
+    
+    return zone;
+}
+
+-(NSArray*) selectedIndexesForZone:(TZone) zone{
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    if(zone & EZone1) [array addObject:[NSNumber numberWithInteger:1]];
+    if(zone & EZone2) [array addObject:[NSNumber numberWithInteger:2]];
+    if(zone & EZone3) [array addObject:[NSNumber numberWithInteger:3]];
+    if(zone & EZone4) [array addObject:[NSNumber numberWithInteger:4]];
+    if(zone & EZone5) [array addObject:[NSNumber numberWithInteger:5]];
+    
+    return array;
+}
+
+
 -(void) IconSelectionViewDelegate_iconSelected:(NSInteger) iconIndex{
     [self.delegate SlotEditingCellDelegate_activityTypeChanged:[self activityTpeForIndex:iconIndex]];
 }
 
-
-
 -(void) MultipleIconSelectionViewDelegate_iconsSelected:(NSArray*) iconIndexArray{
     
-    
+    [self.delegate SlotEditingCellDelegate_zoneChanged:[self zoneForSelectedIndexes:iconIndexArray]];
 }
 
 -(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration{
