@@ -77,8 +77,11 @@
 }
 
 -(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType zone:(TZone) zone{
+    
     [self.activitiesIconSelectionView setupWithSelectedIndex:activityType];
+    
     [self.zonesMultipleIconSelectionView setupWithSelectedIndexes:[self selectedIndexesForZone:zone]];
+    
     [self.simpleHScroller setupWithDuration:duration];
 }
 
@@ -114,11 +117,11 @@
         
         switch (number.integerValue)
         {
-            case 1: zone += EZone1; break;
-            case 2: zone += EZone2; break;
-            case 3: zone += EZone3; break;
-            case 4: zone += EZone4; break;
-            case 5: zone += EZone5; break;
+            case 0: zone += EZone1; break;
+            case 1: zone += EZone2; break;
+            case 2: zone += EZone3; break;
+            case 3: zone += EZone4; break;
+            case 4: zone += EZone5; break;
         }
     }
     
@@ -129,11 +132,11 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
-    if(zone & EZone1) [array addObject:[NSNumber numberWithInteger:1]];
-    if(zone & EZone2) [array addObject:[NSNumber numberWithInteger:2]];
-    if(zone & EZone3) [array addObject:[NSNumber numberWithInteger:3]];
-    if(zone & EZone4) [array addObject:[NSNumber numberWithInteger:4]];
-    if(zone & EZone5) [array addObject:[NSNumber numberWithInteger:5]];
+    if(zone & EZone1) [array addObject:[NSNumber numberWithInteger:0]];
+    if(zone & EZone2) [array addObject:[NSNumber numberWithInteger:1]];
+    if(zone & EZone3) [array addObject:[NSNumber numberWithInteger:2]];
+    if(zone & EZone4) [array addObject:[NSNumber numberWithInteger:3]];
+    if(zone & EZone5) [array addObject:[NSNumber numberWithInteger:4]];
     
     return array;
 }

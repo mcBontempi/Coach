@@ -52,7 +52,7 @@
 
 -(void) layoutSubviews{
     [super layoutSubviews];
-
+    
     CGRect frame = self.frame;
     
     const CGFloat checkboxWidth = 50;
@@ -79,22 +79,32 @@
         [self.zoneImageViewArray removeAllObjects];
     }
     
-    // mmight have to clean this up
-    if(self.zone & EZone1) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone1]]];
-    if(self.zone & EZone2) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone2]]];
-    if(self.zone & EZone3) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone3]]];
-    if(self.zone & EZone4) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone4]]];
-    if(self.zone & EZone5) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:EZone5]]];
-   
+    NSArray *zoneEnumEnumeratorArray = @[@(EZone1), @(EZone2), @(EZone3), @(EZone4), @(EZone5)];
     
- //   for(TZone in TZone.){
+    for(NSNumber *number in zoneEnumEnumeratorArray){
+        TZone zone = number.integerValue;
         
-   // }
+        if(self.zone & zone) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:zone]]];
+    }
     
-   // for(UIImageView)
+    CGFloat yOffset = 5;
+    for(UIImageView *imageView in self.zoneImageViewArray){
+        CGRect zoneFrame = imageView.frame;
+        
+        zoneFrame.origin.x = 60;
+        zoneFrame.origin.y = yOffset;
+        zoneFrame.size = CGSizeMake(10,10);
+        
+        yOffset += 12;
+        
+        imageView.frame = zoneFrame;
+        
+        [self.contentView addSubview:imageView];
+    }
     
+    CGFloat zoneWidth = 20;
     
-    CGFloat labelOffsetX = (iconPadding*2) + size + textPadding;
+    CGFloat labelOffsetX = (iconPadding*2) + size + textPadding + zoneWidth;
     CGFloat textHeight = frame.size.height - (textPadding *2);
     
     self.label.frame = CGRectMake(labelOffsetX,textPadding,self.contentView.frame.size.width - labelOffsetX - (textPadding *2) - checkboxWidth, textHeight);
@@ -105,8 +115,6 @@
     self.backgroundColor = [UIColor whiteColor];
     
     [self.checkbox addTarget:self action:@selector(checked:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
 }
 
 -(void) checked:(id) sender{

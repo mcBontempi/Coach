@@ -24,12 +24,19 @@
         self.bounces = NO;
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
+        
+        
+        
+        
+        [self setupLabels];
+        
+        
     }
     return self;
 }
 
--(void) setupWithDuration:(NSInteger) duration{
-    
+
+-(void) setupLabels{
     CGFloat x = 0;
     
     for(NSString *string in self.items){
@@ -48,6 +55,11 @@
         
     }
     self.contentSize = CGSizeMake(x,50);
+}
+
+-(void) setupWithDuration:(NSInteger) duration{
+    
+
     
     self.contentOffset = CGPointMake(200* ((duration/15)-1),0);
     
