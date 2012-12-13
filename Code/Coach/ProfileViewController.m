@@ -1,11 +1,3 @@
-//
-//  ProfileViewController.m
-//  Coach
-//
-//  Created by daren taylor on 20/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import "ProfileViewController.h"
 #import "ProfileGraph.h"
 

@@ -87,6 +87,11 @@
 		D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
 		D6605A6D1671D846008DFF75 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6C1671D846008DFF75 /* appIcon.png */; };
 		D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6E1671D945008DFF75 /* Default-568h@2x.png */; };
+		D66FFDF71675DFC600B2D119 /* z1.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF21675DFC600B2D119 /* z1.png */; };
+		D66FFDF81675DFC600B2D119 /* z2.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF31675DFC600B2D119 /* z2.png */; };
+		D66FFDF91675DFC600B2D119 /* z3.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF41675DFC600B2D119 /* z3.png */; };
+		D66FFDFA1675DFC600B2D119 /* z4.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF51675DFC600B2D119 /* z4.png */; };
+		D66FFDFB1675DFC600B2D119 /* z5.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF61675DFC600B2D119 /* z5.png */; };
 		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
@@ -260,6 +265,11 @@
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
 		D6605A6C1671D846008DFF75 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D66FFDF21675DFC600B2D119 /* z1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z1.png; path = Coach/assets/z1.png; sourceTree = "<group>"; };
+		D66FFDF31675DFC600B2D119 /* z2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z2.png; path = Coach/assets/z2.png; sourceTree = "<group>"; };
+		D66FFDF41675DFC600B2D119 /* z3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z3.png; path = Coach/assets/z3.png; sourceTree = "<group>"; };
+		D66FFDF51675DFC600B2D119 /* z4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z4.png; path = Coach/assets/z4.png; sourceTree = "<group>"; };
+		D66FFDF61675DFC600B2D119 /* z5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z5.png; path = Coach/assets/z5.png; sourceTree = "<group>"; };
 		D67D7978164854FE00A63FF8 /* ModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelDelegate.h; sourceTree = "<group>"; };
 		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
 		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
@@ -740,6 +750,11 @@
 				D63B1259165B81960045A725 /* run.png */,
 				D63B125A165B81960045A725 /* swim.png */,
 				857D515F164BF40C00527584 /* noEntry.png */,
+				D66FFDF21675DFC600B2D119 /* z1.png */,
+				D66FFDF31675DFC600B2D119 /* z2.png */,
+				D66FFDF41675DFC600B2D119 /* z3.png */,
+				D66FFDF51675DFC600B2D119 /* z4.png */,
+				D66FFDF61675DFC600B2D119 /* z5.png */,
 			);
 			name = GFX;
 			sourceTree = "<group>";
@@ -936,6 +951,11 @@
 				D6DCF588166D13DA00539164 /* slide.wav in Resources */,
 				D6605A6D1671D846008DFF75 /* appIcon.png in Resources */,
 				D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */,
+				D66FFDF71675DFC600B2D119 /* z1.png in Resources */,
+				D66FFDF81675DFC600B2D119 /* z2.png in Resources */,
+				D66FFDF91675DFC600B2D119 /* z3.png in Resources */,
+				D66FFDFA1675DFC600B2D119 /* z4.png in Resources */,
+				D66FFDFB1675DFC600B2D119 /* z5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

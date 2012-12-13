@@ -1,11 +1,3 @@
-//
-//  LogUtils.h
-//  ConferencePad
-//
-//  Created by Daren Taylor on 12/09/2012.
-//
-//
-
 #ifndef ConferencePad_LogUtils_h
 #define ConferencePad_LogUtils_h
 

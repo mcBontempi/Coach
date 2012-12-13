@@ -1,11 +1,3 @@
-//
-//  StackViewController.m
-//  Coach
-//
-//  Created by Daren Taylor on 24/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import "StackViewController.h"
 
 @interface StackViewController ()

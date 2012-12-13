@@ -1,11 +1,3 @@
-//
-//  StackedProfileGraph.m
-//  Coach
-//
-//  Created by daren taylor on 25/09/2012.
-//  Copyright (c) 2012 Daren Taylor. All rights reserved.
-//
-
 #import "StackedProfileGraph.h"
 #import "SlotLogger.h"
 #import "DataUtil.h"

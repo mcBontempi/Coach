@@ -21,27 +21,22 @@
 
 -(void) makeTestData{
     
-     Coach *coach = [[Coach alloc] init];
-     
-     // test data
-     const NSInteger length = 45;
-     
-     Profile *profile = [[Profile alloc] init];
-     profile.numberOfWeeks = length;
-     profile.startPercentage =30;
-     [profile generate];
-     
-     coach.profile = profile;
-     coach.peakMinutes = 20*60;
-     
+    Coach *coach = [[Coach alloc] init];
     
-     
-     for(NSInteger week = 0 ; week <= length ; week++){
-     [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
-     }
-
-
-
+    // test data
+    const NSInteger length = 45;
+    
+    Profile *profile = [[Profile alloc] init];
+    profile.numberOfWeeks = length;
+    profile.startPercentage =30;
+    [profile generate];
+    
+    coach.profile = profile;
+    coach.peakMinutes = 20*60;
+    
+    for(NSInteger week = 0 ; week <= length ; week++){
+        [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
+    }
 }
 
 -(NSArray*) getWeek:(NSInteger) weekIndex{
@@ -79,7 +74,7 @@
 }
 
 -(void) clearPlan{
-       self.weeks = [[NSMutableArray alloc] init];
+    self.weeks = [[NSMutableArray alloc] init];
 }
 
 -(void) ModelDelegate_clearPlan{

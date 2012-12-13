@@ -6,7 +6,7 @@
 #import "Model.h"
 #import "IIViewDeckController.h"
 
-@interface ViewerAgent () 
+@interface ViewerAgent ()
 
 @property (nonatomic, strong) TimetableViewAgent *timetableViewAgent;
 @property (nonatomic, strong) ListViewAgent *listViewAgent;
@@ -29,30 +29,27 @@
 }
 
 -(void) start{
-   
+    
+    // Create the left hand side list
     self.listViewAgent = [[ListViewAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
     ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
     self.listViewAgent.toListViewControllerDelegate = listViewController;
     
-    
+    // Create the main Timetable view
     self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self weekIndex:0];
-
     TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
     self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
     UINavigationController *timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
     timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
-    
+ 
+    // add the two views tot he view deck
     self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:timetableNavigationController leftViewController:listViewController];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        self.viewDeckViewController.leftLedge = 150;
+    else
+        self.viewDeckViewController.leftLedge = 500;
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) 
-    self.viewDeckViewController.leftLedge = 150;
-        else
-            self.viewDeckViewController.leftLedge = 500;
-        
-        
-     [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
-    
-  //  [self.viewDeckViewController openLeftView];
+    [self.rootViewController presentModalViewController:self.viewDeckViewController animated:YES];
     
     [self showInitialWeek];
 }
