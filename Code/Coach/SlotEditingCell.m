@@ -1,5 +1,6 @@
 #import "SlotEditingCell.h"
 #import "UIImage_ImageForActivityType.h"
+#import "UIImage_ImageForZone.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "IconSelectionView.h"
 #import "SimpleHScroller.h"
@@ -35,23 +36,30 @@
         
         
         // activities selection
-        NSMutableArray *imageArray = [[NSMutableArray alloc] init];
+        NSMutableArray *activityImageArray = [[NSMutableArray alloc] init];
         
         for(NSNumber *number in [self activityTypeOrdering]){
-            [imageArray addObject:[UIImage imageForActivityType:number.integerValue]];
+            [activityImageArray addObject:[UIImage imageForActivityType:number.integerValue]];
         }
         
         self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(0,40)
-                                                                             images:imageArray
+                                                                             images:activityImageArray
                                                                            iconSize:CGSizeMake(50,50)
                                                                             padding:5
                                                                            delegate:self];
         
         
         
+        
+        NSMutableArray *zoneImageArray = [[NSMutableArray alloc] init];
+        
+        for(NSNumber *number in [self zoneOrdering]){
+            [zoneImageArray addObject:[UIImage imageForZone:number.integerValue]];
+        }
+        
         // zone selection
         self.zonesMultipleIconSelectionView = [[MultipleIconSelectionView alloc] initWithPoint:CGPointMake(0,103)
-                                                                                        images:imageArray
+                                                                                        images:zoneImageArray
                                                                                       iconSize:CGSizeMake(30,30)
                                                                                        padding:5
                                                                                       delegate:self];
@@ -89,6 +97,10 @@
 
 -(NSArray*) activityTypeOrdering{
     return @[@(EActivityTypeSwim), @(EActivityTypeBike), @(EActivityTypeRun), @(EActivityTypeStrengthAndConditioning)];
+}
+
+-(NSArray*) zoneOrdering{
+    return @[@(EZone1), @(EZone2), @(EZone3), @(EZone4), @(EZone5)];
 }
 
 -(NSInteger) indexForActivityType:(TActivityType) activityType{

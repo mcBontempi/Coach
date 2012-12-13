@@ -55,6 +55,7 @@
     if(self = [self init]){
         self.duration = duration /15 * 15;
         self.activityType = activityType;
+        self.zone = 255;
     }
     
     return self;

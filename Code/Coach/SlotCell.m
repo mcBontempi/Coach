@@ -87,24 +87,39 @@
         if(self.zone & zone) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:zone]]];
     }
     
-    CGFloat yOffset = 5;
+    NSInteger totalRows = 3;
+    
+    CGFloat zoneTopY = iconPadding;
+    CGFloat zoneXOffset = iconPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width;
+    CGFloat zoneYOffset = zoneTopY;
+    CGFloat zoneIconLength = ((self.activityTypeImageView.frame.size.height) / totalRows) - (iconPadding / (totalRows)) ;
+    CGSize zoneIconSize = CGSizeMake(zoneIconLength, zoneIconLength);
+    
+    NSInteger rowCount = 0;
+    
     for(UIImageView *imageView in self.zoneImageViewArray){
-        CGRect zoneFrame = imageView.frame;
         
-        zoneFrame.origin.x = 60;
-        zoneFrame.origin.y = yOffset;
-        zoneFrame.size = CGSizeMake(10,10);
+        if(rowCount == totalRows){
+            rowCount = 0;
+            zoneXOffset += zoneIconLength + iconPadding;
+            zoneYOffset = zoneTopY;
+        };
         
-        yOffset += 12;
+        CGRect zoneFrame;
+        zoneFrame.origin.x = zoneXOffset;
+        zoneFrame.origin.y = zoneYOffset;
+        zoneFrame.size = zoneIconSize ;
+        
+        zoneYOffset += zoneIconLength + iconPadding;
         
         imageView.frame = zoneFrame;
         
         [self.contentView addSubview:imageView];
+    
+        rowCount++;
     }
     
-    CGFloat zoneWidth = 20;
-    
-    CGFloat labelOffsetX = (iconPadding*2) + size + textPadding + zoneWidth;
+    CGFloat labelOffsetX = zoneXOffset + textPadding + zoneIconLength;
     CGFloat textHeight = frame.size.height - (textPadding *2);
     
     self.label.frame = CGRectMake(labelOffsetX,textPadding,self.contentView.frame.size.width - labelOffsetX - (textPadding *2) - checkboxWidth, textHeight);
