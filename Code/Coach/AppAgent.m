@@ -77,6 +77,15 @@
     [self.configAgent startWithDelegate:self];
 }
 
+
+-(void) startUtilWizard{
+  self.configAgent = [[ConfigAgent alloc] init];
+  self.configAgent.rootViewController = self.rootViewController;
+  [self.configAgent startWithDelegate:self];
+}
+
+
+
 -(void) startViewer{
     self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.model delegate:self];
     self.viewerAgent.rootViewController = self.rootViewController;
@@ -103,7 +112,7 @@
 }
 
 -(void) ViewerAgentDelegate_finished{
-    [self startConfigWizard];
+    [self startUtilWizard];
 }
 
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{

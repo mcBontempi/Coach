@@ -55,5 +55,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>PNG</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.XML</string>
+			</array>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>Sandbox-icon.png</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

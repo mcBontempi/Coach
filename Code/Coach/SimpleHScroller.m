@@ -9,7 +9,7 @@
 @implementation SimpleHScroller
 
 - (id)initWithPoint:(CGPoint)point items:(NSArray*) items delegate:(id<SimpleHScrollerDelegate>) hScrollerDelegate{
-    self = [super initWithFrame:CGRectMake(point.x,point.y, 200,50)];
+    self = [super initWithFrame:CGRectMake(point.x,point.y, 150,30)];
     if (self) {
         
         self.hScrollerDelegate = hScrollerDelegate;
@@ -40,18 +40,18 @@
     CGFloat x = 0;
     
     for(NSString *string in self.items){
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x,0,200,50)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x,0,150,30)];
         
         label.text = string;
         label.textAlignment = UITextAlignmentCenter;
         label.textColor = [UIColor blackColor];
         label.font=[UIFont fontWithName:@"Trebuchet MS" size:20.0];
-        label.backgroundColor = [UIColor lightGrayColor];
+        label.backgroundColor = [UIColor whiteColor];
         
         
         [self addSubview:label];
         
-        x+=200;
+        x+=150;
         
     }
     self.contentSize = CGSizeMake(x,50);
@@ -61,7 +61,7 @@
     
 
     
-    self.contentOffset = CGPointMake(200* ((duration/15)-1),0);
+    self.contentOffset = CGPointMake(150* ((duration/15)-1),0);
     
 }
 

@@ -67,58 +67,12 @@
     self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
     self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, size, size);
     
-    if(!self.zoneImageViewArray)
-    {
-        self.zoneImageViewArray = [[NSMutableArray alloc] init];
-    }
-    else{
-        for(UIView *view in self.zoneImageViewArray){
-            [view removeFromSuperview];
-        }
-        
-        [self.zoneImageViewArray removeAllObjects];
-    }
-    
-    NSArray *zoneEnumEnumeratorArray = @[@(EZone1), @(EZone2), @(EZone3), @(EZone4), @(EZone5)];
-    
-    for(NSNumber *number in zoneEnumEnumeratorArray){
-        TZone zone = number.integerValue;
-        
-        if(self.zone & zone) [self.zoneImageViewArray addObject:[[UIImageView alloc] initWithImage:[UIImage imageForZone:zone]]];
-    }
-    
+  
     NSInteger totalRows = 3;
     
-    CGFloat zoneTopY = iconPadding;
     CGFloat zoneXOffset = iconPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width;
-    CGFloat zoneYOffset = zoneTopY;
     CGFloat zoneIconLength = ((self.activityTypeImageView.frame.size.height) / totalRows) - (iconPadding / (totalRows)) ;
-    CGSize zoneIconSize = CGSizeMake(zoneIconLength, zoneIconLength);
-    
-    NSInteger rowCount = 0;
-    
-    for(UIImageView *imageView in self.zoneImageViewArray){
-        
-        if(rowCount == totalRows){
-            rowCount = 0;
-            zoneXOffset += zoneIconLength + iconPadding;
-            zoneYOffset = zoneTopY;
-        };
-        
-        CGRect zoneFrame;
-        zoneFrame.origin.x = zoneXOffset;
-        zoneFrame.origin.y = zoneYOffset;
-        zoneFrame.size = zoneIconSize ;
-        
-        zoneYOffset += zoneIconLength + iconPadding;
-        
-        imageView.frame = zoneFrame;
-        
-        [self.contentView addSubview:imageView];
-    
-        rowCount++;
-    }
-    
+     
     CGFloat labelOffsetX = zoneXOffset + textPadding + zoneIconLength;
     CGFloat textHeight = frame.size.height - (textPadding *2);
     

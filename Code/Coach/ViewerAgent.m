@@ -83,6 +83,7 @@
     [self finish];
 }
 
+
 -(void) TimetableViewAgentDelegate_editingModeChangedIsEditing:(BOOL) editing{
     
     if(editing) {

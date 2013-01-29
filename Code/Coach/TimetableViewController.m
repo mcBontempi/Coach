@@ -8,8 +8,8 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-const CGFloat KSlotCellHeight = 70;
-const CGFloat KExpandedSlotHeight = 200;
+const CGFloat KSlotCellHeight = 50;
+const CGFloat KExpandedSlotHeight = 90;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

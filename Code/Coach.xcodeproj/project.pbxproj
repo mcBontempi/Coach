@@ -60,6 +60,14 @@
 		D61672D81611D23B001C3F15 /* StackedProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672D61611D23B001C3F15 /* StackedProfileViewController.xib */; };
 		D61672DB161396B0001C3F15 /* DataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672DA161396B0001C3F15 /* DataUtil.m */; };
 		D61672E416147811001C3F15 /* WelcomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */; };
+		D620D87A16B7B64C00420D5C /* UtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D620D87616B7B64C00420D5C /* UtilViewController.m */; };
+		D620D87B16B7B64C00420D5C /* UtilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D620D87616B7B64C00420D5C /* UtilViewController.m */; };
+		D620D87C16B7B64C00420D5C /* UtilViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */; };
+		D620D87D16B7B64C00420D5C /* UtilViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */; };
+		D620D87E16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */; };
+		D620D87F16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */; };
+		D620D88316B7C45500420D5C /* UtilAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D620D88116B7C45500420D5C /* UtilAgent.m */; };
+		D620D88416B7C45500420D5C /* UtilAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D620D88116B7C45500420D5C /* UtilAgent.m */; };
 		D63AA69816384F670074EA70 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D63AA69716384F670074EA70 /* HeaderView.m */; };
 		D63AA69F16392E070074EA70 /* EffortViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */; };
 		D63AA6A016392E070074EA70 /* EffortViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D63AA69B16392E070074EA70 /* EffortViewController_iPhone.xib */; };
@@ -77,6 +85,14 @@
 		D63B1260165B81960045A725 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B125A165B81960045A725 /* swim.png */; };
 		D63B126C165D0C4A0045A725 /* landingpageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B126B165D0C4A0045A725 /* landingpageicon.png */; };
 		D63B126D165D0C4A0045A725 /* landingpageicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D63B126B165D0C4A0045A725 /* landingpageicon.png */; };
+		D659212016A05F8F00E7953D /* SlotEditViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */; };
+		D659212116A05F8F00E7953D /* SlotEditViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */; };
+		D659212216A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D659211D16A05F8F00E7953D /* SlotEditViewController_iPad.xib */; };
+		D659212316A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D659211D16A05F8F00E7953D /* SlotEditViewController_iPad.xib */; };
+		D659212416A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D659211E16A05F8F00E7953D /* SlotEditViewController_iPhone.xib */; };
+		D659212516A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D659211E16A05F8F00E7953D /* SlotEditViewController_iPhone.xib */; };
+		D659212816A05FD500E7953D /* SlotEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D659212616A05FD500E7953D /* SlotEditViewController.m */; };
+		D659212916A05FD500E7953D /* SlotEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D659212616A05FD500E7953D /* SlotEditViewController.m */; };
 		D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE440164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */; };
 		D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */; };
@@ -233,6 +249,14 @@
 		D61672D9161396B0001C3F15 /* DataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtil.h; sourceTree = "<group>"; };
 		D61672DA161396B0001C3F15 /* DataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtil.m; sourceTree = "<group>"; };
 		D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone.xib; path = Coach/WelcomeViewController_iPhone.xib; sourceTree = "<group>"; };
+		D620D87516B7B64C00420D5C /* UtilViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilViewControllerDelegate.h; path = Coach/UtilViewControllerDelegate.h; sourceTree = "<group>"; };
+		D620D87616B7B64C00420D5C /* UtilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilViewController.m; path = Coach/UtilViewController.m; sourceTree = "<group>"; };
+		D620D87716B7B64C00420D5C /* UtilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilViewController.h; path = Coach/UtilViewController.h; sourceTree = "<group>"; };
+		D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UtilViewController_iPhone.xib; path = Coach/UtilViewController_iPhone.xib; sourceTree = "<group>"; };
+		D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UtilViewController_iPad.xib; path = Coach/UtilViewController_iPad.xib; sourceTree = "<group>"; };
+		D620D88016B7C45500420D5C /* UtilAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilAgentDelegate.h; sourceTree = "<group>"; };
+		D620D88116B7C45500420D5C /* UtilAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilAgent.m; sourceTree = "<group>"; };
+		D620D88216B7C45500420D5C /* UtilAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilAgent.h; sourceTree = "<group>"; };
 		D63AA69616384F670074EA70 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = Coach/HeaderView.h; sourceTree = "<group>"; };
 		D63AA69716384F670074EA70 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = Coach/HeaderView.m; sourceTree = "<group>"; };
 		D63AA69A16392E070074EA70 /* EffortViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EffortViewController_iPad.xib; path = Coach/EffortViewController_iPad.xib; sourceTree = "<group>"; };
@@ -254,6 +278,14 @@
 		D63B125A165B81960045A725 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swim.png; path = Coach/assets/swim.png; sourceTree = "<group>"; };
 		D63B1269165CD06B0045A725 /* ViewerAgentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewerAgentDelegate.h; sourceTree = "<group>"; };
 		D63B126B165D0C4A0045A725 /* landingpageicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = landingpageicon.png; path = Coach/assets/landingpageicon.png; sourceTree = "<group>"; };
+		D659211A16A05F8F00E7953D /* SlotEditViewAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewAgent.h; path = Coach/SlotEditViewAgent.h; sourceTree = "<group>"; };
+		D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditViewAgent.m; path = Coach/SlotEditViewAgent.m; sourceTree = "<group>"; };
+		D659211C16A05F8F00E7953D /* SlotEditViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewAgentDelegate.h; path = Coach/SlotEditViewAgentDelegate.h; sourceTree = "<group>"; };
+		D659211D16A05F8F00E7953D /* SlotEditViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlotEditViewController_iPad.xib; path = Coach/SlotEditViewController_iPad.xib; sourceTree = "<group>"; };
+		D659211E16A05F8F00E7953D /* SlotEditViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlotEditViewController_iPhone.xib; path = Coach/SlotEditViewController_iPhone.xib; sourceTree = "<group>"; };
+		D659211F16A05F8F00E7953D /* SlotEditViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewControllerDelegate.h; path = Coach/SlotEditViewControllerDelegate.h; sourceTree = "<group>"; };
+		D659212616A05FD500E7953D /* SlotEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditViewController.m; path = Coach/SlotEditViewController.m; sourceTree = "<group>"; };
+		D659212716A05FD500E7953D /* SlotEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewController.h; path = Coach/SlotEditViewController.h; sourceTree = "<group>"; };
 		D65CE439164152DB00D3B0CB /* ListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPad.xib; path = Coach/ListViewController_iPad.xib; sourceTree = "<group>"; };
 		D65CE43A164152DB00D3B0CB /* ListViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListViewController_iPhone.xib; path = Coach/ListViewController_iPhone.xib; sourceTree = "<group>"; };
 		D65CE43B164152DB00D3B0CB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Coach/ListViewController.h; sourceTree = "<group>"; };
@@ -365,6 +397,9 @@
 		850D261F160B78620034A743 /* Agents */ = {
 			isa = PBXGroup;
 			children = (
+				D620D88016B7C45500420D5C /* UtilAgentDelegate.h */,
+				D620D88116B7C45500420D5C /* UtilAgent.m */,
+				D620D88216B7C45500420D5C /* UtilAgent.h */,
 				850D2620160B78770034A743 /* AppAgent.h */,
 				850D2621160B78770034A743 /* AppAgent.m */,
 				850D2623160B78C20034A743 /* ConfigAgent.h */,
@@ -569,6 +604,7 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D659211816A05DDF00E7953D /* SlotEditViewController */,
 				D65CE4371641526C00D3B0CB /* List */,
 				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
@@ -601,6 +637,18 @@
 			);
 			name = Assets;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		D620D87316B7B55200420D5C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D620D87516B7B64C00420D5C /* UtilViewControllerDelegate.h */,
+				D620D87616B7B64C00420D5C /* UtilViewController.m */,
+				D620D87716B7B64C00420D5C /* UtilViewController.h */,
+				D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */,
+				D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		D63AA69516384EF90074EA70 /* HeaderView */ = {
@@ -689,6 +737,21 @@
 			name = Welcome;
 			sourceTree = "<group>";
 		};
+		D659211816A05DDF00E7953D /* SlotEditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D659212616A05FD500E7953D /* SlotEditViewController.m */,
+				D659212716A05FD500E7953D /* SlotEditViewController.h */,
+				D659211A16A05F8F00E7953D /* SlotEditViewAgent.h */,
+				D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */,
+				D659211C16A05F8F00E7953D /* SlotEditViewAgentDelegate.h */,
+				D659211D16A05F8F00E7953D /* SlotEditViewController_iPad.xib */,
+				D659211E16A05F8F00E7953D /* SlotEditViewController_iPhone.xib */,
+				D659211F16A05F8F00E7953D /* SlotEditViewControllerDelegate.h */,
+			);
+			name = SlotEditViewController;
+			sourceTree = "<group>";
+		};
 		D65CE4371641526C00D3B0CB /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +771,7 @@
 		D6A7769A162DEF0500879C11 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				D620D87316B7B55200420D5C /* Util */,
 				D63AA6AE163942C00074EA70 /* Welcome */,
 				D63AA6AD163942B50074EA70 /* TypeSelect */,
 				D63AA6AC163942AE0074EA70 /* Duration */,
@@ -956,6 +1020,10 @@
 				D66FFDF91675DFC600B2D119 /* z3.png in Resources */,
 				D66FFDFA1675DFC600B2D119 /* z4.png in Resources */,
 				D66FFDFB1675DFC600B2D119 /* z5.png in Resources */,
+				D659212216A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */,
+				D659212416A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */,
+				D620D87C16B7B64C00420D5C /* UtilViewController_iPhone.xib in Resources */,
+				D620D87E16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +1042,10 @@
 				D6DCF579166CE4EF00539164 /* tickbox_off@2x.png in Resources */,
 				D6DCF57B166CE4EF00539164 /* tickbox_on.png in Resources */,
 				D6DCF57D166CE4EF00539164 /* tickbox_on@2x.png in Resources */,
+				D659212316A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */,
+				D659212516A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */,
+				D620D87D16B7B64C00420D5C /* UtilViewController_iPhone.xib in Resources */,
+				D620D87F16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1043,6 +1115,10 @@
 				D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B0167106BB00539164 /* GeneralViewController.m in Sources */,
 				85B6CC131671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
+				D659212016A05F8F00E7953D /* SlotEditViewAgent.m in Sources */,
+				D659212816A05FD500E7953D /* SlotEditViewController.m in Sources */,
+				D620D87A16B7B64C00420D5C /* UtilViewController.m in Sources */,
+				D620D88316B7C45500420D5C /* UtilAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1141,10 @@
 				D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B1167106BB00539164 /* GeneralViewController.m in Sources */,
 				85B6CC141671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
+				D659212116A05F8F00E7953D /* SlotEditViewAgent.m in Sources */,
+				D659212916A05FD500E7953D /* SlotEditViewController.m in Sources */,
+				D620D87B16B7B64C00420D5C /* UtilViewController.m in Sources */,
+				D620D88416B7C45500420D5C /* UtilAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,6 @@ typedef enum{
 
 #define maxHoursInAPlan 20
 
-#define KMENUITEM_NEWTIMETABLE @"New Timetable" 
+#define KMENUITEM_NEWTIMETABLE @"New/Export" 
 
 #endif
