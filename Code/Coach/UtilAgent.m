@@ -1,84 +1,47 @@
-#import "ConfigAgent.h"
-#import "WelcomeViewController.h"
-#import "TypeSelectViewController.h"
-#import "DurationViewController.h"
-#import "EffortViewController.h"
-#import "FinishViewController.h"
-#import "WelcomeViewControllerDelegate.h"
-#import "TypeSelectViewControllerDelegate.h"
-#import "DurationViewControllerDelegate.h"
-#import "EffortViewControllerDelegate.h"
-#import "FinishViewControllerDelegate.h"
-#import "ToFinishViewControllerDelegate.h"
+#import "UtilAgent.h"
+#import "UtilViewController.h"
+#import "UtilAgentDelegate.h"
+#import "Util.h"
 #import "Config.h"
 
-@interface ConfigAgent () <WelcomeViewControllerDelegate, TypeSelectViewControllerDelegate, DurationViewControllerDelegate, EffortViewControllerDelegate, FinishViewControllerDelegate>
+@interface UtilAgent () <UtilViewControllerDelegate>
 @property (nonatomic, strong) UINavigationController *wizardNavigationController;
-@property (nonatomic, weak) id<ConfigAgentDelegate> delegate;
-@property (nonatomic, weak) id<ToFinishViewControllerDelegate> toFinishViewControllerDelegate;
-@property (nonatomic, strong) Config *config;
+@property (nonatomic, weak) id<UtilAgentDelegate> delegate;
 @end
 
-@implementation ConfigAgent
+@implementation UtilAgent
 
--(void) startWithDelegate:(id<ConfigAgentDelegate>) delegate{
-    self.config = [[Config alloc] init];
+-(void) startWithDelegate:(id<UtilAgentDelegate>) delegate{
     self.delegate = delegate;
-    WelcomeViewController *vc = [[WelcomeViewController alloc] initWithDelegate:self];
+    UtilViewController *vc = [[UtilViewController alloc] initWithDelegate:self];
     self.wizardNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     [self.rootViewController presentModalViewController:self.wizardNavigationController animated:YES];
 }
 
--(void) WelcomeViewControllerDelegate_getStartedPressed{
-    TypeSelectViewController *vc = [[TypeSelectViewController alloc] initWithDelegate:self];
-    [self.wizardNavigationController pushViewController:vc animated:YES];
+
+-(void) close{
+  
+  [self.rootViewController dismissViewControllerAnimated: YES completion: ^
+   {
+     [self.delegate UtilAgentDelegate_finished];
+   }];
 }
 
--(void) WelcomeViewControllerDelegate_cancelPressed{
-    
-    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
-     {
-         [self.delegate ConfigAgentDelegate_cancelled];
-     }];
-    
+
+-(void) UtilViewControllerDelegate_export{
+
+
 }
 
--(void) TypeSelectViewControllerDelegate_typePressed:(TType) type{
-    self.config.type = type;
-    DurationViewController *vc = [[DurationViewController alloc] initWithDelegate:self];
-    [self.wizardNavigationController pushViewController:vc animated:YES];
+-(void) UtilViewControllerDelegate_makeEmptyPlan:(NSInteger)numWeeks{
+  [self.delegate UtilAgentDelegate_makeEmptyPlan:5];
+  [self close];
 }
 
--(void) DurationViewControllerDelegate_nextPressed:(NSInteger)duration{
-    self.config.duration = duration;
-    EffortViewController *vc = [[EffortViewController alloc] initWithDelegate:self];
-    [self.wizardNavigationController pushViewController:vc animated:YES];
+-(void) UtilViewControllerDelegate_cancel{
+  [self close];
 }
 
--(void) EffortViewControllerDelegate_effortPressed:(TEffort)effort{
-    self.config.effort = effort;
-    FinishViewController *vc = [[FinishViewController alloc] initWithDelegate:self];
-    self.toFinishViewControllerDelegate = vc;
-    [self.wizardNavigationController pushViewController:vc animated:YES];
-}
-
--(void) FinishViewControllerDelegate_makePlanPressed{
-    [self.delegate ConfigAgentDelegate_makePlan:self.config];
-    [self performSelector:@selector(planCreated) withObject:nil afterDelay:1.0];
-}
-
--(void) planCreated{
-    
-    [self.toFinishViewControllerDelegate ToFinishViewControllerDelegate_planCreated];
-}
-
--(void) FinishViewControllerDelegate_getStartedPressed{
-    
-    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
-     {
-         [self.delegate ConfigAgentDelegate_finished];
-     }];
-}
 
 @end

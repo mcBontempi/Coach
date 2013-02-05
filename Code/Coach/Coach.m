@@ -31,6 +31,20 @@
 }
 
 
+-(NSArray *) getEmptyWeek{
+  
+  NSMutableArray *coachedWeek = [[NSMutableArray alloc] init];
+  
+  for(NSInteger day = 0 ; day < 7 ; day++){
+    NSMutableArray *dayArray = [[NSMutableArray alloc] init];
+    [coachedWeek addObject:dayArray];
+  }
+  
+  return [NSArray arrayWithArray:coachedWeek];
+  
+}
+
+
 // this gets a week, basically what sessions he needs to do within 1 week.
 -(NSArray *) getStackedWeekUsesProfileWithWeek:(NSInteger) week{
 

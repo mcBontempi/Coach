@@ -1,7 +1,8 @@
 #import "UtilViewController.h"
 
 @interface UtilViewController ()
-- (IBAction)getStartedPressed:(id)sender;
+- (IBAction)exportPressed:(id)sender;
+- (IBAction)makePlanPressed:(id)sender;
 
 @end
 
@@ -34,24 +35,23 @@
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                            target:self
                                                                                            action:@selector(cancel)] animated:YES];
-    
 }
 
 -(void) cancel{
     
-    [self.delegate UtilViewControllerDelegate_cancelPressed];
+    [self.delegate UtilViewControllerDelegate_cancel];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)exportPressed:(id)sender {
+    
+    [self.delegate UtilViewControllerDelegate_export];
 }
 
-- (IBAction)getStartedPressed:(id)sender {
-    
-    [self.delegate UtilViewControllerDelegate_getStartedPressed];
+- (IBAction)makePlanPressed:(id)sender {
+  [self.delegate UtilViewControllerDelegate_makeEmptyPlan:5];
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{

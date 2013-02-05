@@ -4,13 +4,11 @@
 #import "NSString_NiceStringFromDuration.h"
 #import "IconSelectionView.h"
 #import "SimpleHScroller.h"
-#import "MultipleIconSelectionView.h"
 
 @interface SlotEditingCell ()
 @property (nonatomic, strong) IconSelectionView *activitiesIconSelectionView;
 @property (nonatomic, strong) SimpleHScroller *simpleHScroller;
 @property (nonatomic, weak) id<SlotEditingCellDelegate> delegate;
-@property (nonatomic, strong) MultipleIconSelectionView *zonesMultipleIconSelectionView;
 @property (nonatomic, strong) UITextField *tagsTextField;
 
 

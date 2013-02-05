@@ -132,8 +132,6 @@
 		D6DCF588166D13DA00539164 /* slide.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF584166D13DA00539164 /* slide.wav */; };
 		D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58B166D147200539164 /* AVFoundation.framework */; };
 		D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58D166D160000539164 /* AudioToolbox.framework */; };
-		D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
-		D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */; };
 		D6DCF5A31671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
 		D6DCF5A41671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
 		D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */; };
@@ -332,9 +330,6 @@
 		D6DCF584166D13DA00539164 /* slide.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = slide.wav; path = Coach/assets/slide.wav; sourceTree = "<group>"; };
 		D6DCF58B166D147200539164 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D6DCF58D166D160000539164 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D6DCF590166E24E500539164 /* MultipleIconSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionView.h; path = Coach/MultipleIconSelectionView.h; sourceTree = "<group>"; };
-		D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MultipleIconSelectionView.m; path = Coach/MultipleIconSelectionView.m; sourceTree = "<group>"; };
-		D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultipleIconSelectionViewDelegate.h; path = Coach/MultipleIconSelectionViewDelegate.h; sourceTree = "<group>"; };
 		D6DCF59C1671044A00539164 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		D6DCF59D1671044A00539164 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		D6DCF59E1671044A00539164 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
@@ -619,7 +614,6 @@
 		D61672C6160B3999001C3F15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D6DCF58F166E248F00539164 /* MultipleIconSelectionView */,
 				D6E0FC6A1663D2FC00237C80 /* SimpleHScroller */,
 				D6E0FC63166380B500237C80 /* IconSelectionView */,
 				D63AA69516384EF90074EA70 /* HeaderView */,
@@ -834,16 +828,6 @@
 			name = SFX;
 			sourceTree = "<group>";
 		};
-		D6DCF58F166E248F00539164 /* MultipleIconSelectionView */ = {
-			isa = PBXGroup;
-			children = (
-				D6DCF590166E24E500539164 /* MultipleIconSelectionView.h */,
-				D6DCF591166E24E500539164 /* MultipleIconSelectionView.m */,
-				D6DCF592166E24E500539164 /* MultipleIconSelectionViewDelegate.h */,
-			);
-			name = MultipleIconSelectionView;
-			sourceTree = "<group>";
-		};
 		D6DCF5991671044A00539164 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -952,7 +936,7 @@
 		852CF7841608A7E6009E249F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Daren Taylor";
 			};
 			buildConfigurationList = 852CF7871608A7E6009E249F /* Build configuration list for PBXProject "Coach" */;
@@ -1112,7 +1096,6 @@
 				D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */,
 				D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */,
-				D6DCF593166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B0167106BB00539164 /* GeneralViewController.m in Sources */,
 				85B6CC131671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
 				D659212016A05F8F00E7953D /* SlotEditViewAgent.m in Sources */,
@@ -1138,7 +1121,6 @@
 				D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */,
 				D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */,
 				D6DCF571166CE4DD00539164 /* CheckboxButton.m in Sources */,
-				D6DCF594166E24E500539164 /* MultipleIconSelectionView.m in Sources */,
 				D6DCF5B1167106BB00539164 /* GeneralViewController.m in Sources */,
 				85B6CC141671F4B0003B1A1F /* UIImage_ImageForZone.m in Sources */,
 				D659212116A05F8F00E7953D /* SlotEditViewAgent.m in Sources */,
@@ -1201,6 +1183,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -1229,6 +1214,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;

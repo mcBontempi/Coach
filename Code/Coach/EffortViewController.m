@@ -46,7 +46,7 @@
 }
 
 - (IBAction)nextPressed:(id)sender {
-    [self.delegate EffortViewControllerDelegate_effortPressed:ETypeSprint];
+    [self.delegate EffortViewControllerDelegate_effortPressed:EEffortIntermediate];
 }
 
 - (void)viewDidUnload {

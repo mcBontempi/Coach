@@ -1,12 +1,14 @@
 #import <Foundation/Foundation.h>
-#import "Config.h"
+#import "Util.h"
 
-@protocol ConfigAgentDelegate <NSObject>
+@protocol UtilAgentDelegate <NSObject>
 
--(void) ConfigAgentDelegate_finished;
+-(void) UtilAgentDelegate_finished;
 
--(void) ConfigAgentDelegate_cancelled;
+-(void) UtilAgentDelegate_cancelled;
 
--(void) ConfigAgentDelegate_makePlan:(Config*) config;
+-(void) UtilAgentDelegate_makeEmptyPlan:(NSUInteger) duration;
+
+-(void) UtilAgentDelegate_export;
 
 @end

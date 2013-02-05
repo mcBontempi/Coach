@@ -2,7 +2,8 @@
 
 @protocol UtilViewControllerDelegate <NSObject>
 
--(void) UtilViewControllerDelegate_getStartedPressed;
--(void) UtilViewControllerDelegate_cancelPressed;
+-(void) UtilViewControllerDelegate_export;
+-(void) UtilViewControllerDelegate_cancel;
+-(void) UtilViewControllerDelegate_makeEmptyPlan:(NSInteger)numWeeks;
 
 @end

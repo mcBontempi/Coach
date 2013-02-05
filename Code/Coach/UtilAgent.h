@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
-#import "ConfigAgentDelegate.h"
+#import "UtilAgentDelegate.h"
 
-@interface ConfigAgent  : NSObject 
+@interface UtilAgent  : NSObject 
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 
--(void) startWithDelegate:(id<ConfigAgentDelegate>) delegate;
+-(void) startWithDelegate:(id<UtilAgentDelegate>) delegate;
 
 @end

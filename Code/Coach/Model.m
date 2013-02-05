@@ -49,6 +49,8 @@
 
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
     self.weeks[weekIndex] = array;
+  
+  [self save];
 }
 
 -(NSMutableArray*) makeCopyOfWeek:(NSArray*) weekToCopy{
@@ -81,6 +83,31 @@
     [self clearPlan];
     
 }
+
+- (void)load
+{
+  
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"plan"];
+  if(data){
+    id obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if(obj){
+      self.weeks = obj;
+    }
+  }
+}
+
+- (void) save
+{
+  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.weeks];
+  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"plan"];
+  [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+
+
+
+
 
 
 @end

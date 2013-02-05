@@ -73,4 +73,28 @@
     return self;
 }
 
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+  [coder encodeObject:@(self.start) forKey:@"start"];
+  [coder encodeObject:@(self.duration) forKey:@"duration"];
+  [coder encodeObject:@(self.activityType) forKey:@"activityType"];
+  [coder encodeObject:self.uid forKey:@"uuid"];
+  [coder encodeObject:@(self.checked) forKey:@"checked"];
+  [coder encodeObject:@(self.zone) forKey:@"zone"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder{
+  
+  if(self = [super init]){
+    self.start = [[decoder decodeObjectForKey:@"start"] intValue];
+    self.duration = [[decoder decodeObjectForKey:@"duration"] intValue];
+    self.activityType = [[decoder decodeObjectForKey:@"activityType"] intValue];
+    self.uid = [decoder decodeObjectForKey:@"uid"];
+    self.checked = [[decoder decodeObjectForKey:@"checked"] intValue];
+    self.zone = [[decoder decodeObjectForKey:@"zone"] intValue];
+  }
+  return self;
+}
+
 @end
