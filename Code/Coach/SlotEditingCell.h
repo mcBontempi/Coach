@@ -7,6 +7,6 @@
 @interface SlotEditingCell : UITableViewCell <IconSelectionViewDelegate, SimpleHScrollerDelegate>
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier delegate:(id<SlotEditingCellDelegate>) delegate;
--(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType zone:(TZone) zone;
+-(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType;
 
 @end

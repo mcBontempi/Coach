@@ -130,8 +130,4 @@
   //  [self refetchCurrentWeek];
 }
 
--(void) TimetableViewControllerDelegate_zoneChanged:(TZone) zone slot:(Slot *)slot{
-    slot.zone = zone;
-}
-
 @end

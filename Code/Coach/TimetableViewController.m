@@ -279,7 +279,7 @@ const CGFloat KExpandedSlotHeight = 90;
             }
             
             Slot *slot = [self slotForRowAtIndexPath:indexPath];
-            [cell setupWithDuration:slot.duration activityType:slot.activityType zone:slot.zone];
+            [cell setupWithDuration:slot.duration activityType:slot.activityType];
             
             return cell;;
         }
@@ -291,7 +291,7 @@ const CGFloat KExpandedSlotHeight = 90;
             }
             
             Slot *slot = [self slotForRowAtIndexPath:indexPath];
-            [cell setupWithChecked:slot.checked duration:slot.duration activityType:slot.activityType zone:slot.zone];
+            [cell setupWithChecked:slot.checked duration:slot.duration activityType:slot.activityType];
             
             return cell;
             
@@ -539,11 +539,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingEdited];
     [self updateHeaderViewForSlot:self.slotBeingEdited];
-}
-
-
--(void) SlotEditingCellDelegate_zoneChanged:(TZone) zone{
-    [self.delegate TimetableViewControllerDelegate_zoneChanged:zone slot:self.slotBeingEdited];
 }
 
 -(void) SlotEditingCellDelegate_durationChanged:(NSInteger) duration{

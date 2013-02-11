@@ -26,5 +26,4 @@
 -(void) TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:(Slot*) slot;
 -(void) TimetableViewControllerDelegate_durationChanged:(NSInteger) duration slot:(Slot*) slot;
 -(void) TimetableViewControllerDelegate_checked:(BOOL) checked slot:(Slot*) slot;
--(void) TimetableViewControllerDelegate_zoneChanged:(TZone) zone slot:(Slot*) slot;
 @end

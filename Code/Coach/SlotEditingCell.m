@@ -1,6 +1,5 @@
 #import "SlotEditingCell.h"
 #import "UIImage_ImageForActivityType.h"
-#import "UIImage_ImageForZone.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "IconSelectionView.h"
 #import "SimpleHScroller.h"
@@ -66,7 +65,7 @@
     return self;
 }
 
--(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType zone:(TZone) zone{
+-(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType{
     
     [self.activitiesIconSelectionView setupWithSelectedIndex:activityType];
     

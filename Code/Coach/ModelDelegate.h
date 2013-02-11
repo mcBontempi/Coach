@@ -2,9 +2,10 @@
 
 @protocol ModelDelegate <NSObject>
 
+-(void) exportToJSON;
 -(void) makeTestData;
 -(void) save;
--(void) load;
+-(NSMutableArray*) load;
 -(NSArray*) getWeek:(NSInteger) weekIndex;
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array;
 -(NSMutableArray*) makeCopyOfWeek:(NSArray*) weekToCopy;

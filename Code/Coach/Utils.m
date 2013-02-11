@@ -29,7 +29,9 @@
 
 
 +(void) playSound:(NSString*) path type:(NSString*) type{
-    CFBundleRef mainBundle = CFBundleGetMainBundle(); /* Define mainBundle as the current app's bundle */
+  return;
+  
+  CFBundleRef mainBundle = CFBundleGetMainBundle(); /* Define mainBundle as the current app's bundle */
     CFURLRef fileURL = CFBundleCopyResourceURL(mainBundle, (__bridge CFStringRef)path, (__bridge CFStringRef)type, NULL); /* Set Bundle as Main Bundle, Define Sound Filename, Define Sound Filetype */
     UInt32 soundID; /* define soundID as a 32Bit Unsigned Integer */
     AudioServicesCreateSystemSoundID (fileURL, &soundID); /* Assign Sound to SoundID */

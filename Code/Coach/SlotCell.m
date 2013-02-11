@@ -1,6 +1,5 @@
 #import "SlotCell.h"
 #import "UIImage_ImageForActivityType.h"
-#import "UIImage_ImageForZone.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "CheckboxButton.h"
 
@@ -13,7 +12,6 @@
 
 @property NSInteger duration;
 @property TActivityType activityType;
-@property TZone zone;
 
 @end
 
@@ -42,11 +40,10 @@
 }
 
 
--(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType zone:(TZone) zone{
+-(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType{
     self.checkbox.selected = checked;
     self.activityType = activityType;
     self.duration = duration;
-    self.zone = zone;
 }
 
 
