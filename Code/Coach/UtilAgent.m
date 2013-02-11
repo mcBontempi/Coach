@@ -7,12 +7,15 @@
 @interface UtilAgent () <UtilViewControllerDelegate>
 @property (nonatomic, strong) UINavigationController *wizardNavigationController;
 @property (nonatomic, weak) id<UtilAgentDelegate> delegate;
+@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+
 @end
 
 @implementation UtilAgent
 
--(void) startWithDelegate:(id<UtilAgentDelegate>) delegate{
+-(void) startWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<UtilAgentDelegate>) delegate{
     self.delegate = delegate;
+    self.modelDelegate = modelDelegate;
     UtilViewController *vc = [[UtilViewController alloc] initWithDelegate:self];
     self.wizardNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     
@@ -28,12 +31,6 @@
    }];
 }
 
-
--(void) UtilViewControllerDelegate_export{
-  [self.delegate UtilAgentDelegate_export];
-
-}
-
 -(void) UtilViewControllerDelegate_makeEmptyPlan:(NSInteger)numWeeks{
   [self.delegate UtilAgentDelegate_makeEmptyPlan:5];
   [self close];
@@ -41,6 +38,35 @@
 
 -(void) UtilViewControllerDelegate_cancel{
   [self close];
+}
+
+
+-(void) sendEmailWithAttachmentData:(NSData *)attachmentData{
+  MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+  controller.mailComposeDelegate = self;
+  [controller setSubject:@"My Subject"];
+  [controller setMessageBody:@"your training plan exported from TriathlonTimetable" isHTML:NO];
+  [controller addAttachmentData:attachmentData mimeType:@"application/triathlontimetable" fileName:@"Plan.ttt"];
+  if (controller) [self.wizardNavigationController presentModalViewController:controller animated:YES];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+  if (result == MFMailComposeResultSent) {
+    NSLog(@"It's away!");
+  }
+  [self.wizardNavigationController dismissModalViewControllerAnimated:YES];
+}
+
+-(void) UtilViewControllerDelegate_export{
+  
+  if ([MFMailComposeViewController canSendMail]) {
+    [self sendEmailWithAttachmentData: [self.modelDelegate getJSON]];
+  } else {
+    [[[UIAlertView alloc] initWithTitle:@"Cannot send mail" message:@"You need to setup email in device settings" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
+  }
 }
 
 

@@ -2,7 +2,7 @@
 
 @protocol ModelDelegate <NSObject>
 
--(void) exportToJSON;
+-(NSData *) getJSON;
 -(void) makeTestData;
 -(void) save;
 -(NSMutableArray*) load;

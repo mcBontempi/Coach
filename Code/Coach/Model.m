@@ -107,10 +107,7 @@
 }
 
 
-- (void) exportToJSON{
-  // NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.weeks];
-  
-  
+- (NSData *) getJSON{
   NSMutableArray *jasonableWeeks = [[NSMutableArray alloc] init];
   
   for(NSArray *weekToScan in self.weeks){
@@ -124,8 +121,6 @@
       for(Slot* slot in day){
         {
           NSDictionary *slotDict = [slot encodeIntoDictionary];
-          
-          
           [newDay addObject:slotDict];
         }
       }
@@ -134,20 +129,9 @@
     [jasonableWeeks addObject:copiedWeek];
   }
   
-  
-  
   NSError *error;
   
-  NSData *JSONdata = [NSJSONSerialization dataWithJSONObject:jasonableWeeks options:NSJSONWritingPrettyPrinted error:&error];
-  
-  NSString *jsonString = [[NSString alloc] initWithData:JSONdata encoding:NSUTF8StringEncoding];
-
-
+  return [NSJSONSerialization dataWithJSONObject:jasonableWeeks options:NSJSONWritingPrettyPrinted error:&error];
 }
-
-
-
-
-
 
 @end

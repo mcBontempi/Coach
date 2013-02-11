@@ -59,18 +59,34 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>PNG</string>
+			<string>Scary Bug Document</string>
 			<key>LSHandlerRank</key>
-			<string>Default</string>
+			<string>Owner</string>
 			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
+			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.XML</string>
+				<string>com.mobilesoftwareworks.triathlontimetable</string>
 			</array>
-			<key>CFBundleTypeIconFiles</key>
+		</dict>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.mobilesoftwareworks.triathlontimetable</string>
+			<key>UTTypeDescription</key>
+			<string>Scary Bug Document</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>ttt</string>
+				<key>public.mime-type</key>
+				<string>application/triathlontimetable</string>
+			</dict>
+			<key>UTTypeConformsTo</key>
 			<array>
-				<string>Sandbox-icon.png</string>
+				<string>public.data</string>
 			</array>
 		</dict>
 	</array>

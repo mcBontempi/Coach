@@ -83,7 +83,7 @@
 -(void) startUtilWizard{
   self.utilAgent = [[UtilAgent alloc] init];
   self.utilAgent.rootViewController = self.rootViewController;
-  [self.utilAgent startWithDelegate:self];
+  [self.utilAgent startWithModelDelegate:self.modelDelegate delegate:self];
 }
 
 
@@ -101,8 +101,8 @@
     [self startViewer];
   }
   else{
-    
-    [self startViewer];
+    [self startUtilWizard];
+    //[self startViewer];
   }
 }
 
@@ -175,12 +175,6 @@
   for(NSInteger week = 0 ; week < length ; week++){
     [self.modelDelegate setWeek:week array:[coach getWeekUsesProfileWithWeek:week]];
   }
-}
-
--(void) UtilAgentDelegate_export{
-
-  [self.model exportToJSON];
-  
 }
 
 @end

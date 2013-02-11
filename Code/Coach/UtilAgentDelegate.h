@@ -9,6 +9,4 @@
 
 -(void) UtilAgentDelegate_makeEmptyPlan:(NSUInteger) duration;
 
--(void) UtilAgentDelegate_export;
-
 @end

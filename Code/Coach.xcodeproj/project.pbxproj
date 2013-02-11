@@ -49,6 +49,7 @@
 		85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
+		D615AF4516C915A600D6D0C1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D615AF4416C915A600D6D0C1 /* MessageUI.framework */; };
 		D61672C2160B3896001C3F15 /* ProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C1160B3896001C3F15 /* ProfileGraph.m */; };
 		D61672CA160B39DB001C3F15 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C8160B39DB001C3F15 /* ProfileViewController.m */; };
 		D61672CB160B39DB001C3F15 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D61672C9160B39DB001C3F15 /* ProfileViewController.xib */; };
@@ -144,7 +145,6 @@
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
-		D6F56366165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 /* End PBXBuildFile section */
@@ -229,6 +229,7 @@
 		85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPad.xib; path = Coach/WelcomeViewController_iPad.xib; sourceTree = "<group>"; };
 		85FE7050163549410084AE26 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		85FE7051163549410084AE26 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		D615AF4416C915A600D6D0C1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D61672C0160B3896001C3F15 /* ProfileGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileGraph.h; sourceTree = "<group>"; };
 		D61672C1160B3896001C3F15 /* ProfileGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileGraph.m; sourceTree = "<group>"; };
 		D61672C7160B39DB001C3F15 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Coach/ProfileViewController.h; sourceTree = "<group>"; };
@@ -363,6 +364,7 @@
 				D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */,
 				D6DCF5A91671063600539164 /* SystemConfiguration.framework in Frameworks */,
 				D6DCF5AC1671066900539164 /* CoreData.framework in Frameworks */,
+				D615AF4516C915A600D6D0C1 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +427,7 @@
 		852CF7901608A7E6009E249F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D615AF4416C915A600D6D0C1 /* MessageUI.framework */,
 				D6DCF5AB1671066900539164 /* CoreData.framework */,
 				D6DCF5A81671063600539164 /* SystemConfiguration.framework */,
 				D6DCF58D166D160000539164 /* AudioToolbox.framework */,
@@ -1105,7 +1108,6 @@
 				852CF801160A2C8A009E249F /* ProfileTests.m in Sources */,
 				D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */,
 				D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */,
-				D6F56366165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
 				D63B1257165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A9165BA6A9008325EB /* WrapController.m in Sources */,
