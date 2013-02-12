@@ -16,10 +16,7 @@
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
 @property (nonatomic, strong) UtilAgent *utilAgent;
-
-@property (nonatomic, strong) Model *model;
-
-@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelDelegate> modelDelegate;
 
 @end
 
@@ -28,9 +25,7 @@
 -(id) init{
   self = [super init];
   if(self){
-    self.model = [[Model alloc] init];
-    
-    self.modelDelegate = self.model;
+    self.modelDelegate = [[Model alloc] init];
   }
   return self;
 }
@@ -89,7 +84,7 @@
 
 
 -(void) startViewer{
-  self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.model delegate:self];
+  self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
   self.viewerAgent.rootViewController = self.rootViewController;
   [self.viewerAgent start];
 }
@@ -104,6 +99,15 @@
    // [self startUtilWizard];
    [self startViewer];
 //  }
+}
+
+-(void) handleOpenURL:(NSURL *)url{
+  
+  NSData *data = [NSData dataWithContentsOfURL:url];
+  
+  [self.modelDelegate createPlanFromJSONDataAndMakeCurrent:data];
+  
+  [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_finished{
@@ -133,7 +137,7 @@
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
   
-  [self.modelDelegate ModelDelegate_makePlanNamed:planName];
+  [self.modelDelegate makePlanNamed:planName];
   
   Coach *coach = [[Coach alloc] init];
   
@@ -144,7 +148,7 @@
 
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
   
-  [self.modelDelegate ModelDelegate_clearPlan];
+  [self.modelDelegate clearPlan];
   
   Coach *coach = [[Coach alloc] init];
   

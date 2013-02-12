@@ -3,37 +3,19 @@
 @implementation Slot
 
 -(id) initWithSlot:(Slot*) slot{
-    if(self = [self initWithDuration:slot.duration startTime:slot.start activityType:slot.activityType uid:slot.uid checked:slot.checked]){
+    if(self = [self initWithDuration:slot.duration activityType:slot.activityType checked:slot.checked]){
     }
     return self;
 }
 
--(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType uid:(NSString *)uid checked:(BOOL) checked{
+-(id) initWithDuration:(NSInteger) duration activityType:(TActivityType) activityType checked:(BOOL) checked{
     {
-        if(self = [self initWithDuration:duration startTime: start activityType: activityType uid:uid]){
+        if(self = [self initWithDuration:duration activityType: activityType]){
             self.checked = checked;
         }
     }
     return self;
 }
-
--(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType uid:(NSString *)uid{
-    {
-        if(self = [self initWithDuration: duration startTime: start activityType: activityType]){
-            self.uid = uid;
-        }
-    }
-    return self;
-}
-
--(id) initWithDuration:(NSInteger) duration startTime:(NSInteger) start activityType:(TActivityType) activityType {
-    
-    if(self = [self initWithDuration:duration activityType:activityType]){
-        self.start = start;
-    }
-    return self;
-}
-
 
 -(id) initWithDuration:(NSInteger) duration activityType:(TActivityType) activityType{
     
@@ -45,22 +27,8 @@
     return self;
 }
 
--(id) init{
-    if(self = [super init]) {
-        
-        if(!self.uid){
-            CFUUIDRef newUniqueId = CFUUIDCreate(kCFAllocatorDefault);
-            self.uid = (__bridge_transfer NSString*)CFUUIDCreateString(kCFAllocatorDefault, newUniqueId);
-            CFRelease(newUniqueId);
-        }
-    }
-    return self;
-}
-
-
 - (void)encodeWithCoder:(NSCoder *)coder
 { 
-  [coder encodeObject:@(self.start) forKey:@"start"];
   [coder encodeObject:@(self.duration) forKey:@"duration"];
   [coder encodeObject:@(self.activityType) forKey:@"activityType"];
   [coder encodeObject:@(self.checked) forKey:@"checked"];
@@ -69,7 +37,6 @@
 - (id)initWithCoder:(NSCoder *)decoder{
   
   if(self = [super init]){
-    self.start = [[decoder decodeObjectForKey:@"start"] intValue];
     self.duration = [[decoder decodeObjectForKey:@"duration"] intValue];
     self.activityType = [[decoder decodeObjectForKey:@"activityType"] intValue];
     self.checked = [[decoder decodeObjectForKey:@"checked"] intValue];
@@ -79,8 +46,15 @@
 
 
 - (NSDictionary *) encodeIntoDictionary{
-  return @{@"start" : @(self.start), @"duration":@(self.duration), @"activityType":@(self.activityType),@"checked":@(self.checked)};
+  return @{ @"duration":@(self.duration), @"activityType":@(self.activityType),@"checked":@(self.checked)};
+}
+
+-(id) initWithDictionary:(NSDictionary *)dictionary {
   
+  if([self initWithDuration:[[dictionary objectForKey:@"duration"] intValue] activityType:[[dictionary objectForKey:@"activityType"] intValue] checked:[[dictionary objectForKey:@"checked"] intValue]]){
+    
+  }
+  return self;
 }
 
 

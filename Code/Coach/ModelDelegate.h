@@ -13,8 +13,9 @@
 -(NSUInteger) planCount;
 -(NSString *) planName:(NSUInteger) index;
 -(void) deletePlan:(NSString *)index;
--(void) ModelDelegate_clearPlan;
--(void) ModelDelegate_makePlanNamed:(NSString *)planName;
+-(void) clearPlan;
+-(void) makePlanNamed:(NSString *)planName;
 -(void) selectPlan:(NSString *)planName;
+-(void) createPlanFromJSONDataAndMakeCurrent:(NSData *)data;
 
 @end

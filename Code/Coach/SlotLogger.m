@@ -15,7 +15,7 @@
             
     }
     
-    DLog(@"activityType = %@ \tstart = %d \tduration = %d",activityName, slot.start, slot.duration)
+    DLog(@"activityType = %@ \tduration = %d",activityName, slot.duration)
 }
 
 +(void) logSlots:(NSArray *)slots{

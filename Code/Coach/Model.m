@@ -15,7 +15,7 @@
 -(id) init{
   
   if (self = [super init]){
-
+    
     self.currentPlanName =@"My First Plan";
     
     if(![self load]){
@@ -92,15 +92,15 @@
   self.plans[self.currentPlanName] = [[NSMutableArray alloc] init];
 }
 
-
--(void) ModelDelegate_makePlanNamed:(NSString *)planName{
-  
+-(void) makePlanNamed:(NSString *)planName{
   [self.plans setObject:[[NSMutableArray alloc] init] forKey:planName];
-  
   self.currentPlanName = planName;
-  
 }
 
+-(void) addPlan:(NSMutableArray *)plan named:(NSString *)planName{
+  [self.plans setObject:plan forKey:planName];
+  self.currentPlanName = planName;
+}
 
 -(NSUInteger)planCount
 {
@@ -113,11 +113,6 @@
 
 -(void) deletePlan:(NSString *) planName{
   [self.plans removeObjectForKey:planName];
-}
-
--(void) ModelDelegate_clearPlan{
-  [self clearPlan];
-  
 }
 
 -(void) selectPlan:(NSString *)planName{
@@ -171,5 +166,45 @@
   
   return [NSJSONSerialization dataWithJSONObject:jasonableWeeks options:NSJSONWritingPrettyPrinted error:&error];
 }
+
+- (void) createPlanFromJSONDataAndMakeCurrent:(NSData *)jsonData{
+  NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSASCIIStringEncoding];
+  
+  NSLog(@"%@", jsonString);
+  
+  NSError *error;
+  NSMutableArray *planToScan = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error ];
+  
+  
+  
+  NSMutableArray *copiedPlan = [[NSMutableArray alloc] init];
+  
+  for(NSArray *weekToScan in planToScan){
+    
+    
+    
+    NSMutableArray *copiedWeek = [[NSMutableArray alloc] init];
+    
+    for(NSMutableArray *day in weekToScan ){
+      
+      NSMutableArray *newDay = [[NSMutableArray alloc] init];
+      [copiedWeek addObject:newDay];
+      for(NSDictionary *dict in day){
+        {
+          Slot *slot = [[Slot alloc] initWithDictionary:dict];
+          [newDay addObject:slot];
+        }
+      }
+    }
+    
+    [copiedPlan addObject:copiedWeek];
+  }
+  
+  
+  
+  
+  [self addPlan:copiedPlan named:@"imported"];
+}
+
 
 @end
