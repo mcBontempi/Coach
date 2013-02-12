@@ -1,7 +1,6 @@
 #import "UtilViewController.h"
 
 @interface UtilViewController ()
-- (IBAction)exportPressed:(id)sender;
 - (IBAction)makePlanPressed:(id)sender;
 
 @end
@@ -22,8 +21,12 @@
     }
     if(self){
         self.delegate = delegate;
+      
+      [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                             target:self
+                                                                                             action:@selector(makePlanPressed:)] animated:YES];
     }
-    
+  
     return self;
 }
 
@@ -38,24 +41,53 @@
 }
 
 -(void) cancel{
-    
     [self.delegate UtilViewControllerDelegate_cancel];
-    
-}
-
-
-- (IBAction)exportPressed:(id)sender {
-    
-    [self.delegate UtilViewControllerDelegate_export];
 }
 
 - (IBAction)makePlanPressed:(id)sender {
-  [self.delegate UtilViewControllerDelegate_makeEmptyPlan:5];
+  
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Please name your plan" message:@"keep it short but descriptive" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+  
+  alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+  [alertView show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  if(buttonIndex == 1){
+    NSString *text = [alertView textFieldAtIndex:0].text;
+    [self.delegate UtilViewControllerDelegate_makeEmptyPlanNamed:text numWeeks:5];
+  }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return [self.delegate UtilViewControllerDelegate_numberOfPlans];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+  }
+  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
+  cell.textLabel.textColor = [UIColor whiteColor];
+  
+  cell.contentView.backgroundColor = [UIColor darkGrayColor];
+  
+  cell.textLabel.text = [self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row];
+ 
+  return cell;
 }
 
 @end

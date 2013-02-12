@@ -5,14 +5,26 @@
 
 @interface Model ()
 
-@property (nonatomic, strong) NSMutableArray* weeks;
+@property (nonatomic, strong) NSMutableDictionary* plans;
+@property (nonatomic, strong) NSString *currentPlanName;
 
 @end
 
 @implementation Model
 
 -(id) init{
+  
   if (self = [super init]){
+
+    self.currentPlanName =@"My First Plan";
+    
+    if(![self load]){
+      // first time creation
+      self.plans = [[NSMutableDictionary alloc] init];
+      
+      [self makeTestData];
+    }
+    
   }
   return self;
 }
@@ -36,20 +48,20 @@
   coach.peakMinutes = 20*60;
   
   for(NSInteger week = 0 ; week <= length ; week++){
-    [self.weeks addObject: [coach getWeekUsesProfileWithWeek:0]];
+    [self.plans[self.currentPlanName] addObject: [coach getWeekUsesProfileWithWeek:0]];
   }
 }
 
 -(NSArray*) getWeek:(NSInteger) weekIndex{
-  NSArray *array = self.weeks[weekIndex];
+  NSArray *array = self.plans[self.currentPlanName][weekIndex];
   
   NSLog(@"%@", array.description);
   
-  return self.weeks[weekIndex];
+  return array;
 }
 
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
-  self.weeks[weekIndex] = array;
+  self.plans[self.currentPlanName][weekIndex] = array;
   
   [self save];
 }
@@ -73,11 +85,34 @@
 }
 
 -(NSInteger) weekCount{
-  return self.weeks.count;
+  return ((NSArray *)self.plans[self.currentPlanName]).count;
 }
 
 -(void) clearPlan{
-  self.weeks = [[NSMutableArray alloc] init];
+  self.plans[self.currentPlanName] = [[NSMutableArray alloc] init];
+}
+
+
+-(void) ModelDelegate_makePlanNamed:(NSString *)planName{
+  
+  [self.plans setObject:[[NSMutableArray alloc] init] forKey:planName];
+  
+  self.currentPlanName = planName;
+  
+}
+
+
+-(NSUInteger)planCount
+{
+  return self.plans.count;
+}
+
+-(NSString *)planName:(NSUInteger) index{
+  return [self.plans allKeys][index];
+}
+
+-(void) deletePlan:(NSString *) planName{
+  [self.plans removeObjectForKey:planName];
 }
 
 -(void) ModelDelegate_clearPlan{
@@ -85,32 +120,35 @@
   
 }
 
+-(void) selectPlan:(NSString *)planName{
+  self.currentPlanName = planName;
+}
+
 - (NSMutableArray*)load
 {
-  
-  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"plan"];
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"plans"];
   if(data){
     id obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if(obj){
-      self.weeks = obj;
+      self.plans = obj;
     }
   }
   
-  return self.weeks;
+  return self.plans[self.currentPlanName];
 }
 
 - (void) save
 {
-  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.weeks];
-  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"plan"];
+  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.plans];
+  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"plans"];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 
-- (NSData *) getJSON{
+- (NSData *) getJSONForPlan:(NSString *) plan{
   NSMutableArray *jasonableWeeks = [[NSMutableArray alloc] init];
   
-  for(NSArray *weekToScan in self.weeks){
+  for(NSArray *weekToScan in self.plans[self.currentPlanName]){
     
     NSMutableArray *copiedWeek = [[NSMutableArray alloc] init];
     

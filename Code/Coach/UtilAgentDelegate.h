@@ -7,6 +7,6 @@
 
 -(void) UtilAgentDelegate_cancelled;
 
--(void) UtilAgentDelegate_makeEmptyPlan:(NSUInteger) duration;
+-(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)text numWeeks:(NSUInteger) duration;
 
 @end

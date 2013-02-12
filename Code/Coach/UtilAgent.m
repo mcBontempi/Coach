@@ -22,24 +22,21 @@
     [self.rootViewController presentModalViewController:self.wizardNavigationController animated:YES];
 }
 
-
 -(void) close{
-  
   [self.rootViewController dismissViewControllerAnimated: YES completion: ^
    {
      [self.delegate UtilAgentDelegate_finished];
    }];
 }
 
--(void) UtilViewControllerDelegate_makeEmptyPlan:(NSInteger)numWeeks{
-  [self.delegate UtilAgentDelegate_makeEmptyPlan:5];
+-(void) UtilViewControllerDelegate_makeEmptyPlanNamed:text numWeeks:(NSUInteger)numWeeks{
+  [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:text numWeeks:numWeeks];
   [self close];
 }
 
 -(void) UtilViewControllerDelegate_cancel{
   [self close];
 }
-
 
 -(void) sendEmailWithAttachmentData:(NSData *)attachmentData{
   MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
@@ -60,14 +57,30 @@
   [self.wizardNavigationController dismissModalViewControllerAnimated:YES];
 }
 
--(void) UtilViewControllerDelegate_export{
+-(void) UtilViewControllerDelegate_exportPlan:(NSString *)planName{
   
   if ([MFMailComposeViewController canSendMail]) {
-    [self sendEmailWithAttachmentData: [self.modelDelegate getJSON]];
+    [self sendEmailWithAttachmentData: [self.modelDelegate getJSONForPlan:planName]];
   } else {
     [[[UIAlertView alloc] initWithTitle:@"Cannot send mail" message:@"You need to setup email in device settings" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
   }
 }
 
+-(NSUInteger) UtilViewControllerDelegate_numberOfPlans{
+  return [self.modelDelegate planCount];
+}
+
+-(NSString *) UtilViewControllerDelegate_getPlanName:(NSUInteger)index{
+  return [self.modelDelegate planName:index];
+}
+
+-(void) UtilViewControllerDelegate_deletePlan:(NSString *)planName{
+  [self.modelDelegate deletePlan:planName];
+}
+
+-(void) UtilViewControllerDelegate_selectPlan:(NSString *)planName{
+  [self.modelDelegate selectPlan:planName];
+   [self close];
+}
 
 @end

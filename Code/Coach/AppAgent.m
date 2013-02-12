@@ -95,15 +95,15 @@
 }
 
 -(void) start{
-  if(![self.model load])
-  {
-    [self.model makeTestData];
-    [self startViewer];
-  }
-  else{
-    [self startUtilWizard];
-    //[self startViewer];
-  }
+ // if(self.model)
+ // {
+  //  [self.model makeTestData];
+ //   [self startViewer];
+ // }
+//  else{
+   // [self startUtilWizard];
+   [self startViewer];
+//  }
 }
 
 -(void) ConfigAgentDelegate_finished{
@@ -121,9 +121,7 @@
   [self startUtilWizard];
 }
 
-
 -(void) UtilAgentDelegate_finished{
-  
   //  [self.model ]
   [self startViewer];
 }
@@ -133,24 +131,18 @@
   [self startViewer];
 }
 
-
-
--(void) UtilAgentDelegate_makeEmptyPlan:(NSUInteger) duration{
+-(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
   
-  [self.modelDelegate ModelDelegate_clearPlan];
+  [self.modelDelegate ModelDelegate_makePlanNamed:planName];
   
   Coach *coach = [[Coach alloc] init];
   
-  
-  for(NSInteger week = 0 ; week < duration ; week++){
+  for(NSInteger week = 0 ; week < numWeeks ; week++){
     [self.modelDelegate setWeek:week array:[coach getEmptyWeek]];
   }
-  
 }
 
-
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
-  
   
   [self.modelDelegate ModelDelegate_clearPlan];
   

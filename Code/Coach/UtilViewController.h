@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "UtilViewControllerDelegate.h"
 
-@interface UtilViewController : GeneralViewController
+@interface UtilViewController : UITableViewController
 
     @property (nonatomic, weak) id<UtilViewControllerDelegate> delegate;
 
