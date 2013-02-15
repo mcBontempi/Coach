@@ -47,12 +47,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-    [self setTableView:nil];
-    [self setNavigationBar:nil];
-    [super viewDidUnload];
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }

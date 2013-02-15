@@ -54,11 +54,6 @@
     
 }
 
-- (void)viewDidUnload {
-    [self setMakePlanButton:nil];
-    [self setGetStartedButton:nil];
-    [super viewDidUnload];
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;

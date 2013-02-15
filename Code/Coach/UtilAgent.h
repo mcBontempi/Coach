@@ -2,8 +2,10 @@
 #import "UtilAgentDelegate.h"
 #import "ModelDelegate.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import "PlanDetailAgentDelegate.h"
+#import "UtilViewControllerDelegate.h"
 
-@interface UtilAgent  : NSObject <MFMailComposeViewControllerDelegate>
+@interface UtilAgent  : NSObject <MFMailComposeViewControllerDelegate, PlanDetailAgentDelegate, UtilViewControllerDelegate>
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 

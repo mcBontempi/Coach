@@ -68,6 +68,11 @@
   [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+  [self.delegate UtilViewControllerDelegate_showPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   return [self.delegate UtilViewControllerDelegate_numberOfPlans];
@@ -79,6 +84,7 @@
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
   }
   cell.textLabel.backgroundColor = [UIColor darkGrayColor];
   cell.textLabel.textColor = [UIColor whiteColor];

@@ -3,11 +3,14 @@
 #import "UtilAgentDelegate.h"
 #import "Util.h"
 #import "Config.h"
+#import "PlanDetailAgent.h"
+#import "PlanDetailViewController.h"
 
-@interface UtilAgent () <UtilViewControllerDelegate>
+@interface UtilAgent () 
 @property (nonatomic, strong) UINavigationController *wizardNavigationController;
 @property (nonatomic, weak) id<UtilAgentDelegate> delegate;
-@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) PlanDetailAgent *planDetailAgent;
 
 @end
 
@@ -82,5 +85,25 @@
   [self.modelDelegate selectPlan:planName];
    [self close];
 }
+
+-(void) UtilViewControllerDelegate_showPlan:(NSString *)planName{
+
+  self.planDetailAgent = [[PlanDetailAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self planName:planName];
+  self.planDetailAgent.rootViewController = self.rootViewController;
+  
+  PlanDetailViewController *vc = [[PlanDetailViewController alloc] initWithDelegate:self.planDetailAgent];
+ 
+  [self.wizardNavigationController pushViewController:vc animated:YES];
+
+}
+
+-(void) PlanDetailAgentDelegate_dataChanged{
+  
+}
+
+-(void) PlanDetailAgentDelegate_close{
+   [self.wizardNavigationController popToRootViewControllerAnimated:YES];
+}
+
 
 @end

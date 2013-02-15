@@ -49,10 +49,6 @@
     [self.delegate EffortViewControllerDelegate_effortPressed:EEffortIntermediate];
 }
 
-- (void)viewDidUnload {
-    [self setEffort:nil];
-    [super viewDidUnload];
-}
 - (IBAction)easyPressed:(id)sender {
     [self.delegate EffortViewControllerDelegate_effortPressed:EEffortEasy];
 }

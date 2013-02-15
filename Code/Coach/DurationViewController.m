@@ -44,11 +44,6 @@
     [self.delegate DurationViewControllerDelegate_nextPressed:[self.duration.text intValue]];
 }
 
-- (void)viewDidUnload {
-    [self setDuration:nil];
-    [super viewDidUnload];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;
 }

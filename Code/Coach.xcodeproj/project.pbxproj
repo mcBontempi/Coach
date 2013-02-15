@@ -49,6 +49,10 @@
 		85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
+		D6158C9F16CA9B1E0091768A /* PlanDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */; };
+		D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */; };
+		D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */; };
+		D6158CA516CA9E300091768A /* PlanDetailAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D6158CA216CA9E300091768A /* PlanDetailAgent.m */; };
 		D615AF4516C915A600D6D0C1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D615AF4416C915A600D6D0C1 /* MessageUI.framework */; };
 		D61672C2160B3896001C3F15 /* ProfileGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C1160B3896001C3F15 /* ProfileGraph.m */; };
 		D61672CA160B39DB001C3F15 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D61672C8160B39DB001C3F15 /* ProfileViewController.m */; };
@@ -229,6 +233,14 @@
 		85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPad.xib; path = Coach/WelcomeViewController_iPad.xib; sourceTree = "<group>"; };
 		85FE7050163549410084AE26 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		85FE7051163549410084AE26 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPad.xib; path = Coach/PlanDetailViewController_iPad.xib; sourceTree = "<group>"; };
+		D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPhone.xib; path = Coach/PlanDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanDetailViewController.m; path = Coach/PlanDetailViewController.m; sourceTree = "<group>"; };
+		D6158C9D16CA9B1E0091768A /* PlanDetailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanDetailViewControllerDelegate.h; path = Coach/PlanDetailViewControllerDelegate.h; sourceTree = "<group>"; };
+		D6158C9E16CA9B1E0091768A /* PlanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanDetailViewController.h; path = Coach/PlanDetailViewController.h; sourceTree = "<group>"; };
+		D6158CA216CA9E300091768A /* PlanDetailAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanDetailAgent.m; sourceTree = "<group>"; };
+		D6158CA316CA9E300091768A /* PlanDetailAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailAgent.h; sourceTree = "<group>"; };
+		D6158CA416CA9E300091768A /* PlanDetailAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanDetailAgentDelegate.h; sourceTree = "<group>"; };
 		D615AF4416C915A600D6D0C1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D61672C0160B3896001C3F15 /* ProfileGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileGraph.h; sourceTree = "<group>"; };
 		D61672C1160B3896001C3F15 /* ProfileGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileGraph.m; sourceTree = "<group>"; };
@@ -389,6 +401,9 @@
 		850D261F160B78620034A743 /* Agents */ = {
 			isa = PBXGroup;
 			children = (
+				D6158CA216CA9E300091768A /* PlanDetailAgent.m */,
+				D6158CA316CA9E300091768A /* PlanDetailAgent.h */,
+				D6158CA416CA9E300091768A /* PlanDetailAgentDelegate.h */,
 				D620D88016B7C45500420D5C /* UtilAgentDelegate.h */,
 				D620D88116B7C45500420D5C /* UtilAgent.m */,
 				D620D88216B7C45500420D5C /* UtilAgent.h */,
@@ -582,6 +597,18 @@
 			name = Timetable;
 			sourceTree = "<group>";
 		};
+		D6158C9916CA9A890091768A /* PlanDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */,
+				D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */,
+				D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */,
+				D6158C9D16CA9B1E0091768A /* PlanDetailViewControllerDelegate.h */,
+				D6158C9E16CA9B1E0091768A /* PlanDetailViewController.h */,
+			);
+			name = PlanDetail;
+			sourceTree = "<group>";
+		};
 		D61672B9160B37C2001C3F15 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +790,7 @@
 		D6A7769A162DEF0500879C11 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				D6158C9916CA9A890091768A /* PlanDetail */,
 				D620D87316B7B55200420D5C /* Util */,
 				D63AA6AE163942C00074EA70 /* Welcome */,
 				D63AA6AD163942B50074EA70 /* TypeSelect */,
@@ -1004,6 +1032,8 @@
 				D659212416A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */,
 				D620D87C16B7B64C00420D5C /* UtilViewController_iPhone.xib in Resources */,
 				D620D87E16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */,
+				D6158C9F16CA9B1E0091768A /* PlanDetailViewController_iPad.xib in Resources */,
+				D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,6 +1127,8 @@
 				D659212816A05FD500E7953D /* SlotEditViewController.m in Sources */,
 				D620D87A16B7B64C00420D5C /* UtilViewController.m in Sources */,
 				D620D88316B7C45500420D5C /* UtilAgent.m in Sources */,
+				D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */,
+				D6158CA516CA9E300091768A /* PlanDetailAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
