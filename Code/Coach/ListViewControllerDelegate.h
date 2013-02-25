@@ -2,15 +2,16 @@
 
 @protocol ListViewControllerDelegate <NSObject>
 
--(void)       ListViewControllerDelegate_showWeek:(NSInteger) weekIndex;
--(NSInteger)  ListViewControllerDelegate_numberOfWeeks;
--(NSInteger)  ListViewControllerDelegate_actionItemCount;
--(NSString*)  ListViewControllerDelegate_actionItem:(NSInteger) itemIndex;
--(void)       ListViewControllerDelegate_showPlans;
+- (void)ListViewControllerDelegate_showWeek:(NSInteger)weekIndex;
+- (NSInteger)ListViewControllerDelegate_numberOfWeeks;
+- (NSInteger)ListViewControllerDelegate_actionItemCount;
+- (NSString *)ListViewControllerDelegate_actionItem:(NSInteger)itemIndex;
+- (void)ListViewControllerDelegate_showPlans;
+- (NSString *)ListViewControllerDelegate_currentPlan;
 
--(NSUInteger) ListViewControllerDelegate_numberOfPlans;
--(NSString *) ListViewControllerDelegate_getPlanName:(NSUInteger)index;
--(void) ListViewControllerDelegate_showPlan:(NSString *)planName;
--(void) ListViewControllerDelegate_showPlansInFullscreen;
+- (NSUInteger)ListViewControllerDelegate_numberOfPlans;
+- (NSString *)ListViewControllerDelegate_getPlanName:(NSUInteger)index;
+- (void)ListViewControllerDelegate_showPlan:(NSString *)planName;
+- (void)ListViewControllerDelegate_showPlansInFullscreen;
 
 @end

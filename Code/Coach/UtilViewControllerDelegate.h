@@ -5,7 +5,6 @@
 -(void) UtilViewControllerDelegate_exportPlan:(NSString *)planName;
 -(void) UtilViewControllerDelegate_selectPlan:(NSString *)planName;
 -(void) UtilViewControllerDelegate_showPlan:(NSString *)planName;
--(void) UtilViewControllerDelegate_cancel;
 -(void) UtilViewControllerDelegate_makeEmptyPlanNamed:(NSString *)text numWeeks:(NSUInteger)numWeeks;
 -(NSUInteger) UtilViewControllerDelegate_numberOfPlans;
 -(NSString *) UtilViewControllerDelegate_getPlanName:(NSUInteger)index;

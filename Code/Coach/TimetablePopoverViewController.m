@@ -1,7 +1,7 @@
 #import "TimetablePopoverViewController.h"
 #import "TimetablePopoverViewControllerDelegate.h"
 
-const CGSize popoverSize = {200,200};
+const CGFloat popoverWidth = 200;
 
 @interface TimetablePopoverViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,weak) id<TimetablePopoverViewControllerDelegate> delegate;
@@ -25,7 +25,9 @@ const CGSize popoverSize = {200,200};
 
 - (CGSize) contentSizeForViewInPopover{
   
-  return popoverSize;
+  NSUInteger numCells = [self.delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
+  
+  return CGSizeMake(popoverWidth, 62 + (numCells*44));
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -38,6 +40,7 @@ const CGSize popoverSize = {200,200};
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Timetable"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
  
   cell.textLabel.text = [_delegate TimetablePopoverViewControllerDelegate_getPlanName:indexPath.row];

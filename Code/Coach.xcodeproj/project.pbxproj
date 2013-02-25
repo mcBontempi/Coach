@@ -240,6 +240,8 @@
 		D613308A16DBBB930038455A /* TimetablePopoverViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewControllerDelegate.h; path = Coach/TimetablePopoverViewControllerDelegate.h; sourceTree = "<group>"; };
 		D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetablePopoverViewController_iPhone.xib; path = Coach/TimetablePopoverViewController_iPhone.xib; sourceTree = "<group>"; };
 		D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetablePopoverViewController_iPad.xib; path = Coach/TimetablePopoverViewController_iPad.xib; sourceTree = "<group>"; };
+		D613308F16DBE6AE0038455A /* UtilViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilViewControllerProtocol.h; path = Coach/UtilViewControllerProtocol.h; sourceTree = "<group>"; };
+		D613309016DBEB740038455A /* ModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelProtocol.h; sourceTree = "<group>"; };
 		D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPad.xib; path = Coach/PlanDetailViewController_iPad.xib; sourceTree = "<group>"; };
 		D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPhone.xib; path = Coach/PlanDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanDetailViewController.m; path = Coach/PlanDetailViewController.m; sourceTree = "<group>"; };
@@ -315,7 +317,6 @@
 		D66FFDF41675DFC600B2D119 /* z3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z3.png; path = Coach/assets/z3.png; sourceTree = "<group>"; };
 		D66FFDF51675DFC600B2D119 /* z4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z4.png; path = Coach/assets/z4.png; sourceTree = "<group>"; };
 		D66FFDF61675DFC600B2D119 /* z5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z5.png; path = Coach/assets/z5.png; sourceTree = "<group>"; };
-		D67D7978164854FE00A63FF8 /* ModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelDelegate.h; sourceTree = "<group>"; };
 		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
 		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -543,9 +544,9 @@
 		852CF7CE1608C9EB009E249F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D613309016DBEB740038455A /* ModelProtocol.h */,
 				85FE7050163549410084AE26 /* Model.h */,
 				85FE7051163549410084AE26 /* Model.m */,
-				D67D7978164854FE00A63FF8 /* ModelDelegate.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -677,6 +678,7 @@
 				D620D87716B7B64C00420D5C /* UtilViewController.h */,
 				D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */,
 				D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */,
+				D613308F16DBE6AE0038455A /* UtilViewControllerProtocol.h */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -1263,10 +1265,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Coach/External/Google/Library\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
@@ -1280,10 +1279,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Coach/External/Google/Library\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;

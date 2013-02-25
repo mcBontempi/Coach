@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "PlanDetailAgentDelegate.h"
-#import "ModelDelegate.h"
+#import "ModelProtocol.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "PlanDetailViewControllerDelegate.h"
 
@@ -8,6 +8,6 @@
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<PlanDetailAgentDelegate>) delegate planName:(NSString *) planName;
+- (id)initWithModelProtocol:(id<ModelProtocol>)modelDelegate delegate:(id<PlanDetailAgentDelegate>)delegate planName:(NSString *)planName;
 
 @end

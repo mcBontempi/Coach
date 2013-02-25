@@ -6,7 +6,7 @@
 @interface TimetableViewAgent ()
 
 @property (nonatomic, weak) id<TimetableViewAgentDelegate> delegate;
-@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+@property (nonatomic, weak) id<ModelProtocol> modelProtocol;
 @property (nonatomic, strong) NSMutableArray *week;
 @property NSInteger weekIndex;
 
@@ -14,10 +14,10 @@
 
 @implementation TimetableViewAgent
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<TimetableViewAgentDelegate>) delegate weekIndex:(NSInteger) weekIndex{
+-(id) initWithModelProtocol:(id<ModelProtocol>) modelProtocol delegate:(id<TimetableViewAgentDelegate>) delegate weekIndex:(NSInteger) weekIndex{
     self = [super init];
     if(self) {
-        self.modelDelegate = modelDelegate;
+        self.modelProtocol = modelProtocol;
         self.delegate = delegate;
         self.weekIndex = weekIndex;
     }
@@ -35,11 +35,11 @@
 }
 
 -(void) refetchCurrentWeek{
-    self.week = [self.modelDelegate makeCopyOfWeek:[self.modelDelegate getWeek:self.weekIndex]];
+    self.week = [self.modelProtocol makeCopyOfWeek:[self.modelProtocol getWeek:self.weekIndex]];
 }
 
 -(void) saveCurrentWeek{
-    [self.modelDelegate setWeek:self.weekIndex array:[NSArray arrayWithArray:self.week]];
+    [self.modelProtocol setWeek:self.weekIndex array:[NSArray arrayWithArray:self.week]];
 }
 
 -(void) TimetableViewControllerDelegate_moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{

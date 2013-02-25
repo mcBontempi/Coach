@@ -4,7 +4,7 @@
 
 @interface ListViewAgent ()
 
-@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 @property (nonatomic, weak) id<ListViewAgentDelegate> delegate;
 
 @property (nonatomic, strong) NSArray *actionItemArray;
@@ -13,59 +13,74 @@
 
 @implementation ListViewAgent
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<ListViewAgentDelegate>) delegate{
-    self = [super init];
-    if(self) {
-        self.modelDelegate = modelDelegate;
-        self.delegate = delegate;
-        
-        self.actionItemArray = @[KMENUITEM_NEWTIMETABLE];
-        }
-    return self;
-}
-
--(void) highlightCurrentWeek:(NSInteger) weekIndex{
-    [self.toListViewControllerDelegate ToListViewControllerDelegate_highlightCurrentWeek:weekIndex];
+- (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ListViewAgentDelegate>)delegate
+{
+  self = [super init];
+  if(self) {
+    self.modelProtocol = modelProtocol;
+    self.delegate = delegate;
     
+    self.actionItemArray = @[KMENUITEM_NEWTIMETABLE];
+  }
+  return self;
 }
 
--(void) ListViewControllerDelegate_showWeek:(NSInteger) weekIndex{
-    [self.delegate ListViewAgentDelegate_showWeek:weekIndex];
+- (void)highlightCurrentWeek:(NSInteger) weekIndex
+{
+  [self.toListViewControllerDelegate ToListViewControllerDelegate_highlightCurrentWeek:weekIndex];
 }
 
--(NSInteger) ListViewControllerDelegate_numberOfWeeks{
-    return [self.modelDelegate weekCount];
+#pragma -- mark ListViewControllerDelegate methods
+
+- (void)ListViewControllerDelegate_showWeek:(NSInteger) weekIndex
+{
+  [self.delegate ListViewAgentDelegate_showWeek:weekIndex];
 }
 
--(NSInteger) ListViewControllerDelegate_actionItemCount{
-    return self.actionItemArray.count;
+- (NSInteger)ListViewControllerDelegate_numberOfWeeks
+{
+  return [self.modelProtocol weekCount];
 }
 
--(NSString*) ListViewControllerDelegate_actionItem:(NSInteger) itemIndex{
-    return self.actionItemArray[itemIndex];
+- (NSInteger)ListViewControllerDelegate_actionItemCount
+{
+  return self.actionItemArray.count;
 }
 
-
-
--(void) ListViewControllerDelegate_showPlans{
-   [self.delegate ListViewAgentDelegate_showPlansInFullscreen];
+- (NSString*)ListViewControllerDelegate_actionItem:(NSInteger)itemIndex
+{
+  return self.actionItemArray[itemIndex];
 }
 
--(NSUInteger) ListViewControllerDelegate_numberOfPlans{
-  return [self.modelDelegate planCount];
+- (void)ListViewControllerDelegate_showPlans
+{
+  [self.delegate ListViewAgentDelegate_showPlansInFullscreen];
 }
 
--(NSString *) ListViewControllerDelegate_getPlanName:(NSUInteger)index{
-    return [self.modelDelegate planName:index];
+- (NSUInteger)ListViewControllerDelegate_numberOfPlans
+{
+  return [self.modelProtocol planCount];
 }
 
--(void) ListViewControllerDelegate_showPlan:(NSString *)planName{
-  [self.modelDelegate selectPlan:planName];
+- (NSString *)ListViewControllerDelegate_getPlanName:(NSUInteger)index
+{
+  return [self.modelProtocol planName:index];
+}
+
+-(void)ListViewControllerDelegate_showPlan:(NSString *)planName
+{
+  [self.modelProtocol selectPlan:planName];
   [self.toListViewControllerDelegate ToListViewControllerDelegate_reloadData];
 }
 
--(void) ListViewControllerDelegate_showPlansInFullscreen{
+-(void)ListViewControllerDelegate_showPlansInFullscreen
+{
   [self.delegate ListViewAgentDelegate_showPlansInFullscreen];
+}
+
+-(NSString *)ListViewControllerDelegate_currentPlan
+{
+  return [self.modelProtocol currentPlan];
 }
 
 

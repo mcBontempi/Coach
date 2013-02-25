@@ -26,9 +26,8 @@
     return self;
 }
 
-
--(void) cancel{
-    [self.delegate UtilViewControllerDelegate_cancel];
+- (void) UtilViewControllerProtocol_reloadData{
+  [self.tableView reloadData];
 }
 
 - (IBAction)makePlanPressed:(id)sender {
@@ -52,7 +51,6 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
- // [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
   [self.delegate UtilViewControllerDelegate_showPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
 }
 

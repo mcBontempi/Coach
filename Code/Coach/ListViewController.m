@@ -34,7 +34,7 @@
   if(self){
     self.delegate = delegate;
     
-    self.navigationItem.title = @"Darens Plan";
+    self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
   }
   
   return self;
@@ -44,7 +44,7 @@
 {
   [super viewDidLoad];
   
-  [self setRightBarButtonEdit];
+ // [self setRightBarButtonEdit];
   [self setLeftBarButtonPlans];
 }
 
@@ -111,6 +111,23 @@
   
 }
 
+
+
+
+-(void)toggleEditPressed{
+  [self.tableView setEditing:!self.tableView.editing animated:YES];
+  
+  if(self.tableView.editing){
+     }
+  else{
+       
+  }
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
@@ -166,6 +183,7 @@
 
 
 - (void)ToListViewControllerDelegate_reloadData{
+  self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
   [self.tableView reloadData];
 }
 

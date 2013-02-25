@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "ModelDelegate.h"
+#import "ModelProtocol.h"
 #import "ListViewAgentDelegate.h"
 #import "TimetableViewAgentDelegate.h"
 #import "ViewerAgentDelegate.h"
@@ -9,7 +9,7 @@
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<ViewerAgentDelegate>) delegate;
--(void) start;
+- (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ViewerAgentDelegate>)delegate;
+- (void)start;
 
 @end

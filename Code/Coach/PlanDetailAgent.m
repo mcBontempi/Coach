@@ -5,7 +5,7 @@
 
 @interface PlanDetailAgent ()
 @property (nonatomic, weak) id<PlanDetailAgentDelegate> delegate;
-@property (nonatomic, strong) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 @property (nonatomic, strong) NSString *planName;
 
 @end
@@ -13,17 +13,19 @@
 @implementation PlanDetailAgent
 
 
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<PlanDetailAgentDelegate>) delegate planName:(NSString *) planName{
+- (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<PlanDetailAgentDelegate>)delegate planName:(NSString *) planName
+{
   self = [super init];
   if(self) {
-    self.modelDelegate = modelDelegate;
+    self.modelProtocol = modelProtocol;
     self.delegate = delegate;
     self.planName = planName;
   }
   return self;
 }
 
--(void) sendEmailWithAttachmentData:(NSData *)attachmentData{
+-(void) sendEmailWithAttachmentData:(NSData *)attachmentData
+{
   MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
   controller.mailComposeDelegate = self;
   [controller setSubject:@"My Subject"];
@@ -45,7 +47,7 @@
 -(void) PlanDetailViewControllerDelegate_exportPlan
 {
   if ([MFMailComposeViewController canSendMail]) {
-    [self sendEmailWithAttachmentData: [self.modelDelegate getJSONForPlan:self.planName]];
+    [self sendEmailWithAttachmentData: [self.modelProtocol getJSONForPlan:self.planName]];
   } else {
     [[[UIAlertView alloc] initWithTitle:@"Cannot send mail" message:@"You need to setup email in device settings" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
   }
@@ -56,7 +58,7 @@
 }
 
 -(void) PlanDetailViewControllerDelegate_deletePlan{
-  [self.modelDelegate deletePlan:self.planName];
+  [self.modelProtocol deletePlan:self.planName];
   [self.delegate PlanDetailAgentDelegate_close];
 }
 

@@ -3,7 +3,7 @@
 #import "StackedProfileViewController.h"
 #import "Profile.h"
 #import "Coach.h"
-#import "ModelDelegate.h"
+#import "ModelProtocol.h"
 #import "Model.h"
 #import "Config.h"
 #import "ConfigAgent.h"
@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
-@property (nonatomic, strong) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 
 @end
 
@@ -23,7 +23,7 @@
 -(id) init{
   self = [super init];
   if(self){
-    self.modelDelegate = [[Model alloc] init];
+    self.modelProtocol = [[Model alloc] init];
   }
   return self;
 }
@@ -73,7 +73,7 @@
 }
 
 -(void) startViewer{
-  self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
+  self.viewerAgent = [[ViewerAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   self.viewerAgent.rootViewController = self.rootViewController;
   [self.viewerAgent start];
 }
@@ -94,7 +94,7 @@
   
   NSData *data = [NSData dataWithContentsOfURL:url];
   
-  [self.modelDelegate createPlanFromJSONDataAndMakeCurrent:data];
+  [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data];
   
   [self startViewer];
 }
@@ -126,7 +126,7 @@
 
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
   
-  [self.modelDelegate clearPlan];
+  [self.modelProtocol clearPlan];
   
   Coach *coach = [[Coach alloc] init];
   
@@ -147,7 +147,7 @@
   }
   
   for(NSInteger week = 0 ; week < length ; week++){
-    [self.modelDelegate setWeek:week array:[coach getWeekUsesProfileWithWeek:week]];
+    [self.modelProtocol setWeek:week array:[coach getWeekUsesProfileWithWeek:week]];
   }
 }
 

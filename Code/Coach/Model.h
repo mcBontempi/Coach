@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "ModelDelegate.h"
+#import "ModelProtocol.h"
 
-@interface Model : NSObject <ModelDelegate>
+@interface Model : NSObject <ModelProtocol>
+
+@property (nonatomic, strong, readonly) NSString *currentPlan;
 
 @end

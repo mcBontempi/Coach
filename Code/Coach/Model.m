@@ -6,7 +6,7 @@
 @interface Model ()
 
 @property (nonatomic, strong) NSMutableDictionary* plans;
-@property (nonatomic, strong) NSString *currentPlanName;
+
 
 @end
 
@@ -16,7 +16,7 @@
   
   if (self = [super init]){
     
-    self.currentPlanName =@"My First Plan";
+    _currentPlan =@"My First Plan";
     
     if(![self load]){
       // first time creation
@@ -48,12 +48,12 @@
   coach.peakMinutes = 20*60;
   
   for(NSInteger week = 0 ; week <= length ; week++){
-    [self.plans[self.currentPlanName] addObject: [coach getWeekUsesProfileWithWeek:0]];
+    [self.plans[self.currentPlan] addObject: [coach getWeekUsesProfileWithWeek:0]];
   }
 }
 
 -(NSArray*) getWeek:(NSInteger) weekIndex{
-  NSArray *array = self.plans[self.currentPlanName][weekIndex];
+  NSArray *array = self.plans[self.currentPlan][weekIndex];
   
   NSLog(@"%@", array.description);
   
@@ -61,7 +61,7 @@
 }
 
 -(void) setWeek:(NSInteger) weekIndex array:(NSArray*) array{
-  self.plans[self.currentPlanName][weekIndex] = array;
+  self.plans[self.currentPlan][weekIndex] = array;
   
   [self save];
 }
@@ -85,21 +85,21 @@
 }
 
 -(NSInteger) weekCount{
-  return ((NSArray *)self.plans[self.currentPlanName]).count;
+  return ((NSArray *)self.plans[self.currentPlan]).count;
 }
 
 -(void) clearPlan{
-  self.plans[self.currentPlanName] = [[NSMutableArray alloc] init];
+  self.plans[self.currentPlan] = [[NSMutableArray alloc] init];
 }
 
 -(void) makePlanNamed:(NSString *)planName{
   [self.plans setObject:[[NSMutableArray alloc] init] forKey:planName];
-  self.currentPlanName = planName;
+  _currentPlan = planName;
 }
 
 -(void) addPlan:(NSMutableArray *)plan named:(NSString *)planName{
   [self.plans setObject:plan forKey:planName];
-  self.currentPlanName = planName;
+  _currentPlan = planName;
 }
 
 -(NSUInteger)planCount
@@ -116,7 +116,7 @@
 }
 
 -(void) selectPlan:(NSString *)planName{
-  self.currentPlanName = planName;
+  _currentPlan = planName;
 }
 
 - (NSMutableArray*)load
@@ -129,7 +129,7 @@
     }
   }
   
-  return self.plans[self.currentPlanName];
+  return self.plans[self.currentPlan];
 }
 
 - (void) save
@@ -143,7 +143,7 @@
 - (NSData *) getJSONForPlan:(NSString *) plan{
   NSMutableArray *jasonableWeeks = [[NSMutableArray alloc] init];
   
-  for(NSArray *weekToScan in self.plans[self.currentPlanName]){
+  for(NSArray *weekToScan in self.plans[self.currentPlan]){
     
     NSMutableArray *copiedWeek = [[NSMutableArray alloc] init];
     

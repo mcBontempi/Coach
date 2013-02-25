@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UtilAgent *utilAgent;
 @property (nonatomic, strong) TimetableViewAgent *timetableViewAgent;
 @property (nonatomic, strong) ListViewAgent *listViewAgent;
-@property (nonatomic, weak) id<ModelDelegate> modelDelegate;
+@property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 @property (nonatomic, strong) IIViewDeckController *viewDeckViewController;
 @property (nonatomic, weak) id<ViewerAgentDelegate> delegate;
 
@@ -23,34 +23,35 @@
 
 @implementation ViewerAgent
 
-
--(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<ViewerAgentDelegate>) delegate{
+- (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ViewerAgentDelegate>)delegate
+{
     self = [super init];
     if(self){
-        self.modelDelegate = modelDelegate;
+        self.modelProtocol = modelProtocol;
         self.delegate = delegate;
     }
     
     return self;
 }
 
--(void) start{
-  
-  self.utilAgent = [[UtilAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
+-(void) start
+{
+  self.utilAgent = [[UtilAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   UtilViewController *vc = [[UtilViewController alloc] initWithDelegate:self.utilAgent];
+  self.utilAgent.viewControllerProtocol = vc;
  
   self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
   self.navigationController.navigationBarHidden = YES;
   
     // Create the left hand side list
-    self.listViewAgent = [[ListViewAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
+    self.listViewAgent = [[ListViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
     ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
     self.listViewAgent.toListViewControllerDelegate = listViewController;
   
   UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
 //  listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
     // Create the main Timetable view
-    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self weekIndex:0];
+    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
     TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
     self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
     UINavigationController *timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
@@ -119,7 +120,7 @@
 
 -(void) UtilAgentDelegate_showPlan:(NSString *)planName{
   
-  [self.modelDelegate selectPlan:planName];
+  [self.modelProtocol selectPlan:planName];
   
   [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
   
@@ -127,12 +128,12 @@
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
   
-  [self.modelDelegate makePlanNamed:planName];
+  [self.modelProtocol makePlanNamed:planName];
   
   Coach *coach = [[Coach alloc] init];
   
   for(NSInteger week = 0 ; week < numWeeks ; week++){
-    [self.modelDelegate setWeek:week array:[coach getEmptyWeek]];
+    [self.modelProtocol setWeek:week array:[coach getEmptyWeek]];
   }
 }
 
