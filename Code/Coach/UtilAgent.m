@@ -25,10 +25,22 @@
     [self.rootViewController presentModalViewController:self.wizardNavigationController animated:YES];
 }
 
+
+
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<UtilAgentDelegate>) delegate{
+  if(self = [super init]){
+  
+  self.delegate = delegate;
+  self.modelDelegate = modelDelegate;
+  }
+  
+  return self;
+}
+
 -(void) close{
   [self.rootViewController dismissViewControllerAnimated: YES completion: ^
    {
-     [self.delegate UtilAgentDelegate_finished];
+ //    [self.delegate UtilAgentDelegate_finished];
    }];
 }
 
@@ -87,14 +99,7 @@
 }
 
 -(void) UtilViewControllerDelegate_showPlan:(NSString *)planName{
-
-  self.planDetailAgent = [[PlanDetailAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self planName:planName];
-  self.planDetailAgent.rootViewController = self.rootViewController;
-  
-  PlanDetailViewController *vc = [[PlanDetailViewController alloc] initWithDelegate:self.planDetailAgent];
- 
-  [self.wizardNavigationController pushViewController:vc animated:YES];
-
+  [self.delegate UtilAgentDelegate_showPlan:planName];
 }
 
 -(void) PlanDetailAgentDelegate_dataChanged{

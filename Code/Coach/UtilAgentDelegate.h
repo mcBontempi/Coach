@@ -3,10 +3,8 @@
 
 @protocol UtilAgentDelegate <NSObject>
 
--(void) UtilAgentDelegate_finished;
-
--(void) UtilAgentDelegate_cancelled;
-
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)text numWeeks:(NSUInteger) duration;
+
+-(void) UtilAgentDelegate_showPlan:(NSString *)planName;
 
 @end

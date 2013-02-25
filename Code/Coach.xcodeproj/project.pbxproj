@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750303BF6523489DBD019462 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 675B6490C2414D508325CF01 /* libPods.a */; };
 		850D2622160B78770034A743 /* AppAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2621160B78770034A743 /* AppAgent.m */; };
 		850D2625160B78C20034A743 /* ConfigAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2624160B78C20034A743 /* ConfigAgent.m */; };
 		850D2628160B78E30034A743 /* ViewerAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D2627160B78E30034A743 /* ViewerAgent.m */; };
@@ -49,6 +50,9 @@
 		85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
+		D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613308416DBB2F90038455A /* TimetablePopoverViewController.m */; };
+		D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */; };
+		D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */; };
 		D6158C9F16CA9B1E0091768A /* PlanDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */; };
 		D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */; };
 		D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */; };
@@ -134,10 +138,6 @@
 		D6DCF588166D13DA00539164 /* slide.wav in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF584166D13DA00539164 /* slide.wav */; };
 		D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58B166D147200539164 /* AVFoundation.framework */; };
 		D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF58D166D160000539164 /* AudioToolbox.framework */; };
-		D6DCF5A31671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
-		D6DCF5A41671044A00539164 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */; };
-		D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */; };
-		D6DCF5A61671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */; };
 		D6DCF5A91671063600539164 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A81671063600539164 /* SystemConfiguration.framework */; };
 		D6DCF5AA1671063600539164 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5A81671063600539164 /* SystemConfiguration.framework */; };
 		D6DCF5AC1671066900539164 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DCF5AB1671066900539164 /* CoreData.framework */; };
@@ -164,6 +164,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		675B6490C2414D508325CF01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		850D2620160B78770034A743 /* AppAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppAgent.h; sourceTree = "<group>"; };
 		850D2621160B78770034A743 /* AppAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppAgent.m; sourceTree = "<group>"; };
 		850D2623160B78C20034A743 /* ConfigAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigAgent.h; sourceTree = "<group>"; };
@@ -233,6 +234,12 @@
 		85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPad.xib; path = Coach/WelcomeViewController_iPad.xib; sourceTree = "<group>"; };
 		85FE7050163549410084AE26 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		85FE7051163549410084AE26 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D613308316DBB2F90038455A /* TimetablePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewController.h; path = Coach/TimetablePopoverViewController.h; sourceTree = "<group>"; };
+		D613308416DBB2F90038455A /* TimetablePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimetablePopoverViewController.m; path = Coach/TimetablePopoverViewController.m; sourceTree = "<group>"; };
+		D613308A16DBBB930038455A /* TimetablePopoverViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewControllerDelegate.h; path = Coach/TimetablePopoverViewControllerDelegate.h; sourceTree = "<group>"; };
+		D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetablePopoverViewController_iPhone.xib; path = Coach/TimetablePopoverViewController_iPhone.xib; sourceTree = "<group>"; };
+		D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetablePopoverViewController_iPad.xib; path = Coach/TimetablePopoverViewController_iPad.xib; sourceTree = "<group>"; };
 		D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPad.xib; path = Coach/PlanDetailViewController_iPad.xib; sourceTree = "<group>"; };
 		D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPhone.xib; path = Coach/PlanDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanDetailViewController.m; path = Coach/PlanDetailViewController.m; sourceTree = "<group>"; };
@@ -338,13 +345,6 @@
 		D6DCF584166D13DA00539164 /* slide.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = slide.wav; path = Coach/assets/slide.wav; sourceTree = "<group>"; };
 		D6DCF58B166D147200539164 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D6DCF58D166D160000539164 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D6DCF59C1671044A00539164 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		D6DCF59D1671044A00539164 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		D6DCF59E1671044A00539164 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		D6DCF59F1671044A00539164 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
-		D6DCF5A01671044A00539164 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
-		D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
-		D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		D6DCF5A81671063600539164 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D6DCF5AB1671066900539164 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D6DCF5AE167106BB00539164 /* GeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralViewController.h; path = Coach/GeneralViewController.h; sourceTree = "<group>"; };
@@ -372,11 +372,10 @@
 				85C767AF165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
 				D6DCF58C166D147200539164 /* AVFoundation.framework in Frameworks */,
 				D6DCF58E166D160000539164 /* AudioToolbox.framework in Frameworks */,
-				D6DCF5A31671044A00539164 /* libGoogleAnalytics.a in Frameworks */,
-				D6DCF5A51671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */,
 				D6DCF5A91671063600539164 /* SystemConfiguration.framework in Frameworks */,
 				D6DCF5AC1671066900539164 /* CoreData.framework in Frameworks */,
 				D615AF4516C915A600D6D0C1 /* MessageUI.framework in Frameworks */,
+				750303BF6523489DBD019462 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,8 +387,6 @@
 				852CF7B41608A7E8009E249F /* UIKit.framework in Frameworks */,
 				852CF7B51608A7E8009E249F /* Foundation.framework in Frameworks */,
 				85C767B0165BA8C6008325EB /* QuartzCore.framework in Frameworks */,
-				D6DCF5A41671044A00539164 /* libGoogleAnalytics.a in Frameworks */,
-				D6DCF5A61671044A00539164 /* libGoogleAnalytics_debug.a in Frameworks */,
 				D6DCF5AA1671063600539164 /* SystemConfiguration.framework in Frameworks */,
 				D6DCF5AD1671066900539164 /* CoreData.framework in Frameworks */,
 			);
@@ -427,6 +424,7 @@
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
 				852CF78E1608A7E6009E249F /* Products */,
+				BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -452,6 +450,7 @@
 				852CF7931608A7E6009E249F /* Foundation.framework */,
 				852CF7951608A7E6009E249F /* CoreGraphics.framework */,
 				852CF7B21608A7E8009E249F /* SenTestingKit.framework */,
+				675B6490C2414D508325CF01 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,7 +458,6 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
-				D6DCF5991671044A00539164 /* External */,
 				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
 				85C7679C165BA669008325EB /* ViewDeck */,
 				850D261F160B78620034A743 /* Agents */,
@@ -597,6 +595,18 @@
 			name = Timetable;
 			sourceTree = "<group>";
 		};
+		D613308216DBB2780038455A /* TimetablePopover */ = {
+			isa = PBXGroup;
+			children = (
+				D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */,
+				D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */,
+				D613308316DBB2F90038455A /* TimetablePopoverViewController.h */,
+				D613308416DBB2F90038455A /* TimetablePopoverViewController.m */,
+				D613308A16DBBB930038455A /* TimetablePopoverViewControllerDelegate.h */,
+			);
+			name = TimetablePopover;
+			sourceTree = "<group>";
+		};
 		D6158C9916CA9A890091768A /* PlanDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +634,7 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D613308216DBB2780038455A /* TimetablePopover */,
 				D659211816A05DDF00E7953D /* SlotEditViewController */,
 				D65CE4371641526C00D3B0CB /* List */,
 				D63AA69916384F7D0074EA70 /* Other */,
@@ -854,36 +865,6 @@
 			name = SFX;
 			sourceTree = "<group>";
 		};
-		D6DCF5991671044A00539164 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				D6DCF59A1671044A00539164 /* Google */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		D6DCF59A1671044A00539164 /* Google */ = {
-			isa = PBXGroup;
-			children = (
-				D6DCF59B1671044A00539164 /* Library */,
-			);
-			path = Google;
-			sourceTree = "<group>";
-		};
-		D6DCF59B1671044A00539164 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				D6DCF59C1671044A00539164 /* GAI.h */,
-				D6DCF59D1671044A00539164 /* GAITrackedViewController.h */,
-				D6DCF59E1671044A00539164 /* GAITracker.h */,
-				D6DCF59F1671044A00539164 /* GAITransaction.h */,
-				D6DCF5A01671044A00539164 /* GAITransactionItem.h */,
-				D6DCF5A11671044A00539164 /* libGoogleAnalytics.a */,
-				D6DCF5A21671044A00539164 /* libGoogleAnalytics_debug.a */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
 		D6E0FC63166380B500237C80 /* IconSelectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,6 +906,7 @@
 				852CF7891608A7E6009E249F /* Sources */,
 				852CF78A1608A7E6009E249F /* Frameworks */,
 				852CF78B1608A7E6009E249F /* Resources */,
+				C9EF1B7C9DB0480B97BACAFD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1034,6 +1016,8 @@
 				D620D87E16B7B64C00420D5C /* UtilViewController_iPad.xib in Resources */,
 				D6158C9F16CA9B1E0091768A /* PlanDetailViewController_iPad.xib in Resources */,
 				D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */,
+				D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */,
+				D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,6 +1058,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		C9EF1B7C9DB0480B97BACAFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1129,6 +1127,7 @@
 				D620D88316B7C45500420D5C /* UtilAgent.m in Sources */,
 				D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */,
 				D6158CA516CA9E300091768A /* PlanDetailAgent.m in Sources */,
+				D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,6 +1258,7 @@
 		};
 		852CF7C41608A7E8009E249F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
@@ -1275,6 +1275,7 @@
 		};
 		852CF7C51608A7E8009E249F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";

@@ -45,13 +45,28 @@
     return self.actionItemArray[itemIndex];
 }
 
--(void) ListViewControllerDelegate_actionItemPressed:(NSInteger) itemIndex{
 
-    NSString *title = self.actionItemArray[itemIndex];
-    
-    if([title isEqualToString:KMENUITEM_NEWTIMETABLE]){
-        [self.delegate ListViewAgentDelegate_newTimetable];
-    }
+
+-(void) ListViewControllerDelegate_showPlans{
+   [self.delegate ListViewAgentDelegate_showPlansInFullscreen];
 }
+
+-(NSUInteger) ListViewControllerDelegate_numberOfPlans{
+  return [self.modelDelegate planCount];
+}
+
+-(NSString *) ListViewControllerDelegate_getPlanName:(NSUInteger)index{
+    return [self.modelDelegate planName:index];
+}
+
+-(void) ListViewControllerDelegate_showPlan:(NSString *)planName{
+  [self.modelDelegate selectPlan:planName];
+  [self.toListViewControllerDelegate ToListViewControllerDelegate_reloadData];
+}
+
+-(void) ListViewControllerDelegate_showPlansInFullscreen{
+  [self.delegate ListViewAgentDelegate_showPlansInFullscreen];
+}
+
 
 @end

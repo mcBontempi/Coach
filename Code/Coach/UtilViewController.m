@@ -21,24 +21,11 @@
     }
     if(self){
         self.delegate = delegate;
-      
-      [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                             target:self
-                                                                                             action:@selector(makePlanPressed:)] animated:YES];
     }
   
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                           target:self
-                                                                                           action:@selector(cancel)] animated:YES];
-}
 
 -(void) cancel{
     [self.delegate UtilViewControllerDelegate_cancel];
@@ -65,7 +52,8 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+ // [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+  [self.delegate UtilViewControllerDelegate_showPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{

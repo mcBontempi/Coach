@@ -1,8 +1,11 @@
 #import "ListViewController.h"
+#import <WEPopoverController.h>
+#import "TimetablePopoverViewController.h"
 
 @interface ListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+@property (nonatomic, strong) WEPopoverController *popover;
 @end
 
 
@@ -17,100 +20,174 @@
 @implementation ListViewController
 
 -(id) init{
-    NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
-    [exception raise];
-    return nil;
+  NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
+  [exception raise];
+  return nil;
 }
 
 -(id) initWithDelegate:(id<ListViewControllerDelegate>) delegate{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self = [super initWithNibName:@"ListViewController_iPhone" bundle:nil];
-    } else {
-        self = [super initWithNibName:@"ListViewController_iPad" bundle:nil];
-    }
-    if(self){
-        self.delegate = delegate;
-        
-        self.navigationItem.title = @"";
-    }
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    self = [super initWithNibName:@"ListViewController_iPhone" bundle:nil];
+  } else {
+    self = [super initWithNibName:@"ListViewController_iPad" bundle:nil];
+  }
+  if(self){
+    self.delegate = delegate;
     
-    return self;
+    self.navigationItem.title = @"Darens Plan";
+  }
+  
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
+  [self setRightBarButtonEdit];
+  [self setLeftBarButtonPlans];
+}
+
+-(void) setRightBarButtonEdit{
+  [self setRightBarButton:UIBarButtonSystemItemEdit];
+}
+
+
+
+-(void) setLeftBarButtonPlans{
+  [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"Timetables" style:UIBarButtonItemStylePlain                                                                                               target:self
+                                                                           action:@selector(showPlansBarButtonPressed)] animated:YES];
+}
+
+- (void) showPlansBarButtonPressed{
+  
+  TimetablePopoverViewController *vc = [[TimetablePopoverViewController alloc] initWithDelegate:self];
+  
+  
+ // UIViewController *vc = [[UIViewController alloc] init];
+  
+  self.popover = [[WEPopoverController alloc] initWithContentViewController:vc];
+  [self.popover presentPopoverFromRect:CGRectZero
+                                          inView:self.view
+                        permittedArrowDirections:UIPopoverArrowDirectionUp
+                                        animated:YES];
+
+  
+}
+
+-(void) setRightBarButton:(UIBarButtonSystemItem)systemItem {
+  
+  
+  
+  UIToolbar* toolbar = [[UIToolbar alloc]
+                        initWithFrame:CGRectMake(0, 0, 120, 45)];
+  [toolbar setBarStyle: UIBarStyleDefault];
+  
+  NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
+  
+  [buttons addObject:[[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                      target:nil
+                      action:nil]];
+  
+  [buttons addObject:[[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                      target:nil
+                      action:nil]];
+  [buttons addObject:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:systemItem
+                                                                  target:self
+                                                                  action:@selector(toggleEditPressed)]];
+  
+  // put the buttons in the toolbar and release them
+  [toolbar setItems:buttons animated:NO];
+  
+  
+  
+  
+  self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]
+                                          initWithCustomView:toolbar];
+  
+  
+  
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
+  [super didReceiveMemoryWarning];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+  return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    if(section == 0){
-        return [self.delegate ListViewControllerDelegate_actionItemCount];
-    }
-    else {
-        return [self.delegate ListViewControllerDelegate_numberOfWeeks];
-    }
+
+    return [self.delegate ListViewControllerDelegate_numberOfWeeks];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    }
-    cell.textLabel.backgroundColor = [UIColor darkGrayColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
     
-    cell.contentView.backgroundColor = [UIColor darkGrayColor];
-    
-    if(indexPath.section == 0){
-        cell.textLabel.text = [self.delegate ListViewControllerDelegate_actionItem:indexPath.row];
-    }else{
-        cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1];
-    }
-    return cell;
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+  }
+  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
+  cell.textLabel.textColor = [UIColor whiteColor];
+  
+  cell.contentView.backgroundColor = [UIColor darkGrayColor];
+  
+  cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row];
+  return cell;
 }
 
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == 0){
-        [self.delegate ListViewControllerDelegate_actionItemPressed:indexPath.row];
-        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
-    else{
-        [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
-    }
+  [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if(section)
-        return 5;
-    else return 0; 
+  if(section)
+    return 5;
+  else return 0;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *header =  [[UIView alloc] initWithFrame:CGRectMake(0,0,320,5)];
-
-    header.backgroundColor = [UIColor blackColor];
-    
-    return header;
+  UIView *header =  [[UIView alloc] initWithFrame:CGRectMake(0,0,320,5)];
+  
+  header.backgroundColor = [UIColor blackColor];
+  
+  return header;
 }
 
 -(void) ToListViewControllerDelegate_highlightCurrentWeek:(NSInteger) weekIndex{
- //   [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
+  //   [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
 }
 
 
+- (void)ToListViewControllerDelegate_reloadData{
+  [self.tableView reloadData];
+}
+
+
+-(NSUInteger) TimetablePopoverViewControllerDelegate_numberOfPlans{
+  return [self.delegate ListViewControllerDelegate_numberOfPlans];
+}
+-(NSString *) TimetablePopoverViewControllerDelegate_getPlanName:(NSUInteger)index{
+  return [self.delegate ListViewControllerDelegate_getPlanName:index];
+}
+
+-(void) TimetablePopoverViewControllerDelegate_showPlan:(NSString*)planName{
+  [self.delegate ListViewControllerDelegate_showPlan:planName];
+  
+  [self.popover dismissPopoverAnimated:YES];
+}
+
+-(void) TimetablePopoverViewControllerDelegate_showPlansInFullscreen{
+  [self.delegate ListViewControllerDelegate_showPlansInFullscreen];
+  
+    [self.popover dismissPopoverAnimated:YES];
+}
 
 
 @end

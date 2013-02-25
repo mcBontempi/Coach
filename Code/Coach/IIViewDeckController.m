@@ -316,9 +316,9 @@ __typeof__(h) __h = (h);                                    \
 
 - (NSArray*)controllers {
     NSMutableArray *result = [NSMutableArray array];
-    if (self.centerController) [result addObject:self.centerController];
+  if (self.rightController) [result addObject:self.rightController];
+  if (self.centerController) [result addObject:self.centerController];
     if (self.leftController) [result addObject:self.leftController];
-    if (self.rightController) [result addObject:self.rightController];
     return [NSArray arrayWithArray:result];
 }
 
@@ -836,7 +836,7 @@ __typeof__(h) __h = (h);                                    \
 }
 
 - (BOOL)toggleLeftViewAnimated:(BOOL)animated completion:(IIViewDeckControllerBlock)completed {
-    if ([self leftControllerIsClosed]) 
+    if ([self leftControllerIsClosed])
         return [self openLeftViewAnimated:animated completion:completed];
     else
         return [self closeLeftViewAnimated:animated completion:completed];

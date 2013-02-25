@@ -9,13 +9,11 @@
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
 #import "ViewerAgentDelegate.h"
-#import "UtilAgent.h"
 
-@interface AppAgent () <ConfigAgentDelegate, ViewerAgentDelegate, UtilAgentDelegate>
+@interface AppAgent () <ConfigAgentDelegate, ViewerAgentDelegate>
 
 @property (nonatomic, strong) ConfigAgent *configAgent;
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
-@property (nonatomic, strong) UtilAgent *utilAgent;
 @property (nonatomic, strong) id<ModelDelegate> modelDelegate;
 
 @end
@@ -74,15 +72,6 @@
   [self.configAgent startWithDelegate:self];
 }
 
-
--(void) startUtilWizard{
-  self.utilAgent = [[UtilAgent alloc] init];
-  self.utilAgent.rootViewController = self.rootViewController;
-  [self.utilAgent startWithModelDelegate:self.modelDelegate delegate:self];
-}
-
-
-
 -(void) startViewer{
   self.viewerAgent = [[ViewerAgent alloc] initWithModelDelegate:self.modelDelegate delegate:self];
   self.viewerAgent.rootViewController = self.rootViewController;
@@ -122,7 +111,7 @@
 }
 
 -(void) ViewerAgentDelegate_finished{
-  [self startUtilWizard];
+//  [self startUtilWizard];
 }
 
 -(void) UtilAgentDelegate_finished{
@@ -133,17 +122,6 @@
 -(void) UtilAgentDelegate_cancelled{
   
   [self startViewer];
-}
-
--(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
-  
-  [self.modelDelegate makePlanNamed:planName];
-  
-  Coach *coach = [[Coach alloc] init];
-  
-  for(NSInteger week = 0 ; week < numWeeks ; week++){
-    [self.modelDelegate setWeek:week array:[coach getEmptyWeek]];
-  }
 }
 
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
@@ -171,6 +149,11 @@
   for(NSInteger week = 0 ; week < length ; week++){
     [self.modelDelegate setWeek:week array:[coach getWeekUsesProfileWithWeek:week]];
   }
+}
+
+
+-(void) UtilAgentDelegate_showPlan:(NSString *)planName{
+  
 }
 
 @end

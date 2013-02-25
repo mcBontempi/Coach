@@ -2,28 +2,10 @@
 
 #import "ViewController.h"
 
-#import "GAI.h"
-#import "GAITracker.h"
-#import "GAITrackedViewController.h"
-#import "GAITransaction.h"
-#import "GAITransactionItem.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  /*
-   // Optional: automatically track uncaught exceptions with Google Analytics.
-   [GAI sharedInstance].trackUncaughtExceptions = YES;
-   // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-   [GAI sharedInstance].dispatchInterval = 20;
-   // Optional: set debug to YES for extra debugging information.
-   [GAI sharedInstance].debug = YES;
-   // Create tracker instance.
-   [[GAI sharedInstance] trackerWithTrackingId:@"UA-36876437-1"];
-   
-   */
-  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

@@ -4,4 +4,6 @@
 
 -(void) ToListViewControllerDelegate_highlightCurrentWeek:(NSInteger) weekIndex;
 
+-(void)ToListViewControllerDelegate_reloadData;
+
 @end

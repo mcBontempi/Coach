@@ -2,5 +2,5 @@
 
 @protocol ListViewAgentDelegate <NSObject>
 -(void) ListViewAgentDelegate_showWeek:(NSInteger) weekIndex;
--(void) ListViewAgentDelegate_newTimetable;
+-(void) ListViewAgentDelegate_showPlansInFullscreen;
 @end

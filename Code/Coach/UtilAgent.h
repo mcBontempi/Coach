@@ -10,5 +10,6 @@
 @property (nonatomic, strong) UIViewController *rootViewController;
 
 -(void) startWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<UtilAgentDelegate>) delegate;
+-(id) initWithModelDelegate:(id<ModelDelegate>) modelDelegate delegate:(id<UtilAgentDelegate>) delegate;
 
 @end
