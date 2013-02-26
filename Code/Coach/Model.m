@@ -90,16 +90,19 @@
 
 -(void) clearPlan{
   self.plans[self.currentPlan] = [[NSMutableArray alloc] init];
+  [self save];
 }
 
 -(void) makePlanNamed:(NSString *)planName{
   [self.plans setObject:[[NSMutableArray alloc] init] forKey:planName];
   _currentPlan = planName;
+  [self save];
 }
 
 -(void) addPlan:(NSMutableArray *)plan named:(NSString *)planName{
   [self.plans setObject:plan forKey:planName];
   _currentPlan = planName;
+  [self save];
 }
 
 -(NSUInteger)planCount
@@ -113,10 +116,13 @@
 
 -(void) deletePlan:(NSString *) planName{
   [self.plans removeObjectForKey:planName];
+  _currentPlan = @"";
+  [self save];
 }
 
 -(void) selectPlan:(NSString *)planName{
   _currentPlan = planName;
+  [self save];
 }
 
 - (NSMutableArray*)load

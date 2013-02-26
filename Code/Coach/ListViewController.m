@@ -48,6 +48,13 @@
   [self setLeftBarButtonPlans];
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  
+  [self reloadData];
+}
+
 -(void) setRightBarButtonEdit{
   [self setRightBarButton:UIBarButtonSystemItemEdit];
 }
@@ -124,7 +131,11 @@
   }
 }
 
-
+- (void)reloadData
+{
+  self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
+  [self.tableView reloadData];
+}
 
 
 
@@ -183,8 +194,7 @@
 
 
 - (void)ToListViewControllerDelegate_reloadData{
-  self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
-  [self.tableView reloadData];
+  [self reloadData];
 }
 
 

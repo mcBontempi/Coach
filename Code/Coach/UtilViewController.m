@@ -3,6 +3,9 @@
 @interface UtilViewController ()
 - (IBAction)makePlanPressed:(id)sender;
 
+- (IBAction)toggleEditPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
 @end
 
 @implementation UtilViewController
@@ -36,6 +39,22 @@
   
   alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
   [alertView show];
+}
+
+- (IBAction)toggleEditPressed:(id)sender {
+  
+  [self.tableView setEditing:!self.tableView.editing animated:YES];
+  
+  if(self.tableView.editing){
+    
+    self.editButton.title = @"Done";
+  
+  }
+  else{
+    self.editButton. title = @"Edit";
+    
+  }
+
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -82,4 +101,24 @@
   return cell;
 }
 
+
+- (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    [self.tableView beginUpdates];
+    NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
+    [deleteArray addObject:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+    [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationLeft];
+    [self.delegate UtilViewControllerDelegate_deletePlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+    [self.tableView endUpdates];
+  }
+}
+
+
+
+- (void)viewDidUnload {
+  [self setEditButton:nil];
+  [super viewDidUnload];
+}
 @end

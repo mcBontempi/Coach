@@ -49,7 +49,7 @@
     self.listViewAgent.toListViewControllerDelegate = listViewController;
   
   UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-//  listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+  listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
     // Create the main Timetable view
     self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
     TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
