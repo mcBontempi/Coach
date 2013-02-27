@@ -57,6 +57,13 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+  [super viewWillAppear:animated];
+  
+  // to show currectly selected cell.
+  [self.tableView reloadData];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   if(buttonIndex == 1){
@@ -74,7 +81,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-  [self.delegate UtilViewControllerDelegate_showPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+  [self.delegate UtilViewControllerDelegate_exportPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
 }
 
 
@@ -83,21 +90,61 @@
   return [self.delegate UtilViewControllerDelegate_numberOfPlans];
 }
 
+- (void)checkButtonTapped:(id)sender event:(id)event
+{
+	NSSet *touches = [event allTouches];
+	UITouch *touch = [touches anyObject];
+	CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+  
+	NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint: currentTouchPosition];
+	if (indexPath != nil)
+	{
+		[self tableView: self.tableView accessoryButtonTappedForRowWithIndexPath: indexPath];
+	}
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    
+    UIImage *image = [UIImage imageNamed:@"export.png"];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGRect frame = CGRectMake(0.0, 0.0, 32, 32);
+    button.frame = frame;	// match the button's size with the image size
+    
+    [button setBackgroundImage:image forState:UIControlStateNormal];
+    
+    // set the button's target to this table view controller so we can interpret touch events and map that to a NSIndexSet
+    [button addTarget:self action:@selector(checkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.backgroundColor = [UIColor clearColor];
+    
+    cell.accessoryView = button;
+    
   }
-  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
+//  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
   cell.textLabel.textColor = [UIColor whiteColor];
   
-  cell.contentView.backgroundColor = [UIColor darkGrayColor];
+  cell.backgroundColor = [UIColor darkGrayColor];
   
-  cell.textLabel.text = [self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row];
+  NSString *thisRowPlanName = [self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row];
+  
+  cell.textLabel.text = thisRowPlanName;
  
+    NSString *currentPlan = [self.delegate UtilViewControllerDelegate_currentPlan];
+  
+  if([thisRowPlanName isEqualToString:currentPlan]){
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+  }
+  else{
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  }
+  
+  
   return cell;
 }
 

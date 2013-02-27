@@ -175,8 +175,6 @@ permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
 			CGPoint anchorPoint = CGPointZero;
 			
 			switch (theArrowDirection) {
-        default:
-          break;
 				case UIPopoverArrowDirectionUp:
 					
 					anchorPoint = CGPointMake(CGRectGetMidX(anchorRect), CGRectGetMaxY(anchorRect));
@@ -346,8 +344,6 @@ permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
 	}
 	
 	switch (arrowDirection) {
-    default:
-      break;
 		case UIPopoverArrowDirectionUp:
 			arrowImage = [upArrowImage retain];
 			break;

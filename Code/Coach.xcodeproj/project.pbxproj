@@ -53,6 +53,7 @@
 		D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613308416DBB2F90038455A /* TimetablePopoverViewController.m */; };
 		D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */; };
 		D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */; };
+		D613309B16DE11110038455A /* export.png in Resources */ = {isa = PBXBuildFile; fileRef = D613309A16DE11110038455A /* export.png */; };
 		D6158C9F16CA9B1E0091768A /* PlanDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */; };
 		D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */; };
 		D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */; };
@@ -242,6 +243,7 @@
 		D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TimetablePopoverViewController_iPad.xib; path = Coach/TimetablePopoverViewController_iPad.xib; sourceTree = "<group>"; };
 		D613308F16DBE6AE0038455A /* UtilViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilViewControllerProtocol.h; path = Coach/UtilViewControllerProtocol.h; sourceTree = "<group>"; };
 		D613309016DBEB740038455A /* ModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelProtocol.h; sourceTree = "<group>"; };
+		D613309A16DE11110038455A /* export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = export.png; path = Coach/assets/export.png; sourceTree = "<group>"; };
 		D6158C9A16CA9B1E0091768A /* PlanDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPad.xib; path = Coach/PlanDetailViewController_iPad.xib; sourceTree = "<group>"; };
 		D6158C9B16CA9B1E0091768A /* PlanDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlanDetailViewController_iPhone.xib; path = Coach/PlanDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		D6158C9C16CA9B1E0091768A /* PlanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanDetailViewController.m; path = Coach/PlanDetailViewController.m; sourceTree = "<group>"; };
@@ -835,6 +837,7 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D613309A16DE11110038455A /* export.png */,
 				D6605A6C1671D846008DFF75 /* appIcon.png */,
 				D6DCF572166CE4EF00539164 /* tickbox_off.png */,
 				D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */,
@@ -1020,6 +1023,7 @@
 				D6158CA016CA9B1E0091768A /* PlanDetailViewController_iPhone.xib in Resources */,
 				D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */,
 				D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */,
+				D613309B16DE11110038455A /* export.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

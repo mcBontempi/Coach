@@ -87,6 +87,10 @@
   [self.delegate UtilAgentDelegate_showPlan:planName];
 }
 
+- (NSString *)UtilViewControllerDelegate_currentPlan{
+  return [self.modelProtocol currentPlan];
+}
+
 #pragma mark -- PlanDetailAgentDelegate
 
 -(void) PlanDetailAgentDelegate_dataChanged{

@@ -25,13 +25,13 @@
 
 - (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ViewerAgentDelegate>)delegate
 {
-    self = [super init];
-    if(self){
-        self.modelProtocol = modelProtocol;
-        self.delegate = delegate;
-    }
-    
-    return self;
+  self = [super init];
+  if(self){
+    self.modelProtocol = modelProtocol;
+    self.delegate = delegate;
+  }
+  
+  return self;
 }
 
 -(void) start
@@ -39,63 +39,72 @@
   self.utilAgent = [[UtilAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   UtilViewController *vc = [[UtilViewController alloc] initWithDelegate:self.utilAgent];
   self.utilAgent.viewControllerProtocol = vc;
- 
+  
   self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
   self.navigationController.navigationBarHidden = YES;
   
-    // Create the left hand side list
-    self.listViewAgent = [[ListViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
-    ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
-    self.listViewAgent.toListViewControllerDelegate = listViewController;
+  // Create the left hand side list
+  self.listViewAgent = [[ListViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
+  ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
+  self.listViewAgent.toListViewControllerDelegate = listViewController;
   
   UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
   listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
-    // Create the main Timetable view
-    self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
-    TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
-    self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
-    UINavigationController *timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
-    timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
- 
-    // add the two views tot he view deck
-    self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:timetableNavigationController leftViewController:listViewNavigationController];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-        self.viewDeckViewController.leftLedge = 60;
-    else
-        self.viewDeckViewController.leftLedge = 500;
-    
-    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+  // Create the main Timetable view
+  self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
+  TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
+  self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
+  UINavigationController *timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
+  timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
   
+  // add the two views tot he view deck
+  self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:timetableNavigationController leftViewController:listViewNavigationController];
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    self.viewDeckViewController.leftLedge = 60;
+  else
+    self.viewDeckViewController.leftLedge = 500;
+  
+  [self.rootViewController presentModalViewController:self.navigationController animated:NO];
   [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
   
+  [self showInitialWeek];
+
+
+  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
+ 
+}
+
+
+- (void)quickDebugPop
+{
+  [self TimetableViewAgentDelegate_bookmarksPressed];
+//  [self ListViewAgentDelegate_showPlansInFullscreen];
   
-  
-    [self showInitialWeek];
 }
 
 -(void) finish{
-    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
-     {
-         [self.delegate ViewerAgentDelegate_finished];
-     }];
+  [self.rootViewController dismissViewControllerAnimated: YES completion: ^
+   {
+     [self.delegate ViewerAgentDelegate_finished];
+   }];
 }
 
 -(void) showInitialWeek{
-    
-    [self.timetableViewAgent changeCurrentWeekAnimatedTo:0];
-    
-    [self.listViewAgent highlightCurrentWeek:0];
-    
+  
+  [self.timetableViewAgent changeCurrentWeekAnimatedTo:0];
+  
+  [self.listViewAgent highlightCurrentWeek:0];
+  
 }
 
 
 -(void) showWeek:(NSInteger) weekIndex{
-    [self.timetableViewAgent changeCurrentWeekAnimatedTo:weekIndex];
-    [self.viewDeckViewController closeLeftView];
+  [self.timetableViewAgent changeCurrentWeekAnimatedTo:weekIndex];
+  [self.viewDeckViewController closeLeftView];
 }
 
 -(void) ListViewAgentDelegate_showWeek:(NSInteger) weekIndex{
-    [self showWeek:weekIndex];
+  [self showWeek:weekIndex];
 }
 
 -(void) ListViewAgentDelegate_showPlansInFullscreen{
@@ -103,18 +112,18 @@
 }
 
 -(void) TimetableViewAgentDelegate_editingModeChangedIsEditing:(BOOL) editing{
+  
+  if(editing) {
+    self.viewDeckViewController.panningMode = IIViewDeckNoPanning;
+  }
+  else{
     
-    if(editing) {
-        self.viewDeckViewController.panningMode = IIViewDeckNoPanning;
-    }
-    else{
-        
-        self.viewDeckViewController.panningMode = IIViewDeckFullViewPanning;
-    }
+    self.viewDeckViewController.panningMode = IIViewDeckFullViewPanning;
+  }
 }
 
 -(void) TimetableViewAgentDelegate_bookmarksPressed{
-    [self.viewDeckViewController toggleLeftViewAnimated:YES];
+  [self.viewDeckViewController toggleLeftViewAnimated:YES];
 }
 
 

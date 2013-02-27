@@ -9,5 +9,6 @@
 -(NSUInteger) UtilViewControllerDelegate_numberOfPlans;
 -(NSString *) UtilViewControllerDelegate_getPlanName:(NSUInteger)index;
 -(void) UtilViewControllerDelegate_deletePlan:(NSString *)planName;
+-(NSString *) UtilViewControllerDelegate_currentPlan;
 
 @end

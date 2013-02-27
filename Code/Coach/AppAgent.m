@@ -1,14 +1,12 @@
 #import "AppAgent.h"
 #import "ProfileViewController.h"
 #import "StackedProfileViewController.h"
-#import "Profile.h"
 #import "Coach.h"
 #import "ModelProtocol.h"
 #import "Model.h"
 #import "Config.h"
 #import "ConfigAgent.h"
 #import "ViewerAgent.h"
-#import "ViewerAgentDelegate.h"
 
 @interface AppAgent () <ConfigAgentDelegate, ViewerAgentDelegate>
 
@@ -30,14 +28,14 @@
 
 -(void) showProfileViewController{
   // test data
-  
+
   const NSInteger length = 45;
-  
+
   Profile *profile = [[Profile alloc] init];
   profile.numberOfWeeks = length;
   profile.startPercentage =30;
   [profile generate];
-  
+
   ProfileViewController *vc = [[ProfileViewController alloc] init];
   vc.profile = profile;
   [self.rootViewController presentModalViewController:vc animated:YES];
@@ -46,23 +44,23 @@
 
 -(void) showStackedProfileViewController{
   // test data
-  
+
   const NSInteger length = 45;
-  
+
   Profile *profile = [[Profile alloc] init];
   profile.numberOfWeeks = length;
   profile.startPercentage =30;
   [profile generate];
-  
+
   Coach *coach = [[Coach alloc] init];
   coach.profile = profile;
   coach.peakMinutes = 20*60;
-  
+
   NSArray *week = [coach getStackedWeekUsesProfileWithWeek:1];
-  
+
   StackedProfileViewController *vc = [[StackedProfileViewController alloc] init];
   vc.slots = week;
-  
+
   [self.rootViewController presentModalViewController:vc animated:YES];
 }
 
@@ -91,22 +89,22 @@
 }
 
 -(void) handleOpenURL:(NSURL *)url{
-  
+
   NSData *data = [NSData dataWithContentsOfURL:url];
-  
+
   [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data];
-  
+
   [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_finished{
-  
+
   //  [self.model ]
   [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_cancelled{
-  
+
   [self startViewer];
 }
 
@@ -120,12 +118,12 @@
 }
 
 -(void) UtilAgentDelegate_cancelled{
-  
+
   [self startViewer];
 }
 
 -(void) ConfigAgentDelegate_makePlan:(Config*) config{
-  
+
   [self.modelProtocol clearPlan];
   
   Coach *coach = [[Coach alloc] init];

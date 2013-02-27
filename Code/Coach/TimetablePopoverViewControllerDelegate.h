@@ -13,6 +13,7 @@
 -(NSUInteger) TimetablePopoverViewControllerDelegate_numberOfPlans;
 -(NSString *) TimetablePopoverViewControllerDelegate_getPlanName:(NSUInteger)index;
 -(void) TimetablePopoverViewControllerDelegate_showPlan:(NSString*)planName;
+-(NSString *)TimetablePopoverViewControllerDelegate_currentPlan;
 -(void) TimetablePopoverViewControllerDelegate_showPlansInFullscreen;
 
 

@@ -13,72 +13,70 @@
 #import "Config.h"
 
 @interface ConfigAgent () <WelcomeViewControllerDelegate, TypeSelectViewControllerDelegate, DurationViewControllerDelegate, EffortViewControllerDelegate, FinishViewControllerDelegate>
-@property (nonatomic, strong) UINavigationController *wizardNavigationController;
-@property (nonatomic, weak) id<ConfigAgentDelegate> delegate;
-@property (nonatomic, weak) id<ToFinishViewControllerDelegate> toFinishViewControllerDelegate;
-@property (nonatomic, strong) Config *config;
+@property(nonatomic, strong) UINavigationController *wizardNavigationController;
+@property(nonatomic, weak) id <ConfigAgentDelegate> delegate;
+@property(nonatomic, weak) id <ToFinishViewControllerDelegate> toFinishViewControllerDelegate;
+@property(nonatomic, strong) Config *config;
 @end
 
 @implementation ConfigAgent
 
--(void) startWithDelegate:(id<ConfigAgentDelegate>) delegate{
+- (void)startWithDelegate:(id <ConfigAgentDelegate>)delegate {
     self.config = [[Config alloc] init];
     self.delegate = delegate;
     WelcomeViewController *vc = [[WelcomeViewController alloc] initWithDelegate:self];
     self.wizardNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-    
+
     [self.rootViewController presentModalViewController:self.wizardNavigationController animated:YES];
 }
 
--(void) WelcomeViewControllerDelegate_getStartedPressed{
+- (void)WelcomeViewControllerDelegate_getStartedPressed {
     TypeSelectViewController *vc = [[TypeSelectViewController alloc] initWithDelegate:self];
     [self.wizardNavigationController pushViewController:vc animated:YES];
 }
 
--(void) WelcomeViewControllerDelegate_cancelPressed{
-    
-    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
-     {
-         [self.delegate ConfigAgentDelegate_cancelled];
-     }];
-    
+- (void)WelcomeViewControllerDelegate_cancelPressed {
+
+    [self.rootViewController dismissViewControllerAnimated:YES completion:^{
+        [self.delegate ConfigAgentDelegate_cancelled];
+    }];
+
 }
 
--(void) TypeSelectViewControllerDelegate_typePressed:(TType) type{
+- (void)TypeSelectViewControllerDelegate_typePressed:(TType)type {
     self.config.type = type;
     DurationViewController *vc = [[DurationViewController alloc] initWithDelegate:self];
     [self.wizardNavigationController pushViewController:vc animated:YES];
 }
 
--(void) DurationViewControllerDelegate_nextPressed:(NSInteger)duration{
+- (void)DurationViewControllerDelegate_nextPressed:(NSInteger)duration {
     self.config.duration = duration;
     EffortViewController *vc = [[EffortViewController alloc] initWithDelegate:self];
     [self.wizardNavigationController pushViewController:vc animated:YES];
 }
 
--(void) EffortViewControllerDelegate_effortPressed:(TEffort)effort{
+- (void)EffortViewControllerDelegate_effortPressed:(TEffort)effort {
     self.config.effort = effort;
     FinishViewController *vc = [[FinishViewController alloc] initWithDelegate:self];
     self.toFinishViewControllerDelegate = vc;
     [self.wizardNavigationController pushViewController:vc animated:YES];
 }
 
--(void) FinishViewControllerDelegate_makePlanPressed{
+- (void)FinishViewControllerDelegate_makePlanPressed {
     [self.delegate ConfigAgentDelegate_makePlan:self.config];
     [self performSelector:@selector(planCreated) withObject:nil afterDelay:1.0];
 }
 
--(void) planCreated{
-    
+- (void)planCreated {
+
     [self.toFinishViewControllerDelegate ToFinishViewControllerDelegate_planCreated];
 }
 
--(void) FinishViewControllerDelegate_getStartedPressed{
-    
-    [self.rootViewController dismissViewControllerAnimated: YES completion: ^
-     {
-         [self.delegate ConfigAgentDelegate_finished];
-     }];
+- (void)FinishViewControllerDelegate_getStartedPressed {
+
+    [self.rootViewController dismissViewControllerAnimated:YES completion:^{
+        [self.delegate ConfigAgentDelegate_finished];
+    }];
 }
 
 @end

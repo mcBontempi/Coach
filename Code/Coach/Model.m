@@ -48,7 +48,7 @@
   coach.peakMinutes = 20*60;
   
   for(NSInteger week = 0 ; week <= length ; week++){
-    [self.plans[self.currentPlan] addObject: [coach getWeekUsesProfileWithWeek:0]];
+      [self.plans[self.currentPlan] addObject:[coach getWeekUsesProfileWithWeek:0]];
   }
 }
 

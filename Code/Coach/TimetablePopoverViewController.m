@@ -23,6 +23,13 @@ const CGFloat popoverWidth = 200;
   return self;
 }
 
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (CGSize) contentSizeForViewInPopover{
   
   NSUInteger numCells = [self.delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
@@ -43,7 +50,25 @@ const CGFloat popoverWidth = 200;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
   }
  
-  cell.textLabel.text = [_delegate TimetablePopoverViewControllerDelegate_getPlanName:indexPath.row];
+  cell.textLabel.textColor = [UIColor whiteColor];
+  
+  cell.backgroundColor = [UIColor darkGrayColor];
+  
+  NSString *thisRowPlanName = [self.delegate TimetablePopoverViewControllerDelegate_getPlanName:indexPath.row];
+  
+  cell.textLabel.text = thisRowPlanName;
+  
+  
+  NSString *currentPlan = [self.delegate TimetablePopoverViewControllerDelegate_currentPlan];
+  
+  if([thisRowPlanName isEqualToString:currentPlan]){
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+  }
+  else{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  }
+  
+  
   
   return cell;
 }

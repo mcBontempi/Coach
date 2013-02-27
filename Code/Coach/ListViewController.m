@@ -66,6 +66,36 @@
                                                                            action:@selector(showPlansBarButtonPressed)] animated:YES];
 }
 
+- (WEPopoverContainerViewProperties *)defaultContainerViewProperties {
+	WEPopoverContainerViewProperties *ret = [WEPopoverContainerViewProperties alloc] ;
+	
+	CGSize imageSize = CGSizeMake(62.0f, 62.0f);
+	NSString *bgImageName = @"popoverBg.png";
+	CGFloat bgMargin = 6.0;
+	CGFloat contentMargin = 20.0;
+	
+	ret.leftBgMargin = bgMargin;
+	ret.rightBgMargin = bgMargin;
+	ret.topBgMargin = bgMargin;
+	ret.bottomBgMargin = bgMargin;
+	ret.leftBgCapSize = imageSize.width/2;
+	ret.topBgCapSize = imageSize.height/2;
+	ret.bgImageName = bgImageName;
+	ret.leftContentMargin = contentMargin;
+	ret.rightContentMargin = contentMargin;
+	ret.topContentMargin = contentMargin;
+	ret.bottomContentMargin = contentMargin;
+	ret.arrowMargin = 1.0;
+	
+	ret.upArrowImageName = @"popoverArrowUpSimple.png";
+	ret.downArrowImageName = @"popoverArrowDownSimple.png";
+	ret.leftArrowImageName = @"popoverArrowLeftSimple.png";
+	ret.rightArrowImageName = @"popoverArrowRightSimple.png";
+	return ret;
+}
+
+
+
 - (void) showPlansBarButtonPressed{
   
   TimetablePopoverViewController *vc = [[TimetablePopoverViewController alloc] initWithDelegate:self];
@@ -74,6 +104,10 @@
  // UIViewController *vc = [[UIViewController alloc] init];
   
   self.popover = [[WEPopoverController alloc] initWithContentViewController:vc];
+  
+  self.popover.containerViewProperties = [self defaultContainerViewProperties];
+  
+  
   [self.popover presentPopoverFromRect:CGRectZero
                                           inView:self.view
                         permittedArrowDirections:UIPopoverArrowDirectionUp
@@ -215,6 +249,11 @@
   [self.delegate ListViewControllerDelegate_showPlansInFullscreen];
   
     [self.popover dismissPopoverAnimated:YES];
+}
+
+- (NSString *)TimetablePopoverViewControllerDelegate_currentPlan
+{
+  return [self.delegate ListViewControllerDelegate_currentPlan];
 }
 
 
