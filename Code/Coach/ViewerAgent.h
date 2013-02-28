@@ -11,5 +11,6 @@
 
 - (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ViewerAgentDelegate>)delegate;
 - (void)start;
+- (void)finish;
 
 @end

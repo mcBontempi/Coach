@@ -7,7 +7,6 @@
 #import "PlanDetailViewController.h"
 
 @interface UtilAgent ()
-@property (nonatomic, strong) UINavigationController *wizardNavigationController;
 @property (nonatomic, weak) id<UtilAgentDelegate> delegate;
 @property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 @property (nonatomic, strong) PlanDetailAgent *planDetailAgent;
@@ -32,9 +31,10 @@
   [controller setSubject:@"My Subject"];
   [controller setMessageBody:@"your training plan exported from TriathlonTimetable" isHTML:NO];
   [controller addAttachmentData:attachmentData mimeType:@"application/triathlontimetable" fileName:@"Plan.ttt"];
-  if (controller) [self.wizardNavigationController presentModalViewController:controller animated:YES];
+  if (controller){
+    [self.rootViewController presentViewController:controller animated:YES completion:nil];
+  }
 }
-
 - (void)mailComposeController:(MFMailComposeViewController*)controller
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError*)error;
@@ -42,7 +42,7 @@
   if (result == MFMailComposeResultSent) {
     NSLog(@"It's away!");
   }
-  [self.wizardNavigationController dismissModalViewControllerAnimated:YES];
+  [self.rootViewController dismissModalViewControllerAnimated:YES];
 }
 
 #pragma -- mark UtilViewControllerDelegate methods
@@ -97,7 +97,7 @@
 }
 
 -(void) PlanDetailAgentDelegate_close{
-  [self.wizardNavigationController popToRootViewControllerAnimated:YES];
+ // [self.rootViewController popToRootViewControllerAnimated:YES];
 }
 
 

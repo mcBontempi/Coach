@@ -209,7 +209,7 @@
   
   
   
-  [self addPlan:copiedPlan named:@"imported"];
+  [self addPlan:copiedPlan named:@"Imported"];
 }
 
 

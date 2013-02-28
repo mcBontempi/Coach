@@ -43,6 +43,8 @@
   self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
   self.navigationController.navigationBarHidden = YES;
   
+  self.utilAgent.rootViewController = vc;
+  
   // Create the left hand side list
   self.listViewAgent = [[ListViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
@@ -82,8 +84,10 @@
   
 }
 
+
+
 -(void) finish{
-  [self.rootViewController dismissViewControllerAnimated: YES completion: ^
+  [self.rootViewController dismissViewControllerAnimated: NO completion: ^
    {
      [self.delegate ViewerAgentDelegate_finished];
    }];

@@ -71,6 +71,11 @@
 }
 
 -(void) startViewer{
+  
+  if(self.viewerAgent){
+    [self.viewerAgent finish];
+  }
+  
   self.viewerAgent = [[ViewerAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   self.viewerAgent.rootViewController = self.rootViewController;
   [self.viewerAgent start];
