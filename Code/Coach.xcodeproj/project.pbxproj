@@ -1271,6 +1271,7 @@
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1285,6 +1286,7 @@
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
 			};

@@ -11,22 +11,22 @@
 @implementation UtilViewController
 
 -(id) init{
-    NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
-    [exception raise];
-    return nil;
+  NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
+  [exception raise];
+  return nil;
 }
 
 -(id) initWithDelegate:(id<UtilViewControllerDelegate>) delegate{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self = [super initWithNibName:@"UtilViewController_iPhone" bundle:nil];
-    } else {
-        self = [super initWithNibName:@"UtilViewController_iPad" bundle:nil];
-    }
-    if(self){
-        self.delegate = delegate;
-    }
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    self = [super initWithNibName:@"UtilViewController_iPhone" bundle:nil];
+  } else {
+    self = [super initWithNibName:@"UtilViewController_iPad" bundle:nil];
+  }
+  if(self){
+    self.delegate = delegate;
+  }
   
-    return self;
+  return self;
 }
 
 - (void) UtilViewControllerProtocol_reloadData{
@@ -48,13 +48,13 @@
   if(self.tableView.editing){
     
     self.editButton.title = @"Done";
-  
+    
   }
   else{
     self.editButton. title = @"Edit";
     
   }
-
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -73,7 +73,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return YES;
+  return YES;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -126,7 +126,7 @@
     cell.accessoryView = button;
     
   }
-//  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
+  //  cell.textLabel.backgroundColor = [UIColor darkGrayColor];
   cell.textLabel.textColor = [UIColor whiteColor];
   
   cell.backgroundColor = [UIColor darkGrayColor];
@@ -134,17 +134,15 @@
   NSString *thisRowPlanName = [self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row];
   
   cell.textLabel.text = thisRowPlanName;
- 
-    NSString *currentPlan = [self.delegate UtilViewControllerDelegate_currentPlan];
+  
+  NSString *currentPlan = [self.delegate UtilViewControllerDelegate_currentPlan];
   
   if([thisRowPlanName isEqualToString:currentPlan]){
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
   }
   else{
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
-  
-  
   return cell;
 }
 
