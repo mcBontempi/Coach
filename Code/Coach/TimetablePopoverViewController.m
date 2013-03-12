@@ -1,7 +1,8 @@
 #import "TimetablePopoverViewController.h"
 #import "TimetablePopoverViewControllerDelegate.h"
+#import "UtilTableViewCell.h"
 
-const CGFloat popoverWidth = 200;
+const CGFloat popoverWidth = 240;
 
 @interface TimetablePopoverViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,weak) id<TimetablePopoverViewControllerDelegate> delegate;
@@ -34,7 +35,7 @@ const CGFloat popoverWidth = 200;
   
   NSUInteger numCells = [self.delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
   
-  return CGSizeMake(popoverWidth, 62 + (numCells*44));
+  return CGSizeMake(popoverWidth, 50 + (numCells*44));
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -43,21 +44,14 @@ const CGFloat popoverWidth = 200;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
   
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Timetable"];
+  UtilTableViewCell *cell = (UtilTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Timetable"];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Timetable"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell = [[UtilTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Timetable"];
   }
- 
-  cell.textLabel.textColor = [UIColor whiteColor];
-  
-  cell.backgroundColor = [UIColor darkGrayColor];
   
   NSString *thisRowPlanName = [self.delegate TimetablePopoverViewControllerDelegate_getPlanName:indexPath.row];
   
   cell.textLabel.text = thisRowPlanName;
-  
   
   NSString *currentPlan = [self.delegate TimetablePopoverViewControllerDelegate_currentPlan];
   

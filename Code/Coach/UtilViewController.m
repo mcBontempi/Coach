@@ -133,6 +133,9 @@
   UtilTableViewCell *cell = (UtilTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"Foobar"];
   if (cell == nil) {
     cell = [[UtilTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Foobar"];
+ 
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
   }
   
   

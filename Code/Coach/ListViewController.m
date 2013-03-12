@@ -69,10 +69,10 @@
 - (WEPopoverContainerViewProperties *)defaultContainerViewProperties {
 	WEPopoverContainerViewProperties *ret = [WEPopoverContainerViewProperties alloc] ;
 	
-	CGSize imageSize = CGSizeMake(62.0f, 62.0f);
-	NSString *bgImageName = @"popoverBg.png";
+	CGSize imageSize = CGSizeMake(0.0f, 0.0f);
+	NSString *bgImageName = nil;//@"popoverBgWhite.png";
 	CGFloat bgMargin = 6.0;
-	CGFloat contentMargin = 20.0;
+	CGFloat contentMargin = 0.0;
 	
 	ret.leftBgMargin = bgMargin;
 	ret.rightBgMargin = bgMargin;

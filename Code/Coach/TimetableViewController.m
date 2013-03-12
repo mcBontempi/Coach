@@ -132,6 +132,8 @@ const CGFloat KExpandedSlotHeight = 90;
         
         
         [self addAddRows];
+      
+      
     }
     else{
         // get this before we go messing with the data

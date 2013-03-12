@@ -16,8 +16,7 @@
       [self.contentView addSubview:_spot];
       
       self.selectionStyle = UITableViewCellSelectionStyleNone;
-      self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-
+  
     }
     return self;
 }

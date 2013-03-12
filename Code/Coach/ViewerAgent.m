@@ -67,12 +67,12 @@
     self.viewDeckViewController.leftLedge = 500;
   
   [self.rootViewController presentModalViewController:self.navigationController animated:NO];
-//  [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
+  [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
   
-//  [self showInitialWeek];
+  [self showInitialWeek];
 
 
-//  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
+  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
  
 }
 
