@@ -115,6 +115,12 @@
 		D66FFDF91675DFC600B2D119 /* z3.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF41675DFC600B2D119 /* z3.png */; };
 		D66FFDFA1675DFC600B2D119 /* z4.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF51675DFC600B2D119 /* z4.png */; };
 		D66FFDFB1675DFC600B2D119 /* z5.png in Resources */ = {isa = PBXBuildFile; fileRef = D66FFDF61675DFC600B2D119 /* z5.png */; };
+		D677708E16EF393A00D430C7 /* UtilTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D677708D16EF393A00D430C7 /* UtilTableViewCell.m */; };
+		D677709016EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */; };
+		D677709216EF5FBB00D430C7 /* triathlonTimetableJustTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */; };
+		D677709516EF611800D430C7 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709316EF611800D430C7 /* addButton.png */; };
+		D677709616EF611800D430C7 /* addButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709416EF611800D430C7 /* addButton@2x.png */; };
+		D677709816EF6C1700D430C7 /* spot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709716EF6C1600D430C7 /* spot@2x.png */; };
 		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
@@ -319,6 +325,13 @@
 		D66FFDF41675DFC600B2D119 /* z3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z3.png; path = Coach/assets/z3.png; sourceTree = "<group>"; };
 		D66FFDF51675DFC600B2D119 /* z4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z4.png; path = Coach/assets/z4.png; sourceTree = "<group>"; };
 		D66FFDF61675DFC600B2D119 /* z5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = z5.png; path = Coach/assets/z5.png; sourceTree = "<group>"; };
+		D677708C16EF393A00D430C7 /* UtilTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilTableViewCell.h; path = Coach/UtilTableViewCell.h; sourceTree = "<group>"; };
+		D677708D16EF393A00D430C7 /* UtilTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilTableViewCell.m; path = Coach/UtilTableViewCell.m; sourceTree = "<group>"; };
+		D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "triathlonTimetableJustTitle@2x.png"; path = "Coach/assets/triathlonTimetableJustTitle@2x.png"; sourceTree = "<group>"; };
+		D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triathlonTimetableJustTitle.png; path = Coach/assets/triathlonTimetableJustTitle.png; sourceTree = "<group>"; };
+		D677709316EF611800D430C7 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addButton.png; path = Coach/assets/addButton.png; sourceTree = "<group>"; };
+		D677709416EF611800D430C7 /* addButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addButton@2x.png"; path = "Coach/assets/addButton@2x.png"; sourceTree = "<group>"; };
+		D677709716EF6C1600D430C7 /* spot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spot@2x.png"; path = "Coach/assets/spot@2x.png"; sourceTree = "<group>"; };
 		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
 		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -681,6 +694,8 @@
 				D620D87816B7B64C00420D5C /* UtilViewController_iPhone.xib */,
 				D620D87916B7B64C00420D5C /* UtilViewController_iPad.xib */,
 				D613308F16DBE6AE0038455A /* UtilViewControllerProtocol.h */,
+				D677708C16EF393A00D430C7 /* UtilTableViewCell.h */,
+				D677708D16EF393A00D430C7 /* UtilTableViewCell.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -837,6 +852,11 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D677709716EF6C1600D430C7 /* spot@2x.png */,
+				D677709316EF611800D430C7 /* addButton.png */,
+				D677709416EF611800D430C7 /* addButton@2x.png */,
+				D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */,
+				D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */,
 				D613309A16DE11110038455A /* export.png */,
 				D6605A6C1671D846008DFF75 /* appIcon.png */,
 				D6DCF572166CE4EF00539164 /* tickbox_off.png */,
@@ -1024,6 +1044,11 @@
 				D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */,
 				D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */,
 				D613309B16DE11110038455A /* export.png in Resources */,
+				D677709016EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png in Resources */,
+				D677709216EF5FBB00D430C7 /* triathlonTimetableJustTitle.png in Resources */,
+				D677709516EF611800D430C7 /* addButton.png in Resources */,
+				D677709616EF611800D430C7 /* addButton@2x.png in Resources */,
+				D677709816EF6C1700D430C7 /* spot@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,6 +1159,7 @@
 				D6158CA116CA9B1E0091768A /* PlanDetailViewController.m in Sources */,
 				D6158CA516CA9E300091768A /* PlanDetailAgent.m in Sources */,
 				D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */,
+				D677708E16EF393A00D430C7 /* UtilTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
