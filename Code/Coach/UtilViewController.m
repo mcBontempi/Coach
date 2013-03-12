@@ -75,6 +75,8 @@
   
   // to show currectly selected cell.
   [self.tableView reloadData];
+  
+  self.tableView.userInteractionEnabled = YES;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -90,6 +92,17 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+  [self.delegate UtilViewControllerDelegate_selectPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
+  [self.tableView reloadData];
+ 
+  self.tableView.userInteractionEnabled = NO;
+  
+  [self performSelector:@selector(doSelection:) withObject:indexPath afterDelay:0.1];
+}
+
+- (void)doSelection:(NSIndexPath *)indexPath
+{
   [self.delegate UtilViewControllerDelegate_showPlan:[self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row]];
 }
 
@@ -125,8 +138,16 @@
   
   NSString *thisRowPlanName = [self.delegate UtilViewControllerDelegate_getPlanName:indexPath.row];
   cell.textLabel.text = thisRowPlanName;
-    cell.spot.hidden = ! [thisRowPlanName isEqualToString:[self.delegate UtilViewControllerDelegate_currentPlan]];
   
+      NSString *currentPlan = [self.delegate UtilViewControllerDelegate_currentPlan];
+  
+  if([thisRowPlanName isEqualToString:currentPlan]){
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+  }
+  else{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  }
+
   return cell;
 }
 

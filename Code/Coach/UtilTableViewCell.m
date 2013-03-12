@@ -15,7 +15,7 @@
  
       [self.contentView addSubview:_spot];
       
-      self.selectionStyle = UITableViewCellSelectionStyleGray;
+      self.selectionStyle = UITableViewCellSelectionStyleNone;
       self.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 
     }
@@ -37,7 +37,7 @@
 {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+  self.spot.hidden = !selected;
 }
 
 - (void)setup
