@@ -6,7 +6,7 @@
 @interface TimetableViewAgent ()
 
 @property (nonatomic, weak) id<TimetableViewAgentDelegate> delegate;
-@property (nonatomic, weak) id<ModelProtocol> modelProtocol;
+@property (nonatomic, strong) id<ModelProtocol> modelProtocol;
 @property (nonatomic, strong) NSMutableArray *week;
 @property NSInteger weekIndex;
 
@@ -121,6 +121,12 @@
 
 -(void) TimetableViewControllerDelegate_durationChanged:(NSInteger) duration slot:(Slot*) slot{
     slot.duration = duration;
+}
+
+
+- (void)TimetableViewControllerDelegate_showFullscreenEditor
+{
+  [self.delegate TimetableViewAgentDelegate_showFullscreenEditor];
 }
 
 -(void) TimetableViewControllerDelegate_checked:(BOOL)checked slot:(Slot *)slot{

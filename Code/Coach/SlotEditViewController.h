@@ -1,7 +1,8 @@
 #import <UIKit/UIKit.h>
+#import "SlotEditViewControllerDelegate.h"
 
 @interface SlotEditViewController : GeneralViewController
 
--(id) init;
+-(id) initWithDelegate:(id<SlotEditViewControllerDelegate>) delegate;
 
 @end

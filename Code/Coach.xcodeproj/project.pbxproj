@@ -156,6 +156,7 @@
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
+		D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
@@ -373,6 +374,9 @@
 		D6E0FC691663B92600237C80 /* SlotCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SlotCellDelegate.h; path = Coach/SlotCellDelegate.h; sourceTree = "<group>"; };
 		D6E0FC6B1663D31500237C80 /* SimpleHScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleHScroller.h; path = Coach/SimpleHScroller.h; sourceTree = "<group>"; };
 		D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleHScroller.m; path = Coach/SimpleHScroller.m; sourceTree = "<group>"; };
+		D6E427E716F9A741002EE8D5 /* SlotCreateCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCellDelegate.h; path = Coach/SlotCreateCellDelegate.h; sourceTree = "<group>"; };
+		D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCreateCell.m; path = Coach/SlotCreateCell.m; sourceTree = "<group>"; };
+		D6E427E916F9A742002EE8D5 /* SlotCreateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCell.h; path = Coach/SlotCreateCell.h; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -594,6 +598,9 @@
 		85C886271631601B0023A3E1 /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
+				D6E427E716F9A741002EE8D5 /* SlotCreateCellDelegate.h */,
+				D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */,
+				D6E427E916F9A742002EE8D5 /* SlotCreateCell.h */,
 				D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */,
 				85C88629163160280023A3E1 /* TimetableViewController_iPad.xib */,
 				85C8862A163160280023A3E1 /* TimetableViewController_iPhone.xib */,
@@ -1164,6 +1171,7 @@
 				D6158CA516CA9E300091768A /* PlanDetailAgent.m in Sources */,
 				D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */,
 				D677708E16EF393A00D430C7 /* UtilTableViewCell.m in Sources */,
+				D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@
 #import "Utils.h"
 #import "HeaderView.h"
 #import "SlotCell.h"
-#import "SlotEditingCell.h"
+#import "SlotCreateCell.h"
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -15,7 +15,7 @@ const CGFloat KExpandedSlotHeight = 90;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *headerViews;
 @property NSInteger lastSectionUpdatedWhenDragging;
-@property (nonatomic, strong) Slot *slotBeingEdited;
+@property (nonatomic, strong) Slot *slotBeingCreated;
 @property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
 @end
 
@@ -137,7 +137,7 @@ const CGFloat KExpandedSlotHeight = 90;
     }
     else{
         // get this before we go messing with the data
-        NSIndexPath *currentEditingIndexPath = [self indexPathForSlot:self.slotBeingEdited];
+        NSIndexPath *currentEditingIndexPath = [self indexPathForSlot:self.slotBeingCreated];
         
         
         [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
@@ -152,7 +152,7 @@ const CGFloat KExpandedSlotHeight = 90;
         
         [self.tableView beginUpdates];
         [self deleteAddRows];
-        self.slotBeingEdited = nil;
+        self.slotBeingCreated = nil;
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:currentEditingIndexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
         
         [self.tableView endUpdates];
@@ -189,7 +189,7 @@ const CGFloat KExpandedSlotHeight = 90;
 }
 -(void) cancelItemPressed{
     
-    self.slotBeingEdited = nil;
+    self.slotBeingCreated = nil;
     
     [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
     
@@ -272,16 +272,15 @@ const CGFloat KExpandedSlotHeight = 90;
     }
     else{
     
-        if(self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath]){
+        if(self.slotBeingCreated == [self slotForRowAtIndexPath:indexPath]){
  
-            SlotEditingCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SlotEditing"];
+            SlotCreateCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SlotCreating"];
             if (cell == nil) {
-                cell = [[SlotEditingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SlotEditing" delegate:self];
+                cell = [[SlotCreateCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SlotCreating" delegate:self];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             
-            Slot *slot = [self slotForRowAtIndexPath:indexPath];
-            [cell setupWithDuration:slot.duration activityType:slot.activityType];
+            [cell setup];
             
             return cell;;
         }
@@ -304,7 +303,7 @@ const CGFloat KExpandedSlotHeight = 90;
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if([self slotForRowAtIndexPath:indexPath] && self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath])
+	if([self slotForRowAtIndexPath:indexPath] && self.slotBeingCreated == [self slotForRowAtIndexPath:indexPath])
 		return KExpandedSlotHeight;
     else
         return KSlotCellHeight;
@@ -316,31 +315,29 @@ const CGFloat KExpandedSlotHeight = 90;
     if(indexPath.row >= slots.count){
         [self addSlotAtIndexPath: indexPath];
     }
-    [self newEditableItemSelectionAtIndexPath: indexPath];
+    [self newCreateItemSelectionAtIndexPath: indexPath];
     
 }
 
 
--(void) newEditableItemSelectionAtIndexPath:(NSIndexPath*) indexPath{
+- (void)newCreateItemSelectionAtIndexPath:(NSIndexPath *)indexPath
+{
     NSMutableArray *reloadArray = [[NSMutableArray alloc] initWithObjects:indexPath, nil];
     
     // we want to update the last selected cell
-    if((self.slotBeingEdited && self.slotBeingEdited!= [self slotForRowAtIndexPath:indexPath])){
-        [reloadArray addObject:[self indexPathForSlot:self.slotBeingEdited]];
+    if((self.slotBeingCreated && self.slotBeingCreated!= [self slotForRowAtIndexPath:indexPath])){
+        [reloadArray addObject:[self indexPathForSlot:self.slotBeingCreated]];
     }
     
-    if(self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath]){
-        self.slotBeingEdited = nil;
+    if(self.slotBeingCreated == [self slotForRowAtIndexPath:indexPath]){
+        self.slotBeingCreated = nil;
     }
     else{
-        self.slotBeingEdited= [self slotForRowAtIndexPath:indexPath];
+        self.slotBeingCreated= [self slotForRowAtIndexPath:indexPath];
     }
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
-    
-    
-    
 }
 
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
@@ -350,7 +347,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         
         Slot *slot = self.currentWeek[indexPath.section][indexPath.row];
         
-        if(slot == self.slotBeingEdited){ self.slotBeingEdited = nil;}
+        if(slot == self.slotBeingCreated){ self.slotBeingCreated = nil;}
         
         [self.tableView beginUpdates];
         NSMutableArray *deleteArray = [[NSMutableArray alloc] init];
@@ -366,7 +363,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         
         [self addSlotAtIndexPath:indexPath];
-        [self newEditableItemSelectionAtIndexPath: indexPath];
+        [self newCreateItemSelectionAtIndexPath: indexPath];
         
         
         [Utils playSound:@"delete" type:@"wav"];
@@ -527,18 +524,21 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 
--(void) SlotEditingCellDelegate_activityTypeChanged:(TActivityType) activityType{
+-(void) SlotCreateCellDelegate_activityTypeChanged:(TActivityType) activityType{
     
-    [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingEdited];
-   // [self updateHeaderViewForSlot:self.slotBeingEdited];
+  
+  [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingCreated];
+   // [self updateHeaderViewForSlot:self.slotBeingCreated];
 
+  
+  [self.delegate TimetableViewControllerDelegate_showFullscreenEditor];
   
   [self updateAllHeaders];
 }
 
 -(void) SlotEditingCellDelegate_durationChanged:(NSInteger) duration{
-    [self.delegate TimetableViewControllerDelegate_durationChanged:duration slot:self.slotBeingEdited];
-  //  [self updateHeaderViewForSlot:self.slotBeingEdited];
+    [self.delegate TimetableViewControllerDelegate_durationChanged:duration slot:self.slotBeingCreated];
+  //  [self updateHeaderViewForSlot:self.slotBeingCreated];
   
   [self updateAllHeaders];
   

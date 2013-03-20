@@ -2,9 +2,9 @@
 #import "TimetableViewControllerDelegate.h"
 #import "ToTimetableViewControllerDelegate.h"
 #import "SlotCellDelegate.h"
-#import "SlotEditingCellDelegate.h"
+#import "SlotCreateCellDelegate.h"
 
-@interface TimetableViewController : GeneralViewController <ToTimetableViewControllerDelegate, SlotEditingCellDelegate, SlotCellDelegate>
+@interface TimetableViewController : GeneralViewController <ToTimetableViewControllerDelegate, SlotCreateCellDelegate, SlotCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *weeks;
 

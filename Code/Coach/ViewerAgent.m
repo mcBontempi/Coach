@@ -8,6 +8,8 @@
 #import "UtilViewController.h"
 #import "UtilAgent.h"
 #import "Coach.h"
+#import "SlotEditViewController.h"
+#import "SlotEditViewAgent.h"
 
 @interface ViewerAgent ()
 
@@ -19,6 +21,10 @@
 @property (nonatomic, weak) id<ViewerAgentDelegate> delegate;
 
 @property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) UINavigationController *timetableNavigationController;
+
+
+@property (nonatomic, strong) SlotEditViewAgent *slotEditViewAgent;
 @end
 
 @implementation ViewerAgent
@@ -56,11 +62,11 @@
   self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
   TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
   self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
-  UINavigationController *timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
-  timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+  self.timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
+  self.timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
   
   // add the two views tot he view deck
-  self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:timetableNavigationController leftViewController:listViewNavigationController];
+  self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:self.timetableNavigationController leftViewController:listViewNavigationController];
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     self.viewDeckViewController.leftLedge = 60;
   else
@@ -128,6 +134,16 @@
 
 -(void) TimetableViewAgentDelegate_bookmarksPressed{
   [self.viewDeckViewController toggleLeftViewAnimated:YES];
+}
+
+- (void) TimetableViewAgentDelegate_showFullscreenEditor
+{
+  
+  self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:nil delegate:self];
+  SlotEditViewController *slotEditViewController = [[SlotEditViewController alloc] initWithDelegate:self.slotEditViewAgent];
+  
+  [self.timetableNavigationController pushViewController:slotEditViewController animated:YES];
+  
 }
 
 
