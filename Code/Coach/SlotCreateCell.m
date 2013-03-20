@@ -29,7 +29,7 @@
     
     self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(0,00)
                                                                          images:activityImageArray
-                                                                       iconSize:CGSizeMake(40,40)
+                                                                       iconSize:CGSizeMake(50,50)
                                                                         padding:5
                                                                        delegate:self];
     
