@@ -72,7 +72,7 @@
   [self showInitialWeek];
 
 
-  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
+//  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
  
 }
 

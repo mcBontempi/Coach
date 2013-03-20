@@ -5,7 +5,6 @@
 @property (nonatomic, strong) UILabel *textLabel1;
 @property (nonatomic, strong) UILabel *textLabel2;
 @property (nonatomic, strong) UILabel *currentLabel;
-@property (nonatomic, strong) UIImageView *warningImageView;
 
 @end
 
@@ -34,13 +33,9 @@ const CGFloat paddingForWarning = 5;
         self.textLabel1.textColor = [UIColor whiteColor];
         self.textLabel2.textColor = [UIColor whiteColor];
 
-        self.textLabel1.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
-        self.textLabel2.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
+        self.textLabel1.font=[UIFont fontWithName:@"Helvetica-Bold" size:16.0];
+        self.textLabel2.font=[UIFont fontWithName:@"Helvetica-Bold" size:16.0];
 
-        self.warningImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noEntry.png"]];
-        self.warningImageView.frame = CGRectMake(frame.size.width - frame.size.height +paddingForWarning ,paddingForWarning,self.frame.size.height - (paddingForWarning*2),self.frame.size.height - (paddingForWarning*2) );
-         
-        [self addSubview:self.warningImageView];
     }
     return self;
 }
@@ -85,25 +80,6 @@ const CGFloat paddingForWarning = 5;
             self.currentLabel = self.textLabel1;
         }
     }
-}
-
--(void) setWarning:(BOOL) warning{
-    [UIView animateWithDuration:0.1 animations:^{
-        
-        if(warning){
-            CGRect frame = self.warningImageView.frame;
-            frame.origin.x = self.frame.size.width - self.frame.size.height +paddingForWarning;
-            self.warningImageView.frame = frame;
-            self.warningImageView.alpha = 1.0;
-            
-        }
-        else {
-            CGRect frame = self.warningImageView.frame;
-            frame.origin.x = self.frame.size.width;
-            self.warningImageView.frame = frame;
-            self.warningImageView.alpha = 0.0;
-        }
-    }];
 }
 
 @end

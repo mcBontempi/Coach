@@ -479,31 +479,21 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(void) updateHeaderViewForSection:(NSInteger) section{
     
-    DLog(@"updateHeaderViewForSection:%d", section);
-    
     UIView *view = [self updatedHeaderViewForSection:section];
     
     [view setNeedsDisplay];
 }
 
--(HeaderView *) updatedHeaderViewForSection:(NSInteger) section{
+-(HeaderView *) updatedHeaderViewForSection:(NSInteger) section
+{
     HeaderView *headerView = self.headerViews[section];
     
     [headerView setText:[self.delegate TimetableViewControllerDelegate_daySummary:section]];
-    
-    NSInteger total = 0;
-    for(Slot *slot in self.currentWeek[section] ){
-        total += slot.duration;
-    }
-    if(total > 100) [headerView setWarning:YES];
-    else
-        [headerView setWarning:NO];
-    
     return headerView;
 }
 
-
--(void) reloadTable{
+-(void) reloadTable
+{
     [self.tableView reloadData];
 }
 
@@ -540,12 +530,18 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 -(void) SlotEditingCellDelegate_activityTypeChanged:(TActivityType) activityType{
     
     [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingEdited];
-    [self updateHeaderViewForSlot:self.slotBeingEdited];
+   // [self updateHeaderViewForSlot:self.slotBeingEdited];
+
+  
+  [self updateAllHeaders];
 }
 
 -(void) SlotEditingCellDelegate_durationChanged:(NSInteger) duration{
     [self.delegate TimetableViewControllerDelegate_durationChanged:duration slot:self.slotBeingEdited];
-    [self updateHeaderViewForSlot:self.slotBeingEdited];
+  //  [self updateHeaderViewForSlot:self.slotBeingEdited];
+  
+  [self updateAllHeaders];
+  
 }
 
 

@@ -11,6 +11,5 @@
 @interface HeaderView : UIView
 
 -(void) setText:(NSString *) text;
--(void) setWarning:(BOOL) warning;
 
 @end
