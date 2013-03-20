@@ -3,12 +3,16 @@
 #import "IconSelectionView.h"
 #import "SimpleHScroller.h"
 #import "UIImage_ImageForActivityType.h"
+#import "Slot.h"
 
 @implementation SlotEditViewController{
   
   __weak id<SlotEditViewControllerDelegate> _delegate;
   __weak IBOutlet IconSelectionView *_activityType;
   __weak IBOutlet SimpleHScroller *_hScroller;
+
+  __weak IBOutlet UILabel *_tagsLabel;
+  __weak IBOutlet UITextView *_tagsTextView;
 }
 
 -(id) initWithDelegate:(id<SlotEditViewControllerDelegate>) delegate
@@ -35,18 +39,24 @@
   [super viewWillAppear:animated];
   _activityType.alpha = 0;
   _hScroller.alpha = 0;
+  _tagsLabel.alpha = 0;
+  _tagsTextView.alpha = 0;
+  
+  [UIView animateWithDuration:0.4 animations:^{self.view.backgroundColor = [UIColor whiteColor];}];
+
+  [UIView animateWithDuration:0.1 animations:^{
+    _activityType.alpha = 1;}];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-
+  
   [UIView animateWithDuration:0.1 animations:^{   _activityType.alpha = 1;
   } completion:^(BOOL finished){
-    [UIView animateWithDuration:0.1 animations:^{_hScroller.alpha=1;}]; } ];
-  
-  
-  
+    [UIView animateWithDuration:0.1 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
+      [UIView animateWithDuration:0.1 animations:^{_tagsLabel.alpha=1;} completion:^(BOOL finished){
+        [UIView animateWithDuration:0.1 animations:^{_tagsTextView.alpha=1;}]; }  ]; }   ]; } ];
 }
 
 - (void)setuphScroller
@@ -59,7 +69,7 @@
   }
   
   [_hScroller setupWithItems:scrollerArray delegate:self];
-  [_hScroller setDuration:90];
+  [_hScroller setDuration:[_delegate SlotEditViewControllerDelegate_currentSlotDuration]];
   
   
   const CGFloat leftInset = _hScroller.frame.origin.x;
@@ -83,7 +93,7 @@
                          padding:5
                         delegate:self];
   
-  [_activityType setSelectedIndex:2];
+  [_activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_currentSlotActivityType]];
   
 }
 
@@ -102,16 +112,23 @@
   return 0;
 }
 
+-(TActivityType) activityTpeForIndex:(NSInteger) index
+{
+  NSNumber *number = [self activityTypeOrdering][index];
+  return number.integerValue;
+}
+
 
 -(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration
 {
+  [_delegate SlotEditViewControllerDelegate_currentSlotDurationChanged:duration];
   
 }
 
 
 -(void) IconSelectionViewDelegate_iconSelected:(NSInteger) iconIndex
 {
-  
+  [_delegate SlotEditViewControllerDelegate_currentSlotActivityTypeChanged:[self activityTpeForIndex:iconIndex]];
   
 }
 

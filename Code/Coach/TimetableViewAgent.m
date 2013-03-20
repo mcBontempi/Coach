@@ -124,9 +124,9 @@
 }
 
 
-- (void)TimetableViewControllerDelegate_showFullscreenEditor
+- (void)TimetableViewControllerDelegate_showFullscreenEditorForSlot:(Slot *)slot
 {
-  [self.delegate TimetableViewAgentDelegate_showFullscreenEditor];
+  [self.delegate TimetableViewAgentDelegate_showFullscreenEditorForSlot:slot];
 }
 
 -(void) TimetableViewControllerDelegate_checked:(BOOL)checked slot:(Slot *)slot{

@@ -27,5 +27,5 @@
 -(void) TimetableViewControllerDelegate_durationChanged:(NSInteger) duration slot:(Slot*) slot;
 -(void) TimetableViewControllerDelegate_checked:(BOOL) checked slot:(Slot*) slot;
 
-- (void)TimetableViewControllerDelegate_showFullscreenEditor;
+- (void)TimetableViewControllerDelegate_showFullscreenEditorForSlot:(Slot *)slot;
 @end

@@ -136,10 +136,10 @@
   [self.viewDeckViewController toggleLeftViewAnimated:YES];
 }
 
-- (void) TimetableViewAgentDelegate_showFullscreenEditor
+- (void) TimetableViewAgentDelegate_showFullscreenEditorForSlot:(Slot *)slot
 {
   
-  self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:nil delegate:self];
+  self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:slot delegate:self];
   SlotEditViewController *slotEditViewController = [[SlotEditViewController alloc] initWithDelegate:self.slotEditViewAgent];
   
   [self.timetableNavigationController pushViewController:slotEditViewController animated:YES];

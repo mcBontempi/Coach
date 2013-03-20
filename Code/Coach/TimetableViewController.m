@@ -341,12 +341,23 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  // you cant expand the add row row!
-  NSArray* slots = self.currentWeek[indexPath.section];
-  if(indexPath.row >= slots.count){
-    [self addSlotAtIndexPath: indexPath];
-    [self newCreateItemSelectionAtIndexPath: indexPath];
+  if(self.tableView.isEditing){
+    NSArray* slots = self.currentWeek[indexPath.section];
+    if(indexPath.row >= slots.count){
+      [self addSlotAtIndexPath: indexPath];
+      [self newCreateItemSelectionAtIndexPath: indexPath];
+    }
+    else{
+      
+      self.slotBeingCreated = [self slotForRowAtIndexPath:indexPath];
+      
+      [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingCreated];
+    }
   }
+  else{
+    
+  }
+  
 }
 
 - (void)newCreateItemSelectionAtIndexPath:(NSIndexPath *)indexPath
@@ -557,7 +568,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 {
   [self.delegate TimetableViewControllerDelegate_activityTypeChanged:(TActivityType) activityType slot:self.slotBeingCreated];
   
-  [self.delegate TimetableViewControllerDelegate_showFullscreenEditor];
+  [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingCreated];
 }
 
 -(void) SlotEditingCellDelegate_durationChanged:(NSInteger) duration

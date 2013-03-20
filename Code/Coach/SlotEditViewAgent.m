@@ -17,4 +17,34 @@
   return self;
 }
 
+
+- (Slot *)SlotEditViewControllerDelegate_currentSlot
+{
+  return self.slot;
+}
+
+
+- (TActivityType)SlotEditViewControllerDelegate_currentSlotActivityType
+{
+  return self.slot.activityType;
+}
+
+- (void)SlotEditViewControllerDelegate_currentSlotActivityTypeChanged:(TActivityType)activityType
+{
+  self.slot.activityType = activityType;
+}
+
+- (NSInteger)SlotEditViewControllerDelegate_currentSlotDuration
+{
+  return self.slot.duration;
+}
+
+- (void)SlotEditViewControllerDelegate_currentSlotDurationChanged:(NSInteger)duration
+{
+  self.slot.duration = duration;
+}
+
+
+
+
 @end
