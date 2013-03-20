@@ -11,34 +11,27 @@
 - (id)initWithPoint:(CGPoint)point items:(NSArray*) items delegate:(id<SimpleHScrollerDelegate>) hScrollerDelegate{
     self = [super initWithFrame:CGRectMake(point.x,point.y, 150,30)];
     if (self) {
-        
-        self.hScrollerDelegate = hScrollerDelegate;
-        
-        self.delegate = self;
-        
-        self.items = items;
-    
-        self.backgroundColor = [UIColor lightGrayColor];
-    
-        self.pagingEnabled = YES;
-        self.bounces = NO;
-        self.showsHorizontalScrollIndicator = NO;
-        self.showsVerticalScrollIndicator = NO;
-        
-        
-        
-        
-        [self setupLabels];
-        
-        
+      [self setupWithItems:items delegate:hScrollerDelegate];
     }
     return self;
 }
 
+- (void)setupWithItems:(NSArray*) items delegate:(id<SimpleHScrollerDelegate>) hScrollerDelegate
+{
+  self.hScrollerDelegate = hScrollerDelegate;
+  self.delegate = self;
+  self.items = items;
+  self.backgroundColor = [UIColor lightGrayColor];
+  self.pagingEnabled = YES;
+  self.bounces = NO;
+  self.showsHorizontalScrollIndicator = NO;
+  self.showsVerticalScrollIndicator = NO;
+  [self setupLabels];
+}
 
 -(void) setupLabels{
     CGFloat x = 0;
-    
+  
     for(NSString *string in self.items){
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x,0,150,30)];
         
@@ -57,12 +50,9 @@
     self.contentSize = CGSizeMake(x,50);
 }
 
--(void) setupWithDuration:(NSInteger) duration{
-    
-
-    
+-(void) setDuration:(NSInteger) duration
+{
     self.contentOffset = CGPointMake(150* ((duration/15)-1),0);
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {

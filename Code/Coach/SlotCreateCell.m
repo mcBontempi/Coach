@@ -42,7 +42,7 @@
 
 -(void) setup
 {
-  [self.activitiesIconSelectionView setupWithSelectedIndex:-1];
+  [self.activitiesIconSelectionView setSelectedIndex:-1];
 }
 
 -(NSArray*) activityTypeOrdering

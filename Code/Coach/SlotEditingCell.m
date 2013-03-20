@@ -67,9 +67,9 @@
 
 -(void) setupWithDuration:(NSInteger)duration activityType:(TActivityType)activityType{
     
-    [self.activitiesIconSelectionView setupWithSelectedIndex:activityType];
+    [self.activitiesIconSelectionView setSelectedIndex:activityType];
     
-    [self.simpleHScroller setupWithDuration:duration];
+    [self.simpleHScroller setDuration:duration];
 }
 
 // activity Type conversion methods

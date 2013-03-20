@@ -5,6 +5,8 @@
 
 - (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate;
 
--(void) setupWithSelectedIndex:(NSInteger) selectedIndex;
+-(void) setSelectedIndex:(NSInteger) selectedIndex;
+- (void)setupWithImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate;
+
 
 @end
