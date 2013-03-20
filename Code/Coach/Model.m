@@ -23,6 +23,7 @@
       self.plans = [[NSMutableDictionary alloc] init];
       
       [self makeTestData];
+      [self save];
     }
     
   }
