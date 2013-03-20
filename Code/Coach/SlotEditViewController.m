@@ -7,10 +7,14 @@
 
 @implementation SlotEditViewController{
   
+  __weak IBOutlet UILabel *_coachNotesLabel;
+  __weak IBOutlet UITextView *_coachNotesTextView;
+  __weak IBOutlet UILabel *_athleteNotesLabel;
+  __weak IBOutlet UITextView *_athleteNotesTextView;
   __weak id<SlotEditViewControllerDelegate> _delegate;
   __weak IBOutlet IconSelectionView *_activityType;
   __weak IBOutlet SimpleHScroller *_hScroller;
-
+  
   __weak IBOutlet UILabel *_tagsLabel;
   __weak IBOutlet UITextView *_tagsTextView;
 }
@@ -42,8 +46,14 @@
   _tagsLabel.alpha = 0;
   _tagsTextView.alpha = 0;
   
+  _coachNotesLabel.alpha = 0;
+  _coachNotesTextView.alpha = 0;
+  
+  _athleteNotesLabel.alpha = 0;
+  _athleteNotesTextView.alpha = 0;
+  
   [UIView animateWithDuration:0.4 animations:^{self.view.backgroundColor = [UIColor whiteColor];}];
-
+  
   [UIView animateWithDuration:0.2 animations:^{
     _activityType.alpha = 1;}];
 }
@@ -52,11 +62,15 @@
 {
   [super viewDidAppear:animated];
   
-  [UIView animateWithDuration:0.2 animations:^{   _activityType.alpha = 1;
+  [UIView animateWithDuration:0.1 animations:^{   _activityType.alpha = 1;
   } completion:^(BOOL finished){
-    [UIView animateWithDuration:0.2 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
-      [UIView animateWithDuration:0.2 animations:^{_tagsLabel.alpha=1;} completion:^(BOOL finished){
-        [UIView animateWithDuration:0.2 animations:^{_tagsTextView.alpha=1;}]; }  ]; }   ]; } ];
+    [UIView animateWithDuration:0.1 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
+      [UIView animateWithDuration:0.1 animations:^{_coachNotesLabel.alpha=1;} completion:^(BOOL finished){
+        
+        [UIView animateWithDuration:0.1 animations:^{_coachNotesTextView.alpha=1;} completion:^(BOOL finished){
+          
+          [UIView animateWithDuration:0.1 animations:^{_athleteNotesLabel.alpha=1;} completion:^(BOOL finished){
+            [UIView animateWithDuration:0.1 animations:^{_athleteNotesTextView.alpha=1;}]; }  ];}   ];}   ]; }   ]; } ];
 }
 
 - (void)setuphScroller
@@ -132,4 +146,11 @@
   
 }
 
+- (void)viewDidUnload {
+  _coachNotesLabel = nil;
+  _coachNotesTextView = nil;
+  _athleteNotesLabel = nil;
+  _athleteNotesTextView = nil;
+  [super viewDidUnload];
+}
 @end
