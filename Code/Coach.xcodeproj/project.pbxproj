@@ -158,6 +158,7 @@
 		D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */; };
 		D6E427ED16F9C34E002EE8D5 /* PagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427EB16F9C34D002EE8D5 /* PagingScrollView.m */; };
+		D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E427EE16FA0BA3002EE8D5 /* divider.png */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
@@ -380,6 +381,7 @@
 		D6E427E916F9A742002EE8D5 /* SlotCreateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCell.h; path = Coach/SlotCreateCell.h; sourceTree = "<group>"; };
 		D6E427EB16F9C34D002EE8D5 /* PagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagingScrollView.m; path = Coach/PagingScrollView.m; sourceTree = "<group>"; };
 		D6E427EC16F9C34D002EE8D5 /* PagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagingScrollView.h; path = Coach/PagingScrollView.h; sourceTree = "<group>"; };
+		D6E427EE16FA0BA3002EE8D5 /* divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider.png; path = Coach/assets/divider.png; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D6E427EE16FA0BA3002EE8D5 /* divider.png */,
 				D677709916EF817600D430C7 /* popoverBgWhite.png */,
 				D677709716EF6C1600D430C7 /* spot@2x.png */,
 				D677709316EF611800D430C7 /* addButton.png */,
@@ -1065,6 +1068,7 @@
 				D677709616EF611800D430C7 /* addButton@2x.png in Resources */,
 				D677709816EF6C1700D430C7 /* spot@2x.png in Resources */,
 				D677709A16EF817600D430C7 /* popoverBgWhite.png in Resources */,
+				D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

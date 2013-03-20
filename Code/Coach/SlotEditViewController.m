@@ -44,7 +44,7 @@
   
   [UIView animateWithDuration:0.4 animations:^{self.view.backgroundColor = [UIColor whiteColor];}];
 
-  [UIView animateWithDuration:0.1 animations:^{
+  [UIView animateWithDuration:0.2 animations:^{
     _activityType.alpha = 1;}];
 }
 
@@ -52,11 +52,11 @@
 {
   [super viewDidAppear:animated];
   
-  [UIView animateWithDuration:0.1 animations:^{   _activityType.alpha = 1;
+  [UIView animateWithDuration:0.2 animations:^{   _activityType.alpha = 1;
   } completion:^(BOOL finished){
-    [UIView animateWithDuration:0.1 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
-      [UIView animateWithDuration:0.1 animations:^{_tagsLabel.alpha=1;} completion:^(BOOL finished){
-        [UIView animateWithDuration:0.1 animations:^{_tagsTextView.alpha=1;}]; }  ]; }   ]; } ];
+    [UIView animateWithDuration:0.2 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
+      [UIView animateWithDuration:0.2 animations:^{_tagsLabel.alpha=1;} completion:^(BOOL finished){
+        [UIView animateWithDuration:0.2 animations:^{_tagsTextView.alpha=1;}]; }  ]; }   ]; } ];
 }
 
 - (void)setuphScroller
@@ -89,7 +89,7 @@
   }
   
   [_activityType setupWithImages:activityImageArray
-                        iconSize:CGSizeMake(40,40)
+                        iconSize:CGSizeMake(60,60)
                          padding:5
                         delegate:self];
   
