@@ -2,6 +2,6 @@
 
 @protocol SimpleHScrollerDelegate <NSObject>
 
--(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration;
+-(void) SimpleHScrollerDelegate_pageChanged:(NSInteger) duration;
 
 @end

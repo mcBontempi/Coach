@@ -3,10 +3,12 @@
 
 @protocol SlotEditViewControllerDelegate <NSObject>
 
-- (TActivityType)SlotEditViewControllerDelegate_currentSlotActivityType;
-- (void)SlotEditViewControllerDelegate_currentSlotActivityTypeChanged:(TActivityType)activityType;
+- (TActivityType)SlotEditViewControllerDelegate_activityType;
+- (NSInteger)SlotEditViewControllerDelegate_duration;
+- (NSString *)SlotEditViewControllerDelegate_tags;
+- (NSString *)SlotEditViewControllerDelegate_athleteNotes;
+- (NSString *)SlotEditViewControllerDelegate_coachNotes;
 
-- (NSInteger)SlotEditViewControllerDelegate_currentSlotDuration;
-- (void)SlotEditViewControllerDelegate_currentSlotDurationChanged:(NSInteger)duration;
+- (void)SlotEditViewControllerDelegate_updateWithActivityType:(TActivityType)activityType duration:(NSInteger)duration tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString*)coachNotes;
 
 @end

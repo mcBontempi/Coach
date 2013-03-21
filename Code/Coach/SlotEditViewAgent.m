@@ -17,33 +17,39 @@
   return self;
 }
 
-
-- (Slot *)SlotEditViewControllerDelegate_currentSlot
-{
-  return self.slot;
-}
-
-
-- (TActivityType)SlotEditViewControllerDelegate_currentSlotActivityType
+- (TActivityType)SlotEditViewControllerDelegate_activityType
 {
   return self.slot.activityType;
 }
 
-- (void)SlotEditViewControllerDelegate_currentSlotActivityTypeChanged:(TActivityType)activityType
-{
-  self.slot.activityType = activityType;
-}
-
-- (NSInteger)SlotEditViewControllerDelegate_currentSlotDuration
+- (NSInteger)SlotEditViewControllerDelegate_duration
 {
   return self.slot.duration;
 }
 
-- (void)SlotEditViewControllerDelegate_currentSlotDurationChanged:(NSInteger)duration
+- (NSString *)SlotEditViewControllerDelegate_tags
 {
-  self.slot.duration = duration;
+  return self.slot.tags;
 }
 
+- (NSString *)SlotEditViewControllerDelegate_athleteNotes
+{
+  return self.slot.athleteNotes;
+}
+
+- (NSString *)SlotEditViewControllerDelegate_coachNotes
+{
+  return self.slot.coachNotes;
+}
+
+- (void)SlotEditViewControllerDelegate_updateWithActivityType:(TActivityType)activityType duration:(NSInteger)duration tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString*)coachNotes
+{
+  self.slot.activityType = activityType;
+  self.slot.duration = duration;
+  self.slot.tags = tags;
+  self.slot.athleteNotes = athleteNotes;
+  self.slot.coachNotes = coachNotes;
+}
 
 
 

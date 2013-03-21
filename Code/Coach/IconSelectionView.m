@@ -33,6 +33,8 @@
 
 -(void) setSelectedIndex:(NSInteger) selectedIndex
 {
+  self.currentItemIndex = selectedIndex;
+  
   for (UIView *view in [self subviews])
   {
     [view removeFromSuperview];
@@ -82,7 +84,9 @@
 - (void) itemPressed:(UIControl *)sender{
   [self setSelectedIndex:sender.tag];
   
-  [self.delegate IconSelectionViewDelegate_iconSelected:sender.tag];
+  if([self.delegate respondsToSelector:@selector(IconSelectionViewDelegate_iconSelected:)]){
+    [self.delegate IconSelectionViewDelegate_iconSelected:sender.tag];
+  }
 }
 
 

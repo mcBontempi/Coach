@@ -19,6 +19,17 @@
   __weak IBOutlet UITextView *_tagsTextView;
 }
 
+- (IBAction)donePressed:(id)sender
+{
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+  [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)cancelPressed:(id)sender
+{
+  [self dismissModalViewControllerAnimated:YES];
+}
+
 -(id) initWithDelegate:(id<SlotEditViewControllerDelegate>) delegate
 {
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -36,6 +47,26 @@
 {
   [self setupActivityType];
   [self setuphScroller];
+  
+  [self setupTags];
+  [self setupAthleteNotes];
+  [self setupCoachNotes];
+}
+
+- (void)setupTags
+{
+  
+  
+}
+
+- (void)setupAthleteNotes
+{
+  _athleteNotesTextView.text = [_delegate SlotEditViewControllerDelegate_athleteNotes];
+}
+
+- (void)setupCoachNotes
+{
+  _coachNotesTextView.text = [_delegate SlotEditViewControllerDelegate_coachNotes];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,7 +114,7 @@
   }
   
   [_hScroller setupWithItems:scrollerArray delegate:self];
-  [_hScroller setDuration:[_delegate SlotEditViewControllerDelegate_currentSlotDuration]];
+  [_hScroller setPage:[_delegate SlotEditViewControllerDelegate_duration]/15];
   
   
   const CGFloat leftInset = _hScroller.frame.origin.x;
@@ -107,7 +138,7 @@
                          padding:5
                         delegate:self];
   
-  [_activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_currentSlotActivityType]];
+  [_activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
   
 }
 
@@ -133,24 +164,12 @@
 }
 
 
--(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration
+-(void) SimpleHScrollerDelegate_pageChanged:(NSInteger) duration
 {
-  [_delegate SlotEditViewControllerDelegate_currentSlotDurationChanged:duration];
-  
 }
-
 
 -(void) IconSelectionViewDelegate_iconSelected:(NSInteger) iconIndex
 {
-  [_delegate SlotEditViewControllerDelegate_currentSlotActivityTypeChanged:[self activityTpeForIndex:iconIndex]];
-  
 }
 
-- (void)viewDidUnload {
-  _coachNotesLabel = nil;
-  _coachNotesTextView = nil;
-  _athleteNotesLabel = nil;
-  _athleteNotesTextView = nil;
-  [super viewDidUnload];
-}
 @end

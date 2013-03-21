@@ -21,8 +21,7 @@
 @property (nonatomic, weak) id<ViewerAgentDelegate> delegate;
 
 @property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) UINavigationController *timetableNavigationController;
-
+@property (nonatomic, strong) TimetableViewController *timetableViewController;
 
 @property (nonatomic, strong) SlotEditViewAgent *slotEditViewAgent;
 @end
@@ -60,13 +59,13 @@
   listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
   // Create the main Timetable view
   self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
-  TimetableViewController *timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
-  self.timetableViewAgent.toTimetableViewControllerDelegate = timetableViewController;
-  self.timetableNavigationController = [[UINavigationController alloc] initWithRootViewController:timetableViewController];
-  self.timetableNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+  self.timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
+  self.timetableViewAgent.toTimetableViewControllerDelegate = self.timetableViewController;
+  UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:self.timetableViewController];
+  nc.navigationBar.tintColor = [UIColor darkGrayColor];
   
   // add the two views tot he view deck
-  self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:self.timetableNavigationController leftViewController:listViewNavigationController];
+  self.viewDeckViewController = [[IIViewDeckController alloc] initWithCenterViewController:nc leftViewController:listViewNavigationController];
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     self.viewDeckViewController.leftLedge = 60;
   else
@@ -142,8 +141,8 @@
   self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:slot delegate:self];
   SlotEditViewController *slotEditViewController = [[SlotEditViewController alloc] initWithDelegate:self.slotEditViewAgent];
   
-  [self.timetableNavigationController pushViewController:slotEditViewController animated:YES];
-  
+  [self.timetableViewController presentModalViewController:slotEditViewController animated:YES];
+   
 }
 
 

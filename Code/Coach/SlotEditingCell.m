@@ -69,7 +69,7 @@
     
     [self.activitiesIconSelectionView setSelectedIndex:activityType];
     
-    [self.simpleHScroller setDuration:duration];
+    [self.simpleHScroller setPage:duration/15];
 }
 
 // activity Type conversion methods
@@ -98,7 +98,7 @@
     [self.delegate SlotEditingCellDelegate_activityTypeChanged:[self activityTpeForIndex:iconIndex]];
 }
 
--(void) SimpleHScrollerDelegate_durationChanged:(NSInteger) duration{
+-(void) SimpleHScrollerDelegate_pageChanged:(NSInteger) duration{
     [self.delegate SlotEditingCellDelegate_durationChanged:duration];
     
 }

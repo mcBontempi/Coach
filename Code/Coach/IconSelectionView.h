@@ -8,5 +8,6 @@
 -(void) setSelectedIndex:(NSInteger) selectedIndex;
 - (void)setupWithImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate;
 
+@property (nonatomic) NSInteger currentItemIndex;
 
 @end

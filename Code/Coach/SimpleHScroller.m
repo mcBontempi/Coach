@@ -50,13 +50,16 @@
     self.contentSize = CGSizeMake(x,50);
 }
 
--(void) setDuration:(NSInteger) duration
+-(void) setPage:(NSInteger)page
 {
-    self.contentOffset = CGPointMake(150* ((duration/15)-1),0);
+  self.currentPage = page;
+    self.contentOffset = CGPointMake(150* (page-1),0);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
         int pageNum = (int)(self.contentOffset.x / self.frame.size.width) + 1;
-    [self.hScrollerDelegate SimpleHScrollerDelegate_durationChanged:pageNum*15];
+  
+  self.currentPage = pageNum;
+    [self.hScrollerDelegate SimpleHScrollerDelegate_pageChanged:pageNum];
 }
 @end
