@@ -343,10 +343,21 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if([self slotForRowAtIndexPath:indexPath] && self.slotBeingCreated == [self slotForRowAtIndexPath:indexPath])
+  
+  Slot *slot = [self slotForRowAtIndexPath:indexPath];
+  
+	if(slot && self.slotBeingCreated == [self slotForRowAtIndexPath:indexPath])
 		return KExpandedSlotHeight;
   else
+  {
+    if(slot.athleteNotes.length){
+      return KSlotCellHeight + 10;
+    }
+    else {
+    
     return KSlotCellHeight;
+    }
+  }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
