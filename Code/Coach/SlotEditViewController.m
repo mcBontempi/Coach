@@ -30,7 +30,7 @@
 
 - (IBAction)donePressed:(id)sender
 {
-  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:@"pretend tags" athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
   [self dismissModalViewControllerAnimated:YES];
 }
 

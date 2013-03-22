@@ -14,9 +14,10 @@
   {
     if(self = [self initWithDuration:duration activityType: activityType]){
       self.checked = checked;
-      self.tags = @"";
-      self.athleteNotes = @"";
-      self.coachNotes = @"";
+      
+      self.tags = tags;
+      self.athleteNotes = athleteNotes;
+      self.coachNotes = coachNotes;
     }
   }
   return self;
@@ -28,6 +29,10 @@
   if(self = [self init]){
     self.duration = duration /15 * 15;
     self.activityType = activityType;
+
+    self.tags = @"";
+    self.athleteNotes = @"";
+    self.coachNotes = @"";
   }
   
   return self;
