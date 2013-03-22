@@ -199,7 +199,7 @@
   
   cell.contentView.backgroundColor = [UIColor darkGrayColor];
   
-  cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row];
+  cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1];
   return cell;
 }
 

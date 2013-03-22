@@ -1,4 +1,5 @@
 #import "SlotEditViewAgent.h"
+#import "Notifications.h"
 
 @interface SlotEditViewAgent ()
 @property (nonatomic, weak) id<SlotEditViewAgentDelegate> delegate;
@@ -44,11 +45,23 @@
 
 - (void)SlotEditViewControllerDelegate_updateWithActivityType:(TActivityType)activityType duration:(NSInteger)duration tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString*)coachNotes
 {
+  
+  if(self.slot.activityType != activityType ||
+     self.slot.duration != duration ||
+  //   ![self.slot.tags isEqualToString:tags] ||
+     ![self.slot.athleteNotes isEqualToString:athleteNotes] ||
+     ![self.slot.coachNotes isEqualToString:coachNotes]){
+ 
+    [[NSNotificationCenter defaultCenter] postNotificationName:TTTSlotEditSlotChanged object:nil];
+  }
+  
+  
   self.slot.activityType = activityType;
   self.slot.duration = duration;
   self.slot.tags = tags;
   self.slot.athleteNotes = athleteNotes;
   self.slot.coachNotes = coachNotes;
+
 }
 
 

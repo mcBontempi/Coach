@@ -7,6 +7,7 @@
 
 @implementation SlotEditViewController{
   
+  IBOutlet UIScrollView *_scrollView;
   __weak IBOutlet UILabel *_coachNotesLabel;
   __weak IBOutlet UITextView *_coachNotesTextView;
   __weak IBOutlet UILabel *_athleteNotesLabel;
@@ -17,6 +18,14 @@
   
   __weak IBOutlet UILabel *_tagsLabel;
   __weak IBOutlet UITextView *_tagsTextView;
+}
+
+- (IBAction)scrollViewTapped:(id)sender {
+  [UIView animateWithDuration:0.2 animations:^{
+    _scrollView.contentOffset = CGPointMake(0,0);}];
+  
+  [_coachNotesTextView resignFirstResponder];
+  [_athleteNotesTextView resignFirstResponder];
 }
 
 - (IBAction)donePressed:(id)sender
@@ -39,6 +48,8 @@
   }
   if(self){
     _delegate = delegate;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
   }
   return self;
 }
@@ -51,6 +62,12 @@
   [self setupTags];
   [self setupAthleteNotes];
   [self setupCoachNotes];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+  [UIView animateWithDuration:0.2 animations:^{
+    _scrollView.contentOffset = CGPointMake(0,200);}];
 }
 
 - (void)setupTags
@@ -69,44 +86,8 @@
   _coachNotesTextView.text = [_delegate SlotEditViewControllerDelegate_coachNotes];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
-  _activityType.alpha = 0;
-  _hScroller.alpha = 0;
-  _tagsLabel.alpha = 0;
-  _tagsTextView.alpha = 0;
-  
-  _coachNotesLabel.alpha = 0;
-  _coachNotesTextView.alpha = 0;
-  
-  _athleteNotesLabel.alpha = 0;
-  _athleteNotesTextView.alpha = 0;
-  
-  [UIView animateWithDuration:0.4 animations:^{self.view.backgroundColor = [UIColor whiteColor];}];
-  
-  [UIView animateWithDuration:0.2 animations:^{
-    _activityType.alpha = 1;}];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-  [super viewDidAppear:animated];
-  
-  [UIView animateWithDuration:0.1 animations:^{   _activityType.alpha = 1;
-  } completion:^(BOOL finished){
-    [UIView animateWithDuration:0.1 animations:^{_hScroller.alpha=1;} completion:^(BOOL finished){
-      [UIView animateWithDuration:0.1 animations:^{_coachNotesLabel.alpha=1;} completion:^(BOOL finished){
-        
-        [UIView animateWithDuration:0.1 animations:^{_coachNotesTextView.alpha=1;} completion:^(BOOL finished){
-          
-          [UIView animateWithDuration:0.1 animations:^{_athleteNotesLabel.alpha=1;} completion:^(BOOL finished){
-            [UIView animateWithDuration:0.1 animations:^{_athleteNotesTextView.alpha=1;}]; }  ];}   ];}   ]; }   ]; } ];
-}
-
 - (void)setuphScroller
 {
-  // duration selection
   NSMutableArray *scrollerArray = [[NSMutableArray alloc] init];
   
   for(NSInteger i = 1 ; i <= 80 ; i++){
@@ -120,8 +101,6 @@
   const CGFloat leftInset = _hScroller.frame.origin.x;
   const CGFloat rightInset = self.view.frame.size.width - (_hScroller.frame.origin.x + _hScroller.frame.size.width);
   _hScroller.responseInsets = UIEdgeInsetsMake(0, leftInset, 0, rightInset);
-  
-  
 }
 
 - (void)setupActivityType
@@ -163,13 +142,8 @@
   return number.integerValue;
 }
 
-
--(void) SimpleHScrollerDelegate_pageChanged:(NSInteger) duration
-{
+- (void)viewDidUnload {
+  _scrollView = nil;
+  [super viewDidUnload];
 }
-
--(void) IconSelectionViewDelegate_iconSelected:(NSInteger) iconIndex
-{
-}
-
 @end

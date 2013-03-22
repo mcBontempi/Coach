@@ -7,6 +7,7 @@
 #import "SlotCreateCell.h"
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "Notifications.h"
 
 const CGFloat KSlotCellHeight = 50;
 const CGFloat KExpandedSlotHeight = 60;
@@ -17,6 +18,7 @@ const CGFloat KExpandedSlotHeight = 60;
 @property NSInteger lastSectionUpdatedWhenDragging;
 @property (nonatomic, strong) Slot *slotBeingCreated;
 @property (nonatomic, strong) UIBarButtonItem *previousBarButtonItem;
+@property (nonatomic) bool currentSlotWasChangedDuringEditing;
 @end
 
 @implementation TimetableViewController
@@ -68,14 +70,20 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.tableView setBackgroundView:nil];
     [self.tableView setBackgroundView:[[UIView alloc] init]];
   }
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)slotEditSlotChanged:(NSNotification *)notification
 {
-  [super viewWillAppear:animated];
-  
-  if(self.slotBeingCreated)
-  {
+  self.currentSlotWasChangedDuringEditing = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  if(self.currentSlotWasChangedDuringEditing == YES){
+    self.currentSlotWasChangedDuringEditing = NO;
+    
     NSIndexPath *indexPath = [self indexPathForSlot:self.slotBeingCreated];
     
     NSArray * reloadArray = @[indexPath];
@@ -83,9 +91,11 @@ const CGFloat KExpandedSlotHeight = 60;
     self.slotBeingCreated = nil;
     
     [self.tableView beginUpdates];
-    [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationRight];
     [self.tableView endUpdates];
   }
+  
+  [super viewDidAppear:animated];
 }
 
 -(void) setRightBarButtonEdit{
