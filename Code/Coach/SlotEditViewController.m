@@ -8,15 +8,12 @@
 @implementation SlotEditViewController{
   
   IBOutlet UIScrollView *_scrollView;
-  __weak IBOutlet UILabel *_coachNotesLabel;
   __weak IBOutlet UITextView *_coachNotesTextView;
-  __weak IBOutlet UILabel *_athleteNotesLabel;
   __weak IBOutlet UITextView *_athleteNotesTextView;
   __weak id<SlotEditViewControllerDelegate> _delegate;
   __weak IBOutlet IconSelectionView *_activityType;
   __weak IBOutlet SimpleHScroller *_hScroller;
   
-  __weak IBOutlet UILabel *_tagsLabel;
   __weak IBOutlet UITextView *_tagsTextView;
 }
 
@@ -30,7 +27,7 @@
 
 - (IBAction)donePressed:(id)sender
 {
-  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:@"pretend tags" athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
   [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -67,12 +64,12 @@
 - (void)keyboardWillShow:(NSNotification *)notification
 {
   [UIView animateWithDuration:0.2 animations:^{
-    _scrollView.contentOffset = CGPointMake(0,200);}];
+    _scrollView.contentOffset = CGPointMake(0,125);}];
 }
 
 - (void)setupTags
 {
-  
+  _tagsTextView.text = [_delegate SlotEditViewControllerDelegate_tags];
   
 }
 

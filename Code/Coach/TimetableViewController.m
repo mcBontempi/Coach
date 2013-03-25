@@ -10,6 +10,7 @@
 #import "Notifications.h"
 
 const CGFloat KSlotCellHeight = 50;
+const CGFloat KSlotTagHeight = 20;
 const CGFloat KExpandedSlotHeight = 60;
 
 @interface TimetableViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -331,7 +332,7 @@ const CGFloat KExpandedSlotHeight = 60;
       }
       
       Slot *slot = [self slotForRowAtIndexPath:indexPath];
-      [cell setupWithChecked:slot.checked duration:slot.duration activityType:slot.activityType];
+      [cell setupWithChecked:slot.checked duration:slot.duration activityType:slot.activityType tags:slot.tags];
       
       return cell;
       
@@ -350,8 +351,8 @@ const CGFloat KExpandedSlotHeight = 60;
 		return KExpandedSlotHeight;
   else
   {
-    if(slot.athleteNotes.length){
-      return KSlotCellHeight + 10;
+    if(slot.tags.length){
+      return KSlotCellHeight;// + KSlotTagHeight;
     }
     else {
     

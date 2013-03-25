@@ -48,7 +48,7 @@
   
   if(self.slot.activityType != activityType ||
      self.slot.duration != duration ||
-  //   ![self.slot.tags isEqualToString:tags] ||
+     ![self.slot.tags isEqualToString:tags] ||
      ![self.slot.athleteNotes isEqualToString:athleteNotes] ||
      ![self.slot.coachNotes isEqualToString:coachNotes]){
  
