@@ -7,12 +7,16 @@
 @property (nonatomic, strong) UIImageView *activityTypeImageView;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UITextField *tagsTextField;
+@property (nonatomic, strong) UITextField *athleteNotesTextField;
+@property (nonatomic, strong) UITextField *coachNotesTextField;
 @property (nonatomic, strong) CheckboxButton *checkbox;
 @property (nonatomic, weak) id<SlotCellDelegate> delegate;
 
 @property NSInteger duration;
 @property TActivityType activityType;
 @property (nonatomic, strong) NSString *tags;
+@property (nonatomic, strong) NSString *athleteNotes;
+@property (nonatomic, strong) NSString *coachNotes;
 
 @end
 
@@ -36,6 +40,15 @@
     self.tagsTextField.font=[UIFont fontWithName:@"Trebuchet MS" size:14.0];
     self.tagsTextField.backgroundColor = [UIColor whiteColor];
     self.tagsTextField.userInteractionEnabled = NO;
+
+    
+    self.athleteNotesTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    self.athleteNotesTextField.textColor = [UIColor grayColor];
+    self.athleteNotesTextField.font=[UIFont fontWithName:@"Trebuchet MS" size:12.0];
+    self.athleteNotesTextField.backgroundColor = [UIColor whiteColor];
+    self.athleteNotesTextField.userInteractionEnabled = NO;
+
+    
     
     
     self.checkbox = [[CheckboxButton alloc] initWithFrame:CGRectZero];
@@ -43,17 +56,21 @@
     [self.contentView addSubview:self.activityTypeImageView];
     [self.contentView addSubview:self.label];
     [self.contentView addSubview:self.tagsTextField];
+    [self.contentView addSubview:self.athleteNotesTextField];
+    [self.contentView addSubview:self.coachNotesTextField];
     [self.contentView addSubview:self.checkbox];
   }
   return self;
 }
 
 
--(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType tags:(NSString *)tags
+-(void) setupWithChecked:(BOOL) checked duration:(NSInteger)duration activityType:(TActivityType) activityType tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString *)coachNotes
 {
   self.checkbox.selected = checked;
   self.activityType = activityType;
   self.duration = duration;
+  self.athleteNotes = athleteNotes;
+  self.coachNotes = coachNotes;
   self.tags = tags;
 }
 
@@ -75,20 +92,30 @@
   const CGFloat textFieldVertPadding = 0;
   const CGFloat tagHeight = 20;
   
+  const CGFloat athleteNotesPadding = 3;
+  const CGFloat coachNotesPadding = 3;
+  
   self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
   self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, iconHeight, iconHeight);
   
   CGFloat labelOffsetX = iconPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width + textPadding;
-  
+
   CGFloat labelWidth = self.contentView.frame.size.width - labelOffsetX - (textPadding *2) - checkboxWidth;
   
   self.label.frame = CGRectMake(labelOffsetX,labelYPadding,labelWidth, labelHeight);
   self.label.text = [NSString niceStringFromDuration:self.duration];
-//  self.label.backgroundColor = [UIColor redColor];
   
   self.tagsTextField.frame = CGRectMake(labelOffsetX, CGRectGetMaxY(self.label.frame) + textFieldVertPadding, labelWidth, tagHeight);
   self.tagsTextField.text = self.tags;
- // self.tagsTextField.backgroundColor = [UIColor blueColor];
+  
+  
+  CGSize size = [self.athleteNotesTextField.text sizeWithFont:self.athleteNotesTextField.font forWidth:KNoteFieldWidth lineBreakMode:NSLineBreakByWordWrapping ];
+  
+  self.athleteNotesTextField.frame = CGRectMake(labelOffsetX, CGRectGetMaxY(self.tagsTextField.frame) + textFieldVertPadding, size.width, size.height);
+  self.athleteNotesTextField.text = self.athleteNotes;
+  
+  
+  
   
   self.checkbox.frame = CGRectMake(self.label.frame.origin.x + self.label.frame.size.width+ checkboxPadding, checkboxPadding, checkboxWidth, checkboxHeight);
   

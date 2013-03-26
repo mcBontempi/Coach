@@ -46,6 +46,8 @@
 - (void)SlotEditViewControllerDelegate_updateWithActivityType:(TActivityType)activityType duration:(NSInteger)duration tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString*)coachNotes
 {
   
+  NSLog(@"'%d'  '%d'  '%@' '%@' '%@'    -  '%d'  '%d' '%@' '%@' '%@'", self.slot.activityType, self.slot.duration,  self.slot.tags,self.slot.athleteNotes, self.slot.coachNotes,duration, activityType, tags, athleteNotes, coachNotes);
+  
   if(self.slot.activityType != activityType ||
      self.slot.duration != duration ||
      ![self.slot.tags isEqualToString:tags] ||
