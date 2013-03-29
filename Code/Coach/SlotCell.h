@@ -1,10 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "SlotCellDelegate.h"
 
-const CGFloat KNoteFieldWidth = 200;
-
-extern UIFont * const KNoteFieldFont;
-
 @interface SlotCell : UITableViewCell
 
 

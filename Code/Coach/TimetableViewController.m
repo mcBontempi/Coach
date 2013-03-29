@@ -345,25 +345,12 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
   Slot *slot = [self slotForRowAtIndexPath:indexPath];
-  
 	if(slot && self.slotBeingEdited == [self slotForRowAtIndexPath:indexPath])
 		return KExpandedSlotHeight;
   else
   {
-    if(slot.athleteNotes.length){
-      
-      
-   // CGSize size = [slot.athleteNotes sizeWithFont:<#(UIFont *)#> forWidth:<#(CGFloat)#> lineBreakMode:<#(NSLineBreakMode)#>]  KNoteFieldWidth
-      
-      
-      return KSlotCellHeight + 50;
-    }
-    else {
-    
     return KSlotCellHeight;
-    }
   }
 }
 
