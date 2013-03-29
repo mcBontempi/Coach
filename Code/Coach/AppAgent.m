@@ -82,15 +82,7 @@
 }
 
 -(void) start{
- // if(self.model)
- // {
-  //  [self.model makeTestData];
- //   [self startViewer];
- // }
-//  else{
-   // [self startUtilWizard];
    [self startViewer];
-//  }
 }
 
 -(void) handleOpenURL:(NSURL *)url{
@@ -103,8 +95,6 @@
 }
 
 -(void) ConfigAgentDelegate_finished{
-
-  //  [self.model ]
   [self startViewer];
 }
 

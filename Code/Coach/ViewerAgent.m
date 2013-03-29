@@ -70,12 +70,16 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
-  
+
   [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+
+  
+  if([self.modelProtocol currentPlan].length){
+  
   [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
   
   [self showInitialWeek];
-
+  }
 
 //  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
  
@@ -152,6 +156,7 @@
   
   [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
   
+  [self showInitialWeek];
 }
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{

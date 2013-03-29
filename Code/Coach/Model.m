@@ -16,14 +16,12 @@
   
   if (self = [super init]){
     
-    _currentPlan =@"My First Plan";
+    _currentPlan = @"";
     
     if(![self load]){
       // first time creation
       self.plans = [[NSMutableDictionary alloc] init];
       
-      [self makeTestData];
-      [self save];
     }
     
   }
@@ -38,11 +36,11 @@
   Coach *coach = [[Coach alloc] init];
   
   // test data
-  const NSInteger length = 45;
+  const NSInteger length = 10;
   
   Profile *profile = [[Profile alloc] init];
   profile.numberOfWeeks = length;
-  profile.startPercentage =30;
+  profile.startPercentage =00;
   [profile generate];
   
   coach.profile = profile;

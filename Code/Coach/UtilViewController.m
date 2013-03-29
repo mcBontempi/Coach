@@ -51,7 +51,6 @@
 }
 
 - (IBAction)makePlanPressed:(id)sender {
-  
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Please name your plan" message:@"keep it short but descriptive" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
   
   alertView.alertViewStyle = UIAlertViewStylePlainTextInput;

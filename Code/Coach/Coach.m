@@ -20,7 +20,8 @@
         
         
         u_int32_t r = arc4random()%7;
-        
+      
+      if(slot.duration)
         [coachedWeek[r] addObject:slot];
         
     }
