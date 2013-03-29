@@ -79,9 +79,6 @@
     }
 }
 
--(void) TimetableViewControllerDelegate_startEditingWeek{
-}
-
 -(void) TimetableViewControllerDelegate_commitEditingWeek{
     [self saveCurrentWeek];
     [self refetchCurrentWeek];

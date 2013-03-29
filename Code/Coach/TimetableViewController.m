@@ -74,6 +74,7 @@ const CGFloat KExpandedSlotHeight = 60;
   }
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
+  
 }
 
 - (void)slotEditSlotChanged:(NSNotification *)notification
@@ -95,6 +96,9 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationRight];
     [self.tableView endUpdates];
+    
+    [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
+
   }
   
   [super viewDidAppear:animated];
@@ -158,22 +162,14 @@ const CGFloat KExpandedSlotHeight = 60;
     
     self.previousBarButtonItem = self.navigationItem.leftBarButtonItem;
     
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                           target:self
-                                                                                           action:@selector(cancelItemPressed)] animated:YES];
-    
-    [self.delegate TimetableViewControllerDelegate_startEditingWeek];
-    
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     
     [self addAddRows];
-    
-    
   }
   else
   {
     // get this before we go messing with the data
     NSIndexPath *currentEditingIndexPath = [self indexPathForSlot:self.slotBeingEdited];
-    
     
     [self.delegate TimetableViewControllerDelegate_editingModeChangedIsEditing:NO];
     
@@ -182,8 +178,6 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.navigationItem setLeftBarButtonItem:self.previousBarButtonItem  animated:YES];
     
     [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
-    
-    
     
     [self.tableView beginUpdates];
     [self deleteAddRows];
@@ -356,7 +350,7 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if(self.tableView.isEditing){
+ // if(self.tableView.isEditing){
     NSArray* slots = self.currentWeek[indexPath.section];
     if(indexPath.row >= slots.count){
       self.slotBeingCreated = YES;
@@ -369,10 +363,10 @@ const CGFloat KExpandedSlotHeight = 60;
       
       [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
     }
-  }
-  else{
+  //}
+//  else{
     
-  }
+//  }
   
 }
 
@@ -461,20 +455,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   [self updateHeaderViewForSection:sourceIndexPath.section];
   
   self.lastSectionUpdatedWhenDragging = -1;
+  
+  
+  [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
-  /*
-   NSString *path = [[NSBundle mainBundle]pathForResource:@"slide" ofType:@"wav"];
-   AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
-   [audioPlayer play];
-   
-   */
-  
-  
-  
-  
-  
   
   if(self.tableView.isEditing){
     
