@@ -17,22 +17,32 @@
   __weak IBOutlet UITextView *_tagsTextView;
 }
 
-- (IBAction)scrollViewTapped:(id)sender {
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
   [UIView animateWithDuration:0.2 animations:^{
     _scrollView.contentOffset = CGPointMake(0,0);}];
-  
+  [self resignResponders];
+}
+
+
+- (void)resignResponders
+{
+  [_tagsTextView resignFirstResponder];
   [_coachNotesTextView resignFirstResponder];
   [_athleteNotesTextView resignFirstResponder];
 }
 
 - (IBAction)donePressed:(id)sender
 {
+  [self resignResponders];
+  
   [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_hScroller.currentPage*15 tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
   [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)cancelPressed:(id)sender
 {
+  [self resignResponders];
+  
   [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -45,26 +55,38 @@
   }
   if(self){
     _delegate = delegate;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
   }
   return self;
 }
 
 - (void)viewDidLoad
-{
+{ 
   [self setupActivityType];
   [self setuphScroller];
   
   [self setupTags];
   [self setupAthleteNotes];
   [self setupCoachNotes];
+  
+  //_scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, _scrollView.frame.size.height + 205);
 }
 
-- (void)keyboardWillShow:(NSNotification *)notification
+- (void)textViewDidBeginEditing:(UITextView *)textView
 {
   [UIView animateWithDuration:0.2 animations:^{
-    _scrollView.contentOffset = CGPointMake(0,125);}];
+    
+    if(textView == _tagsTextView){
+      _scrollView.contentOffset = CGPointMake(0,0);
+    }
+   else if(textView == _coachNotesTextView){
+     _scrollView.contentOffset = CGPointMake(0,165);
+   }
+   else if(textView == _athleteNotesTextView){
+     _scrollView.contentOffset = CGPointMake(0,205);
+   }
+   
+   
+    }];
 }
 
 - (void)setupTags

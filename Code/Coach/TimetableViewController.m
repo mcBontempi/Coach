@@ -583,8 +583,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 -(void) SlotCellDelegate_checked:(BOOL)checked identifier:(id) identifier
 {
   [self.delegate TimetableViewControllerDelegate_checked:checked slot:[self slotForRowAtIndexPath:[self.tableView indexPathForCell:identifier]]];
-  
-  [Utils playSound:@"delete" type:@"wav"];
 }
 
 @end
