@@ -3,6 +3,6 @@
 
 @protocol DurationViewControllerDelegate <NSObject>
 
--(void) DurationViewControllerDelegate_nextPressed:(NSInteger) duration;
+-(void) DurationViewControllerDelegate_finishedWith:(NSInteger) duration name:(NSString *)name;
 
 @end

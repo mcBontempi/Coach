@@ -188,7 +188,7 @@
 		850D26AF161072420034A743 /* StackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackViewController.h; path = Coach/StackViewController.h; sourceTree = "<group>"; };
 		850D26B0161072420034A743 /* StackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackViewController.m; path = Coach/StackViewController.m; sourceTree = "<group>"; };
 		850D26B1161072420034A743 /* StackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StackViewController.xib; path = Coach/StackViewController.xib; sourceTree = "<group>"; };
-		852CF78D1608A7E6009E249F /* TriathlonTimetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriathlonTimetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		852CF78D1608A7E6009E249F /* Triathlon Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Triathlon Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852CF7911608A7E6009E249F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		852CF7931608A7E6009E249F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		852CF7951608A7E6009E249F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -455,7 +455,7 @@
 		852CF78E1608A7E6009E249F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				852CF78D1608A7E6009E249F /* TriathlonTimetable.app */,
+				852CF78D1608A7E6009E249F /* Triathlon Timetable.app */,
 				852CF7B11608A7E8009E249F /* CoachTests.octest */,
 			);
 			name = Products;
@@ -953,7 +953,7 @@
 			);
 			name = "Triathlon Timetable";
 			productName = Coach;
-			productReference = 852CF78D1608A7E6009E249F /* TriathlonTimetable.app */;
+			productReference = 852CF78D1608A7E6009E249F /* Triathlon Timetable.app */;
 			productType = "com.apple.product-type.application";
 		};
 		852CF7B01608A7E8009E249F /* CoachTests */ = {
@@ -1323,15 +1323,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: daren taylor";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E1BA4BB1-A4E4-4828-A9CC-C383B60CBE9F";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E1BA4BB1-A4E4-4828-A9CC-C383B60CBE9F";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;

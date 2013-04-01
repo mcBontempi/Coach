@@ -51,10 +51,8 @@
 }
 
 - (IBAction)makePlanPressed:(id)sender {
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Please name your plan" message:@"keep it short but descriptive" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
   
-  alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-  [alertView show];
+  [self.delegate UtilViewControllerDelegate_askUserForNewPlanDetails];
 }
 
 - (IBAction)toggleEditPressed:(id)sender {
@@ -76,14 +74,6 @@
   [self.tableView reloadData];
   
   self.tableView.userInteractionEnabled = YES;
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-  if(buttonIndex == 1){
-    NSString *text = [alertView textFieldAtIndex:0].text;
-    [self.delegate UtilViewControllerDelegate_makeEmptyPlanNamed:text numWeeks:5];
-  }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
@@ -166,9 +156,5 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
   }
 }
 
-- (void)viewDidUnload {
-  [self setMyNavigationBar:nil];
-  [self setAddButton:nil];
-  [super viewDidUnload];
-}
+
 @end

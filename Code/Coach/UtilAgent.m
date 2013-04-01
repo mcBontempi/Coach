@@ -47,10 +47,11 @@
 
 #pragma -- mark UtilViewControllerDelegate methods
 
-- (void)UtilViewControllerDelegate_makeEmptyPlanNamed:planName numWeeks:(NSUInteger)numWeeks
+- (void)UtilViewControllerDelegate_askUserForNewPlanDetails
 {
-  [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:planName numWeeks:numWeeks];
-  [self.viewControllerProtocol UtilViewControllerProtocol_reloadData];
+  DurationViewController *durationViewController = [[DurationViewController alloc] initWithDelegate:self];
+  
+  [self.rootViewController presentViewController:durationViewController animated:YES completion:^{  }];
 }
 
 - (void)UtilViewControllerDelegate_exportPlan:(NSString *)planName
@@ -99,6 +100,15 @@
 -(void) PlanDetailAgentDelegate_close{
  // [self.rootViewController popToRootViewControllerAnimated:YES];
 }
+
+-(void) DurationViewControllerDelegate_finishedWith:(NSInteger) duration name:(NSString *)name
+{
+  
+  
+  [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:name numWeeks:duration];
+  [self.viewControllerProtocol UtilViewControllerProtocol_reloadData];
+}
+
 
 
 @end

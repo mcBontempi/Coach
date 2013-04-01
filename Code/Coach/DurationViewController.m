@@ -3,6 +3,7 @@
 @interface DurationViewController ()
 - (IBAction)nextPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *duration;
+@property (weak, nonatomic) IBOutlet UITextField *name;
 
 @end
 
@@ -40,11 +41,21 @@
 }
 
 - (IBAction)nextPressed:(id)sender {
-    
-    [self.delegate DurationViewControllerDelegate_nextPressed:[self.duration.text intValue]];
+  
+  NSInteger duration = [self.duration.text integerValue];
+ 
+  if(duration >0 && duration <100 && self.name.text.length < 20 && self.name.text.length > 0){
+  [self.delegate DurationViewControllerDelegate_finishedWith:[self.duration.text integerValue]  name:self.name.text] ;
+
+  [self dismissModalViewControllerAnimated:YES];
+  }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;
+}
+- (void)viewDidUnload {
+  [self setName:nil];
+  [super viewDidUnload];
 }
 @end
