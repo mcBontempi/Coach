@@ -89,7 +89,7 @@
 
   NSData *data = [NSData dataWithContentsOfURL:url];
 
-  [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data];
+  [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data named:[[url path] lastPathComponent]];
 
   [self startViewer];
 }

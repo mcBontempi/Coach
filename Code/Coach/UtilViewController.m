@@ -67,6 +67,11 @@
   }
 }
 
+- (IBAction)getTimetablesPressed:(id)sender {
+    NSString* launchUrl =@"http://www.triathlontimetable.com";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
   

@@ -2,6 +2,7 @@
 #import "Profile.h"
 #import "Coach.h"
 #import "Slot.h"
+#import <CocoaSecurity/CocoaSecurity.h>
 
 @interface Model ()
 
@@ -47,7 +48,7 @@
   coach.peakMinutes = 20*60;
   
   for(NSInteger week = 0 ; week <= length ; week++){
-      [self.plans[self.currentPlan] addObject:[coach getWeekUsesProfileWithWeek:0]];
+    [self.plans[self.currentPlan] addObject:[coach getWeekUsesProfileWithWeek:0]];
   }
 }
 
@@ -167,26 +168,22 @@
     [jasonableWeeks addObject:copiedWeek];
   }
   
-  NSError *error;
+  NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jasonableWeeks options:NSJSONWritingPrettyPrinted error:nil];
   
-  return [NSJSONSerialization dataWithJSONObject:jasonableWeeks options:NSJSONWritingPrettyPrinted error:&error];
+  CocoaSecurityResult *result = [CocoaSecurity aesEncryptWithData:jsonData key:[@"0000000000000000" dataUsingEncoding:NSUTF8StringEncoding] iv: [@"pppppppppppppppp"dataUsingEncoding: NSUTF8StringEncoding]];
+  
+  return [[NSData alloc] initWithData:result.data];
 }
 
-- (void) createPlanFromJSONDataAndMakeCurrent:(NSData *)jsonData{
-  NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSASCIIStringEncoding];
+- (void) createPlanFromJSONDataAndMakeCurrent:(NSData *)jsonData named:(NSString *)name{
   
-  NSLog(@"%@", jsonString);
+  CocoaSecurityResult *result = [CocoaSecurity aesDecryptWithData:jsonData key:[@"0000000000000000" dataUsingEncoding:NSUTF8StringEncoding] iv: [@"pppppppppppppppp"dataUsingEncoding: NSUTF8StringEncoding]];
   
-  NSError *error;
-  NSMutableArray *planToScan = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error ];
-  
-  
+  NSMutableArray *planToScan = [NSJSONSerialization JSONObjectWithData:result.data options:NSJSONReadingMutableContainers error:nil ];
   
   NSMutableArray *copiedPlan = [[NSMutableArray alloc] init];
   
   for(NSArray *weekToScan in planToScan){
-    
-    
     
     NSMutableArray *copiedWeek = [[NSMutableArray alloc] init];
     
@@ -205,11 +202,22 @@
     [copiedPlan addObject:copiedWeek];
   }
   
-  
-  
-  
-  [self addPlan:copiedPlan named:@"Imported"];
+  if([self checkPlanNameIsAlreadyTaken:name]){
+    
+  }
+  else{
+    [self addPlan:copiedPlan named:name];
+  }
 }
 
+- (BOOL) checkPlanNameIsAlreadyTaken:(NSString *)testName
+{
+  for(NSString *name in [self.plans allKeys]){
+    if([name isEqualToString:testName]){
+      return YES;
+    }
+  }
+  return NO;
+}
 
 @end

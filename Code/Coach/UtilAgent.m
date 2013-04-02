@@ -24,13 +24,14 @@
 }
 
 
--(void) sendEmailWithAttachmentData:(NSData *)attachmentData
+
+-(void) sendEmailWithAttachmentData:(NSData *)attachmentData named:(NSString *)named
 {
   MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
   controller.mailComposeDelegate = self;
   [controller setSubject:@"My Subject"];
   [controller setMessageBody:@"your training plan exported from TriathlonTimetable" isHTML:NO];
-  [controller addAttachmentData:attachmentData mimeType:@"application/triathlontimetable" fileName:@"Plan.ttt"];
+  [controller addAttachmentData:attachmentData mimeType:@"application/triathlontimetable" fileName:[NSString stringWithFormat:@"%@.ttt", named ]];
   if (controller){
     [self.rootViewController presentViewController:controller animated:YES completion:nil];
   }
@@ -57,7 +58,7 @@
 - (void)UtilViewControllerDelegate_exportPlan:(NSString *)planName
 {
   if ([MFMailComposeViewController canSendMail]) {
-    [self sendEmailWithAttachmentData: [self.modelProtocol getJSONForPlan:planName]];
+    [self sendEmailWithAttachmentData: [self.modelProtocol getJSONForPlan:planName] named:planName];
   } else {
     [[[UIAlertView alloc] initWithTitle:@"Cannot send mail" message:@"You need to setup email in device settings" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
   }

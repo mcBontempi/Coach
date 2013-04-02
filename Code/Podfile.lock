@@ -1,11 +1,14 @@
 
 PODS:
+- CocoaSecurity (1.2.1)
 - WEPopover (0.0.1)
 
 DEPENDENCIES:
+- CocoaSecurity
 - WEPopover
 
 SPEC CHECKSUMS:
+  CocoaSecurity: cfca806aa54a020f0bf24b6ce467e8996dd6bb2e
   WEPopover: 119fe521e9c35069c5ec63dfc14334ca321275b8
 
-COCOAPODS: 0.16.0
+COCOAPODS: 0.16.2

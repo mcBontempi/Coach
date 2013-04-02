@@ -1,3 +1,4 @@
 platform :ios, :deployment_target => '4.3'
 
 pod 'WEPopover'
+pod 'CocoaSecurity'

@@ -161,13 +161,20 @@
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
   
-  [self.modelProtocol makePlanNamed:planName];
-  
-  Coach *coach = [[Coach alloc] init];
-  
-  for(NSInteger week = 0 ; week < numWeeks ; week++){
-    [self.modelProtocol setWeek:week array:[coach getEmptyWeek]];
+  if([self.modelProtocol checkPlanNameIsAlreadyTaken:planName]){
+    
   }
+  else{
+    [self.modelProtocol makePlanNamed:planName];
+    
+    Coach *coach = [[Coach alloc] init];
+    
+    for(NSInteger week = 0 ; week < numWeeks ; week++){
+      [self.modelProtocol setWeek:week array:[coach getEmptyWeek]];
+    }
+  }
+  
+
 }
 
 

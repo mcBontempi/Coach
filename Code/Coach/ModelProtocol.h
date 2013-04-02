@@ -16,7 +16,8 @@
 - (void)clearPlan;
 - (void)makePlanNamed:(NSString *)planName;
 - (void)selectPlan:(NSString *)planName;
-- (void)createPlanFromJSONDataAndMakeCurrent:(NSData *)data;
+- (void)createPlanFromJSONDataAndMakeCurrent:(NSData *)jsonData named:(NSString *)name;
 - (NSString *)currentPlan;
+- (BOOL) checkPlanNameIsAlreadyTaken:(NSString *)testName;
 
 @end
