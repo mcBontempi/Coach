@@ -127,7 +127,12 @@
 
 - (NSMutableArray*)load
 {
-  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"plans"];
+  NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentPlan"];
+  _currentPlan = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding ];
+  
+  NSLog(@"%@", _currentPlan);
+  
+  data = [[NSUserDefaults standardUserDefaults] objectForKey:@"plans"];
   if(data){
     id obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if(obj){
@@ -140,7 +145,10 @@
 
 - (void) save
 {
-  NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.plans];
+  NSData *data = [_currentPlan dataUsingEncoding:NSUTF8StringEncoding];
+  [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentPlan"];
+  
+  data = [NSKeyedArchiver archivedDataWithRootObject:self.plans];
   [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"plans"];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }

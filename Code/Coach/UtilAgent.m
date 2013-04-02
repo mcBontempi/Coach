@@ -23,8 +23,6 @@
   return self;
 }
 
-
-
 -(void) sendEmailWithAttachmentData:(NSData *)attachmentData named:(NSString *)named
 {
   MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
