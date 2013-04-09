@@ -125,7 +125,7 @@
   [self save];
 }
 
-- (NSMutableArray*)load
+- (BOOL)load
 {
   NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentPlan"];
   _currentPlan = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding ];
@@ -137,10 +137,11 @@
     id obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if(obj){
       self.plans = obj;
+      return YES;
     }
   }
   
-  return self.plans[self.currentPlan];
+  return NO;
 }
 
 - (void) save
@@ -211,7 +212,7 @@
   }
   
   if([self checkPlanNameIsAlreadyTaken:name]){
-    
+    [[[UIAlertView alloc] initWithTitle:@"plan not imported" message:@"name already in use" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil] show];
   }
   else{
     [self addPlan:copiedPlan named:name];

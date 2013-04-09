@@ -5,7 +5,7 @@
 - (NSData *)getJSONForPlan:(NSString *)planName;
 - (void)makeTestData;
 - (void)save;
-- (NSMutableArray *)load;
+- (BOOL)load;
 - (NSArray *)getWeek:(NSInteger)weekIndex;
 - (void) setWeek:(NSInteger)weekIndex array:(NSArray *)array;
 - (NSMutableArray *)makeCopyOfWeek:(NSArray *)weekToCopy;

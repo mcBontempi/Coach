@@ -70,26 +70,22 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
-
+  
   [self.rootViewController presentModalViewController:self.navigationController animated:NO];
-
   
   if([self.modelProtocol currentPlan].length){
-  
-  [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
-  
-  [self showInitialWeek];
+    [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
+    [self showInitialWeek];
   }
+  
 
-//  [self performSelector:@selector(quickDebugPop) withObject:nil afterDelay:1.0];
- 
 }
 
 
 - (void)quickDebugPop
 {
   [self TimetableViewAgentDelegate_bookmarksPressed];
-//  [self ListViewAgentDelegate_showPlansInFullscreen];
+  //  [self ListViewAgentDelegate_showPlansInFullscreen];
   
 }
 
@@ -146,7 +142,7 @@
   SlotEditViewController *slotEditViewController = [[SlotEditViewController alloc] initWithDelegate:self.slotEditViewAgent];
   
   [self.timetableViewController presentModalViewController:slotEditViewController animated:YES];
-   
+  
 }
 
 
@@ -162,6 +158,7 @@
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{
   
   if([self.modelProtocol checkPlanNameIsAlreadyTaken:planName]){
+    [[[UIAlertView alloc] initWithTitle:@"plan not imported" message:@"name already in use" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil] show];
     
   }
   else{
@@ -174,7 +171,7 @@
     }
   }
   
-
+  
 }
 
 

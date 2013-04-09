@@ -27,6 +27,7 @@
 
 - (void)highlightCurrentWeek:(NSInteger) weekIndex
 {
+  [self.toListViewControllerDelegate ToListViewControllerDelegate_reloadData];
   [self.toListViewControllerDelegate ToListViewControllerDelegate_highlightCurrentWeek:weekIndex];
 }
 

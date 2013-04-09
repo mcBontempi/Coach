@@ -223,7 +223,7 @@
 }
 
 -(void) ToListViewControllerDelegate_highlightCurrentWeek:(NSInteger) weekIndex{
-  //   [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
+  [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
 }
 
 

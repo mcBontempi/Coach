@@ -89,9 +89,22 @@
 
   NSData *data = [NSData dataWithContentsOfURL:url];
 
-  [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data named:[[url path] lastPathComponent]];
+  [self.modelProtocol createPlanFromJSONDataAndMakeCurrent:data named:[[[url path] lastPathComponent] stringByDeletingPathExtension]];
 
+  // For error information
+  NSError *error;
+  
+  // Create file manager
+  NSFileManager *fileMgr = [NSFileManager defaultManager];
+  
+  [fileMgr removeItemAtURL:url error:&error];
+  
+  
+  
   [self startViewer];
+  
+  
+  
 }
 
 -(void) ConfigAgentDelegate_finished{
