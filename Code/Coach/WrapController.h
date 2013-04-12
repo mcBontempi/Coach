@@ -25,7 +25,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WrapController : GeneralViewController
+@interface WrapController : UIViewController
 
 @property (nonatomic, readonly, retain) UIViewController* wrappedController;
 @property (nonatomic, copy) void(^onViewDidLoad)(WrapController* controller);

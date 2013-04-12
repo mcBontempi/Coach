@@ -77,19 +77,7 @@
     [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
     [self showInitialWeek];
   }
-  
-
 }
-
-
-- (void)quickDebugPop
-{
-  [self TimetableViewAgentDelegate_bookmarksPressed];
-  //  [self ListViewAgentDelegate_showPlansInFullscreen];
-  
-}
-
-
 
 -(void) finish{
   [self.rootViewController dismissViewControllerAnimated: NO completion: ^
@@ -103,7 +91,6 @@
   [self.timetableViewAgent changeCurrentWeekAnimatedTo:0];
   
   [self.listViewAgent highlightCurrentWeek:0];
-  
 }
 
 

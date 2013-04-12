@@ -3,7 +3,7 @@
 #import "ToListViewControllerDelegate.h"
 #import "TimetablePopoverViewControllerDelegate.h"
 
-@interface ListViewController : GeneralViewController  <ToListViewControllerDelegate, TimetablePopoverViewControllerDelegate>
+@interface ListViewController : UIViewController  <ToListViewControllerDelegate, TimetablePopoverViewControllerDelegate>
 
     @property (nonatomic, weak) id<ListViewControllerDelegate> delegate;
 

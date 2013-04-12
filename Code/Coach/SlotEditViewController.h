@@ -3,7 +3,7 @@
 #import "SimpleHScrollerDelegate.h"
 #import "IconSelectionViewDelegate.h"
 
-@interface SlotEditViewController : GeneralViewController <SimpleHScrollerDelegate, IconSelectionViewDelegate >
+@interface SlotEditViewController : UIViewController <SimpleHScrollerDelegate, IconSelectionViewDelegate >
 
 -(id) initWithDelegate:(id<SlotEditViewControllerDelegate>) delegate;
 

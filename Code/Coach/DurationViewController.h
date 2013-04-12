@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "DurationViewControllerDelegate.h"
 
-@interface DurationViewController : GeneralViewController
+@interface DurationViewController : UIViewController
 
 @property (nonatomic, weak) id<DurationViewControllerDelegate> delegate;
 

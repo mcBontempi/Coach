@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface ViewController : GeneralViewController
+@interface ViewController : UIViewController
 
 @end
