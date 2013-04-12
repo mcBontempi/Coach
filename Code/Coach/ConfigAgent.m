@@ -79,4 +79,9 @@
     }];
 }
 
+-(void) DurationViewControllerDelegate_finishedWith:(NSInteger) duration name:(NSString *)name
+{
+  
+}
+
 @end

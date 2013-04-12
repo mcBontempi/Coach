@@ -13,7 +13,6 @@
 -(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex;
 -(void) TimetableViewControllerDelegate_deleteItem:(Slot*) slot;
 
--(void) TimetableViewControllerDelegate_startEditingWeek;
 -(void) TimetableViewControllerDelegate_commitEditingWeek;
 -(void) TimetableViewControllerDelegate_cancelEditingWeek;
 

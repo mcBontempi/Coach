@@ -102,9 +102,7 @@
 
 -(void) DurationViewControllerDelegate_finishedWith:(NSInteger) duration name:(NSString *)name
 {
-  
-  
-  [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:name numWeeks:duration];
+   [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:name numWeeks:duration];
   [self.viewControllerProtocol UtilViewControllerProtocol_reloadData];
 }
 
