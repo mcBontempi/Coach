@@ -4,8 +4,9 @@
 #import "Model.h"
 #import "Config.h"
 #import "ViewerAgent.h"
+#import "WelcomeViewController.h"
 
-@interface AppAgent () <ViewerAgentDelegate>
+@interface AppAgent () <ViewerAgentDelegate, WelcomeViewControllerDelegate>
 
 @property (nonatomic, strong) ViewerAgent *viewerAgent;
 @property (nonatomic, strong) id<ModelProtocol> modelProtocol;
@@ -34,8 +35,28 @@
 }
 
 -(void) start{
-   [self startViewer];
+
+ 
+  
+  WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
+  
+  
+  [self.rootViewController  presentViewController:welcomeViewController animated:NO completion:nil];
+
 }
+
+- (void)WelcomeViewControllerDelegate_getStartedPressed
+{
+  
+  [self.rootViewController dismissViewControllerAnimated:YES completion:^{ [self startViewer];}];
+  
+ 
+}
+
+-(void) WelcomeViewControllerDelegate_cancelPressed
+{
+}
+
 
 -(void) handleOpenURL:(NSURL *)url{
 

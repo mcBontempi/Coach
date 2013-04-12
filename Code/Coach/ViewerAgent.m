@@ -70,15 +70,18 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
-  
-  
-  [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+
+  [self.rootViewController presentModalViewController:self.navigationController animated:YES];
   
   if([self.modelProtocol currentPlan].length){
     [self.navigationController pushViewController:self.viewDeckViewController animated:NO];
     [self showInitialWeekAfterDelay];
     
-      //
+    
+  }
+  
+  else{
+    
   }
   
   

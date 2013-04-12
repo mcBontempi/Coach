@@ -107,6 +107,8 @@
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
 		D6A776A3162DEFFE00879C11 /* DurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A7769F162DEFFE00879C11 /* DurationViewController.m */; };
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
+		D6C755A717181DAF00FEAC56 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C755A617181DAE00FEAC56 /* Default@2x.png */; };
+		D6C755A917181DB900FEAC56 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C755A817181DB900FEAC56 /* Default.png */; };
 		D6DCF56A166CDFD200539164 /* strengthandconditioning.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF569166CDFD200539164 /* strengthandconditioning.png */; };
 		D6DCF56C166CE2FE00539164 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF56B166CE2FE00539164 /* up.png */; };
 		D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF56F166CE4DD00539164 /* CheckboxButton.m */; };
@@ -270,7 +272,7 @@
 		D65CE4541643012200D3B0CB /* ToListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToListViewControllerDelegate.h; path = Coach/ToListViewControllerDelegate.h; sourceTree = "<group>"; };
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
 		D6605A6C1671D846008DFF75 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
-		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D677708C16EF393A00D430C7 /* UtilTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilTableViewCell.h; path = Coach/UtilTableViewCell.h; sourceTree = "<group>"; };
 		D677708D16EF393A00D430C7 /* UtilTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilTableViewCell.m; path = Coach/UtilTableViewCell.m; sourceTree = "<group>"; };
 		D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "triathlonTimetableJustTitle@2x.png"; path = "Coach/assets/triathlonTimetableJustTitle@2x.png"; sourceTree = "<group>"; };
@@ -293,6 +295,8 @@
 		D6A776B1163341E300879C11 /* ToTimetableViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ToTimetableViewControllerDelegate.h; path = Coach/ToTimetableViewControllerDelegate.h; sourceTree = "<group>"; };
 		D6A776B416334DE900879C11 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		D6C755A617181DAE00FEAC56 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		D6C755A817181DB900FEAC56 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		D6DCF567166CD08800539164 /* SimpleHScrollerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleHScrollerDelegate.h; path = Coach/SimpleHScrollerDelegate.h; sourceTree = "<group>"; };
 		D6DCF569166CDFD200539164 /* strengthandconditioning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = strengthandconditioning.png; path = Coach/assets/strengthandconditioning.png; sourceTree = "<group>"; };
 		D6DCF56B166CE2FE00539164 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Coach/assets/up.png; sourceTree = "<group>"; };
@@ -386,12 +390,10 @@
 		852CF7821608A7E6009E249F = {
 			isa = PBXGroup;
 			children = (
-				D6605A6E1671D945008DFF75 /* Default-568h@2x.png */,
 				852CF7971608A7E6009E249F /* Coach */,
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
 				852CF78E1608A7E6009E249F /* Products */,
-				BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -425,11 +427,10 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D60EADEC17184EA100A27641 /* Other */,
 				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
 				85C7679C165BA669008325EB /* ViewDeck */,
 				850D261F160B78620034A743 /* Agents */,
-				852CF7A01608A7E7009E249F /* AppDelegate.h */,
-				852CF7A11608A7E7009E249F /* AppDelegate.m */,
 				D61672E51614E868001C3F15 /* Assets */,
 				D6F5636816540F8D00E7617C /* Class Extensions */,
 				852CF7C91608B184009E249F /* Data */,
@@ -438,14 +439,8 @@
 				852CF7CE1608C9EB009E249F /* Models */,
 				852CF7981608A7E6009E249F /* Supporting Files */,
 				D6A776B316334DD700879C11 /* Utils */,
-				852CF7A31608A7E7009E249F /* ViewController.h */,
-				852CF7A41608A7E7009E249F /* ViewController.m */,
-				852CF7A91608A7E7009E249F /* ViewController_iPad.xib */,
-				852CF7A61608A7E7009E249F /* ViewController_iPhone.xib */,
 				D61672C5160B3991001C3F15 /* ViewControllers */,
 				D61672C6160B3999001C3F15 /* Views */,
-				D6E427F516FC88E2002EE8D5 /* Notifications.h */,
-				D6E427F616FC88E3002EE8D5 /* Notifications.m */,
 			);
 			path = Coach;
 			sourceTree = "<group>";
@@ -565,6 +560,25 @@
 				D6DCF57E166CEFDD00539164 /* SlotEditingCellDelegate.h */,
 			);
 			name = Timetable;
+			sourceTree = "<group>";
+		};
+		D60EADEC17184EA100A27641 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D6E427F516FC88E2002EE8D5 /* Notifications.h */,
+				D6E427F616FC88E3002EE8D5 /* Notifications.m */,
+				D6C755A817181DB900FEAC56 /* Default.png */,
+				D6C755A617181DAE00FEAC56 /* Default@2x.png */,
+				852CF7A31608A7E7009E249F /* ViewController.h */,
+				852CF7A41608A7E7009E249F /* ViewController.m */,
+				852CF7A91608A7E7009E249F /* ViewController_iPad.xib */,
+				852CF7A61608A7E7009E249F /* ViewController_iPhone.xib */,
+				852CF7A01608A7E7009E249F /* AppDelegate.h */,
+				852CF7A11608A7E7009E249F /* AppDelegate.m */,
+				D6605A6E1671D945008DFF75 /* Default-568h@2x.png */,
+				BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		D613308216DBB2780038455A /* TimetablePopover */ = {
@@ -932,6 +946,8 @@
 				D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */,
 				D678E00F1705A6A90046B59D /* 1Note.png in Resources */,
 				D678E0101705A6A90046B59D /* 2Notes.png in Resources */,
+				D6C755A717181DAF00FEAC56 /* Default@2x.png in Resources */,
+				D6C755A917181DB900FEAC56 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

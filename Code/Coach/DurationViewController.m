@@ -45,9 +45,12 @@
   NSInteger duration = [self.duration.text integerValue];
  
   if(duration >0 && duration <100 && self.name.text.length < 20 && self.name.text.length > 0){
+    
+     [self dismissModalViewControllerAnimated:YES];
   [self.delegate DurationViewControllerDelegate_finishedWith:[self.duration.text integerValue]  name:self.name.text] ;
 
-  [self dismissModalViewControllerAnimated:YES];
+      
+ 
   }
 }
 

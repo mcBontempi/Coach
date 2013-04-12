@@ -50,6 +50,7 @@
 {
   DurationViewController *durationViewController = [[DurationViewController alloc] initWithDelegate:self];
   
+  durationViewController.modalPresentationStyle = UIModalTransitionStyleCrossDissolve;
   [self.rootViewController presentViewController:durationViewController animated:YES completion:^{  }];
 }
 

@@ -88,7 +88,7 @@ __typeof__(h) __h = (h);                                    \
 #import <objc/message.h>
 #import "WrapController.h"
 
-#define DURATION_FAST 0.3
+#define DURATION_FAST 0.1
 #define DURATION_SLOW 0.3
 #define SLIDE_DURATION(animated,duration) ((animated) ? (duration) : 0)
 #define OPEN_SLIDE_DURATION(animated) SLIDE_DURATION(animated,DURATION_FAST)

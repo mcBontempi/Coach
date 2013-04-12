@@ -26,11 +26,18 @@
 }
 
 
-- (void)viewDidAppear:(BOOL)animated
-{
-  [super viewDidAppear:animated];
-  self.myNavigationBar.topItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"triathlonTimetableJustTitle.png"]];
+
+- (void)viewWillAppear:(BOOL)animated{
+  [super viewWillAppear:animated];
   
+    self.myNavigationBar.topItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"triathlonTimetableJustTitle.png"]];
+  
+  // to show currectly selected cell.
+  [self.tableView reloadData];
+  
+  self.tableView.userInteractionEnabled = YES;
+  
+  [self hideEditButtonIfNoData];
 }
 
 -(id) initWithDelegate:(id<UtilViewControllerDelegate>) delegate{
@@ -46,8 +53,19 @@
   return self;
 }
 
+- (void)hideEditButtonIfNoData
+{
+  if(![self.tableView numberOfRowsInSection:0])
+  {
+    self.editButton.enabled = NO;
+  }
+
+}
+
 - (void) UtilViewControllerProtocol_reloadData{
   [self.tableView reloadData];
+  [self hideEditButtonIfNoData];
+   
 }
 
 - (IBAction)makePlanPressed:(id)sender {
@@ -72,14 +90,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: launchUrl]];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-  [super viewWillAppear:animated];
-  
-  // to show currectly selected cell.
-  [self.tableView reloadData];
-  
-  self.tableView.userInteractionEnabled = YES;
-}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
   return YES;
