@@ -105,6 +105,8 @@
 {
    [self.delegate UtilAgentDelegate_makeEmptyPlanNamed:name numWeeks:duration];
   [self.viewControllerProtocol UtilViewControllerProtocol_reloadData];
+  
+  [self.delegate UtilAgentDelegate_showPlan:name];
 }
 
 
