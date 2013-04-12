@@ -50,9 +50,7 @@
   NSFileManager *fileMgr = [NSFileManager defaultManager];
   
   [fileMgr removeItemAtURL:url error:&error];
-  
-  
-  
+
   [self startViewer];
 }
 

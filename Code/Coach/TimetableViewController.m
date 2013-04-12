@@ -74,7 +74,6 @@ const CGFloat KExpandedSlotHeight = 60;
   }
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
-  
 }
 
 - (void)slotEditSlotChanged:(NSNotification *)notification
@@ -536,9 +535,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   [self.tableView reloadData];
 }
 
-
--(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
-  
+- (void)changeCurrentWeekAnimatedTo:(NSInteger) weekIndex
+{
   [self.tableView beginUpdates];
   
   [self deleteAllRows:UITableViewRowAnimationFade];
@@ -551,6 +549,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   [self updateAllHeaders];
   
   self.title = [NSString stringWithFormat:@"Week %d", weekIndex+1];
+  
+}
+
+-(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
+  
+  [self changeCurrentWeekAnimatedTo:weekIndex];
   
 }
 

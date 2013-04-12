@@ -71,12 +71,17 @@
   else
     self.viewDeckViewController.leftLedge = 500;
   
+  
   [self.rootViewController presentModalViewController:self.navigationController animated:NO];
   
   if([self.modelProtocol currentPlan].length){
-    [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
-    [self showInitialWeek];
+    [self.navigationController pushViewController:self.viewDeckViewController animated:NO];
+    [self showInitialWeekAfterDelay];
+    
+      //
   }
+  
+  
 }
 
 -(void) finish{
@@ -86,12 +91,21 @@
    }];
 }
 
--(void) showInitialWeek{
-  
+-(void) showInitialWeekImmediately
+{
   [self.timetableViewAgent changeCurrentWeekAnimatedTo:0];
   
   [self.listViewAgent highlightCurrentWeek:0];
+  
+   [self.viewDeckViewController openLeftViewAnimated:YES];
+
 }
+
+-(void) showInitialWeekAfterDelay{
+
+  [self performSelector:@selector(showInitialWeekImmediately) withObject:nil afterDelay:0.0001];
+  
+ }
 
 
 -(void) showWeek:(NSInteger) weekIndex{
@@ -105,6 +119,13 @@
 
 -(void) ListViewAgentDelegate_showPlansInFullscreen{
   [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) ListViewAgentDelegate_selectPlanFromPopover:(NSString *)planName
+{
+  [self.modelProtocol selectPlan:planName];
+   [self showInitialWeekImmediately];
+  
 }
 
 -(void) TimetableViewAgentDelegate_editingModeChangedIsEditing:(BOOL) editing{
@@ -132,14 +153,18 @@
   
 }
 
-
--(void) UtilAgentDelegate_showPlan:(NSString *)planName{
-  
+- (void) showPlan:(NSString *)planName
+{
   [self.modelProtocol selectPlan:planName];
   
   [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
-  
-  [self showInitialWeek];
+  [self.viewDeckViewController toggleLeftViewAnimated:YES];
+  [self showInitialWeekAfterDelay];
+}
+
+-(void) UtilAgentDelegate_showPlan:(NSString *)planName{
+  [self showPlan:planName];
+
 }
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{

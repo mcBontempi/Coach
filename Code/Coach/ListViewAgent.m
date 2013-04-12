@@ -70,8 +70,7 @@
 
 -(void)ListViewControllerDelegate_showPlan:(NSString *)planName
 {
-  [self.modelProtocol selectPlan:planName];
-  [self.toListViewControllerDelegate ToListViewControllerDelegate_reloadData];
+  [self.delegate ListViewAgentDelegate_selectPlanFromPopover:planName];
 }
 
 -(void)ListViewControllerDelegate_showPlansInFullscreen
