@@ -1,4 +1,5 @@
 #import "WelcomeViewController.h"
+#import "SlideToCancelViewController.h"
 
 @interface WelcomeViewController ()
 - (IBAction)getStartedPressed:(id)sender;
@@ -7,7 +8,12 @@
 
 @end
 
-@implementation WelcomeViewController
+@implementation WelcomeViewController{
+  
+  UIButton *testItButton;
+  SlideToCancelViewController *slideToCancel;
+
+}
 
 -(id) init{
     NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
@@ -30,6 +36,22 @@
 
 - (void)viewDidLoad
 {
+  
+  if (!slideToCancel) {
+		// Create the slider
+		slideToCancel = [[SlideToCancelViewController alloc] init];
+		slideToCancel.delegate = self;
+		
+		// Position the slider off the bottom of the view, so we can slide it up
+		CGRect sliderFrame = slideToCancel.view.frame;
+		sliderFrame.origin.y = self.view.frame.size.height;
+		slideToCancel.view.frame = sliderFrame;
+		
+		// Add slider to the view
+		[self.view addSubview:slideToCancel.view];
+	}
+
+  
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -60,28 +82,58 @@
     self.slider.alpha = 1.0;
   }];
   
+  [self testIt];
+  
 }
-/*
 
-- (void)customizeSlider
-{
-     UIImage *stretchLeftTrack = [[UIImage imageNamed:kUnlockBarOnImage] stretchableImageWithLeftCapWidth:51.0 topCapHeight:0.0];
-  
-     UIImage *stretchRightTrack = [[UIImage imageNamed:kUnlockBarOffImage] stretchableImageWithLeftCapWidth:51.0 topCapHeight:0.0];
-   UIImage *newStretchRightTrack = [UIImage addText:stretchRightTrack text:NSLocalizedString(@"SLIDE TO PARTY", nil) textFontSize:18.5 xPos:65 yPos:18.5 colour:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
-  
-   self.slider.frame = CGRectMake(self.slider.frame.origin.x, self.slider.frame.origin.y, self.slider.frame.size.width, 51);
-     [self.slider setThumbImage:[UIImage imageNamed:kUnlockBarHandleImage] forState:UIControlStateNormal];
-     [self.slider setThumbImage:[UIImage imageNamed:kUnlockBarHandleImage] forState:UIControlStateHighlighted];
-     [self.slider setMinimumTrackImage:stretchLeftTrack forState:UIControlStateNormal];
-     [self.slider setMaximumTrackImage:newStretchRightTrack forState:UIControlStateNormal];
+- (IBAction) testIt {
+	// Start the slider animation
+	slideToCancel.enabled = YES;
+	testItButton.enabled = NO;
+	
+	// Slowly move up the slider from the bottom of the screen
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.5];
+	CGPoint sliderCenter = slideToCancel.view.center;
+	sliderCenter.y -= slideToCancel.view.bounds.size.height;
+	slideToCancel.view.center = sliderCenter;
+	[UIView commitAnimations];
 }
-*/
+
+// SlideToCancelDelegate method is called when the slider is slid all the way
+// to the right
+- (void) cancelled {
+	// Disable the slider and re-enable the button
+	slideToCancel.enabled = NO;
+	testItButton.enabled = YES;
+  
+	// Slowly move down the slider off the bottom of the screen
+	[UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.5];
+	CGPoint sliderCenter = slideToCancel.view.center;
+	sliderCenter.y += slideToCancel.view.bounds.size.height;
+	slideToCancel.view.center = sliderCenter;
+	[UIView commitAnimations];
+  
+  
+  [self performSelector:@selector(close) withObject:nil afterDelay:1.0];
+  
+
+  
+}
+
+
+- (void) close
+{
+  [self dismissModalViewControllerAnimated:YES];
+  
+  [self.delegate WelcomeViewControllerDelegate_getStartedPressed];
+}
+
 
 -(void) cancel{
     
-    [self.delegate WelcomeViewControllerDelegate_cancelPressed];
-    
+     
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,8 +143,8 @@
 }
 
 - (IBAction)getStartedPressed:(id)sender {
-    
-    [self.delegate WelcomeViewControllerDelegate_getStartedPressed];
+  
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{

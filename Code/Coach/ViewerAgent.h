@@ -5,8 +5,9 @@
 #import "ViewerAgentDelegate.h"
 #import "UtilAgentDelegate.h"
 #import "SlotEditViewAgentDelegate.h"
+#import "WelcomeViewController.h"
 
-@interface ViewerAgent : NSObject <ListViewAgentDelegate, TimetableViewAgentDelegate, UtilAgentDelegate, SlotEditViewAgentDelegate>
+@interface ViewerAgent : NSObject <ListViewAgentDelegate, TimetableViewAgentDelegate, UtilAgentDelegate, SlotEditViewAgentDelegate, WelcomeViewControllerDelegate>
 
 @property (nonatomic, strong) UIViewController *rootViewController;
 

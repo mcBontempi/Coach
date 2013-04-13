@@ -44,6 +44,12 @@
 		85C886441631675B0023A3E1 /* TimetableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C886431631675B0023A3E1 /* TimetableViewAgent.m */; };
 		85D10E07161437F3007BB5B6 /* WelcomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */; };
 		85FE7052163549410084AE26 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FE7051163549410084AE26 /* Model.m */; };
+		D60EADF717185ACA00A27641 /* sliderMaxMin-02.png in Resources */ = {isa = PBXBuildFile; fileRef = D60EADEE17185ACA00A27641 /* sliderMaxMin-02.png */; };
+		D60EADF817185ACA00A27641 /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D60EADEF17185ACA00A27641 /* sliderThumb.png */; };
+		D60EADF917185ACA00A27641 /* sliderTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = D60EADF017185ACA00A27641 /* sliderTrack.png */; };
+		D60EADFA17185ACA00A27641 /* SlideToCancelAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF217185ACA00A27641 /* SlideToCancelAppDelegate.m */; };
+		D60EADFB17185ACA00A27641 /* SlideToCancelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF417185ACA00A27641 /* SlideToCancelViewController.m */; };
+		D60EADFC17185ACA00A27641 /* TestIt.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF617185ACA00A27641 /* TestIt.m */; };
 		D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613308416DBB2F90038455A /* TimetablePopoverViewController.m */; };
 		D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */; };
 		D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */; };
@@ -217,6 +223,15 @@
 		85FE7050163549410084AE26 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		85FE7051163549410084AE26 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		D60EADEE17185ACA00A27641 /* sliderMaxMin-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderMaxMin-02.png"; sourceTree = "<group>"; };
+		D60EADEF17185ACA00A27641 /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderThumb.png; sourceTree = "<group>"; };
+		D60EADF017185ACA00A27641 /* sliderTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderTrack.png; sourceTree = "<group>"; };
+		D60EADF117185ACA00A27641 /* SlideToCancelAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToCancelAppDelegate.h; sourceTree = "<group>"; };
+		D60EADF217185ACA00A27641 /* SlideToCancelAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToCancelAppDelegate.m; sourceTree = "<group>"; };
+		D60EADF317185ACA00A27641 /* SlideToCancelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideToCancelViewController.h; sourceTree = "<group>"; };
+		D60EADF417185ACA00A27641 /* SlideToCancelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToCancelViewController.m; sourceTree = "<group>"; };
+		D60EADF517185ACA00A27641 /* TestIt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIt.h; sourceTree = "<group>"; };
+		D60EADF617185ACA00A27641 /* TestIt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestIt.m; sourceTree = "<group>"; };
 		D613308316DBB2F90038455A /* TimetablePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewController.h; path = Coach/TimetablePopoverViewController.h; sourceTree = "<group>"; };
 		D613308416DBB2F90038455A /* TimetablePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimetablePopoverViewController.m; path = Coach/TimetablePopoverViewController.m; sourceTree = "<group>"; };
 		D613308A16DBBB930038455A /* TimetablePopoverViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewControllerDelegate.h; path = Coach/TimetablePopoverViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -427,6 +442,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D60EADED17185ACA00A27641 /* SlideToCancel */,
 				D60EADEC17184EA100A27641 /* Other */,
 				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
 				85C7679C165BA669008325EB /* ViewDeck */,
@@ -579,6 +595,22 @@
 				BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		D60EADED17185ACA00A27641 /* SlideToCancel */ = {
+			isa = PBXGroup;
+			children = (
+				D60EADEE17185ACA00A27641 /* sliderMaxMin-02.png */,
+				D60EADEF17185ACA00A27641 /* sliderThumb.png */,
+				D60EADF017185ACA00A27641 /* sliderTrack.png */,
+				D60EADF117185ACA00A27641 /* SlideToCancelAppDelegate.h */,
+				D60EADF217185ACA00A27641 /* SlideToCancelAppDelegate.m */,
+				D60EADF317185ACA00A27641 /* SlideToCancelViewController.h */,
+				D60EADF417185ACA00A27641 /* SlideToCancelViewController.m */,
+				D60EADF517185ACA00A27641 /* TestIt.h */,
+				D60EADF617185ACA00A27641 /* TestIt.m */,
+			);
+			path = SlideToCancel;
 			sourceTree = "<group>";
 		};
 		D613308216DBB2780038455A /* TimetablePopover */ = {
@@ -948,6 +980,9 @@
 				D678E0101705A6A90046B59D /* 2Notes.png in Resources */,
 				D6C755A717181DAF00FEAC56 /* Default@2x.png in Resources */,
 				D6C755A917181DB900FEAC56 /* Default.png in Resources */,
+				D60EADF717185ACA00A27641 /* sliderMaxMin-02.png in Resources */,
+				D60EADF817185ACA00A27641 /* sliderThumb.png in Resources */,
+				D60EADF917185ACA00A27641 /* sliderTrack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,6 +1087,9 @@
 				D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */,
 				D6E427ED16F9C34E002EE8D5 /* PagingScrollView.m in Sources */,
 				D6E427F716FC88E3002EE8D5 /* Notifications.m in Sources */,
+				D60EADFA17185ACA00A27641 /* SlideToCancelAppDelegate.m in Sources */,
+				D60EADFB17185ACA00A27641 /* SlideToCancelViewController.m in Sources */,
+				D60EADFC17185ACA00A27641 /* TestIt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

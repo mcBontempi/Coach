@@ -70,21 +70,40 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
-
-  [self.rootViewController presentModalViewController:self.navigationController animated:YES];
-  
+ 
   if([self.modelProtocol currentPlan].length){
-    [self.navigationController pushViewController:self.viewDeckViewController animated:NO];
+    
+    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+    
+    [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
     [self showInitialWeekAfterDelay];
+    
+    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
+    [self.viewDeckViewController  presentViewController:welcomeViewController animated:NO completion:nil];
     
     
   }
   
   else{
+    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+    
+    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
+     [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
+
     
   }
   
   
+}
+
+
+- (void)WelcomeViewControllerDelegate_getStartedPressed
+{
+  
+}
+
+-(void) WelcomeViewControllerDelegate_cancelPressed
+{
 }
 
 -(void) finish{
