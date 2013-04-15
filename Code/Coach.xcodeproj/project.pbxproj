@@ -50,6 +50,7 @@
 		D60EADFA17185ACA00A27641 /* SlideToCancelAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF217185ACA00A27641 /* SlideToCancelAppDelegate.m */; };
 		D60EADFB17185ACA00A27641 /* SlideToCancelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF417185ACA00A27641 /* SlideToCancelViewController.m */; };
 		D60EADFC17185ACA00A27641 /* TestIt.m in Sources */ = {isa = PBXBuildFile; fileRef = D60EADF617185ACA00A27641 /* TestIt.m */; };
+		D60EADFE171BF4D700A27641 /* WelcomeViewController_iPhone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60EADFD171BF4D700A27641 /* WelcomeViewController_iPhone4.xib */; };
 		D613308516DBB2F90038455A /* TimetablePopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D613308416DBB2F90038455A /* TimetablePopoverViewController.m */; };
 		D613308D16DBC05A0038455A /* TimetablePopoverViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308B16DBC0590038455A /* TimetablePopoverViewController_iPhone.xib */; };
 		D613308E16DBC05A0038455A /* TimetablePopoverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D613308C16DBC0590038455A /* TimetablePopoverViewController_iPad.xib */; };
@@ -232,6 +233,7 @@
 		D60EADF417185ACA00A27641 /* SlideToCancelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideToCancelViewController.m; sourceTree = "<group>"; };
 		D60EADF517185ACA00A27641 /* TestIt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIt.h; sourceTree = "<group>"; };
 		D60EADF617185ACA00A27641 /* TestIt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestIt.m; sourceTree = "<group>"; };
+		D60EADFD171BF4D700A27641 /* WelcomeViewController_iPhone4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeViewController_iPhone4.xib; path = Coach/WelcomeViewController_iPhone4.xib; sourceTree = "<group>"; };
 		D613308316DBB2F90038455A /* TimetablePopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewController.h; path = Coach/TimetablePopoverViewController.h; sourceTree = "<group>"; };
 		D613308416DBB2F90038455A /* TimetablePopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimetablePopoverViewController.m; path = Coach/TimetablePopoverViewController.m; sourceTree = "<group>"; };
 		D613308A16DBBB930038455A /* TimetablePopoverViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TimetablePopoverViewControllerDelegate.h; path = Coach/TimetablePopoverViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 				850D26A1161071DF0034A743 /* WelcomeViewController.m */,
 				85D10E05161437F3007BB5B6 /* WelcomeViewController_iPad.xib */,
 				D61672E316147810001C3F15 /* WelcomeViewController_iPhone.xib */,
+				D60EADFD171BF4D700A27641 /* WelcomeViewController_iPhone4.xib */,
 				854EEFD51614487D00E8E956 /* WelcomeViewControllerDelegate.h */,
 			);
 			name = Welcome;
@@ -983,6 +986,7 @@
 				D60EADF717185ACA00A27641 /* sliderMaxMin-02.png in Resources */,
 				D60EADF817185ACA00A27641 /* sliderThumb.png in Resources */,
 				D60EADF917185ACA00A27641 /* sliderTrack.png in Resources */,
+				D60EADFE171BF4D700A27641 /* WelcomeViewController_iPhone4.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

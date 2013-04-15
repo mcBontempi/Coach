@@ -1,5 +1,4 @@
 #import "WelcomeViewController.h"
-#import "SlideToCancelViewController.h"
 
 @interface WelcomeViewController ()
 - (IBAction)getStartedPressed:(id)sender;
@@ -23,7 +22,11 @@
 
 -(id) initWithDelegate:(id<WelcomeViewControllerDelegate>) delegate{
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+      if( [[UIScreen mainScreen] bounds].size.height == 568.0f){
         self = [super initWithNibName:@"WelcomeViewController_iPhone" bundle:nil];
+      }else{
+        self = [super initWithNibName:@"WelcomeViewController_iPhone4" bundle:nil];
+      }
     } else {
         self = [super initWithNibName:@"WelcomeViewController_iPad" bundle:nil];
     }
