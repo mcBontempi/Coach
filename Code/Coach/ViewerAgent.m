@@ -71,33 +71,35 @@
   else
     self.viewDeckViewController.leftLedge = 500;
   
+  
   if([self.modelProtocol currentPlan].length){
     [self.rootViewController presentModalViewController:self.navigationController animated:NO];
     [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
     if(showWelcome){
       WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
       [self.viewDeckViewController  presentViewController:welcomeViewController animated:NO completion:nil];
+    }else{
+      [self showInitialWeekAfterDelay];
     }
-}
-else{
-  [self.rootViewController presentModalViewController:self.navigationController animated:NO];
-  if(showWelcome){
-    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
-    [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
   }
-}
-if(!showWelcome){
-  [self showInitialWeekAfterDelay];
-}
-
-
-
+  else{
+    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+    if(showWelcome){
+      WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
+      [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
+    }
+  }
+  
+  
+  
 }
 
 - (void)WelcomeViewControllerDelegate_getStartedPressed
 {
-  [self showInitialWeekAfterDelay];
-  
+  if([self.modelProtocol currentPlan].length){
+    
+    [self showInitialWeekAfterDelay];
+  }
 }
 
 -(void) WelcomeViewControllerDelegate_cancelPressed

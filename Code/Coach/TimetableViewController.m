@@ -91,6 +91,7 @@ const CGFloat KExpandedSlotHeight = 60;
     NSArray * reloadArray = @[indexPath];
     
     self.slotBeingEdited = nil;
+    self.slotBeingCreated = NO;
     
     [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationRight];
