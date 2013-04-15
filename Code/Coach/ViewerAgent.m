@@ -39,7 +39,7 @@
   return self;
 }
 
--(void) start
+-(void) startShowWelcome:(BOOL)showWelcome
 {
   self.utilAgent = [[UtilAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   UtilViewController *vc = [[UtilViewController alloc] initWithDelegate:self.utilAgent];
@@ -72,20 +72,26 @@
     self.viewDeckViewController.leftLedge = 500;
   
   if([self.modelProtocol currentPlan].length){
-    
     [self.rootViewController presentModalViewController:self.navigationController animated:NO];
-    
     [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
-    
-    WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
-    [self.viewDeckViewController  presentViewController:welcomeViewController animated:NO completion:nil];
-  }
-  else{
-    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
-    
+    if(showWelcome){
+      WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
+      [self.viewDeckViewController  presentViewController:welcomeViewController animated:NO completion:nil];
+    }
+}
+else{
+  [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+  if(showWelcome){
     WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
     [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
   }
+}
+if(!showWelcome){
+  [self showInitialWeekAfterDelay];
+}
+
+
+
 }
 
 - (void)WelcomeViewControllerDelegate_getStartedPressed

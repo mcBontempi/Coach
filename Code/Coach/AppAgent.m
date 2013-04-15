@@ -22,7 +22,7 @@
   return self;
 }
 
--(void) startViewer{
+-(void) startViewerShowWelcome:(BOOL)showWelcome{
   
   if(self.viewerAgent){
     [self.viewerAgent finish];
@@ -30,15 +30,13 @@
   
   self.viewerAgent = [[ViewerAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
   self.viewerAgent.rootViewController = self.rootViewController;
-  [self.viewerAgent start];
+  [self.viewerAgent startShowWelcome:showWelcome];
 }
 
--(void) start{
-
-  [self startViewer];
- 
+-(void) start
+{
+  [self startViewerShowWelcome:YES];
 }
-
 
 -(void) handleOpenURL:(NSURL *)url{
 
@@ -54,7 +52,7 @@
   
   [fileMgr removeItemAtURL:url error:&error];
 
-  [self startViewer];
+  [self startViewerShowWelcome:NO];
 }
 
 -(void) ViewerAgentDelegate_finished{
@@ -63,12 +61,12 @@
 
 -(void) UtilAgentDelegate_finished{
   //  [self.model ]
-  [self startViewer];
+  [self startViewerShowWelcome:NO];
 }
 
 -(void) UtilAgentDelegate_cancelled{
 
-  [self startViewer];
+  [self startViewerShowWelcome:NO];
 }
 
 -(void) UtilAgentDelegate_showPlan:(NSString *)planName{

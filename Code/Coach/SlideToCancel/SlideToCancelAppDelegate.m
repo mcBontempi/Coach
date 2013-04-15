@@ -9,14 +9,14 @@
 
 @synthesize window;
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-
-    // Override point for customization after application launch
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+  
+  // Override point for customization after application launch
 	testIt = [[TestIt alloc] initWithNibName:@"TestIt" bundle:nil];
 	
-	[window addSubview:testIt.view];	
-
-    [window makeKeyAndVisible];
+	[window addSubview:testIt.view];
+  
+  [window makeKeyAndVisible];
 }
 
 

@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UIViewController *rootViewController;
 
 - (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ViewerAgentDelegate>)delegate;
-- (void)start;
+- (void)startShowWelcome:(BOOL)showWelcome;
 - (void)finish;
 
 @end
