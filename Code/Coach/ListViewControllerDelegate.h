@@ -8,6 +8,7 @@
 - (NSString *)ListViewControllerDelegate_actionItem:(NSInteger)itemIndex;
 - (void)ListViewControllerDelegate_showPlans;
 - (NSString *)ListViewControllerDelegate_currentPlan;
+- (NSInteger)ListViewControllerDelegate_currentWeek;
 
 - (NSUInteger)ListViewControllerDelegate_numberOfPlans;
 - (NSString *)ListViewControllerDelegate_getPlanName:(NSUInteger)index;

@@ -200,10 +200,14 @@
   cell.contentView.backgroundColor = [UIColor darkGrayColor];
   
   cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1];
+  
+  if(indexPath.row == [self.delegate ListViewControllerDelegate_currentWeek])
+  {
+    [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+  }
+  
   return cell;
 }
-
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
@@ -221,11 +225,6 @@
   
   return header;
 }
-
--(void) ToListViewControllerDelegate_highlightCurrentWeek:(NSInteger) weekIndex{
-  [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:weekIndex inSection:0] animated:YES scrollPosition:UITableViewScrollPositionTop];
-}
-
 
 - (void)ToListViewControllerDelegate_reloadData{
   [self reloadData];

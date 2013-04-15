@@ -11,7 +11,9 @@
 
 @end
 
-@implementation ListViewAgent
+@implementation ListViewAgent{
+  NSUInteger _weekIndex;
+}
 
 - (id)initWithModelProtocol:(id<ModelProtocol>)modelProtocol delegate:(id<ListViewAgentDelegate>)delegate
 {
@@ -27,9 +29,10 @@
 
 - (void)highlightCurrentWeek:(NSInteger) weekIndex
 {
+  _weekIndex = weekIndex;
   [self.toListViewControllerDelegate ToListViewControllerDelegate_reloadData];
-  [self.toListViewControllerDelegate ToListViewControllerDelegate_highlightCurrentWeek:weekIndex];
 }
+
 
 #pragma -- mark ListViewControllerDelegate methods
 
@@ -81,6 +84,11 @@
 -(NSString *)ListViewControllerDelegate_currentPlan
 {
   return [self.modelProtocol currentPlan];
+}
+
+- (NSInteger) ListViewControllerDelegate_currentWeek
+{
+  return _weekIndex;
 }
 
 
