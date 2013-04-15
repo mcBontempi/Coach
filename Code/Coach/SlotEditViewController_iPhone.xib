@@ -43,7 +43,7 @@
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIScrollView" id="50838206">
 						<reference key="NSNextResponder" ref="979570378"/>
-						<int key="NSvFlags">268</int>
+						<int key="NSvFlags">292</int>
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUIView" id="94043295">
 								<reference key="NSNextResponder" ref="50838206"/>
@@ -257,14 +257,14 @@
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 44}, {320, 524}}</string>
+						<string key="NSFrame">{{0, 42}, {320, 440}}</string>
 						<reference key="NSSuperview" ref="979570378"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="94043295"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics" id="508679162">
+						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
 							<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
 							<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">
 								<bool key="EncodedWithXMLCoder">YES</bool>
@@ -315,7 +315,7 @@
 						</array>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 568}</string>
+				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="196410563"/>
@@ -327,7 +327,23 @@
 						<int key="NSID">2</int>
 					</object>
 				</object>
-				<reference key="IBUISimulatedDestinationMetrics" ref="508679162"/>
+				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
+					<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
+					<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<array key="dict.sortedKeys">
+							<integer value="1"/>
+							<integer value="3"/>
+						</array>
+						<array key="dict.values">
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
+						</array>
+					</object>
+					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
+					<string key="IBUIDisplayName">Retina 3.5 Full Screen</string>
+					<int key="IBUIType">0</int>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</array>
@@ -511,45 +527,8 @@
 						<reference key="parent" ref="979570378"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">51</int>
-						<reference key="object" ref="94043295"/>
-						<reference key="parent" ref="50838206"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">52</int>
-						<reference key="object" ref="529540464"/>
-						<reference key="parent" ref="50838206"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">65</int>
-						<reference key="object" ref="26244696"/>
-						<reference key="parent" ref="50838206"/>
-						<string key="objectName">Divider</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">67</int>
-						<reference key="object" ref="187607079"/>
-						<reference key="parent" ref="50838206"/>
-						<string key="objectName">Divider</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">70</int>
-						<reference key="object" ref="916481196"/>
-						<reference key="parent" ref="50838206"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">71</int>
-						<reference key="object" ref="499583153"/>
-						<reference key="parent" ref="50838206"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">98</int>
-						<reference key="object" ref="202046006"/>
-						<reference key="parent" ref="50838206"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">97</int>
-						<reference key="object" ref="344059900"/>
+						<int key="objectID">100</int>
+						<reference key="object" ref="534863974"/>
 						<reference key="parent" ref="50838206"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -558,8 +537,45 @@
 						<reference key="parent" ref="50838206"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">100</int>
-						<reference key="object" ref="534863974"/>
+						<int key="objectID">97</int>
+						<reference key="object" ref="344059900"/>
+						<reference key="parent" ref="50838206"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">98</int>
+						<reference key="object" ref="202046006"/>
+						<reference key="parent" ref="50838206"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">71</int>
+						<reference key="object" ref="499583153"/>
+						<reference key="parent" ref="50838206"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">70</int>
+						<reference key="object" ref="916481196"/>
+						<reference key="parent" ref="50838206"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">67</int>
+						<reference key="object" ref="187607079"/>
+						<reference key="parent" ref="50838206"/>
+						<string key="objectName">Divider</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">65</int>
+						<reference key="object" ref="26244696"/>
+						<reference key="parent" ref="50838206"/>
+						<string key="objectName">Divider</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">52</int>
+						<reference key="object" ref="529540464"/>
+						<reference key="parent" ref="50838206"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">51</int>
+						<reference key="object" ref="94043295"/>
 						<reference key="parent" ref="50838206"/>
 					</object>
 				</array>
@@ -597,14 +613,6 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">GeneralViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GeneralViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">IconSelectionView</string>
 					<string key="superclassName">UIView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -630,7 +638,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">SlotEditViewController</string>
-					<string key="superclassName">GeneralViewController</string>
+					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="cancelPressed:">id</string>
 						<string key="donePressed:">id</string>

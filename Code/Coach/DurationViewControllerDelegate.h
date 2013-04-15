@@ -4,5 +4,6 @@
 @protocol DurationViewControllerDelegate <NSObject>
 
 -(void) DurationViewControllerDelegate_finishedWith:(NSInteger) duration name:(NSString *)name;
+- (void) DurationViewControllerDelegate_cancelled;
 
 @end

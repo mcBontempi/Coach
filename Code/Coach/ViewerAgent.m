@@ -70,35 +70,27 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
- 
+  
   if([self.modelProtocol currentPlan].length){
     
     [self.rootViewController presentModalViewController:self.navigationController animated:NO];
     
     [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
-    [self showInitialWeekAfterDelay];
     
     WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
     [self.viewDeckViewController  presentViewController:welcomeViewController animated:NO completion:nil];
-    
-    
   }
-  
   else{
     [self.rootViewController presentModalViewController:self.navigationController animated:NO];
     
     WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
-     [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
-
-    
+    [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
   }
-  
-  
 }
-
 
 - (void)WelcomeViewControllerDelegate_getStartedPressed
 {
+  [self showInitialWeekAfterDelay];
   
 }
 
@@ -119,15 +111,15 @@
   
   [self.listViewAgent highlightCurrentWeek:0];
   
-   [self.viewDeckViewController openLeftViewAnimated:YES];
-
+  [self.viewDeckViewController openLeftViewAnimated:YES];
+  
 }
 
 -(void) showInitialWeekAfterDelay{
-
-  [self performSelector:@selector(showInitialWeekImmediately) withObject:nil afterDelay:0.0001];
   
- }
+  [self performSelector:@selector(showInitialWeekImmediately) withObject:nil afterDelay:0.001];
+  
+}
 
 
 -(void) showWeek:(NSInteger) weekIndex{
@@ -146,7 +138,7 @@
 - (void) ListViewAgentDelegate_selectPlanFromPopover:(NSString *)planName
 {
   [self.modelProtocol selectPlan:planName];
-   [self showInitialWeekImmediately];
+  [self showInitialWeekImmediately];
   
 }
 
@@ -186,7 +178,7 @@
 
 -(void) UtilAgentDelegate_showPlan:(NSString *)planName{
   [self showPlan:planName];
-
+  
 }
 
 -(void) UtilAgentDelegate_makeEmptyPlanNamed:(NSString *)planName numWeeks:(NSUInteger) numWeeks{

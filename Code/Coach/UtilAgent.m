@@ -111,5 +111,11 @@
 }
 
 
+-(void) DurationViewControllerDelegate_cancelled
+{
+  
+  
+}
+
 
 @end
