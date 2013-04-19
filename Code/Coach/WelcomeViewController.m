@@ -86,11 +86,6 @@
   }];
   
   [self testIt];
-  
-  
-  // test
-  [self close];
-  
 }
 
 - (IBAction) testIt {
