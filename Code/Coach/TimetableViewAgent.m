@@ -142,7 +142,6 @@
     slot.checked = checked;
     
     [self saveCurrentWeek];
-  //  [self refetchCurrentWeek];
 }
 
 @end

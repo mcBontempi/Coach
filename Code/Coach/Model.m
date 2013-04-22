@@ -3,6 +3,7 @@
 #import "Coach.h"
 #import "Slot.h"
 #import <CocoaSecurity/CocoaSecurity.h>
+#import "Notifications.h"
 
 @interface Model ()
 
@@ -146,6 +147,10 @@
 
 - (void) save
 {
+  NSLog(@"Model Saved");
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:TTTModelChanged object:nil];
+  
   NSData *data = [_currentPlan dataUsingEncoding:NSUTF8StringEncoding];
   [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentPlan"];
   

@@ -15,4 +15,6 @@
 - (void)ListViewControllerDelegate_showPlan:(NSString *)planName;
 - (void)ListViewControllerDelegate_showPlansInFullscreen;
 
+- (NSString *)ListViewControllerDelegate_weekSummary:(NSUInteger) weekIndex;
+
 @end

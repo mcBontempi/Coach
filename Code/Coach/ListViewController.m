@@ -37,7 +37,7 @@
     
     self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTModelChanged object:nil];
 
   }
   
@@ -213,7 +213,7 @@
   
   cell.contentView.backgroundColor = [UIColor darkGrayColor];
   
-  cell.textLabel.text = [NSString stringWithFormat:@"Week %d", indexPath.row+1];
+  cell.textLabel.text = [NSString stringWithFormat:@"Week %d %@", indexPath.row+1, [self.delegate ListViewControllerDelegate_weekSummary:indexPath.row]];
   
   if(indexPath.row == [self.delegate ListViewControllerDelegate_currentWeek])
   {
