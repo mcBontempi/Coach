@@ -142,6 +142,8 @@
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
+		D6E3874E172156C0001313B2 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E3874C172156C0001313B2 /* appIcon.png */; };
+		D6E3874F172156C0001313B2 /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E3874D172156C0001313B2 /* appIcon@2x.png */; };
 		D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */; };
 		D6E427ED16F9C34E002EE8D5 /* PagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427EB16F9C34D002EE8D5 /* PagingScrollView.m */; };
 		D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E427EE16FA0BA3002EE8D5 /* divider.png */; };
@@ -338,6 +340,8 @@
 		D6E0FC691663B92600237C80 /* SlotCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SlotCellDelegate.h; path = Coach/SlotCellDelegate.h; sourceTree = "<group>"; };
 		D6E0FC6B1663D31500237C80 /* SimpleHScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleHScroller.h; path = Coach/SimpleHScroller.h; sourceTree = "<group>"; };
 		D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleHScroller.m; path = Coach/SimpleHScroller.m; sourceTree = "<group>"; };
+		D6E3874C172156C0001313B2 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
+		D6E3874D172156C0001313B2 /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@2x.png"; sourceTree = "<group>"; };
 		D6E427E716F9A741002EE8D5 /* SlotCreateCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCellDelegate.h; path = Coach/SlotCreateCellDelegate.h; sourceTree = "<group>"; };
 		D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCreateCell.m; path = Coach/SlotCreateCell.m; sourceTree = "<group>"; };
 		D6E427E916F9A742002EE8D5 /* SlotCreateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCell.h; path = Coach/SlotCreateCell.h; sourceTree = "<group>"; };
@@ -793,6 +797,8 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D6E3874C172156C0001313B2 /* appIcon.png */,
+				D6E3874D172156C0001313B2 /* appIcon@2x.png */,
 				D678E00D1705A6A90046B59D /* 1Note.png */,
 				D678E00E1705A6A90046B59D /* 2Notes.png */,
 				D6E427EE16FA0BA3002EE8D5 /* divider.png */,
@@ -987,6 +993,8 @@
 				D60EADF817185ACA00A27641 /* sliderThumb.png in Resources */,
 				D60EADF917185ACA00A27641 /* sliderTrack.png in Resources */,
 				D60EADFE171BF4D700A27641 /* WelcomeViewController_iPhone4.xib in Resources */,
+				D6E3874E172156C0001313B2 /* appIcon.png in Resources */,
+				D6E3874F172156C0001313B2 /* appIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

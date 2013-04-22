@@ -98,6 +98,8 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.tableView endUpdates];
     
     [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
+    
+    [self updateHeaderViewForSection:indexPath.section];
 
   }
   
