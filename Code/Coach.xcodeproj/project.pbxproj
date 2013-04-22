@@ -116,6 +116,7 @@
 		D6A776B616334DE900879C11 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A776B516334DE900879C11 /* Utils.m */; };
 		D6C755A717181DAF00FEAC56 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C755A617181DAE00FEAC56 /* Default@2x.png */; };
 		D6C755A917181DB900FEAC56 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C755A817181DB900FEAC56 /* Default.png */; };
+		D6D6180317257D9E00DA8F54 /* CNApplicationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D6180117257D9E00DA8F54 /* CNApplicationAppearance.m */; };
 		D6DCF56A166CDFD200539164 /* strengthandconditioning.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF569166CDFD200539164 /* strengthandconditioning.png */; };
 		D6DCF56C166CE2FE00539164 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = D6DCF56B166CE2FE00539164 /* up.png */; };
 		D6DCF570166CE4DD00539164 /* CheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DCF56F166CE4DD00539164 /* CheckboxButton.m */; };
@@ -316,6 +317,8 @@
 		D6A776B516334DE900879C11 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		D6C755A617181DAE00FEAC56 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		D6C755A817181DB900FEAC56 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		D6D6180117257D9E00DA8F54 /* CNApplicationAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNApplicationAppearance.m; sourceTree = "<group>"; };
+		D6D6180217257D9E00DA8F54 /* CNApplicationAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNApplicationAppearance.h; sourceTree = "<group>"; };
 		D6DCF567166CD08800539164 /* SimpleHScrollerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleHScrollerDelegate.h; path = Coach/SimpleHScrollerDelegate.h; sourceTree = "<group>"; };
 		D6DCF569166CDFD200539164 /* strengthandconditioning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = strengthandconditioning.png; path = Coach/assets/strengthandconditioning.png; sourceTree = "<group>"; };
 		D6DCF56B166CE2FE00539164 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = Coach/assets/up.png; sourceTree = "<group>"; };
@@ -587,6 +590,8 @@
 		D60EADEC17184EA100A27641 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D6D6180117257D9E00DA8F54 /* CNApplicationAppearance.m */,
+				D6D6180217257D9E00DA8F54 /* CNApplicationAppearance.h */,
 				D6E427F516FC88E2002EE8D5 /* Notifications.h */,
 				D6E427F616FC88E3002EE8D5 /* Notifications.m */,
 				D6C755A817181DB900FEAC56 /* Default.png */,
@@ -1102,6 +1107,7 @@
 				D60EADFA17185ACA00A27641 /* SlideToCancelAppDelegate.m in Sources */,
 				D60EADFB17185ACA00A27641 /* SlideToCancelViewController.m in Sources */,
 				D60EADFC17185ACA00A27641 /* TestIt.m in Sources */,
+				D6D6180317257D9E00DA8F54 /* CNApplicationAppearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

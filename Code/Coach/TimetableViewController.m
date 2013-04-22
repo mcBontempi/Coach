@@ -54,6 +54,7 @@ const CGFloat KExpandedSlotHeight = 60;
     
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"<-" style:UIBarButtonItemStylePlain                                                                                               target:self
                                                                              action:@selector(bookmarksPressed)] animated:YES];
+    
   }
   
   return self;
@@ -512,6 +513,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 -(void) updateAllHeaders{
+  
+    [self setWeekTitle];
+  
   for(NSInteger i = 0 ; i < self.headerViews.count ; i++){
     [self updateHeaderViewForSection:i];
   }
@@ -523,6 +527,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   UIView *view = [self updatedHeaderViewForSection:section];
   
   [view setNeedsDisplay];
+  
+  [self setWeekTitle];
 }
 
 -(HeaderView *) updatedHeaderViewForSection:(NSInteger) section
@@ -551,8 +557,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   [self.tableView endUpdates];
   [self updateAllHeaders];
   
-  self.title = [NSString stringWithFormat:@"Week %d", weekIndex+1];
+  [self setWeekTitle];
+}
+
+- (void)setWeekTitle
+{
+  NSUInteger weekIndex = [self.delegate TimetableViewControllerDelegate_weekIndex];
   
+  self.title = [NSString stringWithFormat:@"Week %d - %@", weekIndex+1, [self.delegate TimetableViewControllerDelegate_weekSummary:weekIndex ]];
 }
 
 -(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{

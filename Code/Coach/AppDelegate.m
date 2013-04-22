@@ -1,11 +1,14 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "CNApplicationAppearance.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [CNApplicationAppearance installApplicationAppearance];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
   // Override point for customization after application launch.

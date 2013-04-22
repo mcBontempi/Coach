@@ -27,4 +27,6 @@
 -(void) TimetableViewControllerDelegate_checked:(BOOL) checked slot:(Slot*) slot;
 
 - (void)TimetableViewControllerDelegate_showFullscreenEditorForSlot:(Slot *)slot;
+
+-(NSString *)TimetableViewControllerDelegate_weekSummary:(NSUInteger)week;
 @end

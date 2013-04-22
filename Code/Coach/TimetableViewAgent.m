@@ -65,6 +65,19 @@
     }
 }
 
+-(NSString *)TimetableViewControllerDelegate_weekSummary:(NSUInteger)week
+{
+  NSUInteger total = 0;
+  
+  for(NSArray *day in self.currentWeek){
+    for(Slot *slot in day){
+      total += slot.duration;
+    }
+  }
+  
+  return [NSString niceStringFromDuration:total];
+}
+
 -(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex{
     Slot *newSlot = [[Slot alloc ] initWithDuration:60 activityType:EActivityTypeBike];
     NSMutableArray *monday = self.week[dayIndex];
@@ -119,7 +132,6 @@
 -(void) TimetableViewControllerDelegate_durationChanged:(NSInteger) duration slot:(Slot*) slot{
     slot.duration = duration;
 }
-
 
 - (void)TimetableViewControllerDelegate_showFullscreenEditorForSlot:(Slot *)slot
 {
