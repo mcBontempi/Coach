@@ -77,6 +77,11 @@ const CGFloat KExpandedSlotHeight = 60;
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
 }
 
+- (void)dealloc
+{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)slotEditSlotChanged:(NSNotification *)notification
 {
   self.currentSlotWasChangedDuringEditing = YES;

@@ -1,6 +1,7 @@
 #import "ListViewController.h"
 #import <WEPopoverController.h>
 #import "TimetablePopoverViewController.h"
+#import "Notifications.h"
 
 @interface ListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -35,9 +36,22 @@
     self.delegate = delegate;
     
     self.navigationItem.title = [self.delegate ListViewControllerDelegate_currentPlan];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
+
   }
   
   return self;
+}
+
+- (void)slotEditSlotChanged:(NSNotification *)notification
+{
+  [self.tableView reloadData];
+}
+
+- (void)dealloc
+{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad
