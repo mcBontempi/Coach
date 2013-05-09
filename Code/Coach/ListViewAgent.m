@@ -39,6 +39,7 @@
 
 - (void)ListViewControllerDelegate_showWeek:(NSInteger) weekIndex
 {
+  _weekIndex = weekIndex;
   [self.delegate ListViewAgentDelegate_showWeek:weekIndex];
 }
 
