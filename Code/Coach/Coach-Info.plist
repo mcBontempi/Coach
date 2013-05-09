@@ -10,7 +10,7 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Scary Bug Document</string>
+			<string>Triathlon Timetable Document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -30,6 +30,7 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>appIcon.png</string>
+				<string>appIcon@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>

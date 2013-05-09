@@ -97,8 +97,9 @@
 		D65CE446164152DB00D3B0CB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE43C164152DB00D3B0CB /* ListViewController.m */; };
 		D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
 		D65CE4531642FFF900D3B0CB /* ListViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D65CE4511642FFF900D3B0CB /* ListViewAgent.m */; };
-		D6605A6D1671D846008DFF75 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6C1671D846008DFF75 /* appIcon.png */; };
 		D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6E1671D945008DFF75 /* Default-568h@2x.png */; };
+		D6652AAB1733ABE8007E5A1C /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AA91733ABE8007E5A1C /* appIcon.png */; };
+		D6652AAE1733AC1A007E5A1C /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */; };
 		D677708E16EF393A00D430C7 /* UtilTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D677708D16EF393A00D430C7 /* UtilTableViewCell.m */; };
 		D677709016EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */; };
 		D677709216EF5FBB00D430C7 /* triathlonTimetableJustTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */; };
@@ -144,8 +145,6 @@
 		D6E0FC67166380FD00237C80 /* IconSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC65166380FD00237C80 /* IconSelectionView.m */; };
 		D6E0FC6D1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
 		D6E0FC6E1663D31500237C80 /* SimpleHScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */; };
-		D6E3874E172156C0001313B2 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E3874C172156C0001313B2 /* appIcon.png */; };
-		D6E3874F172156C0001313B2 /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E3874D172156C0001313B2 /* appIcon@2x.png */; };
 		D6E427EA16F9A742002EE8D5 /* SlotCreateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */; };
 		D6E427ED16F9C34E002EE8D5 /* PagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427EB16F9C34D002EE8D5 /* PagingScrollView.m */; };
 		D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E427EE16FA0BA3002EE8D5 /* divider.png */; };
@@ -292,8 +291,9 @@
 		D65CE4511642FFF900D3B0CB /* ListViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewAgent.m; path = Coach/ListViewAgent.m; sourceTree = "<group>"; };
 		D65CE4541643012200D3B0CB /* ToListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToListViewControllerDelegate.h; path = Coach/ToListViewControllerDelegate.h; sourceTree = "<group>"; };
 		D65CE4551643018500D3B0CB /* ListViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewAgentDelegate.h; path = Coach/ListViewAgentDelegate.h; sourceTree = "<group>"; };
-		D6605A6C1671D846008DFF75 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		D6652AA91733ABE8007E5A1C /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = Coach/appIcon.png; sourceTree = "<group>"; };
+		D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@2x.png"; sourceTree = "<group>"; };
 		D677708C16EF393A00D430C7 /* UtilTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilTableViewCell.h; path = Coach/UtilTableViewCell.h; sourceTree = "<group>"; };
 		D677708D16EF393A00D430C7 /* UtilTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilTableViewCell.m; path = Coach/UtilTableViewCell.m; sourceTree = "<group>"; };
 		D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "triathlonTimetableJustTitle@2x.png"; path = "Coach/assets/triathlonTimetableJustTitle@2x.png"; sourceTree = "<group>"; };
@@ -346,8 +346,6 @@
 		D6E0FC691663B92600237C80 /* SlotCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SlotCellDelegate.h; path = Coach/SlotCellDelegate.h; sourceTree = "<group>"; };
 		D6E0FC6B1663D31500237C80 /* SimpleHScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleHScroller.h; path = Coach/SimpleHScroller.h; sourceTree = "<group>"; };
 		D6E0FC6C1663D31500237C80 /* SimpleHScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleHScroller.m; path = Coach/SimpleHScroller.m; sourceTree = "<group>"; };
-		D6E3874C172156C0001313B2 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
-		D6E3874D172156C0001313B2 /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@2x.png"; sourceTree = "<group>"; };
 		D6E427E716F9A741002EE8D5 /* SlotCreateCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCellDelegate.h; path = Coach/SlotCreateCellDelegate.h; sourceTree = "<group>"; };
 		D6E427E816F9A741002EE8D5 /* SlotCreateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCreateCell.m; path = Coach/SlotCreateCell.m; sourceTree = "<group>"; };
 		D6E427E916F9A742002EE8D5 /* SlotCreateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCreateCell.h; path = Coach/SlotCreateCell.h; sourceTree = "<group>"; };
@@ -417,6 +415,8 @@
 		852CF7821608A7E6009E249F = {
 			isa = PBXGroup;
 			children = (
+				D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */,
+				D6652AA91733ABE8007E5A1C /* appIcon.png */,
 				852CF7971608A7E6009E249F /* Coach */,
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
@@ -807,8 +807,6 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
-				D6E3874C172156C0001313B2 /* appIcon.png */,
-				D6E3874D172156C0001313B2 /* appIcon@2x.png */,
 				D678E00D1705A6A90046B59D /* 1Note.png */,
 				D678E00E1705A6A90046B59D /* 2Notes.png */,
 				D6E427EE16FA0BA3002EE8D5 /* divider.png */,
@@ -819,7 +817,6 @@
 				D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */,
 				D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */,
 				D613309A16DE11110038455A /* export.png */,
-				D6605A6C1671D846008DFF75 /* appIcon.png */,
 				D6DCF572166CE4EF00539164 /* tickbox_off.png */,
 				D6DCF573166CE4EF00539164 /* tickbox_off@2x.png */,
 				D6DCF574166CE4EF00539164 /* tickbox_on.png */,
@@ -977,7 +974,6 @@
 				D6DCF586166D13DA00539164 /* delete.wav in Resources */,
 				D6DCF587166D13DA00539164 /* new.wav in Resources */,
 				D6DCF588166D13DA00539164 /* slide.wav in Resources */,
-				D6605A6D1671D846008DFF75 /* appIcon.png in Resources */,
 				D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */,
 				D659212216A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */,
 				D659212416A05F8F00E7953D /* SlotEditViewController_iPhone.xib in Resources */,
@@ -1003,8 +999,8 @@
 				D60EADF817185ACA00A27641 /* sliderThumb.png in Resources */,
 				D60EADF917185ACA00A27641 /* sliderTrack.png in Resources */,
 				D60EADFE171BF4D700A27641 /* WelcomeViewController_iPhone4.xib in Resources */,
-				D6E3874E172156C0001313B2 /* appIcon.png in Resources */,
-				D6E3874F172156C0001313B2 /* appIcon@2x.png in Resources */,
+				D6652AAB1733ABE8007E5A1C /* appIcon.png in Resources */,
+				D6652AAE1733AC1A007E5A1C /* appIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

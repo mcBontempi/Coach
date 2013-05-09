@@ -70,7 +70,7 @@
 
 -(id) initWithDictionary:(NSDictionary *)dictionary {
   
-  if([self initWithDuration:[[dictionary objectForKey:@"duration"] intValue] activityType:[[dictionary objectForKey:@"activityType"] intValue] checked:[[dictionary objectForKey:@"checked"] intValue] tags:[dictionary objectForKey:@"tags"] athleteNotes:[dictionary objectForKey:@"athleteNotes"] coachNotes:[dictionary objectForKey:@"coachNotes"]]){
+  if(self = [self initWithDuration:[[dictionary objectForKey:@"duration"] intValue] activityType:[[dictionary objectForKey:@"activityType"] intValue] checked:[[dictionary objectForKey:@"checked"] intValue] tags:[dictionary objectForKey:@"tags"] athleteNotes:[dictionary objectForKey:@"athleteNotes"] coachNotes:[dictionary objectForKey:@"coachNotes"]]){
     
   }
   return self;
