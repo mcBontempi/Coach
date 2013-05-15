@@ -10,4 +10,6 @@
 
 @interface ListViewCell : UITableViewCell
 
+- (void) setupWithWeekText:(NSString *)weekText weekSummaryText:(NSString *)weekSummaryText;
+
 @end
