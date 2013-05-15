@@ -50,12 +50,9 @@
     _weekPercentCompletedLabel.textColor = [UIColor grayColor];
     _weekPercentCompletedLabel.font=[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:18.0];
     _weekPercentCompletedLabel.backgroundColor = [UIColor clearColor];
-    _weekPercentCompletedLabel.textAlignment = NSTextAlignmentRight;
+    _weekPercentCompletedLabel.textAlignment = NSTextAlignmentCenter;
     
     _weekCountCircleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_cell_week_count_circle.png"]];
-    
-    
-  //  [[UIImage imageNamed:kBackgroundPatternExtraLightGrey] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile];
     
     _weekCompletedCircleImageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"list_cell_week_completed_circle.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,21,0,21) ]];
     
@@ -67,7 +64,7 @@
     
     
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_cell_background.png"]];
-    self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_cell_background_selected.png"]]; 
+    self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list_cell_background_selected.png"]];
   }
   return self;
 }
@@ -75,27 +72,34 @@
 -(void) layoutSubviews
 {
   [super layoutSubviews];
-
+  
   _weekCountCircleImageView.frame = CGRectMake(0,0,60,60);
   _weekLabel.frame = CGRectMake(0,2,60,60);
-
+  
   if(_weekPercentCompleted == 100) {
     _weekSummaryLabel.frame = CGRectMake(62,0,60,60);
-        _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:18.0];
-  
-    _weekCompletedCircleImageView.frame = CGRectMake(130,0,130,60);
-  
-  
+    _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:18.0];
+    
+    _weekCompletedCircleImageView.frame = CGRectMake(123,0,136,60);
+    
+    
   }
   else {
     _weekSummaryLabel.frame = CGRectMake(62,0,200,60);
-        _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:20.0];
-  
-    _weekCompletedCircleImageView.frame = CGRectMake(190,0,70,60);
-  
+    _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:20.0];
+    
+    if(_weekPercentCompleted) {
+      _weekCompletedCircleImageView.frame = CGRectMake(184,0,76,60);
+    }
+    
   }
+  _weekPercentCompletedLabel.frame = _weekCompletedCircleImageView.frame;
   
-  _weekPercentCompletedLabel.frame = CGRectMake(45,15,200,30);
+  BOOL hidePercent = _weekPercentCompleted ? NO : YES;
+  
+  _weekCompletedCircleImageView.hidden = _weekPercentCompletedLabel.hidden = hidePercent;
+  
+  
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -113,11 +117,11 @@
   else {
     _weekLabel.textColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"list_cell_background.png"]];
     _weekSummaryLabel.textColor = [UIColor lightGrayColor];
-  
+    
     
     _weekPercentCompletedLabel.textColor = [UIColor lightGrayColor];
     
-        _weekCountCircleImageView.image = [UIImage imageNamed:@"list_cell_week_count_circle.png"];
+    _weekCountCircleImageView.image = [UIImage imageNamed:@"list_cell_week_count_circle.png"];
   }
   
   
