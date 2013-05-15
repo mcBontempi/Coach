@@ -104,7 +104,7 @@
 							<object class="IBUITextView" id="916481196">
 								<reference key="NSNextResponder" ref="50838206"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{17, 262}, {289, 54}}</string>
+								<string key="NSFrame">{{15, 262}, {289, 54}}</string>
 								<reference key="NSSuperview" ref="50838206"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="534863974"/>
@@ -120,6 +120,7 @@
 								<int key="IBUITextAlignment">1</int>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIAutocorrectionType">1</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="728136464">
@@ -151,6 +152,7 @@
 								<int key="IBUITextAlignment">1</int>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIAutocorrectionType">1</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="728136464"/>
@@ -175,6 +177,7 @@
 								<int key="IBUITextAlignment">1</int>
 								<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 									<int key="IBUIAutocapitalizationType">2</int>
+									<int key="IBUIAutocorrectionType">1</int>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<reference key="IBUIFontDescription" ref="728136464"/>
@@ -653,17 +656,6 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">_scrollView</string>
-						<string key="NS.object.0">UIScrollView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">_scrollView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">_scrollView</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/SlotEditViewController.h</string>
