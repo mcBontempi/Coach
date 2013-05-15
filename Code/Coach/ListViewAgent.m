@@ -97,15 +97,34 @@
 {
   NSUInteger total = 0;
   
-  for(NSArray *day in [self.modelProtocol getWeek:week] ){
-    for(Slot *slot in day){
+  for(NSArray *day in [self.modelProtocol getWeek:week]) {
+    for(Slot *slot in day) {
       total += slot.duration;
     }
   }
-  if(total)
-  return [NSString stringWithFormat:@" - %@",  [NSString niceStringFromDuration:total]];
-  else return @"";
+  if(total) {
+    return [NSString stringWithFormat:@"%@",  [NSString niceStringFromDuration:total]];
+  }
+  else {
+    return @"";
+  }
 }
+
+- (NSInteger)ListViewControllerDelegate_weekPercent:(NSUInteger)week
+{
+  float slotCount = 0;
+  float slotCountCompleted = 0;
+  
+  for(NSArray *day in [self.modelProtocol getWeek:week]) {
+    for(Slot *slot in day) {
+      slotCount++;
+      if(slot.checked)slotCountCompleted++;
+    }
+  }
+  
+  return (100/slotCount)*slotCountCompleted;
+}
+
 
 
 @end

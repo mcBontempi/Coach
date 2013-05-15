@@ -176,7 +176,7 @@
     cell = [[ListViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Foobar"];
   }
  
-  [cell setupWithWeekText:[NSString stringWithFormat:@"Week %d", indexPath.row+1] weekSummaryText:[self.delegate ListViewControllerDelegate_weekSummary:indexPath.row]];
+  [cell setupWithWeekText:[NSString stringWithFormat:@"%d", indexPath.row+1] weekSummaryText:[self.delegate ListViewControllerDelegate_weekSummary:indexPath.row] weekPercentCompleted:[self.delegate ListViewControllerDelegate_weekPercent:indexPath.row]];
   
   if(indexPath.row == [self.delegate ListViewControllerDelegate_currentWeek]) {
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
