@@ -86,6 +86,8 @@
 		D64A7E8E17442C230083F965 /* list_cell_week_count_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E8D17442C230083F965 /* list_cell_week_count_circle.png */; };
 		D64A7E921744395F0083F965 /* list_cell_week_completed_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E911744395F0083F965 /* list_cell_week_completed_circle.png */; };
 		D64A7E9417443CDD0083F965 /* list_cell_week_count_circle_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E9317443CDD0083F965 /* list_cell_week_count_circle_selected.png */; };
+		D64A7E961744E1CD0083F965 /* table_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E951744E1CD0083F965 /* table_background.png */; };
+		D64A7E981744E3EC0083F965 /* table_background_really_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E971744E3EC0083F965 /* table_background_really_dark.png */; };
 		D659212016A05F8F00E7953D /* SlotEditViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */; };
 		D659212116A05F8F00E7953D /* SlotEditViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */; };
 		D659212216A05F8F00E7953D /* SlotEditViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D659211D16A05F8F00E7953D /* SlotEditViewController_iPad.xib */; };
@@ -284,6 +286,8 @@
 		D64A7E8D17442C230083F965 /* list_cell_week_count_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_cell_week_count_circle.png; path = Coach/assets/ListCell/list_cell_week_count_circle.png; sourceTree = "<group>"; };
 		D64A7E911744395F0083F965 /* list_cell_week_completed_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_cell_week_completed_circle.png; path = Coach/assets/ListCell/list_cell_week_completed_circle.png; sourceTree = "<group>"; };
 		D64A7E9317443CDD0083F965 /* list_cell_week_count_circle_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_cell_week_count_circle_selected.png; path = Coach/assets/ListCell/list_cell_week_count_circle_selected.png; sourceTree = "<group>"; };
+		D64A7E951744E1CD0083F965 /* table_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = table_background.png; path = Coach/assets/table_background.png; sourceTree = "<group>"; };
+		D64A7E971744E3EC0083F965 /* table_background_really_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = table_background_really_dark.png; path = Coach/assets/table_background_really_dark.png; sourceTree = "<group>"; };
 		D659211A16A05F8F00E7953D /* SlotEditViewAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewAgent.h; path = Coach/SlotEditViewAgent.h; sourceTree = "<group>"; };
 		D659211B16A05F8F00E7953D /* SlotEditViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditViewAgent.m; path = Coach/SlotEditViewAgent.m; sourceTree = "<group>"; };
 		D659211C16A05F8F00E7953D /* SlotEditViewAgentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditViewAgentDelegate.h; path = Coach/SlotEditViewAgentDelegate.h; sourceTree = "<group>"; };
@@ -851,6 +855,8 @@
 				D63B1259165B81960045A725 /* run.png */,
 				D63B125A165B81960045A725 /* swim.png */,
 				857D515F164BF40C00527584 /* noEntry.png */,
+				D64A7E951744E1CD0083F965 /* table_background.png */,
+				D64A7E971744E3EC0083F965 /* table_background_really_dark.png */,
 			);
 			name = GFX;
 			sourceTree = "<group>";
@@ -1029,6 +1035,8 @@
 				D64A7E8E17442C230083F965 /* list_cell_week_count_circle.png in Resources */,
 				D64A7E921744395F0083F965 /* list_cell_week_completed_circle.png in Resources */,
 				D64A7E9417443CDD0083F965 /* list_cell_week_count_circle_selected.png in Resources */,
+				D64A7E961744E1CD0083F965 /* table_background.png in Resources */,
+				D64A7E981744E3EC0083F965 /* table_background_really_dark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

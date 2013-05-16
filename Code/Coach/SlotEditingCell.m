@@ -44,7 +44,7 @@
                                                                              images:activityImageArray
                                                                            iconSize:CGSizeMake(40,40)
                                                                             padding:5
-                                                                           delegate:self];
+                                                                        delegate:self];
         
         
            // duration selection

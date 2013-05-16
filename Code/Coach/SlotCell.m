@@ -25,6 +25,7 @@
 {
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
+    
     self.delegate = delegate;
     
     self.activityTypeImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
@@ -32,12 +33,12 @@
     self.label = [[UILabel alloc] initWithFrame:CGRectZero];
     self.label.textColor = [UIColor darkGrayColor];
     self.label.font=[UIFont fontWithName:@"Trebuchet MS" size:22.0];
-    self.label.backgroundColor = [UIColor whiteColor];
+    self.label.backgroundColor = [UIColor clearColor];
     
     self.tagsTextField = [[UITextField alloc] initWithFrame:CGRectZero];
     self.tagsTextField.textColor = [UIColor grayColor];
     self.tagsTextField.font=[UIFont fontWithName:@"Trebuchet MS" size:14.0];
-    self.tagsTextField.backgroundColor = [UIColor whiteColor];
+    self.tagsTextField.backgroundColor = [UIColor clearColor];
     self.tagsTextField.userInteractionEnabled = NO;
     
     self.checkbox = [[CheckboxButton alloc] initWithFrame:CGRectZero];
@@ -92,15 +93,16 @@
   const CGFloat labelHeight = 25;
   const CGFloat labelYPadding = 2;
   const CGFloat iconPadding = 5;
+  const CGFloat iconLeftPadding = 9;
   const CGFloat textPadding = 5;
   const CGFloat iconHeight = 41;
   const CGFloat textFieldVertPadding = 0;
   const CGFloat tagHeight = 20;
   
   self.activityTypeImageView.image = [UIImage imageForActivityType:self.activityType];
-  self.activityTypeImageView.frame = CGRectMake(iconPadding,iconPadding, iconHeight, iconHeight);
+  self.activityTypeImageView.frame = CGRectMake(iconLeftPadding,iconPadding, iconHeight, iconHeight);
   
-  CGFloat labelOffsetX = iconPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width + textPadding;
+  CGFloat labelOffsetX = iconLeftPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width + textPadding;
   
   CGFloat labelWidth = self.contentView.frame.size.width - labelOffsetX - (textPadding *2) - checkboxWidth;
   
@@ -113,9 +115,6 @@
   self.checkbox.frame = CGRectMake(self.label.frame.origin.x + self.label.frame.size.width+ checkboxPadding, checkboxPadding, checkboxWidth, checkboxHeight);
   
   self.noteImageView.frame = CGRectMake(206,4,21,21);
-  
-  self.backgroundColor = [UIColor whiteColor];
-  
   
 }
 

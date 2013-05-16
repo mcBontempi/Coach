@@ -67,11 +67,16 @@ const CGFloat KExpandedSlotHeight = 60;
 -(void) viewDidLoad{
   [super viewDidLoad];
   
+  
   [self setRightBarButtonEdit];
   
   if ([[UIDevice currentDevice] userInterfaceIdiom] != UIUserInterfaceIdiomPhone) {
     [self.tableView setBackgroundView:nil];
     [self.tableView setBackgroundView:[[UIView alloc] init]];
+  }
+  else {
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_really_dark.png"]];
+
   }
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
@@ -106,7 +111,7 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
     
     [self updateHeaderViewForSection:indexPath.section];
-
+    
   }
   
   [super viewDidAppear:animated];
@@ -298,6 +303,12 @@ const CGFloat KExpandedSlotHeight = 60;
   return nil;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+  cell.backgroundColor = [UIColor whiteColor];
+}
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   NSArray* slots = self.currentWeek[indexPath.section];
@@ -307,7 +318,6 @@ const CGFloat KExpandedSlotHeight = 60;
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Add"];
     if (cell == nil) {
       cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Add"];
-      cell.selectionStyle = UITableViewCellSelectionStyleBlue;
       cell.textLabel.textColor = [UIColor blackColor];
       cell.textLabel.font=[UIFont fontWithName:@"Trebuchet MS" size:18.0];
       cell.textLabel.text = @"Tap to add...";
@@ -360,24 +370,18 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
- // if(self.tableView.isEditing){
-    NSArray* slots = self.currentWeek[indexPath.section];
-    if(indexPath.row >= slots.count){
-      self.slotBeingCreated = YES;
-      [self addSlotAtIndexPath: indexPath];
-      [self newCreateItemSelectionAtIndexPath: indexPath];
-    }
-    else{
-      self.slotBeingCreated = NO;
-      self.slotBeingEdited = [self slotForRowAtIndexPath:indexPath];
-      
-      [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
-    }
-  //}
-//  else{
+  NSArray* slots = self.currentWeek[indexPath.section];
+  if(indexPath.row >= slots.count){
+    self.slotBeingCreated = YES;
+    [self addSlotAtIndexPath: indexPath];
+    [self newCreateItemSelectionAtIndexPath: indexPath];
+  }
+  else{
+    self.slotBeingCreated = NO;
+    self.slotBeingEdited = [self slotForRowAtIndexPath:indexPath];
     
-//  }
-  
+    [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
+  }
 }
 
 - (void)newCreateItemSelectionAtIndexPath:(NSIndexPath *)indexPath
@@ -521,7 +525,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(void) updateAllHeaders{
   
-    [self setWeekTitle];
+  [self setWeekTitle];
   
   for(NSInteger i = 0 ; i < self.headerViews.count ; i++){
     [self updateHeaderViewForSection:i];
@@ -577,23 +581,21 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   self.title = [NSString stringWithFormat:@"Week %d - %@", weekIndex+1, [self.delegate TimetableViewControllerDelegate_weekSummary:weekIndex ]];
 }
 
--(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex{
-  
+-(void) ToTimetableViewControllerDelegate_changeCurrentWeekAnimatedTo:(NSInteger) weekIndex
+{
   [self changeCurrentWeekAnimatedTo:weekIndex];
-  
 }
 
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
   return YES;
 }
 
-
--(void) updateHeaderViewForSlot:(Slot*) slot{
+-(void) updateHeaderViewForSlot:(Slot*) slot
+{
   NSIndexPath *indexPath = [self indexPathForSlot:slot];
   [self updatedHeaderViewForSection:indexPath.section];
 }
-
 
 -(void) SlotCreateCellDelegate_activityTypeChanged:(TActivityType) activityType
 {

@@ -16,7 +16,6 @@
   self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
   if (self) {
     
-    self.backgroundColor = [UIColor whiteColor];
     
     self.delegate = delegate;
     

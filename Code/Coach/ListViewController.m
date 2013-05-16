@@ -50,6 +50,9 @@
   
   // [self setRightBarButtonEdit];
   [self setLeftBarButtonPlans];
+  
+  self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background.png"]];
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
