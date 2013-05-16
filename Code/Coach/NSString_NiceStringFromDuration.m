@@ -29,7 +29,7 @@
     if(mins == 1){
         return @"min";
     }
-    else return @"mins";
+    else return @"min";
 }
 
 

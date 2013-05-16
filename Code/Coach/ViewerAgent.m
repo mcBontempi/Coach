@@ -56,7 +56,7 @@
   self.listViewAgent.toListViewControllerDelegate = listViewController;
   
   UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
-  listViewNavigationController.navigationBar.tintColor = [UIColor darkGrayColor];
+  listViewNavigationController.navigationBar.tintColor = [UIColor blackColor];
   // Create the main Timetable view
   self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
   self.timetableViewController = [[TimetableViewController alloc] initWithDelegate:self.timetableViewAgent];
@@ -89,9 +89,6 @@
       [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];
     }
   }
-  
-  
-  
 }
 
 - (void)WelcomeViewControllerDelegate_getStartedPressed

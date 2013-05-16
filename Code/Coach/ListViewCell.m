@@ -25,7 +25,7 @@
 - (void)applySoftShadowToLabel:(UILabel *)label
 {
   label.layer.shadowOpacity = 1.0;
-  label.layer.shadowRadius = 3.0;
+  label.layer.shadowRadius = 1.0;
   label.layer.shadowColor = [UIColor blackColor].CGColor;
   label.layer.shadowOffset = CGSizeMake(0.0, 3.0);
 }
@@ -44,7 +44,7 @@
     _weekSummaryLabel.font=[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:16.0];
     _weekSummaryLabel.backgroundColor = [UIColor clearColor];
     _weekSummaryLabel.numberOfLines = 2;
-    [self applySoftShadowToLabel:_weekSummaryLabel];
+ //   [self applySoftShadowToLabel:_weekSummaryLabel];
     
     _weekPercentCompletedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _weekPercentCompletedLabel.textColor = [UIColor grayColor];
@@ -77,7 +77,7 @@
   _weekLabel.frame = CGRectMake(0,2,60,60);
   
   if(_weekPercentCompleted == 100) {
-    _weekSummaryLabel.frame = CGRectMake(62,0,60,60);
+    _weekSummaryLabel.frame = CGRectMake(62,2,60,60);
     _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:18.0];
     
     _weekCompletedCircleImageView.frame = CGRectMake(123,0,136,60);
@@ -85,7 +85,7 @@
     
   }
   else {
-    _weekSummaryLabel.frame = CGRectMake(62,0,200,60);
+    _weekSummaryLabel.frame = CGRectMake(62,3,200,60);
     _weekPercentCompletedLabel.font=[UIFont fontWithName:@"venirNext-Medium" size:20.0];
     
     if(_weekPercentCompleted) {
@@ -97,7 +97,8 @@
   
   BOOL hidePercent = _weekPercentCompleted ? NO : YES;
   
-  _weekCompletedCircleImageView.hidden = _weekPercentCompletedLabel.hidden = hidePercent;
+  _weekCompletedCircleImageView.hidden = hidePercent;
+  _weekPercentCompletedLabel.hidden = hidePercent;
   
   
 }
@@ -132,7 +133,13 @@
   _weekPercentCompleted = weekPercentCompleted;
   
   _weekLabel.text = weekText;
-  _weekSummaryLabel.text = weekSummaryText;
+  
+  if(weekSummaryText.length) {
+    _weekSummaryLabel.text = weekSummaryText;
+  }
+  else {
+    _weekSummaryLabel.text = @"Rest Week";
+  }
   
   if(_weekPercentCompleted > 0) {
     if(_weekPercentCompleted == 100) {
@@ -141,7 +148,6 @@
     else {
       _weekPercentCompletedLabel.text = [NSString stringWithFormat:@"%d%%", weekPercentCompleted];
     }
-    
   }
 }
 

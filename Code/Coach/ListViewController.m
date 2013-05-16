@@ -48,7 +48,7 @@
 {
   [super viewDidLoad];
   
- // [self setRightBarButtonEdit];
+  // [self setRightBarButtonEdit];
   [self setLeftBarButtonPlans];
 }
 
@@ -106,10 +106,10 @@
   self.popover = [[WEPopoverController alloc] initWithContentViewController:vc];
   self.popover.containerViewProperties = [self defaultContainerViewProperties];
   [self.popover presentPopoverFromRect:CGRectZero
-                                          inView:self.view
-                        permittedArrowDirections:UIPopoverArrowDirectionUp
-                                        animated:YES];
-
+                                inView:self.view
+              permittedArrowDirections:UIPopoverArrowDirectionUp
+                              animated:YES];
+  
 }
 
 -(void) setRightBarButton:(UIBarButtonSystemItem)systemItem
@@ -140,13 +140,7 @@
   
   self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]
                                           initWithCustomView:toolbar];
-  
-  
-  
 }
-
-
-
 
 -(void)toggleEditPressed
 {
@@ -166,7 +160,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.delegate ListViewControllerDelegate_numberOfWeeks];
+  return [self.delegate ListViewControllerDelegate_numberOfWeeks];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -175,7 +169,7 @@
   if (cell == nil) {
     cell = [[ListViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Foobar"];
   }
- 
+  
   [cell setupWithWeekText:[NSString stringWithFormat:@"%d", indexPath.row+1] weekSummaryText:[self.delegate ListViewControllerDelegate_weekSummary:indexPath.row] weekPercentCompleted:[self.delegate ListViewControllerDelegate_weekPercent:indexPath.row]];
   
   if(indexPath.row == [self.delegate ListViewControllerDelegate_currentWeek]) {
@@ -195,20 +189,20 @@
   [self.delegate ListViewControllerDelegate_showWeek:indexPath.row];
 }
 /*
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-  if(section)
-    return 5;
-  else return 0;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-  UIView *header =  [[UIView alloc] initWithFrame:CGRectMake(0,0,320,5)];
-  
-  header.backgroundColor = [UIColor blackColor];
-  
-  return header;
-}
-*/
+ - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+ {
+ if(section)
+ return 5;
+ else return 0;
+ }
+ - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+ UIView *header =  [[UIView alloc] initWithFrame:CGRectMake(0,0,320,5)];
+ 
+ header.backgroundColor = [UIColor blackColor];
+ 
+ return header;
+ }
+ */
 
 - (void)ToListViewControllerDelegate_reloadData
 {

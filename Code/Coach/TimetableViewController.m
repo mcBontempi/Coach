@@ -112,6 +112,8 @@ const CGFloat KExpandedSlotHeight = 60;
   [super viewDidAppear:animated];
 }
 
+
+
 -(void) setRightBarButtonEdit{
   [self setRightBarButton:UIBarButtonSystemItemEdit];
 }
@@ -551,6 +553,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)changeCurrentWeekAnimatedTo:(NSInteger) weekIndex
 {
+  self.slotBeingCreated = NO;
+  self.slotBeingEdited = nil;
+  
   [self.tableView beginUpdates];
   
   [self deleteAllRows:UITableViewRowAnimationFade];

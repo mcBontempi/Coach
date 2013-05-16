@@ -122,6 +122,8 @@
     }
   }
   
+  if(!slotCount) return 0;
+  
   return (100/slotCount)*slotCountCompleted;
 }
 
