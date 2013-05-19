@@ -76,8 +76,7 @@
 {
 	WEPopoverContainerViewProperties *ret = [WEPopoverContainerViewProperties alloc];
 	
-	CGSize imageSize = CGSizeMake(0.0f, 0.0f);
-	NSString *bgImageName = nil;//@"popoverBgWhite.png";
+	CGSize imageSize = CGSizeMake(64.0f, 64.0f);
 	CGFloat bgMargin = 6.0;
 	CGFloat contentMargin = 0.0;
 	
@@ -87,14 +86,14 @@
 	ret.bottomBgMargin = bgMargin;
 	ret.leftBgCapSize = imageSize.width/2;
 	ret.topBgCapSize = imageSize.height/2;
-	ret.bgImageName = bgImageName;
 	ret.leftContentMargin = contentMargin;
 	ret.rightContentMargin = contentMargin;
 	ret.topContentMargin = contentMargin;
 	ret.bottomContentMargin = contentMargin;
 	ret.arrowMargin = 1.0;
 	
-	ret.upArrowImageName = @"popoverArrowUpSimple.png";
+  ret.bgImageName = @"popoverBgWhite.png";
+	ret.upArrowImageName = nil;//@"popoverArrowUpSimple.png";
 	ret.downArrowImageName = @"popoverArrowDownSimple.png";
 	ret.leftArrowImageName = @"popoverArrowLeftSimple.png";
 	ret.rightArrowImageName = @"popoverArrowRightSimple.png";

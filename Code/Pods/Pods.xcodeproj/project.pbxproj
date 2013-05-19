@@ -52,7 +52,6 @@
 		56D7DABDAA67403AA7657604 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
 		5B63291B13224D94A26C1482 /* popoverArrowUp.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popoverArrowUp.png; path = WEPopover/popoverArrowUp.png; sourceTree = SOURCE_ROOT; };
 		6284C35B0C8E421C9810B03E /* popoverArrowDown.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popoverArrowDown.png; path = WEPopover/popoverArrowDown.png; sourceTree = SOURCE_ROOT; };
-		66E508F53DE949D6B761A59D /* popoverArrowUpSimple.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popoverArrowUpSimple.png; path = WEPopover/popoverArrowUpSimple.png; sourceTree = SOURCE_ROOT; };
 		6ED58CAA8D6045C2A863CFD2 /* popoverBgSimple.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = popoverBgSimple.png; path = WEPopover/popoverBgSimple.png; sourceTree = SOURCE_ROOT; };
 		894F7B38A6FE4344B084F866 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		939ACF8EC8BF4E88AB91C27D /* WEPopoverTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WEPopoverTableViewController.m; path = WEPopover/Classes/WEPopoverTableViewController.m; sourceTree = SOURCE_ROOT; };
@@ -103,7 +102,6 @@
 				A20897E1F8A54BE6A9BCDBF8 /* popoverArrowRightSimple.png */,
 				5B63291B13224D94A26C1482 /* popoverArrowUp.png */,
 				43DC1B721AFD43D0A43A5FC6 /* popoverArrowUp@2x.png */,
-				66E508F53DE949D6B761A59D /* popoverArrowUpSimple.png */,
 				FF27C70CFB5544F2B12FA1A7 /* popoverBg.png */,
 				498F166C8CAB4BF79B65CDDE /* popoverBg@2x.png */,
 				6ED58CAA8D6045C2A863CFD2 /* popoverBgSimple.png */,

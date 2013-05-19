@@ -6,6 +6,7 @@ const CGFloat popoverWidth = 240;
 
 @interface TimetablePopoverViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,weak) id<TimetablePopoverViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UINavigationBar *bottomNavigationBar;
 - (IBAction)showInFullscreen:(id)sender;
 @end
 
@@ -27,15 +28,32 @@ const CGFloat popoverWidth = 240;
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  self.bottomNavigationBar.shadowImage = [[UIImage alloc] init];
+  /*
+  self.view.backgroundColor = [UIColor clearColor];
   
-  self.view.backgroundColor = [UIColor whiteColor];
+  self.bottomNavigationBar.shadowImage = [[UIImage alloc] init];
+  self.bottomNavigationBar.backgroundColor = [UIColor clearColor];
+  self.bottomNavigationBar.tintColor = [UIColor clearColor];
+  self.bottomNavigationBar.b
+  //self.bottomNavigationBar.
+  
+  
+  
+  self.bottomNavigationBar.translucent = YES;
+  self.bottomNavigationBar.opaque = YES;
+ // self.navigationController.navigationBar.tintColor = [UIColor clearColor];
+ // self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+   
+   */
+  
 }
 
 - (CGSize) contentSizeForViewInPopover{
   
   NSUInteger numCells = [self.delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
   
-  return CGSizeMake(popoverWidth, 50 + (numCells*44));
+  return CGSizeMake(popoverWidth, 40 + (numCells*44));
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -62,7 +80,7 @@ const CGFloat popoverWidth = 240;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
   }
   
-  
+  cell.contentView.backgroundColor = [UIColor clearColor];
   
   return cell;
 }
@@ -76,5 +94,9 @@ const CGFloat popoverWidth = 240;
 - (IBAction)showInFullscreen:(id)sender {
   [_delegate TimetablePopoverViewControllerDelegate_showPlansInFullscreen];
   
+}
+- (void)viewDidUnload {
+  [self setBottomNavigationBar:nil];
+  [super viewDidUnload];
 }
 @end

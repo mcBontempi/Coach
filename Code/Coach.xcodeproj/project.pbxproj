@@ -107,6 +107,7 @@
 		D6605A6F1671D945008DFF75 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6605A6E1671D945008DFF75 /* Default-568h@2x.png */; };
 		D6652AAB1733ABE8007E5A1C /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AA91733ABE8007E5A1C /* appIcon.png */; };
 		D6652AAE1733AC1A007E5A1C /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */; };
+		D675A31D17495CD300F3AA51 /* popoverArrowUpSimple.png in Resources */ = {isa = PBXBuildFile; fileRef = D675A31C17495CD300F3AA51 /* popoverArrowUpSimple.png */; };
 		D677708E16EF393A00D430C7 /* UtilTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D677708D16EF393A00D430C7 /* UtilTableViewCell.m */; };
 		D677709016EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */; };
 		D677709216EF5FBB00D430C7 /* triathlonTimetableJustTitle.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709116EF5FBB00D430C7 /* triathlonTimetableJustTitle.png */; };
@@ -308,6 +309,7 @@
 		D6605A6E1671D945008DFF75 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D6652AA91733ABE8007E5A1C /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = Coach/appIcon.png; sourceTree = "<group>"; };
 		D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appIcon@2x.png"; sourceTree = "<group>"; };
+		D675A31C17495CD300F3AA51 /* popoverArrowUpSimple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverArrowUpSimple.png; path = Coach/assets/popoverArrowUpSimple.png; sourceTree = "<group>"; };
 		D677708C16EF393A00D430C7 /* UtilTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtilTableViewCell.h; path = Coach/UtilTableViewCell.h; sourceTree = "<group>"; };
 		D677708D16EF393A00D430C7 /* UtilTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UtilTableViewCell.m; path = Coach/UtilTableViewCell.m; sourceTree = "<group>"; };
 		D677708F16EF5F9100D430C7 /* triathlonTimetableJustTitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "triathlonTimetableJustTitle@2x.png"; path = "Coach/assets/triathlonTimetableJustTitle@2x.png"; sourceTree = "<group>"; };
@@ -838,6 +840,7 @@
 				D678E00E1705A6A90046B59D /* 2Notes.png */,
 				D6E427EE16FA0BA3002EE8D5 /* divider.png */,
 				D677709916EF817600D430C7 /* popoverBgWhite.png */,
+				D675A31C17495CD300F3AA51 /* popoverArrowUpSimple.png */,
 				D677709716EF6C1600D430C7 /* spot@2x.png */,
 				D677709316EF611800D430C7 /* addButton.png */,
 				D677709416EF611800D430C7 /* addButton@2x.png */,
@@ -1037,6 +1040,7 @@
 				D64A7E9417443CDD0083F965 /* list_cell_week_count_circle_selected.png in Resources */,
 				D64A7E961744E1CD0083F965 /* table_background.png in Resources */,
 				D64A7E981744E3EC0083F965 /* table_background_really_dark.png in Resources */,
+				D675A31D17495CD300F3AA51 /* popoverArrowUpSimple.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
