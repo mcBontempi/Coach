@@ -7,7 +7,7 @@
 #import "UtilViewController.h"
 #import "UtilAgent.h"
 #import "Coach.h"
-#import "SlotEditViewController.h"
+#import "SlotEditTableViewController.h"
 #import "SlotEditViewAgent.h"
 
 @interface ViewerAgent ()
@@ -170,7 +170,7 @@
 {
   
   self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:slot delegate:self];
-  SlotEditViewController *slotEditViewController = [[SlotEditViewController alloc] initWithDelegate:self.slotEditViewAgent];
+  SlotEditTableViewController *slotEditViewController = [[SlotEditTableViewController alloc] initWithDelegate:self.slotEditViewAgent];
   
   [self.timetableViewController presentModalViewController:slotEditViewController animated:YES];
   
