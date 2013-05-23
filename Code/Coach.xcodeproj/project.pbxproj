@@ -120,6 +120,7 @@
 		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */; };
 		D69E336B174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69E336A174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib */; };
+		D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69E336C174E42190013EB49 /* SlotEdit.storyboard */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -327,6 +328,7 @@
 		D69E3365174E0FD80013EB49 /* SlotEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditTableViewController.h; path = Coach/SlotEditTableViewController.h; sourceTree = "<group>"; };
 		D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditTableViewController.m; path = Coach/SlotEditTableViewController.m; sourceTree = "<group>"; };
 		D69E336A174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlotEditTableViewController_iPhone.xib; path = Coach/SlotEditTableViewController_iPhone.xib; sourceTree = "<group>"; };
+		D69E336C174E42190013EB49 /* SlotEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SlotEdit.storyboard; path = Coach/SlotEdit.storyboard; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DurationViewController_iPad.xib; path = Coach/DurationViewController_iPad.xib; sourceTree = "<group>"; };
@@ -790,6 +792,7 @@
 				D69E3365174E0FD80013EB49 /* SlotEditTableViewController.h */,
 				D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */,
 				D69E336A174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib */,
+				D69E336C174E42190013EB49 /* SlotEdit.storyboard */,
 			);
 			name = SlotEditViewController;
 			sourceTree = "<group>";
@@ -1050,6 +1053,7 @@
 				D64A7E981744E3EC0083F965 /* table_background_really_dark.png in Resources */,
 				D675A31D17495CD300F3AA51 /* popoverArrowUpSimple.png in Resources */,
 				D69E336B174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib in Resources */,
+				D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -170,9 +170,12 @@
 {
   
   self.slotEditViewAgent = [[SlotEditViewAgent alloc] initWitSlot:slot delegate:self];
-  SlotEditTableViewController *slotEditViewController = [[SlotEditTableViewController alloc] initWithDelegate:self.slotEditViewAgent];
+ 
   
-  [self.timetableViewController presentModalViewController:slotEditViewController animated:YES];
+  SlotEditTableViewController *slotEditViewController = [[SlotEditTableViewController alloc] initWithDelegate:self.slotEditViewAgent];
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:slotEditViewController];
+  navigationController.navigationBar.barStyle = UIBarStyleBlack;
+  [self.timetableViewController presentViewController:navigationController animated:YES completion:nil];
   
 }
 
