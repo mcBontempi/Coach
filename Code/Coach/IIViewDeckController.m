@@ -1312,6 +1312,9 @@ __typeof__(h) __h = (h);                                    \
     }
     
     CGFloat px = self.slidingControllerView.frame.origin.x;
+  
+  
+  
     if (px != 0) return YES;
         
     CGFloat x = [self locationOfPanner:(UIPanGestureRecognizer*)gestureRecognizer];
@@ -1357,6 +1360,9 @@ __typeof__(h) __h = (h);                                    \
 - (CGFloat)locationOfPanner:(UIPanGestureRecognizer*)panner {
     CGPoint pan = [panner translationInView:self.referenceView];
     CGFloat x = pan.x + _panOrigin;
+  
+  [self.delegate didPanTo:x];
+  
     
     if (!self.leftController) x = MIN(0, x);
     if (!self.rightController) x = MAX(0, x);

@@ -25,9 +25,9 @@
 - (void)applySoftShadowToLabel:(UILabel *)label
 {
   label.layer.shadowOpacity = 1.0;
-  label.layer.shadowRadius = 1.0;
+  label.layer.shadowRadius = 5.0;
   label.layer.shadowColor = [UIColor blackColor].CGColor;
-  label.layer.shadowOffset = CGSizeMake(0.0, 3.0);
+  label.layer.shadowOffset = CGSizeMake(0.0, 5.0);
 }
 
 
@@ -44,7 +44,7 @@
     _weekSummaryLabel.font=[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:16.0];
     _weekSummaryLabel.backgroundColor = [UIColor clearColor];
     _weekSummaryLabel.numberOfLines = 2;
- //   [self applySoftShadowToLabel:_weekSummaryLabel];
+   // [self applySoftShadowToLabel:_weekSummaryLabel];
     
     _weekPercentCompletedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     _weekPercentCompletedLabel.textColor = [UIColor grayColor];

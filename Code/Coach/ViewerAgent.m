@@ -4,7 +4,6 @@
 #import "TimetableViewController.h"
 #import "ListViewController.h"
 #import "Model.h"
-#import "IIViewDeckController.h"
 #import "UtilViewController.h"
 #import "UtilAgent.h"
 #import "Coach.h"
@@ -24,6 +23,8 @@
 @property (nonatomic, strong) TimetableViewController *timetableViewController;
 
 @property (nonatomic, strong) SlotEditViewAgent *slotEditViewAgent;
+
+@property (nonatomic, strong) ListViewController *listViewController;
 @end
 
 @implementation ViewerAgent
@@ -52,10 +53,10 @@
   
   // Create the left hand side list
   self.listViewAgent = [[ListViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self];
-  ListViewController *listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
-  self.listViewAgent.toListViewControllerDelegate = listViewController;
+  self.listViewController = [[ListViewController alloc] initWithDelegate:self.listViewAgent];
+  self.listViewAgent.toListViewControllerDelegate = self.listViewController;
   
-  UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+  UINavigationController *listViewNavigationController = [[UINavigationController alloc] initWithRootViewController:self.listViewController];
   listViewNavigationController.navigationBar.tintColor = [UIColor blackColor];
   // Create the main Timetable view
   self.timetableViewAgent = [[TimetableViewAgent alloc] initWithModelProtocol:self.modelProtocol delegate:self weekIndex:0];
@@ -70,6 +71,9 @@
     self.viewDeckViewController.leftLedge = 60;
   else
     self.viewDeckViewController.leftLedge = 500;
+  
+  
+  self.viewDeckViewController.delegate = self;
   
   
   if([self.modelProtocol currentPlan].length){
@@ -203,6 +207,19 @@
   }
   
   
+}
+
+
+- (void)didPanTo:(NSInteger)x
+{
+/*
+  float pc = x;
+  pc/=320;
+  
+  NSLog(@"%f", pc);
+  
+  self.listViewController.view.alpha = pc;
+*/
 }
 
 

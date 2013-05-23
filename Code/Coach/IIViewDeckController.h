@@ -153,6 +153,8 @@ typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 
 @protocol IIViewDeckControllerDelegate <NSObject>
 
+- (void)didPanTo:(NSInteger)x;
+
 @optional
 - (void)viewDeckController:(IIViewDeckController*)viewDeckController applyShadow:(CALayer*)shadowLayer withBounds:(CGRect)rect;
 
