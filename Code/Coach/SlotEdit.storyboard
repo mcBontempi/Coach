@@ -8,12 +8,12 @@
         <scene sceneID="2MY-ZU-fgn">
             <objects>
                 <tableViewController storyboardIdentifier="slotEditTableViewController" id="4iY-Hn-Wdj" customClass="SlotEditTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eyb-bU-Y7X">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eyb-bU-Y7X">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Details" id="gEF-6Z-W2X">
+                            <tableViewSection headerTitle="Activity &amp; Duration" id="gEF-6Z-W2X">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="160" id="fO3-F0-4vT" customClass="SlotEditClockTableViewCell">
                                         <rect key="frame" x="0.0" y="46" width="320" height="161"/>
@@ -23,7 +23,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-q8-9pf" customClass="IconSelectionView">
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Zone1 Zone2" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-Z7-Ov7">
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="lPN-C2-hc7"/>
                                                     </constraints>
@@ -78,7 +78,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" text="You need to run quite quick on this one, make sure you arent too fast or too slow, just medium maybe." translatesAutoresizingMaskIntoConstraints="NO" id="qFt-32-itX">
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="aUD-LS-eGz"/>
                                                     </constraints>
@@ -95,6 +95,37 @@
                                             <constraint firstItem="qFt-32-itX" firstAttribute="top" secondItem="Pez-xH-rbl" secondAttribute="top" constant="10" type="user" id="BUC-to-65u"/>
                                             <constraint firstItem="qFt-32-itX" firstAttribute="leading" secondItem="Pez-xH-rbl" secondAttribute="leading" constant="20" type="user" id="YK3-Cw-Ko6"/>
                                             <constraint firstAttribute="bottom" secondItem="qFt-32-itX" secondAttribute="bottom" constant="10" type="user" id="gWY-9o-v3f"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Coach Notes" id="T5y-gX-tEX">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="89L-Jn-Vk4">
+                                        <rect key="frame" x="0.0" y="547" width="320" height="101"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" text="You need to run quite quick on this one, make sure you arent too fast or too slow, just medium maybe." translatesAutoresizingMaskIntoConstraints="NO" id="fyk-oF-zbE">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" type="user" id="xxb-dA-W4Y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="4iY-Hn-Wdj" id="3Iz-MR-vrK"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fyk-oF-zbE" firstAttribute="leading" secondItem="89L-Jn-Vk4" secondAttribute="leading" constant="20" type="user" id="3sl-vT-Z7c"/>
+                                            <constraint firstAttribute="bottom" secondItem="fyk-oF-zbE" secondAttribute="bottom" constant="10" type="user" id="Jsk-SK-cMe"/>
+                                            <constraint firstItem="fyk-oF-zbE" firstAttribute="top" secondItem="89L-Jn-Vk4" secondAttribute="top" constant="10" type="user" id="PQX-el-tzE"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>

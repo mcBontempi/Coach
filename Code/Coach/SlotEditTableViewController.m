@@ -65,107 +65,106 @@
   [super viewDidLoad];
   
   
-  [self setupTextFieldInitially:self.tagsTextView text:@"The arc of the moral universe is long, but it bends towards justice."];
-  [self setupTextFieldInitially:self.coachNotesTextView text:@"Hi."];
-  
-  [self setupActivityType];
-  // Uncomment the following line to preserve selection between presentations.
-  // self.clearsSelectionOnViewWillAppear = NO;
-  
-  // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-  // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-
+  [self setupTextFieldInitially:self.tagsTextView text:[_delegate SlotEditViewControllerDelegate_tags]];
+  [self setupTextFieldInitially:self.coachNotesTextView text:[_delegate SlotEditViewControllerDelegate_coachNotes]];
+   [self setupTextFieldInitially:self.athleteNotesTextView text:[_delegate SlotEditViewControllerDelegate_athleteNotes]];
+   
+   [self setupActivityType];
+   
+   self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_light.png"]];
+   
+   }
+   
+   
 #pragma mark - Table view delegate
-
-- (CGFloat)heightForTextView:(UITextView*)textView
-{
-  float horizontalPadding = 24;
-  float verticalPadding = 36;
-  float widthOfTextView = textView.contentSize.width - horizontalPadding;
-  float height = [textView.text sizeWithFont:textView.font constrainedToSize:CGSizeMake(widthOfTextView, 999999.0f) lineBreakMode:NSLineBreakByWordWrapping].height + verticalPadding;
-  
-  return height + 8;
-}
-
-- (void) textViewDidChange:(UITextView *)textView
-{
-  [self.tableView beginUpdates];
-  [self.tableView endUpdates];
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-  
-  switch(indexPath.section) {
-    case 1:
-      return [self heightForTextView:self.tagsTextView];
-    case 2:
-      return [self heightForTextView:self.coachNotesTextView];
-    default:
-      return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-  }
-}
-
-- (void)setupTextFieldInitially:(UITextView *)textView text:(NSString *)text {
-  textView.text = text;
-  float height = [self heightForTextView:textView];
-  CGRect textViewRect = CGRectMake(74, 4, 280, height);
-  textView.frame = textViewRect;
-  textView.contentSize = CGSizeMake(280, [self heightForTextView:textView]);
-}
-
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-  [self.tagsTextView resignFirstResponder];
-  [self.coachNotesTextView resignFirstResponder];
-}
-
-
-
-
-
-- (void)setupActivityType
-{
-  // activities selection
-  NSMutableArray *activityImageArray = [[NSMutableArray alloc] init];
-  
-  for(NSNumber *number in [self activityTypeOrdering]){
-    [activityImageArray addObject:[UIImage imageForActivityType:number.integerValue]];
-  }
-  
-  [self.activityType setupWithImages:activityImageArray
-                        iconSize:CGSizeMake(60,60)
-                         padding:5
-                        delegate:self];
-  
-  [self.activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
-  
-}
-
--(NSArray*) activityTypeOrdering{
-  return @[@(EActivityTypeSwim), @(EActivityTypeBike), @(EActivityTypeRun), @(EActivityTypeStrengthAndConditioning)];
-}
-
--(NSInteger) indexForActivityType:(TActivityType) activityType{
-  for(NSInteger index = 0 ; index <  [self activityTypeOrdering].count ; index++){
-    NSNumber *number = [self activityTypeOrdering][index];
-    if(number.integerValue == activityType){
-      return index;
-    }
-  }
-  
-  return 0;
-}
-
--(TActivityType) activityTpeForIndex:(NSInteger) index
-{
-  NSNumber *number = [self activityTypeOrdering][index];
-  return number.integerValue;
-}
-
-
-
-@end
+   
+   - (CGFloat)heightForTextView:(UITextView*)textView
+   {
+     float horizontalPadding = 24;
+     float verticalPadding = 36;
+     float widthOfTextView = textView.contentSize.width - horizontalPadding;
+     float height = [textView.text sizeWithFont:textView.font constrainedToSize:CGSizeMake(widthOfTextView, 999999.0f) lineBreakMode:NSLineBreakByWordWrapping].height + verticalPadding;
+     
+     return height + 8;
+   }
+   
+   - (void) textViewDidChange:(UITextView *)textView
+   {
+     [self.tableView beginUpdates];
+     [self.tableView endUpdates];
+   }
+   
+   - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+   {
+     
+     switch(indexPath.section) {
+       case 1:
+         return [self heightForTextView:self.tagsTextView];
+       case 2:
+         return [self heightForTextView:self.coachNotesTextView];
+       default:
+         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+     }
+   }
+   
+   - (void)setupTextFieldInitially:(UITextView *)textView text:(NSString *)text {
+     textView.text = text;
+     float height = [self heightForTextView:textView];
+     CGRect textViewRect = CGRectMake(74, 4, 280, height);
+     textView.frame = textViewRect;
+     textView.contentSize = CGSizeMake(280, [self heightForTextView:textView]);
+   }
+   
+   
+   - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+   {
+     [self.tagsTextView resignFirstResponder];
+     [self.coachNotesTextView resignFirstResponder];
+   }
+   
+   
+   
+   
+   
+   - (void)setupActivityType
+   {
+     // activities selection
+     NSMutableArray *activityImageArray = [[NSMutableArray alloc] init];
+     
+     for(NSNumber *number in [self activityTypeOrdering]){
+       [activityImageArray addObject:[UIImage imageForActivityType:number.integerValue]];
+     }
+     
+     [self.activityType setupWithImages:activityImageArray
+                               iconSize:CGSizeMake(60,60)
+                                padding:5
+                               delegate:self];
+     
+     [self.activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
+     
+   }
+   
+   -(NSArray*) activityTypeOrdering{
+     return @[@(EActivityTypeSwim), @(EActivityTypeBike), @(EActivityTypeRun), @(EActivityTypeStrengthAndConditioning)];
+   }
+   
+   -(NSInteger) indexForActivityType:(TActivityType) activityType{
+     for(NSInteger index = 0 ; index <  [self activityTypeOrdering].count ; index++){
+       NSNumber *number = [self activityTypeOrdering][index];
+       if(number.integerValue == activityType){
+         return index;
+       }
+     }
+     
+     return 0;
+   }
+   
+   -(TActivityType) activityTpeForIndex:(NSInteger) index
+   {
+     NSNumber *number = [self activityTypeOrdering][index];
+     return number.integerValue;
+   }
+   
+   
+   
+   @end

@@ -78,7 +78,7 @@
   
   // we set the actual size here, theres no point setting it from the initializer
   // as we dont know the final size.
-  frame.size = CGSizeMake(x+self.padding, self.padding*2 + self.iconSize.height);
+  frame.size = CGSizeMake(x+self.padding, y+ self.padding*2 + self.iconSize.height);
   
   self.frame = frame;
   
