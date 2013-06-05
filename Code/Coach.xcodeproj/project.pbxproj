@@ -121,6 +121,13 @@
 		D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */; };
 		D69E336B174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D69E336A174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib */; };
 		D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69E336C174E42190013EB49 /* SlotEdit.storyboard */; };
+		D69E3371174E73A80013EB49 /* PSAnalogClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E336F174E73A80013EB49 /* PSAnalogClockView.m */; };
+		D69E3376174E74980013EB49 /* clock_centre_point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E3372174E74980013EB49 /* clock_centre_point@2x.png */; };
+		D69E3377174E74980013EB49 /* clock_hour_hand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E3373174E74980013EB49 /* clock_hour_hand@2x.png */; };
+		D69E3378174E74980013EB49 /* clock_minute_hand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E3374174E74980013EB49 /* clock_minute_hand@2x.png */; };
+		D69E3379174E74980013EB49 /* ClockFace.png in Resources */ = {isa = PBXBuildFile; fileRef = D69E3375174E74980013EB49 /* ClockFace.png */; };
+		D69E337D174E754A0013EB49 /* SlotEditClockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E337C174E754A0013EB49 /* SlotEditClockTableViewCell.m */; };
+		D69E3380174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E337F174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m */; };
 		D6A77698162DEC5B00879C11 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A77697162DEC5B00879C11 /* Config.m */; };
 		D6A776A1162DEFFE00879C11 /* DurationViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */; };
 		D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A7769D162DEFFE00879C11 /* DurationViewController_iPhone.xib */; };
@@ -329,6 +336,16 @@
 		D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditTableViewController.m; path = Coach/SlotEditTableViewController.m; sourceTree = "<group>"; };
 		D69E336A174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlotEditTableViewController_iPhone.xib; path = Coach/SlotEditTableViewController_iPhone.xib; sourceTree = "<group>"; };
 		D69E336C174E42190013EB49 /* SlotEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SlotEdit.storyboard; path = Coach/SlotEdit.storyboard; sourceTree = "<group>"; };
+		D69E336F174E73A80013EB49 /* PSAnalogClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAnalogClockView.m; sourceTree = "<group>"; };
+		D69E3370174E73A80013EB49 /* PSAnalogClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAnalogClockView.h; sourceTree = "<group>"; };
+		D69E3372174E74980013EB49 /* clock_centre_point@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock_centre_point@2x.png"; path = "Coach/assets/clock_centre_point@2x.png"; sourceTree = "<group>"; };
+		D69E3373174E74980013EB49 /* clock_hour_hand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock_hour_hand@2x.png"; path = "Coach/assets/clock_hour_hand@2x.png"; sourceTree = "<group>"; };
+		D69E3374174E74980013EB49 /* clock_minute_hand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clock_minute_hand@2x.png"; path = "Coach/assets/clock_minute_hand@2x.png"; sourceTree = "<group>"; };
+		D69E3375174E74980013EB49 /* ClockFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ClockFace.png; path = Coach/assets/ClockFace.png; sourceTree = "<group>"; };
+		D69E337B174E754A0013EB49 /* SlotEditClockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditClockTableViewCell.h; path = Coach/SlotEditClockTableViewCell.h; sourceTree = "<group>"; };
+		D69E337C174E754A0013EB49 /* SlotEditClockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditClockTableViewCell.m; path = Coach/SlotEditClockTableViewCell.m; sourceTree = "<group>"; };
+		D69E337E174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTOneFingerRotationGestureRecognizer.h; sourceTree = "<group>"; };
+		D69E337F174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTOneFingerRotationGestureRecognizer.m; sourceTree = "<group>"; };
 		D6A77696162DEC5B00879C11 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		D6A77697162DEC5B00879C11 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		D6A7769C162DEFFE00879C11 /* DurationViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DurationViewController_iPad.xib; path = Coach/DurationViewController_iPad.xib; sourceTree = "<group>"; };
@@ -477,6 +494,7 @@
 		852CF7971608A7E6009E249F /* Coach */ = {
 			isa = PBXGroup;
 			children = (
+				D69E336E174E739A0013EB49 /* ClockView */,
 				D60EADED17185ACA00A27641 /* SlideToCancel */,
 				D60EADEC17184EA100A27641 /* Other */,
 				D6DCF56D166CE4CB00539164 /* CheckboxButton */,
@@ -781,6 +799,7 @@
 		D659211816A05DDF00E7953D /* SlotEditViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D69E337A174E75200013EB49 /* Cells */,
 				D659212616A05FD500E7953D /* SlotEditViewController.m */,
 				D659212716A05FD500E7953D /* SlotEditViewController.h */,
 				D659211A16A05F8F00E7953D /* SlotEditViewAgent.h */,
@@ -813,6 +832,26 @@
 				D6D618051725919100DA8F54 /* ListViewCell.m */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		D69E336E174E739A0013EB49 /* ClockView */ = {
+			isa = PBXGroup;
+			children = (
+				D69E337E174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.h */,
+				D69E337F174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m */,
+				D69E336F174E73A80013EB49 /* PSAnalogClockView.m */,
+				D69E3370174E73A80013EB49 /* PSAnalogClockView.h */,
+			);
+			name = ClockView;
+			sourceTree = "<group>";
+		};
+		D69E337A174E75200013EB49 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D69E337B174E754A0013EB49 /* SlotEditClockTableViewCell.h */,
+				D69E337C174E754A0013EB49 /* SlotEditClockTableViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		D6A7769A162DEF0500879C11 /* Config */ = {
@@ -871,6 +910,10 @@
 				857D515F164BF40C00527584 /* noEntry.png */,
 				D64A7E951744E1CD0083F965 /* table_background.png */,
 				D64A7E971744E3EC0083F965 /* table_background_really_dark.png */,
+				D69E3372174E74980013EB49 /* clock_centre_point@2x.png */,
+				D69E3373174E74980013EB49 /* clock_hour_hand@2x.png */,
+				D69E3374174E74980013EB49 /* clock_minute_hand@2x.png */,
+				D69E3375174E74980013EB49 /* ClockFace.png */,
 			);
 			name = GFX;
 			sourceTree = "<group>";
@@ -1054,6 +1097,10 @@
 				D675A31D17495CD300F3AA51 /* popoverArrowUpSimple.png in Resources */,
 				D69E336B174E10C60013EB49 /* SlotEditTableViewController_iPhone.xib in Resources */,
 				D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */,
+				D69E3376174E74980013EB49 /* clock_centre_point@2x.png in Resources */,
+				D69E3377174E74980013EB49 /* clock_hour_hand@2x.png in Resources */,
+				D69E3378174E74980013EB49 /* clock_minute_hand@2x.png in Resources */,
+				D69E3379174E74980013EB49 /* ClockFace.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1164,6 +1211,9 @@
 				D6D6180317257D9E00DA8F54 /* CNApplicationAppearance.m in Sources */,
 				D6D618061725919100DA8F54 /* ListViewCell.m in Sources */,
 				D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */,
+				D69E3371174E73A80013EB49 /* PSAnalogClockView.m in Sources */,
+				D69E337D174E754A0013EB49 /* SlotEditClockTableViewCell.m in Sources */,
+				D69E3380174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

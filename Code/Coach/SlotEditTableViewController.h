@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SlotEditViewControllerDelegate.h"
+#import "IconSelectionView.h"
 
-@interface SlotEditTableViewController : UITableViewController
+@interface SlotEditTableViewController : UITableViewController <IconSelectionViewDelegate>
+
+@property (nonatomic, strong) NSString *model;
 
 -(id) initWithDelegate:(id<SlotEditViewControllerDelegate>) delegate;
 

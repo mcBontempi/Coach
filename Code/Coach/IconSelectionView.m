@@ -41,14 +41,18 @@
   }
   
   CGFloat x = 0;
+  CGFloat y = 0;
   
   NSInteger index = 0;
+
   
   for(UIImage *image in self.images){
     
+    if(index ==2) { x=0 ; y+=self.iconSize.height + self.padding;}
+    
     x+=self.padding;
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x,self.padding, self.iconSize.width, self.iconSize.height)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x,self.padding + y, self.iconSize.width, self.iconSize.height)];
     button.tag = index;
     
     [button addTarget:self action:@selector(itemPressed:) forControlEvents:UIControlEventTouchUpInside];
