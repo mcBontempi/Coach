@@ -12,19 +12,23 @@
 @end
 
 
-@implementation IconSelectionView
+@implementation IconSelectionView{
+  NSUInteger _numCols;
+}
 
-- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate
+- (id)initWithPoint:(CGPoint)point images:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate numCols:(NSUInteger)numCols
 {
   self = [super initWithFrame:CGRectMake(point.x, point.y, 0,0)];
   if (self) {
-    [self setupWithImages:images iconSize:iconSize padding:padding delegate:delegate];
+    [self setupWithImages:images iconSize:iconSize padding:padding delegate:delegate numCols:numCols];
   }
   return self;
 }
 
-- (void)setupWithImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate
+- (void)setupWithImages:(NSArray*) images iconSize:(CGSize) iconSize padding:(NSInteger) padding delegate:(id<IconSelectionViewDelegate>) delegate numCols:(NSUInteger)numCols
 {
+  _numCols = numCols;
+  
   self.images = images;
   self.iconSize = iconSize;
   self.padding = padding;
@@ -48,12 +52,13 @@
   
   for(UIImage *image in self.images){
     
-    if(index ==2) { x=0 ; y+=self.iconSize.height + self.padding;}
+    if(index == _numCols) { x=0 ; y+=self.iconSize.height + self.padding;}
+    
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x, y, self.iconSize.width, self.iconSize.height)];
+    button.tag = index;
     
     x+=self.padding;
-    
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(x,self.padding + y, self.iconSize.width, self.iconSize.height)];
-    button.tag = index;
     
     [button addTarget:self action:@selector(itemPressed:) forControlEvents:UIControlEventTouchUpInside];
     

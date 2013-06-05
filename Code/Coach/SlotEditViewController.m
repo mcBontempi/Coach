@@ -134,7 +134,8 @@
   [_activityType setupWithImages:activityImageArray
                         iconSize:CGSizeMake(60,60)
                          padding:5
-                        delegate:self];
+                        delegate:self
+   numCols:2];
   
   [_activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
   

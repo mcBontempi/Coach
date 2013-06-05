@@ -15,24 +15,31 @@
                         <sections>
                             <tableViewSection headerTitle="Activity &amp; Duration" id="gEF-6Z-W2X">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="160" id="fO3-F0-4vT" customClass="SlotEditClockTableViewCell">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="161"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="140" id="fO3-F0-4vT">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="159"/>
+                                            <rect key="frame" x="10" y="1" width="300" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-q8-9pf" customClass="IconSelectionView">
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zj-N9-yEl">
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="top" secondItem="fO3-F0-4vT" secondAttribute="top" constant="12" id="6fm-yT-CYf"/>
-                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="22" id="FhW-7w-4ZK"/>
-                                            <constraint firstAttribute="bottom" secondItem="Mdh-q8-9pf" secondAttribute="bottom" constant="40" id="XHl-p5-hrp"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mdh-q8-9pf" secondAttribute="trailing" constant="148" id="htE-ay-qeM"/>
+                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="top" secondItem="fO3-F0-4vT" secondAttribute="top" constant="17" id="5EN-xO-BS4"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Zj-N9-yEl" secondAttribute="trailing" constant="40" id="TEI-ki-TRo"/>
+                                            <constraint firstItem="8Zj-N9-yEl" firstAttribute="top" secondItem="Mdh-q8-9pf" secondAttribute="top" type="default" id="XxT-VV-DJi"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Zj-N9-yEl" secondAttribute="bottom" constant="20" type="default" id="ZdX-Te-XdZ"/>
+                                            <constraint firstItem="8Zj-N9-yEl" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="175" id="eHG-0r-hVg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mdh-q8-9pf" secondAttribute="trailing" constant="176" id="hVQ-gY-sMm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mdh-q8-9pf" secondAttribute="bottom" constant="20" type="default" id="j4f-hJ-ttz"/>
+                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="39" id="wlN-Js-bru"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -40,7 +47,7 @@
                             <tableViewSection headerTitle="Tags" id="XpS-Wj-qwL">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="4ug-Ut-XyJ">
-                                        <rect key="frame" x="0.0" y="253" width="320" height="101"/>
+                                        <rect key="frame" x="0.0" y="233" width="320" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="99"/>
@@ -71,7 +78,7 @@
                             <tableViewSection headerTitle="Coach Notes" id="Xci-lV-OwA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="Pez-xH-rbl">
-                                        <rect key="frame" x="0.0" y="400" width="320" height="101"/>
+                                        <rect key="frame" x="0.0" y="380" width="320" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="99"/>
@@ -99,10 +106,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Coach Notes" id="T5y-gX-tEX">
+                            <tableViewSection headerTitle="Athlete Notes" id="T5y-gX-tEX">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="89L-Jn-Vk4">
-                                        <rect key="frame" x="0.0" y="547" width="320" height="101"/>
+                                        <rect key="frame" x="0.0" y="527" width="320" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="99"/>
@@ -123,7 +130,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="fyk-oF-zbE" firstAttribute="leading" secondItem="89L-Jn-Vk4" secondAttribute="leading" constant="20" type="user" id="3sl-vT-Z7c"/>
+                                            <constraint firstItem="fyk-oF-zbE" firstAttribute="leading" secondItem="89L-Jn-Vk4" secondAttribute="leading" constant="20" type="user" id="1Kv-27-31Z"/>
                                             <constraint firstAttribute="bottom" secondItem="fyk-oF-zbE" secondAttribute="bottom" constant="10" type="user" id="Jsk-SK-cMe"/>
                                             <constraint firstItem="fyk-oF-zbE" firstAttribute="top" secondItem="89L-Jn-Vk4" secondAttribute="top" constant="10" type="user" id="PQX-el-tzE"/>
                                         </constraints>
@@ -139,6 +146,8 @@
                     <connections>
                         <outlet property="_tagsTextView" destination="MZB-Z7-Ov7" id="yXs-sw-rl4"/>
                         <outlet property="activityType" destination="Mdh-q8-9pf" id="GLi-LD-kFh"/>
+                        <outlet property="athleteNotesTextView" destination="fyk-oF-zbE" id="HSZ-UF-P8F"/>
+                        <outlet property="clockContainer" destination="8Zj-N9-yEl" id="jG2-sY-WRa"/>
                         <outlet property="coachNotesTextView" destination="qFt-32-itX" id="2qs-Px-AND"/>
                     </connections>
                 </tableViewController>
@@ -154,13 +163,12 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="SlotEditClockTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotEditClockTableViewCell.h"/>
-        </class>
         <class className="SlotEditTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotEditTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityType" candidateClass="IconSelectionView"/>
+                <relationship kind="outlet" name="athleteNotesTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="clockContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="coachNotesTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="tagsTextView" candidateClass="UITextView"/>
             </relationships>

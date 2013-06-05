@@ -40,11 +40,12 @@
             [activityImageArray addObject:[UIImage imageForActivityType:number.integerValue]];
         }
         
-        self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(0,00)
+        self.activitiesIconSelectionView = [[IconSelectionView alloc] initWithPoint:CGPointMake(5,5)
                                                                              images:activityImageArray
                                                                            iconSize:CGSizeMake(40,40)
                                                                             padding:5
-                                                                        delegate:self];
+                                                                        delegate:self
+                                            numCols:4];
         
         
            // duration selection
