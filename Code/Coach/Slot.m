@@ -27,7 +27,7 @@
 {
   
   if(self = [self init]){
-    self.duration = duration /15 * 15;
+    self.duration = duration ;
     self.activityType = activityType;
 
     self.tags = @"";

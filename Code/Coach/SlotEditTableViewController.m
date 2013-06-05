@@ -45,6 +45,24 @@
   return self;
 }
 
+
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  
+  [self setupTextFieldInitially:self.tagsTextView text:[_delegate SlotEditViewControllerDelegate_tags]];
+  [self setupTextFieldInitially:self.coachNotesTextView text:[_delegate SlotEditViewControllerDelegate_coachNotes]];
+  [self setupTextFieldInitially:self.athleteNotesTextView text:[_delegate SlotEditViewControllerDelegate_athleteNotes]];
+  [self setupActivityType];
+  
+  self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_light.png"]];
+  
+  [self setupClock];
+  
+}
+
+
 - (void)setupNavigationBarButtons
 {
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -56,10 +74,11 @@
                                                                                         action:@selector(donePressed)];
 }
 
+#pragma mark - Actions
 
 - (void)donePressed
 {
-    [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_duration tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_analogClockView.totalMinutes tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -68,34 +87,29 @@
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  
-  
-  [self setupTextFieldInitially:self.tagsTextView text:[_delegate SlotEditViewControllerDelegate_tags]];
-  [self setupTextFieldInitially:self.coachNotesTextView text:[_delegate SlotEditViewControllerDelegate_coachNotes]];
-  [self setupTextFieldInitially:self.athleteNotesTextView text:[_delegate SlotEditViewControllerDelegate_athleteNotes]];
-  
-  [self setupActivityType];
-  
-  self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_light.png"]];
-  
-  [self setupClock];
-  
-}
-
-
-#pragma mark - Table view delegate
+#pragma mark - UITextViewDelegate
 
 - (CGFloat)heightForTextView:(UITextView*)textView
 {
-  float horizontalPadding = 24;
-  float verticalPadding = 36;
-  float widthOfTextView = textView.contentSize.width - horizontalPadding;
-  float height = [textView.text sizeWithFont:textView.font constrainedToSize:CGSizeMake(widthOfTextView, 999999.0f) lineBreakMode:NSLineBreakByWordWrapping].height + verticalPadding;
+  NSString *string = @"B";
   
-  return height + 8;
+  if(textView.text.length) {
+    string = textView.text;
+    NSUInteger endIndex = [textView.text length];
+    endIndex--;
+    if ([[textView.text substringFromIndex:endIndex] isEqualToString:@"\n"]) {
+      string = [textView.text stringByAppendingString:@"B"];
+    }
+  }
+  
+  
+  float verticalPadding = 36;
+  float widthOfTextView = textView.contentSize.width;
+  float height = [string sizeWithFont:textView.font constrainedToSize:CGSizeMake(widthOfTextView, 999999.0f) lineBreakMode:NSLineBreakByWordWrapping].height + verticalPadding;
+  
+  NSLog(@"height = %f", height);
+  
+  return height;
 }
 
 - (void) textViewDidChange:(UITextView *)textView
@@ -104,9 +118,17 @@
   [self.tableView endUpdates];
 }
 
+
+- (void)setupTextFieldInitially:(UITextView *)textView text:(NSString *)text {
+  textView.text = text;
+  textView.contentSize = CGSizeMake(280, [self heightForTextView:textView]);
+}
+
+
+#pragma mark - Table view delegate
+
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
   switch(indexPath.section) {
     case 0:
       return [super tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -121,20 +143,13 @@
   }
 }
 
-- (void)setupTextFieldInitially:(UITextView *)textView text:(NSString *)text {
-  textView.text = text;
-  float height = [self heightForTextView:textView];
-  CGRect textViewRect = CGRectMake(74, 4, 280, height);
-  textView.frame = textViewRect;
-  textView.contentSize = CGSizeMake(280, [self heightForTextView:textView]);
-}
-
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
   [self.tagsTextView resignFirstResponder];
   [self.coachNotesTextView resignFirstResponder];
 }
+
+#pragma mark - ActivityType
 
 - (void)setupActivityType
 {
@@ -149,7 +164,7 @@
                             iconSize:CGSizeMake(50,50)
                              padding:5
                             delegate:self
-   numCols:2];
+                             numCols:2];
   
   [self.activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
   
@@ -176,6 +191,7 @@
   return number.integerValue;
 }
 
+#pragma mark - clock
 
 - (CGFloat) degreesToRadians:(CGFloat) degrees
 {
@@ -211,12 +227,8 @@
   _analogClockView.minuteHandImage = [UIImage imageNamed:@"clock_minute_hand"];
   _analogClockView.centerCapImage  = [UIImage imageNamed:@"clock_centre_point"];
   [self.clockContainer addSubview:_analogClockView];
-  
   KTOneFingerRotationGestureRecognizer *rotation = [[KTOneFingerRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotating:)];
   [_analogClockView addGestureRecognizer:rotation];
-  
-  [_analogClockView start];
-  
   _duration = [_delegate SlotEditViewControllerDelegate_duration];
   _analogClockView.totalMinutes = _duration;
 }

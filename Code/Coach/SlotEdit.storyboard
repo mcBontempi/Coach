@@ -58,7 +58,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="lPN-C2-hc7"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="4iY-Hn-Wdj" id="lQw-Cj-cuV"/>
@@ -89,7 +89,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="aUD-LS-eGz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="4iY-Hn-Wdj" id="vzD-9L-UUR"/>
@@ -120,7 +120,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="xxb-dA-W4Y"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="4iY-Hn-Wdj" id="3Iz-MR-vrK"/>
