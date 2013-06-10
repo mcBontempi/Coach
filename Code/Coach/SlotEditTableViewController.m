@@ -121,7 +121,7 @@
 
 - (void)setupTextFieldInitially:(UITextView *)textView text:(NSString *)text {
   textView.text = text;
-  textView.contentSize = CGSizeMake(280, [self heightForTextView:textView]);
+  textView.contentSize = CGSizeMake(262, [self heightForTextView:textView]);
 }
 
 
