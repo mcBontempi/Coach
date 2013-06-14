@@ -36,7 +36,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x,0,150,30)];
     
     label.text = string;
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor blackColor];
     label.font=[UIFont fontWithName:@"Trebuchet MS" size:20.0];
     label.backgroundColor = [UIColor whiteColor];

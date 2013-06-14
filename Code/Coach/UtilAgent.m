@@ -41,7 +41,7 @@
   if (result == MFMailComposeResultSent) {
     NSLog(@"It's away!");
   }
-  [self.rootViewController dismissModalViewControllerAnimated:YES];
+  [self.rootViewController dismissViewControllerAnimated:YES completion:nil] ;
 }
 
 #pragma -- mark UtilViewControllerDelegate methods

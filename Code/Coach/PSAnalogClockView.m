@@ -133,6 +133,8 @@ NSString * const PSAnalogClockViewCenterCap  = @"center_cap";
     CGFloat duration           = 1.f;
     UIViewAnimationCurve curve = UIViewAnimationCurveLinear;
     
+    UIViewAnimationOptions options = 0;
+    
     if (PSAnalogClockViewOptionClunkyHands & self.options) {
       duration = 0.3f;
       curve    = UIViewAnimationCurveEaseOut;
@@ -140,7 +142,7 @@ NSString * const PSAnalogClockViewCenterCap  = @"center_cap";
     
     [UIView animateWithDuration:duration
                           delay:0.f
-                        options:curve
+                        options:options
                      animations:updateClocks
                      completion:nil];
   } else {
@@ -205,8 +207,6 @@ NSString * const PSAnalogClockViewCenterCap  = @"center_cap";
   [self updateClockTimeAnimated:NO];
   
   NSLog(@"total minutes = %d", _totalMinutes );
-
-  
 }
 
 

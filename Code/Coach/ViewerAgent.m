@@ -77,7 +77,7 @@
   
   
   if([self.modelProtocol currentPlan].length){
-    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+    [self.rootViewController presentViewController:self.navigationController animated:NO completion:nil];
     [self.navigationController pushViewController:self.viewDeckViewController animated:YES];
     if(showWelcome){
       WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
@@ -87,7 +87,7 @@
     }
   }
   else{
-    [self.rootViewController presentModalViewController:self.navigationController animated:NO];
+    [self.rootViewController presentViewController:self.navigationController animated:NO completion:nil];
     if(showWelcome){
       WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithDelegate:self];
       [self.navigationController  presentViewController:welcomeViewController animated:NO completion:nil];

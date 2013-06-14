@@ -31,7 +31,7 @@
   [controller setSubject:@"My Subject"];
   [controller setMessageBody:@"your training plan exported from TriathlonTimetable" isHTML:NO];
   [controller addAttachmentData:attachmentData mimeType:@"application/triathlontimetable" fileName:@"Plan.ttt"];
-  if (controller) [self.rootViewController presentModalViewController:controller animated:YES];
+  if (controller) [self.rootViewController presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller
@@ -41,7 +41,7 @@
   if (result == MFMailComposeResultSent) {
     NSLog(@"It's away!");
   }
-  [self.rootViewController dismissModalViewControllerAnimated:YES];
+  [self.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) PlanDetailViewControllerDelegate_exportPlan

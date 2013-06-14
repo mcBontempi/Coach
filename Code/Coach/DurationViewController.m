@@ -47,7 +47,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancelPressed:(id)sender {
-     [self dismissModalViewControllerAnimated:YES];
+     [self dismissViewControllerAnimated:YES completion:nil];
   
   [self.delegate DurationViewControllerDelegate_cancelled];
 }
@@ -58,7 +58,7 @@
  
   if(duration >0 && duration <100 && self.name.text.length < 20 && self.name.text.length > 0){
     
-     [self dismissModalViewControllerAnimated:YES];
+     [self dismissViewControllerAnimated:YES completion:nil];
   [self.delegate DurationViewControllerDelegate_finishedWith:[self.duration.text integerValue]  name:self.name.text] ;
 
       

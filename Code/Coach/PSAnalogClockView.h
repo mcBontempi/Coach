@@ -35,6 +35,6 @@ typedef enum {
 - (void)stop;
 - (void)updateClockTimeAnimated:(BOOL)animated;
 
-@property int totalMinutes;
+@property (nonatomic) int totalMinutes;
 
 @end

@@ -107,7 +107,7 @@ static const int animationFramesPerSec = 8;
 	
 	// Set other label attributes and add it to the view
 	label.textColor = [UIColor darkGrayColor];
-	label.textAlignment = UITextAlignmentCenter;
+	label.textAlignment = NSTextAlignmentCenter;
 	label.backgroundColor = [UIColor clearColor];
 	label.font = labelFont;
 	label.text = labelText;
