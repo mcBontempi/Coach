@@ -426,9 +426,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
   } else if (editingStyle == UITableViewCellEditingStyleInsert) {
     
+    self.slotBeingCreated = YES;
     [self addSlotAtIndexPath:indexPath];
     [self newCreateItemSelectionAtIndexPath: indexPath];
-    
     
     [Utils playSound:@"delete" type:@"wav"];
   }
