@@ -10,28 +10,28 @@
 @implementation DurationViewController
 
 -(id) init{
-    NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
-    [exception raise];
-    return nil;
+  NSException *exception = [NSException exceptionWithName:@"you must use the explicit initializer" reason:@"" userInfo:nil];
+  [exception raise];
+  return nil;
 }
 
 -(id) initWithDelegate:(id<DurationViewControllerDelegate>) delegate{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self = [super initWithNibName:@"DurationViewController_iPhone" bundle:nil];
-    } else {
-        self = [super initWithNibName:@"DurationViewController_iPad" bundle:nil];
-    }
-    if(self){
-        self.delegate = delegate;
-    }
-    
-    return self;
+  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    self = [super initWithNibName:@"DurationViewController_iPhone" bundle:nil];
+  } else {
+    self = [super initWithNibName:@"DurationViewController_iPad" bundle:nil];
+  }
+  if(self){
+    self.delegate = delegate;
+  }
+  
+  return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -43,11 +43,11 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancelPressed:(id)sender {
-     [self dismissViewControllerAnimated:YES completion:nil];
+  [self dismissViewControllerAnimated:YES completion:nil];
   
   [self.delegate DurationViewControllerDelegate_cancelled];
 }
@@ -55,19 +55,20 @@
 - (IBAction)nextPressed:(id)sender {
   
   NSInteger duration = [self.duration.text integerValue];
- 
+  
   if(duration >0 && duration <100 && self.name.text.length < 20 && self.name.text.length > 0){
     
-     [self dismissViewControllerAnimated:YES completion:nil];
-  [self.delegate DurationViewControllerDelegate_finishedWith:[self.duration.text integerValue]  name:self.name.text] ;
-
-      
- 
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate DurationViewControllerDelegate_finishedWith:[self.duration.text integerValue]  name:self.name.text] ;
+  }
+  else {
+    
+    [[[UIAlertView alloc] initWithTitle:@"Try Again" message:@"Name must be less than 20 characters and the Timetable less than 100 weeks long" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
   }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return YES;
+  return YES;
 }
 - (void)viewDidUnload {
   [self setName:nil];
