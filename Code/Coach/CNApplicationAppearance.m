@@ -12,19 +12,16 @@
 
 + (void)installApplicationAppearance
 {
+  [self customiseNavigationBars];
 }
 
 + (void)customiseNavigationBars
 {
-  if ([[UINavigationBar class] respondsToSelector:@selector(appearance)])
-  {
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                          [UIColor whiteColor], UITextAttributeTextColor,
-                                                          [UIColor blackColor], UITextAttributeTextShadowColor,
-                                                          [NSValue valueWithUIOffset:UIOffsetMake(1, 0)], UITextAttributeTextShadowOffset,
-                                                          [UIFont boldSystemFontOfSize:15.0], UITextAttributeFont,
-                                                          nil]];
+  if ([[UINavigationBar class] respondsToSelector:@selector(appearance)]) {
+    
+    if ([[UINavigationBar appearance] respondsToSelector:@selector(setBarTintColor:)]) {
+      [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    }
   }
 }
-
 @end

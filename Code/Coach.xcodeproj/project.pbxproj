@@ -975,6 +975,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Daren Taylor";
+				TargetAttributes = {
+					852CF78C1608A7E6009E249F = {
+						DevelopmentTeam = 3U786KR73N;
+					};
+				};
 			};
 			buildConfigurationList = 852CF7871608A7E6009E249F /* Build configuration list for PBXProject "Coach" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1303,12 +1308,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
@@ -1319,8 +1327,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";

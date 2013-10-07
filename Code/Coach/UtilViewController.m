@@ -25,12 +25,17 @@
   
 }
 
-
+- (BOOL)prefersStatusBarHidden
+{
+  return YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated{
   [super viewWillAppear:animated];
   
-    self.myNavigationBar.topItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"triathlonTimetableJustTitle.png"]];
+  self.myNavigationBar.topItem.title = @"Manage Timetables";
+  
+  //  self.myNavigationBar.topItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"triathlonTimetableJustTitle.png"]];
   
   // to show currectly selected cell.
   [self.tableView reloadData];

@@ -52,7 +52,7 @@ const CGFloat KExpandedSlotHeight = 60;
     self.lastSectionUpdatedWhenDragging = -1;
     
     
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"<-" style:UIBarButtonItemStylePlain                                                                                               target:self
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithTitle:@"==" style:UIBarButtonItemStylePlain                                                                                               target:self
                                                                              action:@selector(bookmarksPressed)] animated:YES];
     
   }

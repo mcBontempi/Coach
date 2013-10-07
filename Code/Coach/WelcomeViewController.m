@@ -53,7 +53,6 @@
 		// Add slider to the view
 		[self.view addSubview:slideToCancel.view];
 	}
-
   
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
