@@ -686,7 +686,6 @@
 				D613308216DBB2780038455A /* TimetablePopover */,
 				D659211816A05DDF00E7953D /* SlotEditViewController */,
 				D65CE4371641526C00D3B0CB /* List */,
-				D63AA69916384F7D0074EA70 /* Other */,
 				85C886271631601B0023A3E1 /* Timetable */,
 				D6A7769A162DEF0500879C11 /* Config */,
 			);
@@ -737,13 +736,6 @@
 				D63AA69716384F670074EA70 /* HeaderView.m */,
 			);
 			name = HeaderView;
-			sourceTree = "<group>";
-		};
-		D63AA69916384F7D0074EA70 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Other;
 			sourceTree = "<group>";
 		};
 		D63AA6AC163942AE0074EA70 /* Duration */ = {

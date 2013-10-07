@@ -6,13 +6,13 @@ const CGFloat popoverWidth = 240;
 
 @interface TimetablePopoverViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic,weak) id<TimetablePopoverViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UINavigationBar *bottomNavigationBar;
-- (IBAction)showInFullscreen:(id)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @end
 
 @implementation TimetablePopoverViewController
 
--(id) initWithDelegate:(id<TimetablePopoverViewControllerDelegate>) delegate{
+-(id) initWithDelegate:(id<TimetablePopoverViewControllerDelegate>) delegate
+{
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self = [super initWithNibName:@"TimetablePopoverViewController_iPhone" bundle:nil];
   } else {
@@ -25,43 +25,28 @@ const CGFloat popoverWidth = 240;
   return self;
 }
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  self.bottomNavigationBar.shadowImage = [[UIImage alloc] init];
-  /*
-  self.view.backgroundColor = [UIColor clearColor];
-  
-  self.bottomNavigationBar.shadowImage = [[UIImage alloc] init];
-  self.bottomNavigationBar.backgroundColor = [UIColor clearColor];
-  self.bottomNavigationBar.tintColor = [UIColor clearColor];
-  self.bottomNavigationBar.b
-  //self.bottomNavigationBar.
-  
-  
-  
-  self.bottomNavigationBar.translucent = YES;
-  self.bottomNavigationBar.opaque = YES;
- // self.navigationController.navigationBar.tintColor = [UIColor clearColor];
- // self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-   
-   */
-  
-}
-
 - (CGSize) contentSizeForViewInPopover{
   
   NSUInteger numCells = [self.delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
   
-  return CGSizeMake(popoverWidth, 40 + (numCells*44));
+  CGFloat tableHeight = (numCells*44);
+  
+  self.heightConstraint.constant = tableHeight;
+  
+  return CGSizeMake(popoverWidth, 60 + tableHeight);
+}
+- (IBAction)manageTimetablesPressed:(id)sender
+{
+  [_delegate TimetablePopoverViewControllerDelegate_showPlansInFullscreen];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
   return [_delegate TimetablePopoverViewControllerDelegate_numberOfPlans];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-  
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
   UtilTableViewCell *cell = (UtilTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Timetable"];
   if (cell == nil) {
     cell = [[UtilTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Timetable"];
@@ -87,16 +72,5 @@ const CGFloat popoverWidth = 240;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
   [_delegate TimetablePopoverViewControllerDelegate_showPlan:[_delegate TimetablePopoverViewControllerDelegate_getPlanName:indexPath.row]];
-}
-
-
-
-- (IBAction)showInFullscreen:(id)sender {
-  [_delegate TimetablePopoverViewControllerDelegate_showPlansInFullscreen];
-  
-}
-- (void)viewDidUnload {
-  [self setBottomNavigationBar:nil];
-  [super viewDidUnload];
 }
 @end
