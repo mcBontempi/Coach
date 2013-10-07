@@ -12,7 +12,6 @@
 
 + (void)installApplicationAppearance
 {
-  [self customiseNavigationBars];
 }
 
 + (void)customiseNavigationBars
