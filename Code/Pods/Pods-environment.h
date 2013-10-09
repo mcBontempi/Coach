@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_CocoaSecurity 2
 #define COCOAPODS_VERSION_PATCH_CocoaSecurity 1
 
-// SparkInspector
-#define COCOAPODS_POD_AVAILABLE_SparkInspector
-#define COCOAPODS_VERSION_MAJOR_SparkInspector 1
-#define COCOAPODS_VERSION_MINOR_SparkInspector 0
-#define COCOAPODS_VERSION_PATCH_SparkInspector 13
-
 // WEPopover
 #define COCOAPODS_POD_AVAILABLE_WEPopover
 #define COCOAPODS_VERSION_MAJOR_WEPopover 0
