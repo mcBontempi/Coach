@@ -161,7 +161,7 @@ const CGFloat KExpandedSlotHeight = 60;
     [deleteArray addObject:[NSIndexPath indexPathForRow:day.count inSection:dayIndex]];
   }
   
-  [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationAutomatic];
+  [self.tableView deleteRowsAtIndexPaths:deleteArray withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 -(void)toggleEditPressed
@@ -195,6 +195,7 @@ const CGFloat KExpandedSlotHeight = 60;
     [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
     
     [self.tableView beginUpdates];
+    
     [self deleteAddRows];
     self.slotBeingEdited = nil;
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:currentEditingIndexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
@@ -377,9 +378,7 @@ const CGFloat KExpandedSlotHeight = 60;
     [self newCreateItemSelectionAtIndexPath: indexPath];
   }
   else{
-    self.slotBeingCreated = NO;
     self.slotBeingEdited = [self slotForRowAtIndexPath:indexPath];
-    
     [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
   }
 }
@@ -470,8 +469,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   
   self.lastSectionUpdatedWhenDragging = -1;
   
-  
-  [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
+  if (self.slotBeingEdited) {
+    NSIndexPath *indexPathForEditing = [self indexPathForSlot:self.slotBeingEdited];
+    [self.delegate TimetableViewControllerDelegate_commitEditingWeek];
+    self.slotBeingEdited = self.currentWeek[indexPathForEditing.section][indexPathForEditing.row ];
+  }
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath{
