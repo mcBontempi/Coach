@@ -226,5 +226,14 @@
 }
 
 
+- (BOOL)SlotEditViewAgentDelegate_clockSnap
+{
+  return [self.modelProtocol clockSnap];
+}
+- (void)SlotEditViewAgentDelegate_setClockSnap:(BOOL)clockSnap;
+{
+  [self.modelProtocol setClockSnap:clockSnap];
+}
+
 
 @end

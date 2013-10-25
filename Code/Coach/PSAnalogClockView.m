@@ -113,7 +113,8 @@ NSString * const PSAnalogClockViewCenterCap  = @"center_cap";
 
 - (void)stop
 {
-	[self.clockUpdateTimer invalidate]; self.clockUpdateTimer = nil;
+	[self.clockUpdateTimer invalidate];
+  self.clockUpdateTimer = nil;
 }
 
 - (void)updateClockTimeAnimated:(BOOL)animated

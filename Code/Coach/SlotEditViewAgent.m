@@ -66,6 +66,15 @@
 
 }
 
+- (BOOL)SlotEditViewControllerDelegate_clockSnap
+{
+  return [self.delegate SlotEditViewAgentDelegate_clockSnap];
+}
+- (void)SlotEditViewControllerDelegate_setClockSnap:(BOOL)clockSnap
+{
+  [self.delegate SlotEditViewAgentDelegate_setClockSnap:clockSnap];
+}
+
 
 
 @end

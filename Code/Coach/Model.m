@@ -234,4 +234,16 @@
   return NO;
 }
 
+- (BOOL)clockSnap
+{
+  return [[NSUserDefaults standardUserDefaults] boolForKey:@"clockSnap"];
+}
+
+- (void)setClockSnap:(BOOL)clockSnap
+{
+  [[NSUserDefaults standardUserDefaults] setBool:clockSnap forKey:@"clockSnap"];
+}
+
+
+
 @end

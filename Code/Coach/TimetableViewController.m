@@ -8,6 +8,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "Notifications.h"
+#import "AppDelegate.h"
 
 const CGFloat KSlotCellHeight = 50;
 const CGFloat KSlotTagHeight = 20;
@@ -76,7 +77,7 @@ const CGFloat KExpandedSlotHeight = 60;
   }
   else {
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_really_dark.png"]];
-
+    
   }
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(slotEditSlotChanged:) name:TTTSlotEditSlotChanged object:nil];
@@ -357,7 +358,6 @@ const CGFloat KExpandedSlotHeight = 60;
   }
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   Slot *slot = [self slotForRowAtIndexPath:indexPath];
@@ -369,6 +369,25 @@ const CGFloat KExpandedSlotHeight = 60;
   }
 }
 
+- (void)createSlotAtIndexPath:(NSIndexPath *)indexPath
+{
+  self.slotBeingEdited = [self slotForRowAtIndexPath:indexPath];
+  [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
+}
+
+- (void)delayedcreateSlotAtIndexPathReEnablingInterface:(NSIndexPath *)indexPath
+{
+  [self createSlotAtIndexPath:indexPath];
+  [self setMainWindowEnabled:YES];
+}
+
+
+- (void)setMainWindowEnabled:(BOOL)enabled
+{
+  AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+  appDelegate.window.userInteractionEnabled = enabled;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   NSArray* slots = self.currentWeek[indexPath.section];
@@ -376,10 +395,13 @@ const CGFloat KExpandedSlotHeight = 60;
     self.slotBeingCreated = YES;
     [self addSlotAtIndexPath: indexPath];
     [self newCreateItemSelectionAtIndexPath: indexPath];
+
+    [self setMainWindowEnabled:NO];
+    
+    [self performSelector:@selector(delayedcreateSlotAtIndexPathReEnablingInterface:) withObject:indexPath afterDelay:0.5];
   }
-  else{
-    self.slotBeingEdited = [self slotForRowAtIndexPath:indexPath];
-    [self.delegate TimetableViewControllerDelegate_showFullscreenEditorForSlot:self.slotBeingEdited];
+  else {
+  [self createSlotAtIndexPath:indexPath];
   }
 }
 

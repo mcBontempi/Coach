@@ -203,6 +203,7 @@
   return radians * 180 / M_PI;
 }
 
+
 - (void)rotating:(KTOneFingerRotationGestureRecognizer *)recognizer
 {
   CGFloat rotation =  [recognizer rotation];
@@ -215,14 +216,22 @@
   
   (_duration+= (degrees/6)) ;
   
-  _analogClockView.totalMinutes = _duration;
+  if (_duration < 0) {
+    _duration = 0;
+  }
+  
+  NSInteger integerDuration = _duration;
+  
+  BOOL clockSnap = [_delegate SlotEditViewControllerDelegate_clockSnap];
+  
+  _analogClockView.totalMinutes = clockSnap ? integerDuration/5*5 : integerDuration;
 }
 
 
 - (void)setupClock
 {
   _analogClockView = [[PSAnalogClockView alloc] initWithFrame:CGRectMake(0,0,105,105)];
-  _analogClockView.clockFaceImage  = [UIImage imageNamed:@"ClockFace"];
+  _analogClockView.clockFaceImage  = [_delegate SlotEditViewControllerDelegate_clockSnap] ? [UIImage imageNamed:@"ClockFaceSnap"]: [UIImage imageNamed:@"ClockFace"];
   _analogClockView.hourHandImage   = [UIImage imageNamed:@"clock_hour_hand"];
   _analogClockView.minuteHandImage = [UIImage imageNamed:@"clock_minute_hand"];
   _analogClockView.centerCapImage  = [UIImage imageNamed:@"clock_centre_point"];
@@ -233,6 +242,15 @@
   _analogClockView.totalMinutes = _duration;
 }
 
+- (IBAction)clockWasLongPressed:(id)sender
+{
+  BOOL clockSnap = [_delegate SlotEditViewControllerDelegate_clockSnap];
+  clockSnap = !clockSnap;
+  
+  _analogClockView.clockFaceImage  = clockSnap ? [UIImage imageNamed:@"ClockFaceSnap"]: [UIImage imageNamed:@"ClockFace"];
+  
+  [_delegate SlotEditViewControllerDelegate_setClockSnap:clockSnap];
+}
 
 
 @end

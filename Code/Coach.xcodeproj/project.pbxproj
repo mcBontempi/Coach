@@ -160,6 +160,7 @@
 		D6E427ED16F9C34E002EE8D5 /* PagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427EB16F9C34D002EE8D5 /* PagingScrollView.m */; };
 		D6E427EF16FA0BA3002EE8D5 /* divider.png in Resources */ = {isa = PBXBuildFile; fileRef = D6E427EE16FA0BA3002EE8D5 /* divider.png */; };
 		D6E427F716FC88E3002EE8D5 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = D6E427F616FC88E3002EE8D5 /* Notifications.m */; };
+		D6EE0C8F181AD92700985D63 /* ClockFaceSnap.png in Resources */ = {isa = PBXBuildFile; fileRef = D6EE0C8E181AD92700985D63 /* ClockFaceSnap.png */; };
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
@@ -381,6 +382,7 @@
 		D6E427EE16FA0BA3002EE8D5 /* divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider.png; path = Coach/assets/divider.png; sourceTree = "<group>"; };
 		D6E427F516FC88E2002EE8D5 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		D6E427F616FC88E3002EE8D5 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
+		D6EE0C8E181AD92700985D63 /* ClockFaceSnap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ClockFaceSnap.png; path = Coach/assets/ClockFaceSnap.png; sourceTree = "<group>"; };
 		D6F56363165409AE00E7617C /* SlotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotCell.h; path = Coach/SlotCell.h; sourceTree = "<group>"; };
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				D69E3373174E74980013EB49 /* clock_hour_hand@2x.png */,
 				D69E3374174E74980013EB49 /* clock_minute_hand@2x.png */,
 				D69E3375174E74980013EB49 /* ClockFace.png */,
+				D6EE0C8E181AD92700985D63 /* ClockFaceSnap.png */,
 			);
 			name = GFX;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				D6A776A2162DEFFE00879C11 /* DurationViewController_iPhone.xib in Resources */,
 				85C8862E163160280023A3E1 /* TimetableViewController_iPad.xib in Resources */,
 				85C88630163160280023A3E1 /* TimetableViewController_iPhone.xib in Resources */,
+				D6EE0C8F181AD92700985D63 /* ClockFaceSnap.png in Resources */,
 				D65CE43F164152DB00D3B0CB /* ListViewController_iPad.xib in Resources */,
 				D65CE442164152DB00D3B0CB /* ListViewController_iPhone.xib in Resources */,
 				857D5160164BF40C00527584 /* noEntry.png in Resources */,

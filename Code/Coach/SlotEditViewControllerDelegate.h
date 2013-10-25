@@ -11,4 +11,8 @@
 
 - (void)SlotEditViewControllerDelegate_updateWithActivityType:(TActivityType)activityType duration:(NSInteger)duration tags:(NSString *)tags athleteNotes:(NSString *)athleteNotes coachNotes:(NSString*)coachNotes;
 
+
+- (BOOL)SlotEditViewControllerDelegate_clockSnap;
+- (void)SlotEditViewControllerDelegate_setClockSnap:(BOOL)clockSnap;
+
 @end

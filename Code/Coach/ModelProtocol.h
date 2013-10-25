@@ -19,5 +19,7 @@
 - (void)createPlanFromJSONDataAndMakeCurrent:(NSData *)jsonData named:(NSString *)name;
 - (NSString *)currentPlan;
 - (BOOL) checkPlanNameIsAlreadyTaken:(NSString *)testName;
+- (BOOL)clockSnap;
+- (void)setClockSnap:(BOOL)clockSnap;
 
 @end

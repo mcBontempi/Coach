@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4iY-Hn-Wdj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="4iY-Hn-Wdj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Slot Edit Table View Controller-->
@@ -23,10 +25,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-q8-9pf" customClass="IconSelectionView">
+                                                    <rect key="frame" x="29" y="16" width="105" height="104"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zj-N9-yEl">
+                                                    <rect key="frame" x="165" y="16" width="105" height="104"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="7Mg-XC-5PF" appends="YES" id="0tc-rm-C0V"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -54,6 +62,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Zone1 Zone2" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-Z7-Ov7">
+                                                    <rect key="frame" x="10" y="9" width="280" height="81"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="lPN-C2-hc7"/>
@@ -85,6 +94,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" text="You need to run quite quick on this one, make sure you arent too fast or too slow, just medium maybe." translatesAutoresizingMaskIntoConstraints="NO" id="qFt-32-itX">
+                                                    <rect key="frame" x="10" y="9" width="280" height="81"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="aUD-LS-eGz"/>
@@ -116,6 +126,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" text="You need to run quite quick on this one, make sure you arent too fast or too slow, just medium maybe." translatesAutoresizingMaskIntoConstraints="NO" id="fyk-oF-zbE">
+                                                    <rect key="frame" x="10" y="9" width="280" height="81"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="280" type="user" id="xxb-dA-W4Y"/>
@@ -152,28 +163,15 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0h-hb-cws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="7Mg-XC-5PF">
+                    <connections>
+                        <action selector="clockWasLongPressed:" destination="4iY-Hn-Wdj" id="709-ZI-m9e"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="85" y="5"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="IconSelectionView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IconSelectionView.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SlotEditTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotEditTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityType" candidateClass="IconSelectionView"/>
-                <relationship kind="outlet" name="athleteNotesTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="clockContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="coachNotesTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tagsTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
