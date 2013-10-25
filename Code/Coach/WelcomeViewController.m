@@ -60,11 +60,6 @@
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                            target:self
                                                                                            action:@selector(cancel)] animated:YES];
-  
-  
-  
-  
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -72,7 +67,6 @@
   self.bodyText.alpha = 0.0;
   
   self.slider.alpha = 0.0;
-  
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -86,7 +80,7 @@
   
   [self testIt];
   
-  [self close];
+ // [self close];
 }
 
 - (IBAction) testIt {
