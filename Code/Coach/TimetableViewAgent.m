@@ -79,7 +79,7 @@
 }
 
 -(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex{
-    Slot *newSlot = [[Slot alloc ] initWithDuration:60 activityType:EActivityTypeBike];
+    Slot *newSlot = [[Slot alloc ] initWithDuration:30 activityType:EActivityTypeSwim];
     NSMutableArray *monday = self.week[dayIndex];
     [monday addObject:newSlot];
 }

@@ -11,6 +11,7 @@
 #import "IconSelectionView.h"
 #import "PSAnalogClockView.h"
 #import "KTOneFingerRotationGestureRecognizer.h"
+#import "NSString_NiceStringFromDuration.h"
 
 @interface SlotEditTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tagsTextView;
@@ -60,6 +61,7 @@
   
   [self setupClock];
   
+  self.title = [NSString niceStringFromDuration:_analogClockView.totalMinutes];
 }
 
 
@@ -106,8 +108,6 @@
   float verticalPadding = 36;
   float widthOfTextView = textView.contentSize.width;
   float height = [string sizeWithFont:textView.font constrainedToSize:CGSizeMake(widthOfTextView, 999999.0f) lineBreakMode:NSLineBreakByWordWrapping].height + verticalPadding;
-  
-  NSLog(@"height = %f", height);
   
   return height;
 }
@@ -225,6 +225,8 @@
   BOOL clockSnap = [_delegate SlotEditViewControllerDelegate_clockSnap];
   
   _analogClockView.totalMinutes = clockSnap ? integerDuration/5*5 : integerDuration;
+  
+  self.title = [NSString niceStringFromDuration:_analogClockView.totalMinutes];
 }
 
 
@@ -240,6 +242,7 @@
   [_analogClockView addGestureRecognizer:rotation];
   _duration = [_delegate SlotEditViewControllerDelegate_duration];
   _analogClockView.totalMinutes = _duration;
+  
 }
 
 - (IBAction)clockWasLongPressed:(id)sender
