@@ -83,7 +83,7 @@
   
   
   
-  [self close];
+ // [self close];
 }
 
 - (IBAction) testIt {
