@@ -1312,8 +1312,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: daren taylor (3U786KR73N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
@@ -1331,8 +1331,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: daren taylor (3U786KR73N)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
