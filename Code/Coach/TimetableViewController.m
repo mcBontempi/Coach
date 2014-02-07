@@ -95,7 +95,23 @@ const CGFloat KExpandedSlotHeight = 60;
 
 - (void)viewDidAppear:(BOOL)animated
 {
-  if(self.currentSlotWasChangedDuringEditing == YES || self.slotBeingCreated){
+  
+  if (self.currentSlotWasChangedDuringEditing == NO && self.slotBeingCreated) {
+    self.currentSlotWasChangedDuringEditing = NO;
+    
+    NSIndexPath *indexPath = [self indexPathForSlot:self.slotBeingEdited];
+    NSArray * reloadArray = @[indexPath];
+    
+    [self.delegate TimetableViewControllerDelegate_deleteItem:self.slotBeingEdited];
+    self.slotBeingEdited = nil;
+    self.slotBeingCreated = NO;
+    
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:reloadArray withRowAnimation:UITableViewRowAnimationRight];
+    [self.tableView endUpdates];
+    
+  }
+  else if(self.currentSlotWasChangedDuringEditing == YES || self.slotBeingCreated) {
     self.currentSlotWasChangedDuringEditing = NO;
     
     NSIndexPath *indexPath = [self indexPathForSlot:self.slotBeingEdited];
@@ -398,7 +414,7 @@ const CGFloat KExpandedSlotHeight = 60;
 
     [self setMainWindowEnabled:NO];
     
-    [self performSelector:@selector(delayedcreateSlotAtIndexPathReEnablingInterface:) withObject:indexPath afterDelay:0.5];
+    [self performSelector:@selector(delayedcreateSlotAtIndexPathReEnablingInterface:) withObject:indexPath afterDelay:0.2];
   }
   else {
   [self createSlotAtIndexPath:indexPath];
