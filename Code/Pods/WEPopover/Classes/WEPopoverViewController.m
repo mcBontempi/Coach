@@ -80,8 +80,8 @@
 	}
 }
 
-- (void)dealloc {
-	[self viewDidUnload];
+- (void)dealloc
+{
     [super dealloc];
 }
 
