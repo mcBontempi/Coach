@@ -12,6 +12,7 @@
 #import "PSAnalogClockView.h"
 #import "KTOneFingerRotationGestureRecognizer.h"
 #import "NSString_NiceStringFromDuration.h"
+#import "ActivitySelectionViewController.h"
 
 @interface SlotEditTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tagsTextView;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet IconSelectionView *activityType;
 @property (weak, nonatomic) IBOutlet UITextView *athleteNotesTextView;
 @property (weak, nonatomic) IBOutlet UIView *clockContainer;
+@property (weak, nonatomic) IBOutlet UIButton *activityTypeButton;
 
 @end
 
@@ -170,9 +172,18 @@
   
 }
 
+#ifdef TRIATHLONTIMETABLE
 -(NSArray*) activityTypeOrdering{
   return @[@(EActivityTypeSwim), @(EActivityTypeBike), @(EActivityTypeRun), @(EActivityTypeStrengthAndConditioning)];
 }
+#endif
+
+
+#ifdef GYMTIMETABLE
+-(NSArray*) activityTypeOrdering{
+  return @[@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer)];
+}
+#endif
 
 -(NSInteger) indexForActivityType:(TActivityType) activityType{
   for(NSInteger index = 0 ; index <  [self activityTypeOrdering].count ; index++){
@@ -253,6 +264,25 @@
   _analogClockView.clockFaceImage  = clockSnap ? [UIImage imageNamed:@"ClockFaceSnap"]: [UIImage imageNamed:@"ClockFace"];
   
   [_delegate SlotEditViewControllerDelegate_setClockSnap:clockSnap];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+  if([segue.identifier isEqualToString:@"showIngredientsSegue"]){
+    
+    UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+    ActivitySelectionViewController *controller = (ActivitySelectionViewController *)navController.topViewController;
+    
+    
+    // activities selection
+    NSMutableDictionary *dictionary = [[NSMutableArray alloc] init];
+    
+    for(NSNumber *number in [self activityTypeOrdering]){
+      [dictionary addObject:[UIImage imageForActivityType:number.integerValue]];
+    }
+    
+    
+    controller.dictionary = selectedRecipe;
+  }
 }
 
 

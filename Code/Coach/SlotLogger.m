@@ -11,8 +11,7 @@
         case EActivityTypeRun: activityName = @"Run";break;
         case EActivityTypeSwim: activityName = @"Swim";break;
         case EActivityTypeStrengthAndConditioning: activityName = @"StrengthAndConditioning";break;
-        case EActivityTypeBrick: activityName = @"Brick";break;
-            
+        case EActivityTypeCrossTrainer: activityName = @"CrossTrainer";break;
     }
     
     DLog(@"activityType = %@ \tduration = %d",activityName, slot.duration)

@@ -289,6 +289,12 @@
 		FD65372118A5800C0052D973 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65371E18A5800C0052D973 /* Default-568h@2x.png */; };
 		FD65372218A5800C0052D973 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65371F18A5800C0052D973 /* Default.png */; };
 		FD65372318A5800C0052D973 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372018A5800C0052D973 /* Default@2x.png */; };
+		FD65372518A594CC0052D973 /* Crosstrainer.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372418A594CC0052D973 /* Crosstrainer.png */; };
+		FD65372618A594CC0052D973 /* Crosstrainer.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372418A594CC0052D973 /* Crosstrainer.png */; };
+		FDACF55918A7A2BC002F5E0F /* ActivitySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */; };
+		FDACF55C18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
+		FDACF55D18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
+		FDACF55E18A7A392002F5E0F /* ActivitySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +523,11 @@
 		FD65371E18A5800C0052D973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "GymTimetable/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		FD65371F18A5800C0052D973 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = GymTimetable/Default.png; sourceTree = SOURCE_ROOT; };
 		FD65372018A5800C0052D973 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "GymTimetable/Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		FD65372418A594CC0052D973 /* Crosstrainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Crosstrainer.png; path = Coach/assets/Crosstrainer.png; sourceTree = "<group>"; };
+		FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionViewController.h; path = Coach/ActivitySelectionViewController.h; sourceTree = "<group>"; };
+		FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivitySelectionViewController.m; path = Coach/ActivitySelectionViewController.m; sourceTree = "<group>"; };
+		FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionTableViewCell.h; path = Coach/ActivitySelectionTableViewCell.h; sourceTree = "<group>"; };
+		FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivitySelectionTableViewCell.m; path = Coach/ActivitySelectionTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -597,7 +608,6 @@
 				852CF7B81608A7E8009E249F /* CoachTests */,
 				852CF7901608A7E6009E249F /* Frameworks */,
 				852CF78E1608A7E6009E249F /* Products */,
-				FD65371C18A576D90052D973 /* Gym Timetable.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -655,6 +665,7 @@
 		852CF7981608A7E6009E249F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD65371C18A576D90052D973 /* Gym Timetable.plist */,
 				852CF7991608A7E6009E249F /* Coach-Info.plist */,
 				852CF79A1608A7E6009E249F /* InfoPlist.strings */,
 				852CF79D1608A7E7009E249F /* main.m */,
@@ -836,7 +847,7 @@
 			children = (
 				D63AA6AC163942AE0074EA70 /* Duration */,
 				D613308216DBB2780038455A /* TimetablePopover */,
-				D659211816A05DDF00E7953D /* SlotEditViewController */,
+				D659211816A05DDF00E7953D /* SlotEdit */,
 				D65CE4371641526C00D3B0CB /* List */,
 				85C886271631601B0023A3E1 /* Timetable */,
 				D6A7769A162DEF0500879C11 /* Config */,
@@ -927,7 +938,7 @@
 			name = ListCell;
 			sourceTree = "<group>";
 		};
-		D659211816A05DDF00E7953D /* SlotEditViewController */ = {
+		D659211816A05DDF00E7953D /* SlotEdit */ = {
 			isa = PBXGroup;
 			children = (
 				D659211A16A05F8F00E7953D /* SlotEditViewAgent.h */,
@@ -937,8 +948,12 @@
 				D69E3365174E0FD80013EB49 /* SlotEditTableViewController.h */,
 				D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */,
 				D69E336C174E42190013EB49 /* SlotEdit.storyboard */,
+				FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */,
+				FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */,
+				FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */,
+				FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */,
 			);
-			name = SlotEditViewController;
+			name = SlotEdit;
 			sourceTree = "<group>";
 		};
 		D65CE4371641526C00D3B0CB /* List */ = {
@@ -1018,6 +1033,7 @@
 				D6DCF574166CE4EF00539164 /* tickbox_on.png */,
 				D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */,
 				D6DCF56B166CE2FE00539164 /* up.png */,
+				FD65372418A594CC0052D973 /* Crosstrainer.png */,
 				D6DCF569166CDFD200539164 /* strengthandconditioning.png */,
 				D63B126B165D0C4A0045A725 /* landingpageicon.png */,
 				D63B1258165B81960045A725 /* bike.png */,
@@ -1154,10 +1170,13 @@
 		852CF7841608A7E6009E249F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daren Taylor";
 				TargetAttributes = {
 					852CF78C1608A7E6009E249F = {
+						DevelopmentTeam = 3U786KR73N;
+					};
+					FD65369618A576D80052D973 = {
 						DevelopmentTeam = 3U786KR73N;
 					};
 				};
@@ -1249,6 +1268,7 @@
 				D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */,
 				D69E3376174E74980013EB49 /* clock_centre_point@2x.png in Resources */,
 				D69E3377174E74980013EB49 /* clock_hour_hand@2x.png in Resources */,
+				FD65372518A594CC0052D973 /* Crosstrainer.png in Resources */,
 				D69E3378174E74980013EB49 /* clock_minute_hand@2x.png in Resources */,
 				D69E3379174E74980013EB49 /* ClockFace.png in Resources */,
 				D6017500175F26FF004F5AA6 /* table_background_light.png in Resources */,
@@ -1342,6 +1362,7 @@
 				FD65371118A576D80052D973 /* SlotEdit.storyboard in Resources */,
 				FD65371218A576D80052D973 /* clock_centre_point@2x.png in Resources */,
 				FD65371318A576D80052D973 /* clock_hour_hand@2x.png in Resources */,
+				FD65372618A594CC0052D973 /* Crosstrainer.png in Resources */,
 				FD65371418A576D80052D973 /* clock_minute_hand@2x.png in Resources */,
 				FD65371518A576D80052D973 /* ClockFace.png in Resources */,
 				FD65371618A576D80052D973 /* table_background_light.png in Resources */,
@@ -1423,6 +1444,7 @@
 				D65CE4521642FFF900D3B0CB /* ListViewAgent.m in Sources */,
 				D6F56365165409AE00E7617C /* SlotCell.m in Sources */,
 				D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */,
+				FDACF55918A7A2BC002F5E0F /* ActivitySelectionViewController.m in Sources */,
 				D63B1256165A99DC0045A725 /* NSString_NiceStringFromDuration.m in Sources */,
 				85C767A8165BA6A9008325EB /* WrapController.m in Sources */,
 				85C767AC165BA6BC008325EB /* IIViewDeckController.m in Sources */,
@@ -1445,6 +1467,7 @@
 				D60EADFC17185ACA00A27641 /* TestIt.m in Sources */,
 				D6D6180317257D9E00DA8F54 /* CNApplicationAppearance.m in Sources */,
 				D6D618061725919100DA8F54 /* ListViewCell.m in Sources */,
+				FDACF55C18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */,
 				D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */,
 				D69E3371174E73A80013EB49 /* PSAnalogClockView.m in Sources */,
 				D69E3380174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m in Sources */,
@@ -1491,8 +1514,10 @@
 				FD6536A518A576D80052D973 /* Config.m in Sources */,
 				FD6536A618A576D80052D973 /* DurationViewController.m in Sources */,
 				FD6536A718A576D80052D973 /* TimetableViewController.m in Sources */,
+				FDACF55D18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */,
 				FD6536A818A576D80052D973 /* TimetableViewAgent.m in Sources */,
 				FD6536A918A576D80052D973 /* Utils.m in Sources */,
+				FDACF55E18A7A392002F5E0F /* ActivitySelectionViewController.m in Sources */,
 				FD6536AA18A576D80052D973 /* Model.m in Sources */,
 				FD6536AB18A576D80052D973 /* HeaderView.m in Sources */,
 				FD6536AC18A576D80052D973 /* ListViewController.m in Sources */,
@@ -1577,10 +1602,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1595,10 +1621,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1608,10 +1638,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1619,8 +1650,11 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -1638,6 +1672,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TRIATHLONTIMETABLE=1",
+				);
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1657,6 +1696,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TRIATHLONTIMETABLE=1",
+				);
 				INFOPLIST_FILE = "Coach/Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1717,15 +1761,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: daren taylor (3U786KR73N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"GYMTIMETABLE=1",
+				);
 				INFOPLIST_FILE = "Gym Timetable.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Gym Timetable";
-				PROVISIONING_PROFILE = "61BF4CFF-D1E5-4CC0-81AB-D369892A974E";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
@@ -1736,15 +1785,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDED2B7557244A00A9BCAC81 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: daren taylor (3U786KR73N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daren taylor (3U786KR73N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coach/Coach-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"GYMTIMETABLE=1",
+				);
 				INFOPLIST_FILE = "Gym Timetable.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Gym Timetable";
-				PROVISIONING_PROFILE = "61BF4CFF-D1E5-4CC0-81AB-D369892A974E";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "61BF4CFF-D1E5-4CC0-81AB-D369892A974E";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;

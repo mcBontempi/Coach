@@ -6,7 +6,7 @@ typedef enum{
     EActivityTypeBike,
     EActivityTypeRun,
     EActivityTypeStrengthAndConditioning,
-    EActivityTypeBrick
+    EActivityTypeCrossTrainer
 } TActivityType;
 
 

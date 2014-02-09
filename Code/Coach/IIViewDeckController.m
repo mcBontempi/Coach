@@ -94,6 +94,62 @@ __typeof__(h) __h = (h);                                    \
 #define OPEN_SLIDE_DURATION(animated) SLIDE_DURATION(animated,DURATION_FAST)
 #define CLOSE_SLIDE_DURATION(animated) SLIDE_DURATION(animated,DURATION_SLOW)
 
+@implementation UIViewController (UIViewDeckController_ViewContainmentEmulation_Fakes)
+
+- (BOOL)vdc_shouldRelay {
+  if (self.viewDeckController)
+    return [self.viewDeckController vdc_shouldRelay];
+  
+  return ![self respondsToSelector:@selector(automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers)] || ![self performSelector:@selector(automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers)];
+}
+
+- (void)vdc_addChildViewController:(UIViewController *)childController {
+  // intentionally empty
+}
+
+- (void)vdc_removeFromParentViewController {
+  // intentionally empty
+}
+
+- (void)vdc_willMoveToParentViewController:(UIViewController *)parent {
+  // intentionally empty
+}
+
+- (void)vdc_didMoveToParentViewController:(UIViewController *)parent {
+  // intentionally empty
+}
+
+- (void)vdc_viewWillAppear:(bool)animated {
+  if (![self vdc_shouldRelay])
+    return;
+  
+  [self viewWillAppear:animated];
+}
+
+- (void)vdc_viewDidAppear:(bool)animated{
+  if (![self vdc_shouldRelay])
+    return;
+  
+  [self viewDidAppear:animated];
+}
+
+- (void)vdc_viewWillDisappear:(bool)animated{
+  if (![self vdc_shouldRelay])
+    return;
+  
+  [self viewWillDisappear:animated];
+}
+
+- (void)vdc_viewDidDisappear:(bool)animated{
+  if (![self vdc_shouldRelay])
+    return;
+  
+  [self viewDidDisappear:animated];
+}
+
+
+@end
+
 @interface IIViewDeckController () <UIGestureRecognizerDelegate>
 
 
@@ -2059,62 +2115,6 @@ static const char* viewDeckControllerKey = "ViewDeckController";
 + (void)load {
     [super load];
     [self vdc_swizzle];
-}
-
-
-@end
-
-@implementation UIViewController (UIViewDeckController_ViewContainmentEmulation_Fakes) 
-
-- (BOOL)vdc_shouldRelay {
-    if (self.viewDeckController)
-        return [self.viewDeckController vdc_shouldRelay];
-    
-    return ![self respondsToSelector:@selector(automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers)] || ![self performSelector:@selector(automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers)];
-}
-
-- (void)vdc_addChildViewController:(UIViewController *)childController {
-    // intentionally empty
-}
-
-- (void)vdc_removeFromParentViewController {
-    // intentionally empty
-}
-
-- (void)vdc_willMoveToParentViewController:(UIViewController *)parent {
-    // intentionally empty
-}
-
-- (void)vdc_didMoveToParentViewController:(UIViewController *)parent {
-    // intentionally empty
-}
-
-- (void)vdc_viewWillAppear:(bool)animated {
-    if (![self vdc_shouldRelay])
-        return;
-    
-    [self viewWillAppear:animated];
-}
-
-- (void)vdc_viewDidAppear:(bool)animated{
-    if (![self vdc_shouldRelay])
-        return;
-    
-    [self viewDidAppear:animated];
-}
-
-- (void)vdc_viewWillDisappear:(bool)animated{
-    if (![self vdc_shouldRelay])
-        return;
-    
-    [self viewWillDisappear:animated];
-}
-
-- (void)vdc_viewDidDisappear:(bool)animated{
-    if (![self vdc_shouldRelay])
-        return;
-    
-    [self viewDidDisappear:animated];
 }
 
 
