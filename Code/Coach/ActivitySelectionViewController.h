@@ -10,6 +10,6 @@
 
 @interface ActivitySelectionViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableDictionary *dictionary;
+@property (nonatomic, strong) NSArray *array;
 
 @end

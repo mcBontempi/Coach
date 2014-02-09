@@ -45,16 +45,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return self.dictionary.count;
+    return self.array.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,9 +58,11 @@
     static NSString *CellIdentifier = @"ActivitySelectionTableViewCelldentifier";
     ActivitySelectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  //cell.imageView
+    NSDictionary *itemDictionary = self.array[indexPath.row];
   
-    
+    cell.iconImageView.image = [itemDictionary objectForKey:@"imagePath"];
+    cell.name.text = [itemDictionary objectForKey:@"name"];
+  
     return cell;
 }
 

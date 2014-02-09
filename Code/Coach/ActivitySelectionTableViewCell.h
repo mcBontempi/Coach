@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivitySelectionTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *description;
 @end

@@ -13,6 +13,7 @@
 #import "KTOneFingerRotationGestureRecognizer.h"
 #import "NSString_NiceStringFromDuration.h"
 #import "ActivitySelectionViewController.h"
+#import "NSString+NameForActivityType.h"
 
 @interface SlotEditTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tagsTextView;
@@ -267,21 +268,16 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-  if([segue.identifier isEqualToString:@"showIngredientsSegue"]){
-    
+  
+  if ([segue.identifier isEqualToString:@"ActivitySelectSegue"]) {
     UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
     ActivitySelectionViewController *controller = (ActivitySelectionViewController *)navController.topViewController;
     
-    
-    // activities selection
-    NSMutableDictionary *dictionary = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
     for(NSNumber *number in [self activityTypeOrdering]){
-      [dictionary addObject:[UIImage imageForActivityType:number.integerValue]];
+      [array addObject:@{@"activityType": number, @"name": [NSString nameForActivityType:number.integerValue], @"imagePath" :  [UIImage imageForActivityType:number.integerValue]}];
     }
-    
-    
-    controller.dictionary = selectedRecipe;
+    controller.array = [array copy];
   }
 }
 

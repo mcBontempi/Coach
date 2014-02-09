@@ -8,14 +8,6 @@
 
 #import "ActivitySelectionTableViewCell.h"
 
-@interface ActivitySelectionTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *description;
-
-
-@end
-
 @implementation ActivitySelectionTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
