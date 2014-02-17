@@ -520,6 +520,7 @@
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
 		D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_ImageForActivityType.m; sourceTree = "<group>"; };
+		FD34CD6B18B233290090948E /* ActivitySelectionViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionViewControllerDelegate.h; path = Coach/ActivitySelectionViewControllerDelegate.h; sourceTree = "<group>"; };
 		FD65371B18A576D80052D973 /* Gym Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD65371C18A576D90052D973 /* Gym Timetable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Gym Timetable.plist"; path = "/Users/darentaylor/Documents/Code/DDT/Coach/Code/Gym Timetable.plist"; sourceTree = "<absolute>"; };
 		FD65371E18A5800C0052D973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "GymTimetable/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -849,6 +850,7 @@
 		D61672C5160B3991001C3F15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD34CD6518B2131D0090948E /* ActivitySelection */,
 				D63AA6AC163942AE0074EA70 /* Duration */,
 				D613308216DBB2780038455A /* TimetablePopover */,
 				D659211816A05DDF00E7953D /* SlotEdit */,
@@ -952,10 +954,6 @@
 				D69E3365174E0FD80013EB49 /* SlotEditTableViewController.h */,
 				D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */,
 				D69E336C174E42190013EB49 /* SlotEdit.storyboard */,
-				FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */,
-				FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */,
-				FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */,
-				FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */,
 			);
 			name = SlotEdit;
 			sourceTree = "<group>";
@@ -1100,6 +1098,18 @@
 				FDACF56118A7EA56002F5E0F /* NSString+NameForActivityType.m */,
 			);
 			name = "Class Extensions";
+			sourceTree = "<group>";
+		};
+		FD34CD6518B2131D0090948E /* ActivitySelection */ = {
+			isa = PBXGroup;
+			children = (
+				FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */,
+				FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */,
+				FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */,
+				FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */,
+				FD34CD6B18B233290090948E /* ActivitySelectionViewControllerDelegate.h */,
+			);
+			name = ActivitySelection;
 			sourceTree = "<group>";
 		};
 		FD65371D18A57FA40052D973 /* GymTimetable */ = {

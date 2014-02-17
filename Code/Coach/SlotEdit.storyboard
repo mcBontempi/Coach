@@ -29,13 +29,13 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdX-SO-VYP">
-                                                    <rect key="frame" x="29" y="48" width="70" height="44"/>
+                                                    <rect key="frame" x="29" y="20" width="105" height="101"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="A1G-tv-wA8"/>
+                                                        <constraint firstAttribute="width" constant="105" id="Hs4-Iy-zVi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal">
                                                         <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -60,14 +60,15 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="8Zj-N9-yEl" secondAttribute="trailing" constant="30" type="default" id="0vD-A8-Cek"/>
                                             <constraint firstItem="Mdh-q8-9pf" firstAttribute="top" secondItem="fO3-F0-4vT" secondAttribute="top" constant="17" id="5EN-xO-BS4"/>
+                                            <constraint firstItem="NdX-SO-VYP" firstAttribute="trailing" secondItem="Mdh-q8-9pf" secondAttribute="trailing" type="default" id="5y6-gq-bbg"/>
                                             <constraint firstItem="Mdh-q8-9pf" firstAttribute="top" secondItem="8Zj-N9-yEl" secondAttribute="top" type="default" id="C41-cw-qK4"/>
+                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="bottom" secondItem="NdX-SO-VYP" secondAttribute="bottom" type="default" id="PGF-yL-082"/>
+                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="39" id="Xb3-Y8-lFz"/>
                                             <constraint firstItem="NdX-SO-VYP" firstAttribute="leading" secondItem="Mdh-q8-9pf" secondAttribute="leading" type="default" id="afP-my-UvX"/>
                                             <constraint firstItem="8Zj-N9-yEl" firstAttribute="bottom" secondItem="Mdh-q8-9pf" secondAttribute="bottom" type="default" id="fyZ-0S-1TL"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mdh-q8-9pf" secondAttribute="trailing" constant="176" id="hVQ-gY-sMm"/>
                                             <constraint firstAttribute="bottom" secondItem="Mdh-q8-9pf" secondAttribute="bottom" constant="20" type="default" id="j4f-hJ-ttz"/>
                                             <constraint firstItem="8Zj-N9-yEl" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="173" id="nGY-9W-TyY"/>
-                                            <constraint firstItem="NdX-SO-VYP" firstAttribute="centerY" secondItem="fO3-F0-4vT" secondAttribute="centerY" type="default" id="whs-hp-fze"/>
-                                            <constraint firstItem="Mdh-q8-9pf" firstAttribute="leading" secondItem="fO3-F0-4vT" secondAttribute="leading" constant="39" id="wlN-Js-bru"/>
+                                            <constraint firstItem="NdX-SO-VYP" firstAttribute="top" secondItem="fO3-F0-4vT" secondAttribute="top" constant="21" type="default" id="ulz-2J-IuE"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -176,11 +177,11 @@
                     </tableView>
                     <connections>
                         <outlet property="_tagsTextView" destination="MZB-Z7-Ov7" id="yXs-sw-rl4"/>
-                        <outlet property="activityType" destination="Mdh-q8-9pf" id="GLi-LD-kFh"/>
                         <outlet property="activityTypeButton" destination="NdX-SO-VYP" id="YtP-J1-x0u"/>
                         <outlet property="athleteNotesTextView" destination="fyk-oF-zbE" id="HSZ-UF-P8F"/>
                         <outlet property="clockContainer" destination="8Zj-N9-yEl" id="jG2-sY-WRa"/>
                         <outlet property="coachNotesTextView" destination="qFt-32-itX" id="2qs-Px-AND"/>
+                        <outlet property="iconSelectionView" destination="Mdh-q8-9pf" id="fdO-Fw-1EJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0h-hb-cws" userLabel="First Responder" sceneMemberID="firstResponder"/>

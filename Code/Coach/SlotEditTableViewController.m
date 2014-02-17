@@ -18,7 +18,7 @@
 @interface SlotEditTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *tagsTextView;
 @property (weak, nonatomic) IBOutlet UITextView *coachNotesTextView;
-@property (weak, nonatomic) IBOutlet IconSelectionView *activityType;
+@property (weak, nonatomic) IBOutlet IconSelectionView *iconSelectionView;
 @property (weak, nonatomic) IBOutlet UITextView *athleteNotesTextView;
 @property (weak, nonatomic) IBOutlet UIView *clockContainer;
 @property (weak, nonatomic) IBOutlet UIButton *activityTypeButton;
@@ -31,6 +31,8 @@
   PSAnalogClockView *_analogClockView;
   
   CGFloat _duration;
+  
+  TActivityType _activityType;
 }
 
 
@@ -54,11 +56,24 @@
 {
   [super viewDidLoad];
   
+  _activityType = [_delegate SlotEditViewControllerDelegate_activityType];
+  
+#ifdef GYMTIMETABLE
+  self.iconSelectionView.hidden = YES;
+  self.activityTypeButton.hidden = NO;
+  [self setupButton];
+#endif
+
+#ifdef TRIATHLONTIMETABLE
+  self.iconSelectionView.hidden = NO;
+  self.activityTypeButton.hidden = YES;
+  [self setupIconSelectionView];
+#endif
+
   
   [self setupTextFieldInitially:self.tagsTextView text:[_delegate SlotEditViewControllerDelegate_tags]];
   [self setupTextFieldInitially:self.coachNotesTextView text:[_delegate SlotEditViewControllerDelegate_coachNotes]];
   [self setupTextFieldInitially:self.athleteNotesTextView text:[_delegate SlotEditViewControllerDelegate_athleteNotes]];
-  [self setupActivityType];
   
   self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"table_background_light.png"]];
   
@@ -83,7 +98,7 @@
 
 - (void)donePressed
 {
-  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:_activityType.currentItemIndex] duration:_analogClockView.totalMinutes tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:_activityType duration:_analogClockView.totalMinutes tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -152,9 +167,9 @@
   [self.coachNotesTextView resignFirstResponder];
 }
 
-#pragma mark - ActivityType
+#pragma mark - iconSelectionView
 
-- (void)setupActivityType
+- (void)setupIconSelectionView
 {
   // activities selection
   NSMutableArray *activityImageArray = [[NSMutableArray alloc] init];
@@ -163,14 +178,20 @@
     [activityImageArray addObject:[UIImage imageForActivityType:number.integerValue]];
   }
   
-  [self.activityType setupWithImages:activityImageArray
+  [self.iconSelectionView setupWithImages:activityImageArray
                             iconSize:CGSizeMake(50,50)
                              padding:5
                             delegate:self
                              numCols:2];
   
-  [self.activityType setSelectedIndex:[_delegate SlotEditViewControllerDelegate_activityType]];
+  [self.iconSelectionView setSelectedIndex:_activityType];
   
+}
+
+- (void)setupButton
+{
+  UIImage *image = [UIImage imageForActivityType:_activityType];
+  [self.activityTypeButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 #ifdef TRIATHLONTIMETABLE
@@ -278,8 +299,24 @@
       [array addObject:@{@"activityType": number, @"name": [NSString nameForActivityType:number.integerValue], @"imagePath" :  [UIImage imageForActivityType:number.integerValue]}];
     }
     controller.array = [array copy];
+    controller.delegate = self;
   }
 }
 
+
+
+- (void)ActivitySelectionViewControllerDelegate_itemSlected:(NSUInteger)index
+{
+  NSNumber *activityTypeNumber = [self activityTypeOrdering][index];
+  
+  _activityType = activityTypeNumber.integerValue;
+  
+  [self setupButton];
+}
+
+- (void)ActivitySelectionViewControllerDelegate_Cancelled
+{
+  
+}
 
 @end

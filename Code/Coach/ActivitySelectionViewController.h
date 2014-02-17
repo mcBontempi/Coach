@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivitySelectionViewControllerDelegate.h"
 
 @interface ActivitySelectionViewController : UITableViewController
 
 @property (nonatomic, strong) NSArray *array;
+@property (nonatomic, weak) id<ActivitySelectionViewControllerDelegate> delegate;
 
 @end
