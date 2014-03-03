@@ -976,6 +976,13 @@
 			name = List;
 			sourceTree = "<group>";
 		};
+		D69231BF18C5178B002D6EF5 /* GymTimetable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GymTimetable;
+			sourceTree = "<group>";
+		};
 		D69E336E174E739A0013EB49 /* ClockView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,6 +1025,7 @@
 		D6DCF57F166D120F00539164 /* GFX */ = {
 			isa = PBXGroup;
 			children = (
+				D69231BF18C5178B002D6EF5 /* GymTimetable */,
 				D64A7E801744235D0083F965 /* ListCell */,
 				D678E00D1705A6A90046B59D /* 1Note.png */,
 				D678E00E1705A6A90046B59D /* 2Notes.png */,
