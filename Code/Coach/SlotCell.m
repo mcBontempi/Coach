@@ -103,7 +103,7 @@
   self.activityTypeImageView.frame = CGRectMake(iconLeftPadding,iconPadding, iconHeight, iconHeight);
   
   CGFloat labelOffsetX = iconLeftPadding + self.activityTypeImageView.frame.origin.x + self.activityTypeImageView.frame.size.width + textPadding;
-  
+    
   CGFloat labelWidth = self.contentView.frame.size.width - labelOffsetX - (textPadding *2) - checkboxWidth;
   
   self.label.frame = CGRectMake(labelOffsetX,labelYPadding,labelWidth, labelHeight);
@@ -115,6 +115,9 @@
   self.checkbox.frame = CGRectMake(self.label.frame.origin.x + self.label.frame.size.width+ checkboxPadding, checkboxPadding, checkboxWidth, checkboxHeight);
   
   self.noteImageView.frame = CGRectMake(206,4,21,21);
+    
+    
+    self.backgroundColor = [UIColor colorWithWhite:0.925 alpha:1.0];
   
 }
 
