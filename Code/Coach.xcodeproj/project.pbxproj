@@ -112,6 +112,55 @@
 		D677709A16EF817600D430C7 /* popoverBgWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D677709916EF817600D430C7 /* popoverBgWhite.png */; };
 		D678E00F1705A6A90046B59D /* 1Note.png in Resources */ = {isa = PBXBuildFile; fileRef = D678E00D1705A6A90046B59D /* 1Note.png */; };
 		D678E0101705A6A90046B59D /* 2Notes.png in Resources */ = {isa = PBXBuildFile; fileRef = D678E00E1705A6A90046B59D /* 2Notes.png */; };
+		D69231F118C51808002D6EF5 /* 8-stack_multi_station_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C018C51808002D6EF5 /* 8-stack_multi_station_small.jpg */; };
+		D69231F218C51808002D6EF5 /* abdominal_crunch_bench_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C118C51808002D6EF5 /* abdominal_crunch_bench_small.jpg */; };
+		D69231F318C51808002D6EF5 /* abdominal_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C218C51808002D6EF5 /* abdominal_small.jpg */; };
+		D69231F418C51808002D6EF5 /* adjustable_bench_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C318C51808002D6EF5 /* adjustable_bench_small.jpg */; };
+		D69231F518C51808002D6EF5 /* adjustable_decline_bench_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C418C51808002D6EF5 /* adjustable_decline_bench_small.jpg */; };
+		D69231F618C51808002D6EF5 /* arm_curl_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C518C51808002D6EF5 /* arm_curl_small.jpg */; };
+		D69231F718C51808002D6EF5 /* ascent_trainer_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C618C51808002D6EF5 /* ascent_trainer_small.jpg */; };
+		D69231F818C51808002D6EF5 /* back_extension_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C718C51808002D6EF5 /* back_extension_small.jpg */; };
+		D69231F918C51808002D6EF5 /* calf_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C818C51808002D6EF5 /* calf_press_small.jpg */; };
+		D69231FA18C51808002D6EF5 /* chest_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231C918C51808002D6EF5 /* chest_press_small.jpg */; };
+		D69231FB18C51808002D6EF5 /* converging_chest_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CA18C51808002D6EF5 /* converging_chest_press_small.jpg */; };
+		D69231FC18C51808002D6EF5 /* converging_shoulder_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CB18C51808002D6EF5 /* converging_shoulder_press_small.jpg */; };
+		D69231FD18C51808002D6EF5 /* dip_chin_assist_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CC18C51808002D6EF5 /* dip_chin_assist_small.jpg */; };
+		D69231FE18C51808002D6EF5 /* diverging_lat_pulldown_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CD18C51808002D6EF5 /* diverging_lat_pulldown_small.jpg */; };
+		D69231FF18C51808002D6EF5 /* diverging_seated_row_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CE18C51808002D6EF5 /* diverging_seated_row_small.jpg */; };
+		D692320018C51808002D6EF5 /* dumbbells_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231CF18C51808002D6EF5 /* dumbbells_small.jpg */; };
+		D692320118C51808002D6EF5 /* elliptical_trainer_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D018C51808002D6EF5 /* elliptical_trainer_small.jpg */; };
+		D692320218C51808002D6EF5 /* functional_trainer_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D118C51808002D6EF5 /* functional_trainer_small.jpg */; };
+		D692320318C51808002D6EF5 /* hip_abductor_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D218C51808002D6EF5 /* hip_abductor_small.jpg */; };
+		D692320418C51808002D6EF5 /* hip_adductor_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D318C51808002D6EF5 /* hip_adductor_small.jpg */; };
+		D692320518C51808002D6EF5 /* hybrid_cycle_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D418C51808002D6EF5 /* hybrid_cycle_small.jpg */; };
+		D692320618C51808002D6EF5 /* indoor_cycle_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D518C51808002D6EF5 /* indoor_cycle_small.jpg */; };
+		D692320718C51808002D6EF5 /* kettlebells_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D618C51808002D6EF5 /* kettlebells_small.jpg */; };
+		D692320818C51808002D6EF5 /* lat_pull_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D718C51808002D6EF5 /* lat_pull_small.jpg */; };
+		D692320918C51808002D6EF5 /* lateral_raise_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D818C51808002D6EF5 /* lateral_raise_small.jpg */; };
+		D692320A18C51808002D6EF5 /* leg_extension_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231D918C51808002D6EF5 /* leg_extension_small.jpg */; };
+		D692320B18C51808002D6EF5 /* leg_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DA18C51808002D6EF5 /* leg_press_small.jpg */; };
+		D692320C18C51808002D6EF5 /* medicine_ball_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DB18C51808002D6EF5 /* medicine_ball_small.jpg */; };
+		D692320D18C51808002D6EF5 /* multi_adjustable_bench_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DC18C51808002D6EF5 /* multi_adjustable_bench_small.jpg */; };
+		D692320E18C51808002D6EF5 /* multimode_rope_climber_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DD18C51808002D6EF5 /* multimode_rope_climber_small.jpg */; };
+		D692320F18C51808002D6EF5 /* olympic_bar_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DE18C51808002D6EF5 /* olympic_bar_small.jpg */; };
+		D692321018C51808002D6EF5 /* pectoral_fly_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231DF18C51808002D6EF5 /* pectoral_fly_small.jpg */; };
+		D692321118C51808002D6EF5 /* power_station_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E018C51808002D6EF5 /* power_station_small.jpg */; };
+		D692321218C51808002D6EF5 /* prone_leg_curl_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E118C51808002D6EF5 /* prone_leg_curl_small.jpg */; };
+		D692321318C51808002D6EF5 /* rear_delt_fly_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E218C51808002D6EF5 /* rear_delt_fly_small.jpg */; };
+		D692321418C51808002D6EF5 /* recumbent_cycle_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E318C51808002D6EF5 /* recumbent_cycle_small.jpg */; };
+		D692321518C51808002D6EF5 /* rotary_hip_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E418C51808002D6EF5 /* rotary_hip_small.jpg */; };
+		D692321618C51808002D6EF5 /* rotary_torso_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E518C51808002D6EF5 /* rotary_torso_small.jpg */; };
+		D692321718C51808002D6EF5 /* rower_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E618C51808002D6EF5 /* rower_small.jpg */; };
+		D692321818C51808002D6EF5 /* seated_dip_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E718C51808002D6EF5 /* seated_dip_small.jpg */; };
+		D692321918C51808002D6EF5 /* seated_leg_curl_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E818C51808002D6EF5 /* seated_leg_curl_small.jpg */; };
+		D692321A18C51808002D6EF5 /* seated_row_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231E918C51808002D6EF5 /* seated_row_small.jpg */; };
+		D692321B18C51808002D6EF5 /* shoulder_press_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231EA18C51808002D6EF5 /* shoulder_press_small.jpg */; };
+		D692321C18C51808002D6EF5 /* smith_machine_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231EB18C51808002D6EF5 /* smith_machine_small.jpg */; };
+		D692321D18C51808002D6EF5 /* spinner_bike_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231EC18C51808002D6EF5 /* spinner_bike_small.jpg */; };
+		D692321E18C51808002D6EF5 /* stepper_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231ED18C51808002D6EF5 /* stepper_small.jpg */; };
+		D692321F18C51808002D6EF5 /* treadmill_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231EE18C51808002D6EF5 /* treadmill_small.jpg */; };
+		D692322018C51808002D6EF5 /* triceps_extension_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231EF18C51808002D6EF5 /* triceps_extension_small.jpg */; };
+		D692322118C51808002D6EF5 /* upright_cycle_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D69231F018C51808002D6EF5 /* upright_cycle_small.jpg */; };
 		D6947964166A5ABB00F551FD /* SlotEditingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6947963166A5ABB00F551FD /* SlotEditingCell.m */; };
 		D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366174E0FD80013EB49 /* SlotEditTableViewController.m */; };
 		D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69E336C174E42190013EB49 /* SlotEdit.storyboard */; };
@@ -289,8 +338,6 @@
 		FD65372118A5800C0052D973 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65371E18A5800C0052D973 /* Default-568h@2x.png */; };
 		FD65372218A5800C0052D973 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65371F18A5800C0052D973 /* Default.png */; };
 		FD65372318A5800C0052D973 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372018A5800C0052D973 /* Default@2x.png */; };
-		FD65372518A594CC0052D973 /* Crosstrainer.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372418A594CC0052D973 /* Crosstrainer.png */; };
-		FD65372618A594CC0052D973 /* Crosstrainer.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372418A594CC0052D973 /* Crosstrainer.png */; };
 		FDACF55918A7A2BC002F5E0F /* ActivitySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */; };
 		FDACF55C18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
 		FDACF55D18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
@@ -454,6 +501,55 @@
 		D677709916EF817600D430C7 /* popoverBgWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popoverBgWhite.png; path = Coach/assets/popoverBgWhite.png; sourceTree = "<group>"; };
 		D678E00D1705A6A90046B59D /* 1Note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1Note.png; path = Coach/assets/1Note.png; sourceTree = "<group>"; };
 		D678E00E1705A6A90046B59D /* 2Notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2Notes.png; path = Coach/assets/2Notes.png; sourceTree = "<group>"; };
+		D69231C018C51808002D6EF5 /* 8-stack_multi_station_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "8-stack_multi_station_small.jpg"; path = "../GFXIcons/Processed/8-stack_multi_station_small.jpg"; sourceTree = "<group>"; };
+		D69231C118C51808002D6EF5 /* abdominal_crunch_bench_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abdominal_crunch_bench_small.jpg; path = ../GFXIcons/Processed/abdominal_crunch_bench_small.jpg; sourceTree = "<group>"; };
+		D69231C218C51808002D6EF5 /* abdominal_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = abdominal_small.jpg; path = ../GFXIcons/Processed/abdominal_small.jpg; sourceTree = "<group>"; };
+		D69231C318C51808002D6EF5 /* adjustable_bench_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adjustable_bench_small.jpg; path = ../GFXIcons/Processed/adjustable_bench_small.jpg; sourceTree = "<group>"; };
+		D69231C418C51808002D6EF5 /* adjustable_decline_bench_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adjustable_decline_bench_small.jpg; path = ../GFXIcons/Processed/adjustable_decline_bench_small.jpg; sourceTree = "<group>"; };
+		D69231C518C51808002D6EF5 /* arm_curl_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = arm_curl_small.jpg; path = ../GFXIcons/Processed/arm_curl_small.jpg; sourceTree = "<group>"; };
+		D69231C618C51808002D6EF5 /* ascent_trainer_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ascent_trainer_small.jpg; path = ../GFXIcons/Processed/ascent_trainer_small.jpg; sourceTree = "<group>"; };
+		D69231C718C51808002D6EF5 /* back_extension_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = back_extension_small.jpg; path = ../GFXIcons/Processed/back_extension_small.jpg; sourceTree = "<group>"; };
+		D69231C818C51808002D6EF5 /* calf_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = calf_press_small.jpg; path = ../GFXIcons/Processed/calf_press_small.jpg; sourceTree = "<group>"; };
+		D69231C918C51808002D6EF5 /* chest_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chest_press_small.jpg; path = ../GFXIcons/Processed/chest_press_small.jpg; sourceTree = "<group>"; };
+		D69231CA18C51808002D6EF5 /* converging_chest_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = converging_chest_press_small.jpg; path = ../GFXIcons/Processed/converging_chest_press_small.jpg; sourceTree = "<group>"; };
+		D69231CB18C51808002D6EF5 /* converging_shoulder_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = converging_shoulder_press_small.jpg; path = ../GFXIcons/Processed/converging_shoulder_press_small.jpg; sourceTree = "<group>"; };
+		D69231CC18C51808002D6EF5 /* dip_chin_assist_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dip_chin_assist_small.jpg; path = ../GFXIcons/Processed/dip_chin_assist_small.jpg; sourceTree = "<group>"; };
+		D69231CD18C51808002D6EF5 /* diverging_lat_pulldown_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = diverging_lat_pulldown_small.jpg; path = ../GFXIcons/Processed/diverging_lat_pulldown_small.jpg; sourceTree = "<group>"; };
+		D69231CE18C51808002D6EF5 /* diverging_seated_row_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = diverging_seated_row_small.jpg; path = ../GFXIcons/Processed/diverging_seated_row_small.jpg; sourceTree = "<group>"; };
+		D69231CF18C51808002D6EF5 /* dumbbells_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dumbbells_small.jpg; path = ../GFXIcons/Processed/dumbbells_small.jpg; sourceTree = "<group>"; };
+		D69231D018C51808002D6EF5 /* elliptical_trainer_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = elliptical_trainer_small.jpg; path = ../GFXIcons/Processed/elliptical_trainer_small.jpg; sourceTree = "<group>"; };
+		D69231D118C51808002D6EF5 /* functional_trainer_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = functional_trainer_small.jpg; path = ../GFXIcons/Processed/functional_trainer_small.jpg; sourceTree = "<group>"; };
+		D69231D218C51808002D6EF5 /* hip_abductor_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hip_abductor_small.jpg; path = ../GFXIcons/Processed/hip_abductor_small.jpg; sourceTree = "<group>"; };
+		D69231D318C51808002D6EF5 /* hip_adductor_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hip_adductor_small.jpg; path = ../GFXIcons/Processed/hip_adductor_small.jpg; sourceTree = "<group>"; };
+		D69231D418C51808002D6EF5 /* hybrid_cycle_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hybrid_cycle_small.jpg; path = ../GFXIcons/Processed/hybrid_cycle_small.jpg; sourceTree = "<group>"; };
+		D69231D518C51808002D6EF5 /* indoor_cycle_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = indoor_cycle_small.jpg; path = ../GFXIcons/Processed/indoor_cycle_small.jpg; sourceTree = "<group>"; };
+		D69231D618C51808002D6EF5 /* kettlebells_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kettlebells_small.jpg; path = ../GFXIcons/Processed/kettlebells_small.jpg; sourceTree = "<group>"; };
+		D69231D718C51808002D6EF5 /* lat_pull_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lat_pull_small.jpg; path = ../GFXIcons/Processed/lat_pull_small.jpg; sourceTree = "<group>"; };
+		D69231D818C51808002D6EF5 /* lateral_raise_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lateral_raise_small.jpg; path = ../GFXIcons/Processed/lateral_raise_small.jpg; sourceTree = "<group>"; };
+		D69231D918C51808002D6EF5 /* leg_extension_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = leg_extension_small.jpg; path = ../GFXIcons/Processed/leg_extension_small.jpg; sourceTree = "<group>"; };
+		D69231DA18C51808002D6EF5 /* leg_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = leg_press_small.jpg; path = ../GFXIcons/Processed/leg_press_small.jpg; sourceTree = "<group>"; };
+		D69231DB18C51808002D6EF5 /* medicine_ball_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = medicine_ball_small.jpg; path = ../GFXIcons/Processed/medicine_ball_small.jpg; sourceTree = "<group>"; };
+		D69231DC18C51808002D6EF5 /* multi_adjustable_bench_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = multi_adjustable_bench_small.jpg; path = ../GFXIcons/Processed/multi_adjustable_bench_small.jpg; sourceTree = "<group>"; };
+		D69231DD18C51808002D6EF5 /* multimode_rope_climber_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = multimode_rope_climber_small.jpg; path = ../GFXIcons/Processed/multimode_rope_climber_small.jpg; sourceTree = "<group>"; };
+		D69231DE18C51808002D6EF5 /* olympic_bar_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = olympic_bar_small.jpg; path = ../GFXIcons/Processed/olympic_bar_small.jpg; sourceTree = "<group>"; };
+		D69231DF18C51808002D6EF5 /* pectoral_fly_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pectoral_fly_small.jpg; path = ../GFXIcons/Processed/pectoral_fly_small.jpg; sourceTree = "<group>"; };
+		D69231E018C51808002D6EF5 /* power_station_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = power_station_small.jpg; path = ../GFXIcons/Processed/power_station_small.jpg; sourceTree = "<group>"; };
+		D69231E118C51808002D6EF5 /* prone_leg_curl_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prone_leg_curl_small.jpg; path = ../GFXIcons/Processed/prone_leg_curl_small.jpg; sourceTree = "<group>"; };
+		D69231E218C51808002D6EF5 /* rear_delt_fly_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rear_delt_fly_small.jpg; path = ../GFXIcons/Processed/rear_delt_fly_small.jpg; sourceTree = "<group>"; };
+		D69231E318C51808002D6EF5 /* recumbent_cycle_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = recumbent_cycle_small.jpg; path = ../GFXIcons/Processed/recumbent_cycle_small.jpg; sourceTree = "<group>"; };
+		D69231E418C51808002D6EF5 /* rotary_hip_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rotary_hip_small.jpg; path = ../GFXIcons/Processed/rotary_hip_small.jpg; sourceTree = "<group>"; };
+		D69231E518C51808002D6EF5 /* rotary_torso_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rotary_torso_small.jpg; path = ../GFXIcons/Processed/rotary_torso_small.jpg; sourceTree = "<group>"; };
+		D69231E618C51808002D6EF5 /* rower_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rower_small.jpg; path = ../GFXIcons/Processed/rower_small.jpg; sourceTree = "<group>"; };
+		D69231E718C51808002D6EF5 /* seated_dip_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = seated_dip_small.jpg; path = ../GFXIcons/Processed/seated_dip_small.jpg; sourceTree = "<group>"; };
+		D69231E818C51808002D6EF5 /* seated_leg_curl_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = seated_leg_curl_small.jpg; path = ../GFXIcons/Processed/seated_leg_curl_small.jpg; sourceTree = "<group>"; };
+		D69231E918C51808002D6EF5 /* seated_row_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = seated_row_small.jpg; path = ../GFXIcons/Processed/seated_row_small.jpg; sourceTree = "<group>"; };
+		D69231EA18C51808002D6EF5 /* shoulder_press_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shoulder_press_small.jpg; path = ../GFXIcons/Processed/shoulder_press_small.jpg; sourceTree = "<group>"; };
+		D69231EB18C51808002D6EF5 /* smith_machine_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = smith_machine_small.jpg; path = ../GFXIcons/Processed/smith_machine_small.jpg; sourceTree = "<group>"; };
+		D69231EC18C51808002D6EF5 /* spinner_bike_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = spinner_bike_small.jpg; path = ../GFXIcons/Processed/spinner_bike_small.jpg; sourceTree = "<group>"; };
+		D69231ED18C51808002D6EF5 /* stepper_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = stepper_small.jpg; path = ../GFXIcons/Processed/stepper_small.jpg; sourceTree = "<group>"; };
+		D69231EE18C51808002D6EF5 /* treadmill_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = treadmill_small.jpg; path = ../GFXIcons/Processed/treadmill_small.jpg; sourceTree = "<group>"; };
+		D69231EF18C51808002D6EF5 /* triceps_extension_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = triceps_extension_small.jpg; path = ../GFXIcons/Processed/triceps_extension_small.jpg; sourceTree = "<group>"; };
+		D69231F018C51808002D6EF5 /* upright_cycle_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = upright_cycle_small.jpg; path = ../GFXIcons/Processed/upright_cycle_small.jpg; sourceTree = "<group>"; };
 		D6947962166A5ABB00F551FD /* SlotEditingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditingCell.h; path = Coach/SlotEditingCell.h; sourceTree = "<group>"; };
 		D6947963166A5ABB00F551FD /* SlotEditingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotEditingCell.m; path = Coach/SlotEditingCell.m; sourceTree = "<group>"; };
 		D69E3365174E0FD80013EB49 /* SlotEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlotEditTableViewController.h; path = Coach/SlotEditTableViewController.h; sourceTree = "<group>"; };
@@ -526,7 +622,6 @@
 		FD65371E18A5800C0052D973 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "GymTimetable/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		FD65371F18A5800C0052D973 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = GymTimetable/Default.png; sourceTree = SOURCE_ROOT; };
 		FD65372018A5800C0052D973 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "GymTimetable/Default@2x.png"; sourceTree = SOURCE_ROOT; };
-		FD65372418A594CC0052D973 /* Crosstrainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Crosstrainer.png; path = Coach/assets/Crosstrainer.png; sourceTree = "<group>"; };
 		FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionViewController.h; path = Coach/ActivitySelectionViewController.h; sourceTree = "<group>"; };
 		FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivitySelectionViewController.m; path = Coach/ActivitySelectionViewController.m; sourceTree = "<group>"; };
 		FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionTableViewCell.h; path = Coach/ActivitySelectionTableViewCell.h; sourceTree = "<group>"; };
@@ -979,6 +1074,55 @@
 		D69231BF18C5178B002D6EF5 /* GymTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				D69231C018C51808002D6EF5 /* 8-stack_multi_station_small.jpg */,
+				D69231C118C51808002D6EF5 /* abdominal_crunch_bench_small.jpg */,
+				D69231C218C51808002D6EF5 /* abdominal_small.jpg */,
+				D69231C318C51808002D6EF5 /* adjustable_bench_small.jpg */,
+				D69231C418C51808002D6EF5 /* adjustable_decline_bench_small.jpg */,
+				D69231C518C51808002D6EF5 /* arm_curl_small.jpg */,
+				D69231C618C51808002D6EF5 /* ascent_trainer_small.jpg */,
+				D69231C718C51808002D6EF5 /* back_extension_small.jpg */,
+				D69231C818C51808002D6EF5 /* calf_press_small.jpg */,
+				D69231C918C51808002D6EF5 /* chest_press_small.jpg */,
+				D69231CA18C51808002D6EF5 /* converging_chest_press_small.jpg */,
+				D69231CB18C51808002D6EF5 /* converging_shoulder_press_small.jpg */,
+				D69231CC18C51808002D6EF5 /* dip_chin_assist_small.jpg */,
+				D69231CD18C51808002D6EF5 /* diverging_lat_pulldown_small.jpg */,
+				D69231CE18C51808002D6EF5 /* diverging_seated_row_small.jpg */,
+				D69231CF18C51808002D6EF5 /* dumbbells_small.jpg */,
+				D69231D018C51808002D6EF5 /* elliptical_trainer_small.jpg */,
+				D69231D118C51808002D6EF5 /* functional_trainer_small.jpg */,
+				D69231D218C51808002D6EF5 /* hip_abductor_small.jpg */,
+				D69231D318C51808002D6EF5 /* hip_adductor_small.jpg */,
+				D69231D418C51808002D6EF5 /* hybrid_cycle_small.jpg */,
+				D69231D518C51808002D6EF5 /* indoor_cycle_small.jpg */,
+				D69231D618C51808002D6EF5 /* kettlebells_small.jpg */,
+				D69231D718C51808002D6EF5 /* lat_pull_small.jpg */,
+				D69231D818C51808002D6EF5 /* lateral_raise_small.jpg */,
+				D69231D918C51808002D6EF5 /* leg_extension_small.jpg */,
+				D69231DA18C51808002D6EF5 /* leg_press_small.jpg */,
+				D69231DB18C51808002D6EF5 /* medicine_ball_small.jpg */,
+				D69231DC18C51808002D6EF5 /* multi_adjustable_bench_small.jpg */,
+				D69231DD18C51808002D6EF5 /* multimode_rope_climber_small.jpg */,
+				D69231DE18C51808002D6EF5 /* olympic_bar_small.jpg */,
+				D69231DF18C51808002D6EF5 /* pectoral_fly_small.jpg */,
+				D69231E018C51808002D6EF5 /* power_station_small.jpg */,
+				D69231E118C51808002D6EF5 /* prone_leg_curl_small.jpg */,
+				D69231E218C51808002D6EF5 /* rear_delt_fly_small.jpg */,
+				D69231E318C51808002D6EF5 /* recumbent_cycle_small.jpg */,
+				D69231E418C51808002D6EF5 /* rotary_hip_small.jpg */,
+				D69231E518C51808002D6EF5 /* rotary_torso_small.jpg */,
+				D69231E618C51808002D6EF5 /* rower_small.jpg */,
+				D69231E718C51808002D6EF5 /* seated_dip_small.jpg */,
+				D69231E818C51808002D6EF5 /* seated_leg_curl_small.jpg */,
+				D69231E918C51808002D6EF5 /* seated_row_small.jpg */,
+				D69231EA18C51808002D6EF5 /* shoulder_press_small.jpg */,
+				D69231EB18C51808002D6EF5 /* smith_machine_small.jpg */,
+				D69231EC18C51808002D6EF5 /* spinner_bike_small.jpg */,
+				D69231ED18C51808002D6EF5 /* stepper_small.jpg */,
+				D69231EE18C51808002D6EF5 /* treadmill_small.jpg */,
+				D69231EF18C51808002D6EF5 /* triceps_extension_small.jpg */,
+				D69231F018C51808002D6EF5 /* upright_cycle_small.jpg */,
 			);
 			name = GymTimetable;
 			sourceTree = "<group>";
@@ -1043,7 +1187,6 @@
 				D6DCF574166CE4EF00539164 /* tickbox_on.png */,
 				D6DCF575166CE4EF00539164 /* tickbox_on@2x.png */,
 				D6DCF56B166CE2FE00539164 /* up.png */,
-				FD65372418A594CC0052D973 /* Crosstrainer.png */,
 				D6DCF569166CDFD200539164 /* strengthandconditioning.png */,
 				D63B126B165D0C4A0045A725 /* landingpageicon.png */,
 				D63B1258165B81960045A725 /* bike.png */,
@@ -1292,7 +1435,6 @@
 				D69E336D174E42190013EB49 /* SlotEdit.storyboard in Resources */,
 				D69E3376174E74980013EB49 /* clock_centre_point@2x.png in Resources */,
 				D69E3377174E74980013EB49 /* clock_hour_hand@2x.png in Resources */,
-				FD65372518A594CC0052D973 /* Crosstrainer.png in Resources */,
 				D69E3378174E74980013EB49 /* clock_minute_hand@2x.png in Resources */,
 				D69E3379174E74980013EB49 /* ClockFace.png in Resources */,
 				D6017500175F26FF004F5AA6 /* table_background_light.png in Resources */,
@@ -1323,36 +1465,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D692322118C51808002D6EF5 /* upright_cycle_small.jpg in Resources */,
+				D69231FF18C51808002D6EF5 /* diverging_seated_row_small.jpg in Resources */,
+				D692320718C51808002D6EF5 /* kettlebells_small.jpg in Resources */,
 				FD6536D518A576D80052D973 /* InfoPlist.strings in Resources */,
 				FD6536D618A576D80052D973 /* ViewController_iPhone.xib in Resources */,
 				FD6536D718A576D80052D973 /* ViewController_iPad.xib in Resources */,
+				D692321B18C51808002D6EF5 /* shoulder_press_small.jpg in Resources */,
 				FD6536D818A576D80052D973 /* WelcomeViewController_iPad.xib in Resources */,
 				FD6536D918A576D80052D973 /* WelcomeViewController_iPhone.xib in Resources */,
 				FD6536DA18A576D80052D973 /* DurationViewController_iPad.xib in Resources */,
 				FD65372318A5800C0052D973 /* Default@2x.png in Resources */,
+				D69231F418C51808002D6EF5 /* adjustable_bench_small.jpg in Resources */,
 				FD6536DB18A576D80052D973 /* DurationViewController_iPhone.xib in Resources */,
 				FD65372218A5800C0052D973 /* Default.png in Resources */,
+				D692321518C51808002D6EF5 /* rotary_hip_small.jpg in Resources */,
 				FD6536DC18A576D80052D973 /* TimetableViewController_iPad.xib in Resources */,
 				FD6536DD18A576D80052D973 /* TimetableViewController_iPhone.xib in Resources */,
+				D692321218C51808002D6EF5 /* prone_leg_curl_small.jpg in Resources */,
+				D69231FC18C51808002D6EF5 /* converging_shoulder_press_small.jpg in Resources */,
+				D692320418C51808002D6EF5 /* hip_adductor_small.jpg in Resources */,
+				D692320218C51808002D6EF5 /* functional_trainer_small.jpg in Resources */,
+				D692321618C51808002D6EF5 /* rotary_torso_small.jpg in Resources */,
 				FD6536DE18A576D80052D973 /* ClockFaceSnap.png in Resources */,
 				FD6536DF18A576D80052D973 /* ListViewController_iPad.xib in Resources */,
+				D692321318C51808002D6EF5 /* rear_delt_fly_small.jpg in Resources */,
+				D692322018C51808002D6EF5 /* triceps_extension_small.jpg in Resources */,
+				D692320618C51808002D6EF5 /* indoor_cycle_small.jpg in Resources */,
+				D692321418C51808002D6EF5 /* recumbent_cycle_small.jpg in Resources */,
 				FD6536E018A576D80052D973 /* ListViewController_iPhone.xib in Resources */,
 				FD6536E118A576D80052D973 /* noEntry.png in Resources */,
 				FD6536E218A576D80052D973 /* bike.png in Resources */,
 				FD6536E318A576D80052D973 /* run.png in Resources */,
+				D692321818C51808002D6EF5 /* seated_dip_small.jpg in Resources */,
+				D692321018C51808002D6EF5 /* pectoral_fly_small.jpg in Resources */,
+				D692321E18C51808002D6EF5 /* stepper_small.jpg in Resources */,
 				FD6536E418A576D80052D973 /* swim.png in Resources */,
 				FD6536E518A576D80052D973 /* landingpageicon.png in Resources */,
+				D692320C18C51808002D6EF5 /* medicine_ball_small.jpg in Resources */,
 				FD6536E618A576D80052D973 /* strengthandconditioning.png in Resources */,
 				FD6536E718A576D80052D973 /* up.png in Resources */,
+				D692321718C51808002D6EF5 /* rower_small.jpg in Resources */,
+				D69231FB18C51808002D6EF5 /* converging_chest_press_small.jpg in Resources */,
 				FD6536E818A576D80052D973 /* tickbox_off.png in Resources */,
 				FD6536E918A576D80052D973 /* tickbox_off@2x.png in Resources */,
+				D692321A18C51808002D6EF5 /* seated_row_small.jpg in Resources */,
+				D692320E18C51808002D6EF5 /* multimode_rope_climber_small.jpg in Resources */,
 				FD6536EA18A576D80052D973 /* tickbox_on.png in Resources */,
 				FD6536EB18A576D80052D973 /* tickbox_on@2x.png in Resources */,
 				FD6536EC18A576D80052D973 /* checked.wav in Resources */,
 				FD6536ED18A576D80052D973 /* delete.wav in Resources */,
 				FD6536EE18A576D80052D973 /* new.wav in Resources */,
+				D692320B18C51808002D6EF5 /* leg_press_small.jpg in Resources */,
 				FD6536EF18A576D80052D973 /* slide.wav in Resources */,
+				D69231FE18C51808002D6EF5 /* diverging_lat_pulldown_small.jpg in Resources */,
+				D69231FA18C51808002D6EF5 /* chest_press_small.jpg in Resources */,
+				D692321918C51808002D6EF5 /* seated_leg_curl_small.jpg in Resources */,
 				FD6536F118A576D80052D973 /* UtilViewController_iPhone.xib in Resources */,
+				D692321118C51808002D6EF5 /* power_station_small.jpg in Resources */,
+				D692321F18C51808002D6EF5 /* treadmill_small.jpg in Resources */,
+				D692320518C51808002D6EF5 /* hybrid_cycle_small.jpg in Resources */,
 				FD6536F218A576D80052D973 /* UtilViewController_iPad.xib in Resources */,
 				FD6536F318A576D80052D973 /* PlanDetailViewController_iPad.xib in Resources */,
 				FD6536F418A576D80052D973 /* PlanDetailViewController_iPhone.xib in Resources */,
@@ -1362,33 +1534,51 @@
 				FD6536F818A576D80052D973 /* triathlonTimetableJustTitle@2x.png in Resources */,
 				FD6536F918A576D80052D973 /* triathlonTimetableJustTitle.png in Resources */,
 				FD6536FA18A576D80052D973 /* addButton.png in Resources */,
+				D692320A18C51808002D6EF5 /* leg_extension_small.jpg in Resources */,
 				FD6536FB18A576D80052D973 /* addButton@2x.png in Resources */,
 				FD6536FC18A576D80052D973 /* spot@2x.png in Resources */,
 				FD6536FD18A576D80052D973 /* popoverBgWhite.png in Resources */,
 				FD6536FE18A576D80052D973 /* divider.png in Resources */,
+				D692320918C51808002D6EF5 /* lateral_raise_small.jpg in Resources */,
 				FD6536FF18A576D80052D973 /* 1Note.png in Resources */,
 				FD65370018A576D80052D973 /* 2Notes.png in Resources */,
 				FD65370318A576D80052D973 /* sliderMaxMin-02.png in Resources */,
 				FD65370418A576D80052D973 /* sliderThumb.png in Resources */,
 				FD65370518A576D80052D973 /* sliderTrack.png in Resources */,
+				D69231FD18C51808002D6EF5 /* dip_chin_assist_small.jpg in Resources */,
+				D69231F718C51808002D6EF5 /* ascent_trainer_small.jpg in Resources */,
 				FD65370618A576D80052D973 /* WelcomeViewController_iPhone4.xib in Resources */,
+				D69231F518C51808002D6EF5 /* adjustable_decline_bench_small.jpg in Resources */,
+				D69231F318C51808002D6EF5 /* abdominal_small.jpg in Resources */,
+				D69231F818C51808002D6EF5 /* back_extension_small.jpg in Resources */,
 				FD65370718A576D80052D973 /* appIcon.png in Resources */,
 				FD65370818A576D80052D973 /* appIcon@2x.png in Resources */,
 				FD65370918A576D80052D973 /* list_cell_background_selected.png in Resources */,
+				D69231F618C51808002D6EF5 /* arm_curl_small.jpg in Resources */,
+				D692321D18C51808002D6EF5 /* spinner_bike_small.jpg in Resources */,
 				FD65370A18A576D80052D973 /* list_cell_background.png in Resources */,
+				D692320018C51808002D6EF5 /* dumbbells_small.jpg in Resources */,
 				FD65370B18A576D80052D973 /* list_cell_week_count_circle.png in Resources */,
+				D692320F18C51808002D6EF5 /* olympic_bar_small.jpg in Resources */,
 				FD65370C18A576D80052D973 /* list_cell_week_completed_circle.png in Resources */,
 				FD65370D18A576D80052D973 /* list_cell_week_count_circle_selected.png in Resources */,
 				FD65370E18A576D80052D973 /* table_background.png in Resources */,
+				D692320318C51808002D6EF5 /* hip_abductor_small.jpg in Resources */,
 				FD65370F18A576D80052D973 /* table_background_really_dark.png in Resources */,
 				FD65371018A576D80052D973 /* popoverArrowUpSimple.png in Resources */,
+				D692320818C51808002D6EF5 /* lat_pull_small.jpg in Resources */,
+				D69231F918C51808002D6EF5 /* calf_press_small.jpg in Resources */,
+				D692321C18C51808002D6EF5 /* smith_machine_small.jpg in Resources */,
 				FD65372118A5800C0052D973 /* Default-568h@2x.png in Resources */,
+				D69231F118C51808002D6EF5 /* 8-stack_multi_station_small.jpg in Resources */,
 				FD65371118A576D80052D973 /* SlotEdit.storyboard in Resources */,
 				FD65371218A576D80052D973 /* clock_centre_point@2x.png in Resources */,
 				FD65371318A576D80052D973 /* clock_hour_hand@2x.png in Resources */,
-				FD65372618A594CC0052D973 /* Crosstrainer.png in Resources */,
+				D692320118C51808002D6EF5 /* elliptical_trainer_small.jpg in Resources */,
 				FD65371418A576D80052D973 /* clock_minute_hand@2x.png in Resources */,
+				D69231F218C51808002D6EF5 /* abdominal_crunch_bench_small.jpg in Resources */,
 				FD65371518A576D80052D973 /* ClockFace.png in Resources */,
+				D692320D18C51808002D6EF5 /* multi_adjustable_bench_small.jpg in Resources */,
 				FD65371618A576D80052D973 /* table_background_light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

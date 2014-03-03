@@ -203,7 +203,15 @@
 
 #ifdef GYMTIMETABLE
 -(NSArray*) activityTypeOrdering{
-  return @[@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer),@(EActivityTypeCrossTrainer)];
+  return @[
+           @(EActivityType8_stack_multi_station_small),
+           @(EActivityTypeleg_extension_small),
+           @(EActivityTypeabdominal_crunch_bench_small),
+           @(EActivityTypeleg_press_small),
+           @(EActivityTypeabdominal_small),
+           @(EActivityTypemedicine_ball_small),
+           @(EActivityTypeadjustable_bench_small),
+           @(EActivityTypemulti_adjustable_bench_small)];
 }
 #endif
 
