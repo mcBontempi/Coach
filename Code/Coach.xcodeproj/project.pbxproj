@@ -339,8 +339,6 @@
 		FD65372218A5800C0052D973 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65371F18A5800C0052D973 /* Default.png */; };
 		FD65372318A5800C0052D973 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD65372018A5800C0052D973 /* Default@2x.png */; };
 		FDACF55918A7A2BC002F5E0F /* ActivitySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */; };
-		FDACF55C18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
-		FDACF55D18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */; };
 		FDACF55E18A7A392002F5E0F /* ActivitySelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */; };
 		FDACF56218A7EA56002F5E0F /* NSString+NameForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF56118A7EA56002F5E0F /* NSString+NameForActivityType.m */; };
 		FDACF56318A7EA56002F5E0F /* NSString+NameForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = FDACF56118A7EA56002F5E0F /* NSString+NameForActivityType.m */; };
@@ -624,8 +622,6 @@
 		FD65372018A5800C0052D973 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "GymTimetable/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionViewController.h; path = Coach/ActivitySelectionViewController.h; sourceTree = "<group>"; };
 		FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivitySelectionViewController.m; path = Coach/ActivitySelectionViewController.m; sourceTree = "<group>"; };
-		FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionTableViewCell.h; path = Coach/ActivitySelectionTableViewCell.h; sourceTree = "<group>"; };
-		FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivitySelectionTableViewCell.m; path = Coach/ActivitySelectionTableViewCell.m; sourceTree = "<group>"; };
 		FDACF56018A7EA56002F5E0F /* NSString+NameForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NameForActivityType.h"; sourceTree = "<group>"; };
 		FDACF56118A7EA56002F5E0F /* NSString+NameForActivityType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NameForActivityType.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1256,8 +1252,6 @@
 			children = (
 				FDACF55718A7A2BC002F5E0F /* ActivitySelectionViewController.h */,
 				FDACF55818A7A2BC002F5E0F /* ActivitySelectionViewController.m */,
-				FDACF55A18A7A383002F5E0F /* ActivitySelectionTableViewCell.h */,
-				FDACF55B18A7A383002F5E0F /* ActivitySelectionTableViewCell.m */,
 				FD34CD6B18B233290090948E /* ActivitySelectionViewControllerDelegate.h */,
 			);
 			name = ActivitySelection;
@@ -1682,7 +1676,6 @@
 				D60EADFC17185ACA00A27641 /* TestIt.m in Sources */,
 				D6D6180317257D9E00DA8F54 /* CNApplicationAppearance.m in Sources */,
 				D6D618061725919100DA8F54 /* ListViewCell.m in Sources */,
-				FDACF55C18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */,
 				D69E3368174E0FD80013EB49 /* SlotEditTableViewController.m in Sources */,
 				D69E3371174E73A80013EB49 /* PSAnalogClockView.m in Sources */,
 				D69E3380174E769A0013EB49 /* KTOneFingerRotationGestureRecognizer.m in Sources */,
@@ -1730,7 +1723,6 @@
 				FD6536A518A576D80052D973 /* Config.m in Sources */,
 				FD6536A618A576D80052D973 /* DurationViewController.m in Sources */,
 				FD6536A718A576D80052D973 /* TimetableViewController.m in Sources */,
-				FDACF55D18A7A383002F5E0F /* ActivitySelectionTableViewCell.m in Sources */,
 				FD6536A818A576D80052D973 /* TimetableViewAgent.m in Sources */,
 				FD6536A918A576D80052D973 /* Utils.m in Sources */,
 				FDACF55E18A7A392002F5E0F /* ActivitySelectionViewController.m in Sources */,

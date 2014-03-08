@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSArray *array;
 @property (nonatomic, weak) id<ActivitySelectionViewControllerDelegate> delegate;
+@property (nonatomic) NSUInteger initialSelectedRow;
 
 @end

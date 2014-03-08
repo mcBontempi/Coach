@@ -7,11 +7,6 @@
 //
 
 #import "ActivitySelectionViewController.h"
-#import "ActivitySelectionTableViewCell.h"
-
-@interface ActivitySelectionViewController ()
-
-@end
 
 @implementation ActivitySelectionViewController
 
@@ -27,28 +22,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                        target:self
-                                                                                        action:@selector(donePressed:)];
-  
   
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                         target:self
                                                                                        action:@selector(cancelPressed:)];
-  
+
+
 }
 
-- (IBAction)donePressed:(id)sender
-{
-  [self.delegate ActivitySelectionViewControllerDelegate_itemSlected:self.tableView.indexPathForSelectedRow.row];
-  
-  [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)cancelPressed:(id)sender
 {
   [self.delegate ActivitySelectionViewControllerDelegate_Cancelled];
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -67,14 +54,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ActivitySelectionTableViewCelldentifier";
-    ActivitySelectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
     NSDictionary *itemDictionary = self.array[indexPath.row];
   
-    cell.iconImageView.image = [itemDictionary objectForKey:@"imagePath"];
-    cell.name.text = [itemDictionary objectForKey:@"name"];
+    cell.imageView.image = [itemDictionary objectForKey:@"imagePath"];
+    cell.textLabel.text = [itemDictionary objectForKey:@"name"];
+  
+  cell.textLabel.backgroundColor = [UIColor clearColor];
   
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  [self.delegate ActivitySelectionViewControllerDelegate_itemSlected:indexPath.row];
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
