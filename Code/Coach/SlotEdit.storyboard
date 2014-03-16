@@ -194,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="85" y="5"/>
         </scene>
-        <!--Activity Selection View Controller - Root View Controller-->
+        <!--Activity Selection View Controller - Activities-->
         <scene sceneID="q3a-4r-WvK">
             <objects>
                 <tableViewController id="pJ1-Q7-JhV" customClass="ActivitySelectionViewController" sceneMemberID="viewController">
@@ -214,7 +214,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="eNY-bT-dk8"/>
+                    <navigationItem key="navigationItem" title="Activities" id="eNY-bT-dk8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tw-sg-Tse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

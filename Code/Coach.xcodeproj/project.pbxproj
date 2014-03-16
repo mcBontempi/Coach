@@ -213,6 +213,8 @@
 		D6F56365165409AE00E7617C /* SlotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F56364165409AE00E7617C /* SlotCell.m */; };
 		D6F5636B165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
 		D6F5636C165411C300E7617C /* UIImage_ImageForActivityType.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */; };
+		FD0315E918CC5A4900101C81 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0315E718CC5A4900101C81 /* appIcon.png */; };
+		FD0315EA18CC5A4900101C81 /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0315E818CC5A4900101C81 /* appIcon@2x.png */; };
 		FD65369818A576D80052D973 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF79D1608A7E7009E249F /* main.m */; };
 		FD65369918A576D80052D973 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7A11608A7E7009E249F /* AppDelegate.m */; };
 		FD65369A18A576D80052D973 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 852CF7A41608A7E7009E249F /* ViewController.m */; };
@@ -319,8 +321,6 @@
 		FD65370418A576D80052D973 /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D60EADEF17185ACA00A27641 /* sliderThumb.png */; };
 		FD65370518A576D80052D973 /* sliderTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = D60EADF017185ACA00A27641 /* sliderTrack.png */; };
 		FD65370618A576D80052D973 /* WelcomeViewController_iPhone4.xib in Resources */ = {isa = PBXBuildFile; fileRef = D60EADFD171BF4D700A27641 /* WelcomeViewController_iPhone4.xib */; };
-		FD65370718A576D80052D973 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AA91733ABE8007E5A1C /* appIcon.png */; };
-		FD65370818A576D80052D973 /* appIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6652AAD1733AC1A007E5A1C /* appIcon@2x.png */; };
 		FD65370918A576D80052D973 /* list_cell_background_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E891744243F0083F965 /* list_cell_background_selected.png */; };
 		FD65370A18A576D80052D973 /* list_cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E8A1744243F0083F965 /* list_cell_background.png */; };
 		FD65370B18A576D80052D973 /* list_cell_week_count_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D64A7E8D17442C230083F965 /* list_cell_week_count_circle.png */; };
@@ -614,6 +614,8 @@
 		D6F56364165409AE00E7617C /* SlotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlotCell.m; path = Coach/SlotCell.m; sourceTree = "<group>"; };
 		D6F5636916540FC200E7617C /* UIImage_ImageForActivityType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImage_ImageForActivityType.h; sourceTree = "<group>"; };
 		D6F5636A165411C300E7617C /* UIImage_ImageForActivityType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImage_ImageForActivityType.m; sourceTree = "<group>"; };
+		FD0315E718CC5A4900101C81 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = GymTimetable/appIcon.png; sourceTree = SOURCE_ROOT; };
+		FD0315E818CC5A4900101C81 /* appIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appIcon@2x.png"; path = "GymTimetable/appIcon@2x.png"; sourceTree = SOURCE_ROOT; };
 		FD34CD6B18B233290090948E /* ActivitySelectionViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ActivitySelectionViewControllerDelegate.h; path = Coach/ActivitySelectionViewControllerDelegate.h; sourceTree = "<group>"; };
 		FD65371B18A576D80052D973 /* Gym Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD65371C18A576D90052D973 /* Gym Timetable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Gym Timetable.plist"; path = "/Users/darentaylor/Documents/Code/DDT/Coach/Code/Gym Timetable.plist"; sourceTree = "<absolute>"; };
@@ -1260,6 +1262,8 @@
 		FD65371D18A57FA40052D973 /* GymTimetable */ = {
 			isa = PBXGroup;
 			children = (
+				FD0315E718CC5A4900101C81 /* appIcon.png */,
+				FD0315E818CC5A4900101C81 /* appIcon@2x.png */,
 				FD65371E18A5800C0052D973 /* Default-568h@2x.png */,
 				FD65371F18A5800C0052D973 /* Default.png */,
 				FD65372018A5800C0052D973 /* Default@2x.png */,
@@ -1483,6 +1487,7 @@
 				D692321618C51808002D6EF5 /* rotary_torso_small.jpg in Resources */,
 				FD6536DE18A576D80052D973 /* ClockFaceSnap.png in Resources */,
 				FD6536DF18A576D80052D973 /* ListViewController_iPad.xib in Resources */,
+				FD0315E918CC5A4900101C81 /* appIcon.png in Resources */,
 				D692321318C51808002D6EF5 /* rear_delt_fly_small.jpg in Resources */,
 				D692322018C51808002D6EF5 /* triceps_extension_small.jpg in Resources */,
 				D692320618C51808002D6EF5 /* indoor_cycle_small.jpg in Resources */,
@@ -1545,8 +1550,7 @@
 				D69231F518C51808002D6EF5 /* adjustable_decline_bench_small.jpg in Resources */,
 				D69231F318C51808002D6EF5 /* abdominal_small.jpg in Resources */,
 				D69231F818C51808002D6EF5 /* back_extension_small.jpg in Resources */,
-				FD65370718A576D80052D973 /* appIcon.png in Resources */,
-				FD65370818A576D80052D973 /* appIcon@2x.png in Resources */,
+				FD0315EA18CC5A4900101C81 /* appIcon@2x.png in Resources */,
 				FD65370918A576D80052D973 /* list_cell_background_selected.png in Resources */,
 				D69231F618C51808002D6EF5 /* arm_curl_small.jpg in Resources */,
 				D692321D18C51808002D6EF5 /* spinner_bike_small.jpg in Resources */,
@@ -2007,7 +2011,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Gym Timetable";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "61BF4CFF-D1E5-4CC0-81AB-D369892A974E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "29D13A52-DDEE-45BD-B2F1-9C82F96F119F";
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;

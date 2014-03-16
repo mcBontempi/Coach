@@ -98,7 +98,16 @@
 
 - (void)donePressed
 {
+  
+  
+  #ifdef GYMTIMETABLE
   [_delegate SlotEditViewControllerDelegate_updateWithActivityType:_activityType duration:_analogClockView.totalMinutes tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+#endif 
+  
+#ifdef TRIATHLONTIMETABLE
+  [_delegate SlotEditViewControllerDelegate_updateWithActivityType:[self activityTpeForIndex:self.iconSelectionView.currentItemIndex] duration:_analogClockView.totalMinutes tags:_tagsTextView.text athleteNotes:_athleteNotesTextView.text coachNotes:_coachNotesTextView.text];
+#endif
+  
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -252,14 +261,7 @@
            @(EActivityTypetriceps_extension_small),
            @(EActivityTypelat_pull_small),
            @(EActivityTypeupright_cycle_small)];
-  
-  
-  
-  
-  
-  
-  
-}
+ }
 #endif
 
 -(NSInteger) indexForActivityType:(TActivityType) activityType{

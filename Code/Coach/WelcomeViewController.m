@@ -80,7 +80,7 @@
   
   [self testIt];
 
-   [self close];
+ //  [self close];
 }
 
 - (IBAction) testIt {

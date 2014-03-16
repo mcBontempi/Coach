@@ -34,7 +34,7 @@
                                         numCols:4];
     
     
-    [self.contentView addSubview:self.activitiesIconSelectionView];
+  //  [self.contentView addSubview:self.activitiesIconSelectionView];
     
   }
   return self;

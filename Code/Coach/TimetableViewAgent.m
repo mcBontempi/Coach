@@ -78,8 +78,16 @@
   return [NSString niceStringFromDuration:total];
 }
 
--(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex{
-    Slot *newSlot = [[Slot alloc ] initWithDuration:30 activityType:EActivityTypeSwim];
+-(void) TimetableViewControllerDelegate_addItemForDay:(NSInteger) dayIndex
+{
+#ifdef GYMTIMETABLE
+    Slot *newSlot = [[Slot alloc ] initWithDuration:0 activityType:EActivityType8_stack_multi_station_small];
+#endif
+  
+#ifdef TRIATHLONTIMETABLE
+      Slot *newSlot = [[Slot alloc ] initWithDuration:0 activityType:EActivityTypeSwim];
+#endif
+
     NSMutableArray *monday = self.week[dayIndex];
     [monday addObject:newSlot];
 }
