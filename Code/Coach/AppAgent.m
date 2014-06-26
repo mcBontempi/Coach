@@ -35,7 +35,7 @@
 
 -(void) start
 {
-  [self startViewerShowWelcome:YES];
+  [self startViewerShowWelcome:NO];
 }
 
 -(void) handleOpenURL:(NSURL *)url{
